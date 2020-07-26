@@ -18,9 +18,11 @@ document.addEventListener('scroll', () => {
     if (scroll_position > 260) {
         header.style.backgroundColor = getComputedStyle(document.body).getPropertyValue('--scroll_header_color');
         brand.style.display = 'block';
+        brand.style.color = 'white';
     } else {
         header.style.backgroundColor = getComputedStyle(document.body).getPropertyValue('--hero_header_color');
         brand.style.display = getComputedStyle(document.body).getPropertyValue('--brand_display_initial');
+        brand.style.color = getComputedStyle(document.body).getPropertyValue('--brand_color_initial');
     }
 });
 

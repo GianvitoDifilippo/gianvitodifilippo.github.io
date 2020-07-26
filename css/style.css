@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+    --hero_header_color: transparent;
+    --scroll_header_color: #29323c;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -15,6 +20,8 @@ html {
 a {
     text-decoration: none;
 }
+
+/* Header Section Begin */
 
 .container {
     min-height: 100vh;
@@ -40,8 +47,6 @@ a {
     color: aqua;
 }
 
-/* Header Section Begin */
-
 #header {
     position: fixed;
 	z-index: 1000;
@@ -53,7 +58,7 @@ a {
 
 #header .header {
     min-height: 8vh;
-    background-color: rgba(30, 30, 30, 0.5);
+    background-color: var(--hero_header_color);
 	transition: .3s ease background-color;
 }
 
@@ -138,7 +143,7 @@ a {
 	z-index: 100;
 	cursor: pointer;
 	transform: scale(.8);
-	margin-right: 20px;
+	margin-right: 10px;
 }
 
 #header .hamburger::after {
@@ -363,8 +368,16 @@ a {
     }
 }
 
-@media only screen and (min-width: 1200px) {    
+@media only screen and (min-width: 1200px) {
+    :root {
+        --hero_header_color: rgba(30, 30, 30, 0.5);
+    }
+
     /* Header Begin */
+    #header .header {
+        background-color: var(--hero_header_color);
+    }
+
     #header .hamburger {
         display: none;
     }

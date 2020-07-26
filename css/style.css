@@ -17,13 +17,13 @@ html {
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
 }
-
 input,
 textarea,
 button,
 select,
 a {
-  -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Header Section Begin */
@@ -125,7 +125,8 @@ a {
 	z-index: 100;
 	cursor: pointer;
 	transform: scale(.8);
-	margin-right: 10px;
+    margin-right: 10px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 #header .hamburger::after {

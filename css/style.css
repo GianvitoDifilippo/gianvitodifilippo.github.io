@@ -17,6 +17,7 @@ html {
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
 }
+
 input,
 textarea,
 button,
@@ -24,6 +25,16 @@ select,
 a {
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
+}
+
+.section-title {
+    font-size: 4rem;
+    font-weight: 300;
+    color: white;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-align: center;
 }
 
 /* Header Section Begin */
@@ -46,6 +57,7 @@ a {
 
 .brand h1 span {
     color: aqua;
+    text-shadow: 0 0 8px steelblue;
     transition: .5s ease color;
 }
 
@@ -184,7 +196,7 @@ a {
 /* Hero Section Begin */
 
 #hero {
-    background-image: url(/assets/img/pollino.jpeg);
+    background-image: url(/assets/img/hero-background.jpeg);
     background-size: cover;
     position: relative;
     z-index: 1;
@@ -262,13 +274,32 @@ a {
 
 /* Hero Section End */
 
-/* About Section Begin */
-
 /* background: linear-gradient(0deg, rgba(10,10,20,1) 0%, rgba(40,50,70,1) 50%, rgba(10,10,20,1) 100%); */
+
+/* About Section Begin */
 
 #about {
     background-color: rgb(30, 30, 30);
 }
+
+#about .about {
+    flex-direction: column-reverse;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+#about .col-left {
+    width: 250px;
+    height: 360px;
+}
+
+#about .col-right {
+    width: 100%;
+}
+
+
 
 /* About Section End */
 
@@ -276,6 +307,21 @@ a {
 
 #experience {
     background-color: rgb(30, 30, 30);
+}
+
+#experience .experience {
+    flex-direction: column;
+    text-align: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+#experience .experience-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* Experience Section End */
@@ -365,6 +411,7 @@ a {
     }
 
     .brand h1 span {
+        text-shadow: none;
         color: white;
     }
 

@@ -3,6 +3,7 @@
 :root {
     --hero_header_color: transparent;
     --scroll_header_color: #29323c;
+    --brand_display_initial: none;
 }
 
 * {
@@ -35,17 +36,14 @@ a {
 .brand h1 {
     font-weight: 500;
 	font-size: 2.5rem;
-	text-transform: uppercase;
-	color: white;
+    text-transform: uppercase;
+    color: white;
+    display: var(--brand_display_initial);
 }
 
 .brand h1 span {
-    transition: .5s ease color;
-}
-
-.brand h1:hover span {
-    animation: neon_hover .4s;
     color: aqua;
+    transition: .5s ease color;
 }
 
 #header {
@@ -104,26 +102,6 @@ a {
 	padding: 20px;
 	display: block;
     transition: .5s ease color;
-}
-
-#header .nav-list ul a::after{
-    white-space: nowrap;
-    overflow: hidden;
-    content: attr(data-after);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    color: rgba(240, 240, 240, 0.04);
-    font-size: 8rem;
-    letter-spacing: 60px;
-    z-index: -1;
-    transition: .5s ease letter-spacing;
-}
-
-#header .nav-list ul li:hover a::after {
-    transform: translate(-50%, -50%) scale(1);
-    letter-spacing: 15px;
 }
 
 #header .nav-list ul li:hover a {
@@ -372,9 +350,25 @@ a {
 @media only screen and (min-width: 1200px) {
     :root {
         --hero_header_color: rgba(30, 30, 30, 0.5);
+        --brand_display_initial: block;
     }
 
     /* Header Begin */
+    .brand h1 {
+        display: var(--brand_display_initial);
+        position: relative;
+        right: 30%;
+    }
+
+    .brand h1 span {
+        color: white;
+    }
+
+    .brand h1:hover span {
+        animation: neon_hover .4s;
+        color: aqua;
+    }
+
     #header .header {
         background-color: var(--hero_header_color);
     }
@@ -397,10 +391,6 @@ a {
 
     #header .nav-list ul li {
         display: inline-block;
-    }
-
-    #header .nav-list ul a:after {
-        display: none;
     }
     /* Header End */
 

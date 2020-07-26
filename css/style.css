@@ -412,7 +412,7 @@ a {
     /* Hero Section End */
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 360px) {
     /* Hero Section Begin */
 
     #hero h1 {

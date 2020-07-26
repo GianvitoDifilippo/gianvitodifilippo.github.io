@@ -14,7 +14,8 @@
 html {
     font-size: 10px;
     font-family: 'Montserrat', sans-serif;
-	scroll-behavior: smooth;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
 }
 
 a {

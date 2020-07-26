@@ -198,7 +198,6 @@ a {
 #hero {
     background-image: url(/assets/img/pollino.jpeg);
     background-size: cover;
-    background-position: top center;
     position: relative;
     z-index: 1;
 }
@@ -358,11 +357,18 @@ a {
 
 /* Media query for desktop Begin */
 
+@media only screen and (max-width: 1200px) {
+    #hero {
+        background-position: 80%;
+    }
+}
+
 @media only screen and (min-width: 1200px) {    
     /* Header Begin */
     #header .hamburger {
         display: none;
     }
+
     #header .nav-list ul {
         position: initial;
         display: block;
@@ -370,12 +376,15 @@ a {
         width: fit-content;
         background-color: transparent;
     }
+
     #header .nav-list ul a {
         font-size: 1.8rem;
     }
+
     #header .nav-list ul li {
         display: inline-block;
     }
+
     #header .nav-list ul a:after {
         display: none;
     }
@@ -405,12 +414,15 @@ a {
 
 @media only screen and (max-width: 350px) {
     /* Hero Section Begin */
+
     #hero h1 {
         font-size: 4rem;
     }
+
     #hero h2 {
         font-size: 2.5rem;
     }
+
     #hero .cta {
         max-width: 270px;
         font-size: 1.5rem;

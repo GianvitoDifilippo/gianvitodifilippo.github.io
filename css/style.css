@@ -403,7 +403,7 @@ a {
     /* Hero Section End */
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 350px) {
     /* Hero Section Begin */
     #hero h1 {
         font-size: 4rem;

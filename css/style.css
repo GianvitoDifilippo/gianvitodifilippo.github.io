@@ -18,9 +18,12 @@ html {
     scroll-behavior: smooth;
 }
 
+input,
+textarea,
+button,
+select,
 a {
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Header Section Begin */

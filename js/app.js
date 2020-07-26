@@ -5,10 +5,6 @@ const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a'
 const header = document.querySelector('.header.container');
 const brand = document.querySelector('.brand h1');
 
-const scroll_header_color = getComputedStyle(document.body).getPropertyValue('--scroll_header_color');
-const hero_header_color = getComputedStyle(document.body).getPropertyValue('--hero_header_color');
-const brand_display_initial = getComputedStyle(document.body).getPropertyValue('--brand_display_initial');
-
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     mobile_menu.classList.toggle('active');
@@ -17,12 +13,12 @@ hamburger.addEventListener('click', () => {
 
 document.addEventListener('scroll', () => {
     var scroll_position = window.scrollY;
-    if (scroll_position > 250) {
-        header.style.backgroundColor = scroll_header_color;
+    if (scroll_position > 260) {
+        header.style.backgroundColor = getComputedStyle(document.body).getPropertyValue('--scroll_header_color');
         brand.style.display = 'block';
     } else {
-        header.style.backgroundColor = hero_header_color;
-        brand.style.display = brand_display_initial;
+        header.style.backgroundColor = getComputedStyle(document.body).getPropertyValue('--hero_header_color');
+        brand.style.display = getComputedStyle(document.body).getPropertyValue('--brand_display_initial');
     }
 });
 

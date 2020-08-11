@@ -1,52 +1,43 @@
-/* ------------------------------------------------     HEADER ELEMENTS     ------------------------------------------------ */
-const navbar = document.querySelector('#header .container');
-const hamburger = document.querySelector('#header .container .nav-list .hamburger');
-const menu_list = document.querySelector('#header .container .nav-list ul');
-const menu_items = document.querySelectorAll('#header .container .nav-list ul li a');
+const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
+const hamburger_after = document.querySelector('.header .nav-bar .nav-list .hamburger::after');
+const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
+const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
+const header = document.querySelector('.header.container');
+const brand = document.querySelector('.brand h1');
+const hero = document.getElementById("hero");
 
-/* ------------------------------------------------      HERO ELEMENTS      ------------------------------------------------ */
-const hero_container = document.querySelector('#hero .container');
+// alert('This portfolio is work in progress');
 
-/* ------------------------------------------------      CSS VARIABLES      ------------------------------------------------ */
-const navigation_position = parseInt(getComputedStyle(document.body).getPropertyValue('--navigation_position'));
-
-/* ------------------------------------------------        VARIABLES        ------------------------------------------------ */
-var hero_section = true;
-
-/* ------------------------------------------------         SCRIPT          ------------------------------------------------ */
-// Mobile menu
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
-    menu_list.classList.toggle('active');
+    mobile_menu.classList.toggle('active');
+    hamburger_after.style.toggle('active');
 });
 
-menu_items.forEach(item => {
-	item.addEventListener('click', () => {
-        setTimeout(() => {
-            hamburger.classList.toggle('active');
-		    menu_list.classList.toggle('active');
-        }, 100);
-	});
-});
-
-// Scroll effects
 document.addEventListener('scroll', () => {
     var scroll_position = window.scrollY;
 
     // Header scroll effect
-    if (scroll_position > navigation_position) {
-        if (hero_section) {
-            hero_section = false;
-            navbar.classList.toggle('navigation');
-        }
+    if (scroll_position > 280) {
+        header.style.backgroundColor = getComputedStyle(document.body).getPropertyValue('--scroll_header_color');
+        brand.style.display = 'block';
+        brand.style.color = 'white';
     } else {
-        if (!hero_section) {
-            hero_section = true;
-            navbar.classList.toggle('navigation');
-        }
+        header.style.backgroundColor = getComputedStyle(document.body).getPropertyValue('--hero_header_color');
+        brand.style.display = getComputedStyle(document.body).getPropertyValue('--brand_display_initial');
+        brand.style.color = getComputedStyle(document.body).getPropertyValue('--brand_color_initial');
     }
 
     // Background parallax effect
-    var parallaxShift = scroll_position * 0.75;
-    hero_container.style.backgroundPosition = '0px ' + parallaxShift + 'px';
+    var parallaxShift = scroll_position * 0.7;
+    hero.style.backgroundPosition = '0px ' + parallaxShift + 'px';
+});
+
+menu_item.forEach((item) => {
+	item.addEventListener('click', () => {
+        setTimeout(() => {
+            hamburger.classList.toggle('active');
+		    mobile_menu.classList.toggle('active');
+        }, 100);
+	});
 });

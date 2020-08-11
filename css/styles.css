@@ -3,7 +3,7 @@
 /* ----------------------------------------   COMMON   ---------------------------------------- */
 
 :root {
-    --primary_color: aqua;
+    --primary_color: red;
     --secondary_color: steelblue;
     --background_color: rgb(40, 40, 40);
     --background_color_dark: rgb(20, 20, 20);
@@ -27,10 +27,10 @@ html {
 }
 
 .container {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
     min-height: 100vh;
     background-color: var(--background_color);
 }

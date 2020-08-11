@@ -200,7 +200,7 @@ a {
 #hero .container .brand h1 {
     font-size: 5rem;
     font-weight: 600;
-    color: red;
+    color: white;
 }
 
 #hero .container .brand h2 {
@@ -220,7 +220,7 @@ a {
     border: var(--primary_color) solid 2px;
     background-color: transparent;
     margin-top: 15px;
-    transition: all .3s;
+    transition: background-color .3s, color .3s;
 }
 
 #hero .container .brand a:hover {
@@ -296,6 +296,7 @@ a {
 
     #header .container {
         justify-content: space-between;
+        height: 50vh;
     }
 
     #header .container .brand {
@@ -348,6 +349,8 @@ a {
     }
 }
 
+/* ----------------------------------------   PHONE    ---------------------------------------- */
+
 @media only screen and (max-width: 600px) {
     :root {
         --navigation_position: 80;
@@ -355,10 +358,6 @@ a {
     
     html {
         font-size: 8px;
-    }
-
-    #header .container .nav-list ul li a {
-        font-size: 3rem;
     }
 
     #hero .container {
@@ -377,5 +376,9 @@ a {
         text-align: center;
         padding: 1rem 1rem;
         margin: 1rem auto;
+    }
+
+    #header .container .nav-list ul li a {
+        font-size: 3rem;
     }
 }

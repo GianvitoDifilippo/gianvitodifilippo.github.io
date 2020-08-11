@@ -65,14 +65,11 @@ a {
 
 /* ----------------------------------------   HEADER   ---------------------------------------- */
 
-#header {
+#header .container {
 	left: 0;
 	top: 0;
     position: fixed;
 	z-index: 1000;
-}
-
-#header .container {
     background-color: var(--navbar_color_hero);
     width: 100vw;
     min-height: unset;

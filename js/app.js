@@ -25,7 +25,7 @@ menu_items.forEach(item => {
         setTimeout(() => {
             hamburger.classList.toggle('active');
 		    menu_list.classList.toggle('active');
-        }, 150);
+        }, 100);
 	});
 });
 

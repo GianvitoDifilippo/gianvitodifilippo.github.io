@@ -27,6 +27,7 @@ body.stop_scroll {
     right: unset;
     left: -100px;
     transition: left .2s linear;
+    transition-delay: .2s;
 }
 
 #lang.visible {

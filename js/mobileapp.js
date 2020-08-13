@@ -3,6 +3,7 @@ function mobileApp() {
     var langVisible = false;
     
     function showFlags() {
+        flagsVisible = true;
         for (let i = 1; i < flags.length; i++) {
             let ms = i * 100;
             flags[i].style.top = '0px';
@@ -10,6 +11,7 @@ function mobileApp() {
         }
     }
     function hideFlags() {
+        flagsVisible = false;
         for (let i = 1; i < flags.length; i++) {
             let ms = (flags.length - 1 - i) * 100;
             flags[i].style.top = `${flag_rest_top}px`;
@@ -17,10 +19,15 @@ function mobileApp() {
         }
     }
     function showLang() {
+        langVisible = true;
         lang.style.left = '3%';
     }
     function hideLang() {
+        langVisible = false;
         lang.style.left = `${-flag_width * 1.5}px`;
+        if (flagsVisible) {
+            hideFlags();
+        }
     }
 
     // Shows/hides nav-list, disables scrolling, disables header brand button
@@ -30,11 +37,9 @@ function mobileApp() {
         hamburger.classList.toggle('active');
         body.classList.toggle('stop_scroll');
         if (langVisible) {
-            langVisible = false;
             hideLang();
         }
         else {
-            langVisible = true;
             showLang();
         }
     }
@@ -65,11 +70,9 @@ function mobileApp() {
     // Adds click event listener
     flags.forEach(flag => flag.addEventListener('click', () => {
         if (flagsVisible) {
-            flagsVisible = false;
             hideFlags();
         }
         else {
-            flagsVisible = true;
             showFlags();
         }
     }));

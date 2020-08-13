@@ -54,7 +54,13 @@ body.stop_scroll {
 }
 
 /* ----------------------------------------    HEADER    ---------------------------------------- */
-    
+
+#header {
+    top: 0;
+    transition: none;
+    transition-delay: 0s;
+}
+
 #header .navbar {
     position: relative;
     justify-content: space-between;

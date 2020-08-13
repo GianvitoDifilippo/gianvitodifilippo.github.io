@@ -23,7 +23,7 @@ const flag_height = parseInt(getComputedStyle(document.body).getPropertyValue('-
 
 /* ------------------------------------------------       VARS/CONSTS       ------------------------------------------------ */
 var navigating = window.scrollY > navigation_position;
-const mobile = checkMobile();
+const mobile = window.innerWidth <= 1024;
 const flag_rest_top = Math.floor(-lang.getBoundingClientRect().top - flag_height * 1.5);
 const flag_rest_left = Math.ceil(window.innerWidth - lang.getBoundingClientRect().right + flag_width * 1.5);
 

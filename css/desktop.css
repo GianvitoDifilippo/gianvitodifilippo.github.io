@@ -135,10 +135,16 @@ a {
 
 #header {
     position: fixed;
-    top: 0;
+    top: -100px;
     left: 0;
     width: 100vw;
     z-index: 10;
+    transition: top .8s;
+    transition-delay: 5s;
+}
+
+#header.visible {
+    top: 0;
 }
 
 #header .navbar {
@@ -296,7 +302,7 @@ a {
 }
 
 /* ---------------------------------------- DESKTOP ONLY ---------------------------------------- */
-@media only screen and (min-width: 1367px) {
+@media (any-hover: hover) {
     .neon {
         transition: color .4s;
     }
@@ -304,15 +310,5 @@ a {
     *:hover > .neon {
         color: var(--primary_color) !important;
         animation: neon .4s;
-    }
-
-    #header {
-        top: -100px;
-        transition: top .8s;
-        transition-delay: 5s;
-    }
-
-    #header.visible {
-        top: 0;
     }
 }

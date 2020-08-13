@@ -60,12 +60,12 @@ function mobileApp() {
             });
         });
     });
-    menu_items.forEach(item => {
+    menu_items.forEach(item =>
         item.addEventListener('click', () => {
             item.classList.add('neon_animation');
             setTimeout(toggleNavlistActive, 100);
-        });
-    });
+        })
+    );
 
     // Adds click event listener
     flags.forEach(flag => flag.addEventListener('click', () => {

@@ -15,12 +15,8 @@ function desktopApp() {
     }
     
     // Adds hover event listener
-    lang.addEventListener('mouseenter', () => {
-        showFlags();
-    });
-    lang.addEventListener('mouseleave', () => {
-        hideFlags();
-    });
+    lang.addEventListener('mouseenter', showFlags);
+    lang.addEventListener('mouseleave', hideFlags);
 
     // Hides flags at launch
     hideFlags();

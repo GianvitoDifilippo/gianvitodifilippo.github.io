@@ -47,15 +47,6 @@ a {
     justify-content: center;
 }
 
-.showlater {
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-.showlater.visible {
-    opacity: 1;
-}
-
 .section {
     position: relative;
     min-height: 100vh;
@@ -135,16 +126,10 @@ a {
 
 #header {
     position: fixed;
-    top: -100px;
+    top: 0;
     left: 0;
     width: 100vw;
     z-index: 10;
-    transition: top .8s;
-    transition-delay: 5s;
-}
-
-#header.visible {
-    top: 0;
 }
 
 #header .navbar {
@@ -234,38 +219,27 @@ a {
     font-weight: 600;
 }
 
-#hero .container .brand h1.showlater {
-    transition-delay: 1s;
-}
-
 #hero .container .brand h2 {
     color: white;
     font-size: 3rem;
     font-weight: 200;
 }
 
-#hero .container .brand h2.showlater {
-    transition-delay: 2.5s;
-}
-
-#hero .container .brand div.showlater {
+#hero .container .brand a {
     display: inline-block;
-    margin-top: 25px;
-    transition-delay: 4.5s;
-}
-
-#hero .container .brand div a {
     max-width: 300px;
+    text-align: center;
     text-transform: uppercase;
     color: var(--primary_color);
     font-size: 2rem;
     padding: 1rem 3rem;
+    margin-top: 10px;
     border: var(--primary_color) solid 2px;
     background-color: transparent;
     transition: background-color .3s, color .3s;
 }
 
-#hero .container .brand div a:hover {
+#hero .container .brand a:hover {
     background-color: var(--primary_color);
     color: black;
 }
@@ -303,6 +277,10 @@ a {
 
 /* ---------------------------------------- DESKTOP ONLY ---------------------------------------- */
 @media (any-hover: hover) {
+    :root {
+        --can_hover: 1;
+    }
+
     .neon {
         transition: color .4s;
     }

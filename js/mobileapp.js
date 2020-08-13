@@ -1,3 +1,18 @@
+function launchAnimationMobile() {
+    hamburger.style.left = '100px';
+
+    // Entering hamburger
+    setTimeout(() => {
+        hamburger.style.transition = 'left .5s';
+        hamburger.style.left = '0px';
+    }, 4500);
+
+    // Style cleanup
+    setTimeout(() => {
+        hamburger.style.transition = null;
+    }, 5000);
+}
+
 function mobileApp() {
     var flagsVisible = false;
     var langVisible = false;
@@ -69,12 +84,8 @@ function mobileApp() {
 
     // Adds click event listener
     flags.forEach(flag => flag.addEventListener('click', () => {
-        if (flagsVisible) {
-            hideFlags();
-        }
-        else {
-            showFlags();
-        }
+        if (flagsVisible) hideFlags();
+        else showFlags();
     }));
 
     // Hides flags and lang at launch

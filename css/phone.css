@@ -40,9 +40,13 @@ html {
     font-size: 2.5rem;
 }
 
-#hero .container .brand div a {
-    display: block;
+#hero .container .brand {
+    display: flex;
+    flex-direction: column;
+}
+
+#hero .container .brand a {
     text-align: center;
-    margin-bottom: 1rem;
+    width: 220px;
 }
 }

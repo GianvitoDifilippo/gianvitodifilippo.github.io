@@ -35,6 +35,7 @@ function translatePage(lang) {
     language = langs[lang];
     if (!language) language = langs['en'];
     if (!language) return;
+    setCookie('lang', lang);
     sortFlags(lang);
     let fields = document.querySelectorAll('[data-lang]');
     fields.forEach(field => {

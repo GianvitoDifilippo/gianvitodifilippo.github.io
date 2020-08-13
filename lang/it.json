@@ -1,0 +1,14 @@
+{
+    "section_titles": {
+        "about": "Su di me",
+        "experience": "Esperienza",
+        "education": "Educazione",
+        "skills": "Skills",
+        "projects": "Progetti"
+    },
+    "hero": {
+        "h2": "Ingegnere dell'Automazione",
+        "contactme": "Contattami",
+        "downloadcv": "Scarica il mio CV"
+    }
+}

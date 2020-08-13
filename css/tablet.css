@@ -1,0 +1,171 @@
+@media only screen and (max-width: 1024px) {
+/* ----------------------------------------   COMMON   ---------------------------------------- */
+
+:root {
+    --navbar_color_hero: transparent;
+
+    --flag_rest_left_mobile: 0px;
+}
+
+body.stop_scroll {
+    height: 100%;
+    overflow: hidden;
+}
+    
+*.neon_animation .neon {
+    animation: neon_mobile .3s;
+}
+
+.section {
+    overflow-x: hidden;
+}
+
+/* ----------------------------------------    FLAGS     ---------------------------------------- */
+
+#lang {
+    z-index: 1;
+    right: unset;
+    left: -100px;
+    transition: left .2s linear;
+}
+
+#lang.visible {
+    left: 0px;
+}
+
+#lang ul {
+    flex-direction: row;
+}
+
+#lang ul li div::after {
+    display: none;
+}
+
+#lang ul li {
+    padding-bottom: 0px;
+    padding-right: 6px;
+    transition: top .2s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#lang:hover ul li {
+    left: unset;
+}
+
+/* ----------------------------------------    HEADER    ---------------------------------------- */
+    
+#header .navbar {
+    position: relative;
+    justify-content: space-between;
+}
+
+#header .navbar .brand {
+    pointer-events: none;
+}
+
+#header .navbar .brand.inactive {
+    pointer-events: none;
+}
+
+#header .navbar.navigating .brand {
+    pointer-events: visible;
+}
+
+#header .navbar .brand h1 {
+    position: relative;
+    opacity: 0;
+    transition: opacity .2s;
+    margin-left: 10px;
+}
+
+#header .navbar.navigating .brand h1 {
+    opacity: 1;
+}
+    
+#header .navbar .hamburger {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 100%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 2;
+    transition: left .5s;
+    transition-delay: 5s;
+}
+
+#header .navbar .hamburger.visible {
+    left: 0;
+}
+
+#header .navbar .hamburger .bar {
+    position: relative;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+#header .navbar .hamburger .bar::before,
+#header .navbar .hamburger .bar::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+#header .navbar .hamburger .bar::before {
+    bottom: 7px;
+    transition: bottom .3s;
+}
+
+#header .navbar .hamburger.active .bar::before {
+    bottom: 0px;
+}
+
+#header .navbar .hamburger .bar::after {
+    top: 7px;
+    transition: top .3s;
+}
+
+#header .navbar .hamburger.active .bar::after {
+    top: 0px;
+}
+
+#header .navbar .navlist {
+    position: absolute;
+    top: 0;
+    left: 100vw;
+    width: 100vw;
+    transition: left .5s;
+    height: 100vh;
+    background-color: var(--background_color_dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+#header .navbar .navlist.active {
+    left: 0;
+}
+
+#header .navbar .navlist li {
+    padding: 2.5rem;
+}
+
+#header .navbar .navlist li a {
+    font-size: 3.5rem;
+}
+
+/* ----------------------------------------     HERO     ---------------------------------------- */
+
+#hero .container .brand div.showlater {
+    margin-top: 10px;
+}
+}

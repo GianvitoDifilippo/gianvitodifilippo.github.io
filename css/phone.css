@@ -1,0 +1,48 @@
+@media only screen and (max-width: 600px) {
+/* ----------------------------------------   COMMON   ---------------------------------------- */
+:root {
+    --navigation_position: 80;
+}
+        
+html {
+    font-size: 8px;
+}
+    
+/* ----------------------------------------   HEADER   ---------------------------------------- */
+#header .navbar .brand h1 {
+    font-size: 3rem;
+}
+
+#header .navbar .navlist li a {
+    font-size: 3rem;
+}
+        
+/* ----------------------------------------    HERO    ---------------------------------------- */
+#hero.section {
+    justify-content: center;
+}
+
+#hero .container {
+    justify-content: center;
+    text-align: center;
+}
+
+#hero .container .brand {
+    align-items: center;
+    margin: 0px 0px;
+}
+
+#hero .container .brand h1 {
+    font-size: 4.5rem;
+}
+
+#hero .container .brand h2 {
+    font-size: 2.5rem;
+}
+
+#hero .container .brand div a {
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+}

@@ -1,52 +1,69 @@
+/* ------------------------------------------------     COMMON ELEMENTS     ------------------------------------------------ */
+const body = document.querySelector('body');
+const neon_items = document.querySelectorAll('.neon');
+const showlater = document.querySelectorAll('.showlater');
+
+/* ------------------------------------------------      LANG ELEMENTS      ------------------------------------------------ */
+const lang = document.querySelector('#lang');
+
 /* ------------------------------------------------     HEADER ELEMENTS     ------------------------------------------------ */
-const navbar = document.querySelector('#header .container');
-const hamburger = document.querySelector('#header .container .nav-list .hamburger');
-const menu_list = document.querySelector('#header .container .nav-list ul');
-const menu_items = document.querySelectorAll('#header .container .nav-list ul li a');
+const navbar = document.querySelector('#header .navbar');
+const navlist = document.querySelector('#header .navbar .navlist');
+const hamburger = document.querySelector('#header .navbar .hamburger');
+const menu_items = document.querySelectorAll('#header .navbar .navlist li');
+const header_brand = document.querySelector('#header .navbar .brand');
 
 /* ------------------------------------------------      HERO ELEMENTS      ------------------------------------------------ */
-const hero_container = document.querySelector('#hero .container');
+const hero = document.querySelector('#hero');
 
 /* ------------------------------------------------      CSS VARIABLES      ------------------------------------------------ */
 const navigation_position = parseInt(getComputedStyle(document.body).getPropertyValue('--navigation_position'));
+const flag_width = parseInt(getComputedStyle(document.body).getPropertyValue('--flag_width'));
+const flag_height = parseInt(getComputedStyle(document.body).getPropertyValue('--flag_height'));
 
-/* ------------------------------------------------        VARIABLES        ------------------------------------------------ */
-var hero_section = true;
+/* ------------------------------------------------       VARS/CONSTS       ------------------------------------------------ */
+var navigating = window.scrollY > navigation_position;
+const mobile = checkMobile();
+const flag_rest_top = Math.floor(-lang.getBoundingClientRect().top - flag_height * 1.5);
+const flag_rest_left = Math.ceil(window.innerWidth - lang.getBoundingClientRect().right + flag_width * 1.5);
 
 /* ------------------------------------------------         SCRIPT          ------------------------------------------------ */
-// Mobile menu
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    menu_list.classList.toggle('active');
-});
+// Translates page
+(async() => {
+    await loadLangs();
+    var language = navigator.language.split('-')[0];
+    translatePage(language);
+})();
 
-menu_items.forEach(item => {
-	item.addEventListener('click', () => {
-        setTimeout(() => {
-            hamburger.classList.toggle('active');
-		    menu_list.classList.toggle('active');
-        }, 100);
-	});
-});
+// Shows hero brand and hamburger at opening
+showlater.forEach(item => item.classList.add('visible'));
 
 // Scroll effects
 document.addEventListener('scroll', () => {
-    var scroll_position = window.scrollY;
+    let scroll_position = window.scrollY;
 
-    // Header scroll effect
+    // Navbar navigation color
     if (scroll_position > navigation_position) {
-        if (hero_section) {
-            hero_section = false;
-            navbar.classList.toggle('navigation');
+        if (!navigating) {
+            navigating = true;
+            navbar.classList.toggle('navigating');
         }
-    } else {
-        if (!hero_section) {
-            hero_section = true;
-            navbar.classList.toggle('navigation');
+    }
+    else {
+        if (navigating) {
+            navigating = false;
+            navbar.classList.toggle('navigating');
         }
     }
 
-    // Background parallax effect
-    var parallaxShift = scroll_position * 0.75;
-    hero_container.style.backgroundPosition = '0px ' + parallaxShift + 'px';
+    // Hero background parallax effect
+    let parallaxShift = scroll_position * 0.75;
+    hero.style.backgroundPositionY = `${parallaxShift}px`;
 });
+
+// Device-specific scripts
+if (mobile) {
+    mobileApp();
+} else {
+    desktopApp();
+}

@@ -5,86 +5,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gianvito Difilippo</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" type="text/css" href="./css/desktop.css">
+    <link rel="stylesheet" type="text/css" href="./css/tablet.css">
+    <link rel="stylesheet" type="text/css" href="./css/phone.css">
 </head>
 
 <body>
-    <!-- ------------------------------------------   HEADER SECTION   ------------------------------------------ -->
-    <section id="header">
-        <div class="container">
-            <div class="brand">
-                <a href="#hero">
-                    <h1><span class="neon">Gia</span>nvito<br></bri><span class="neon">Dif</span>ilippo</h1>
-                </a>
+    <!-- ------------------------------------------       HEADER       ------------------------------------------ -->
+    <div id="header" class="showlater">
+        <div class="navbar">
+            <a href="#hero" class="brand">
+                <h1><span class="neon">Gia</span>nvito<br><span class="neon">Dif</span>ilippo</h1>
+            </a>
+            <div class="hamburger showlater">
+                <div class="bar"></div>
             </div>
-            <div class="nav-list">
-                <div class="hamburger"><div class="bar"></div></div>
+            <ul class="navlist">
+                <li><a class="neon" data-lang="section_titles:about" href="#about">Su di me</a></li>
+                <li><a class="neon" data-lang="section_titles:experience" href="#experience">Esperienza</a></li>
+                <li><a class="neon" data-lang="section_titles:education" href="#education">Educazione</a></li>
+                <li><a class="neon" data-lang="section_titles:skills" href="#skills">Skills</a></li>
+                <li><a class="neon" data-lang="section_titles:projects" href="#projects">Progetti</a></li>
+            </ul>
+            <div id="lang">
                 <ul>
-                    <li><a class="neon" href="#about">Su di me</a></li>
-                    <li><a class="neon" href="#experience">Esperienza</a></li>
-                    <li><a class="neon" href="#education">Educazione</a></li>
-                    <li><a class="neon" href="#skills">Skills</a></li>
-                    <li><a class="neon" href="#projects">Progetti</a></li>
+                    <li                              ><div></div></li>
+                    <li onclick="translatePage('en')"><div></div></li>
+                    <li onclick="translatePage('es')"><div></div></li>
                 </ul>
             </div>
         </div>
-    </section>
+    </div>
     <!-- ------------------------------------------    HERO SECTION    ------------------------------------------ -->
-    <section id="hero">
+    <section id="hero" class="section">
         <div class="container">
             <div class="brand">
-                <h1>Gianvito Difilippo</h1>
-                <h2>Ingegnere dell'Automazione</h2>
-                <a href="mailto:gianvito.difilippo@gmail.com">Contattami</a>
-                <a href="./assets/cv.pdf">Scarica il mio CV</a>
+                <h1 class="showlater">Gianvito Difilippo</h1>
+                <h2 class="showlater" data-lang="hero:h2">Ingegnere dell'Automazione</h2>
+                <div class="showlater">
+                    <a href="mailto:gianvito.difilippo@gmail.com" data-lang="hero:contactme">Contattami</a>
+                    <a href="./assets/cv.pdf" data-lang="hero:downloadcv">Scarica il mio CV</a>
+                </div>
             </div>
         </div>
     </section>
     <!-- ------------------------------------------   ABOUT SECTION    ------------------------------------------ -->
-    <section id="about">
-        <h1 class="section-title">Su di me</h1>
+    <section id="about" class="section">
+        <h1 class="section-title" data-lang="section_titles:about">Su di me</h1>
         <div class="container">
-            <div class="content">
-                <img src="./assets/img/photo.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium vitae, tempore optio
-                    reprehenderit hic tenetur vero, nulla minima accusamus placeat ducimus neque! Nemo cum, incidunt
-                    vitae eligendi atque ratione nihil placeat, molestiae maiores quam ipsa iste. Soluta eveniet
-                    consectetur at libero architecto, debitis veritatis excepturi officiis consequuntur? Numquam
-                    officiis sed dolorum ipsum ratione totam quidem quia et hic repellat, debitis necessitatibus
-                    ducimus, explicabo expedita labore minima dolorem voluptates, nulla iste velit mollitia quo quis.
-                    Dolorum aperiam consectetur blanditiis, repellat quaerat inventore repellendus non qui! Voluptates
-                    aliquid commodi sequi. Error nulla unde ad fugit atque saepe facere animi! Sapiente, provident
-                    suscipit.</p>
-            </div>
 
         </div>
     </section>
     <!-- ------------------------------------------ EXPERIENCE SECTION ------------------------------------------ -->
-    <section id="experience">
-        <h1 class="section-title">Esperienza</h1>
+    <section id="experience" class="section">
+        <h1 class="section-title" data-lang="section_titles:experience">Esperienza</h1>
         <div class="container">
+
         </div>
     </section>
     <!-- ------------------------------------------ EDUCATION SECTION  ------------------------------------------ -->
-    <section id="education">
-        <h1 class="section-title">Educazione</h1>
+    <section id="education" class="section">
+        <h1 class="section-title" data-lang="section_titles:education">Educazione</h1>
         <div class="container">
+
         </div>
     </section>
     <!-- ------------------------------------------   SKILLS SECTION   ------------------------------------------ -->
-    <section id="skills">
-        <h1 class="section-title">Skills</h1>
+    <section id="skills" class="section">
+        <h1 class="section-title" data-lang="section_titles:skills">Skills</h1>
         <div class="container">
+
         </div>
     </section>
     <!-- ------------------------------------------  PROJECTS SECTION  ------------------------------------------ -->
-    <section id="projects">
-        <h1 class="section-title">Progetti</h1>
+    <section id="projects" class="section">
+        <h1 class="section-title" data-lang="section_titles:projects">Progetti</h1>
         <div class="container">
+
         </div>
     </section>
+    <!-- ------------------------------------------       FOOTER       ------------------------------------------ -->
+    <div id="footer">
 
-    <script src="./js/app.js"></script>
+    </div>
+
+    <script type="text/javascript" src="./js/translate.js"></script>
+    <script type="text/javascript" src="./js/checkmobile.js"></script>
+    <script type="text/javascript" src="./js/mobileapp.js"></script>
+    <script type="text/javascript" src="./js/desktopapp.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
 </body>
 
 </html>

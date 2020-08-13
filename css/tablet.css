@@ -38,10 +38,6 @@ body.stop_scroll {
     flex-direction: row;
 }
 
-#lang ul li div::after {
-    display: none;
-}
-
 #lang ul li {
     padding-bottom: 0px;
     padding-right: 6px;

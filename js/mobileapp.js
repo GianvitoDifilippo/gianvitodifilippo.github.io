@@ -19,6 +19,7 @@ function mobileApp() {
     
     function showFlags() {
         flagsVisible = true;
+        lang.classList.add('active');
         for (let i = 1; i < flags.length; i++) {
             let ms = i * 100;
             flags[i].style.top = '0px';
@@ -27,6 +28,7 @@ function mobileApp() {
     }
     function hideFlags() {
         flagsVisible = false;
+        lang.classList.remove('active');
         for (let i = 1; i < flags.length; i++) {
             let ms = (flags.length - 1 - i) * 100;
             flags[i].style.top = `${flag_rest_top}px`;

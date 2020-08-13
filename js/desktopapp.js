@@ -18,6 +18,7 @@ function desktopApp() {
 
     function showFlags() {
         flagsVisible = true;
+        lang.classList.add('active');
         for (let i = 1; i < flags.length; i++) {
             let ms = i * 100;
             flags[i].style.left = '0px';
@@ -26,6 +27,7 @@ function desktopApp() {
     }
     function hideFlags() {
         flagsVisible = false;
+        lang.classList.remove('active');
         for (let i = 1; i < flags.length; i++) {
             let ms = (flags.length - 1 - i) * 100;
             flags[i].style.left = `${flag_rest_left}px`;

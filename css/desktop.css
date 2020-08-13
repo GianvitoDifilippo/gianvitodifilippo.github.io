@@ -106,7 +106,7 @@ a {
     transition: opacity .1s linear;
 }
 
-#lang:hover ul li div::after {
+#lang.active ul li div::after {
     opacity: 0;
 }
 
@@ -275,7 +275,7 @@ a {
     }
 }
 
-/* ---------------------------------------- DESKTOP ONLY ---------------------------------------- */
+/* ----------------------------------------   HOVERING   ---------------------------------------- */
 @media (any-hover: hover) {
     :root {
         --can_hover: 1;

@@ -37,6 +37,7 @@ function mobileApp() {
     }
     function showLang() {
         langVisible = true;
+        lang.style.zIndex = 1;
         lang.style.left = '3%';
         lang.style.transitionDelay = '.2s';
     }
@@ -44,6 +45,7 @@ function mobileApp() {
         langVisible = false;
         lang.style.left = `${-flag_width * 1.5}px`;
         lang.style.transitionDelay = flagsVisible ? '.1s' : '0s';
+        setTimeout(() => lang.style.zIndex = -1, 300);
         if (flagsVisible) {
             hideFlags();
         }

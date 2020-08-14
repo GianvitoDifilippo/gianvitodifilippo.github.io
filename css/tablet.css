@@ -4,6 +4,8 @@
 :root {
     --navbar_color_hero: transparent;
 
+    --navigation_position: 200;
+
     --flag_rest_left_mobile: 0px;
 }
 
@@ -31,7 +33,6 @@ body.stop_scroll {
 /* ----------------------------------------    FLAGS     ---------------------------------------- */
 
 #lang {
-    z-index: 1;
     right: unset;
     left: -100px;
     transition: left .2s linear;

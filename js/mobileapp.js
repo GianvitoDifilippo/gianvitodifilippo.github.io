@@ -1,16 +1,16 @@
+var hamburger_transition;
+var hamburger_transition_started = false;
+
+function animateHamburger() {
+    hamburger_transition_started = true;
+    hamburger.style.transition = 'left .5s';
+    hamburger.style.left = '0px';
+    setTimeout(() => hamburger.style.transition = null, 500); // Style cleanup
+}
+
 function launchAnimationMobile() {
     hamburger.style.left = '100px';
-
-    // Entering hamburger
-    setTimeout(() => {
-        hamburger.style.transition = 'left .5s';
-        hamburger.style.left = '0px';
-    }, 4500);
-
-    // Style cleanup
-    setTimeout(() => {
-        hamburger.style.transition = null;
-    }, 5000);
+    hamburger_transition = setTimeout(() => animateHamburger, 4500);
 }
 
 function mobileApp() {
@@ -78,4 +78,12 @@ function mobileApp() {
     // Hides flags and lang at launch
     hideFlags();
     hideLang();
+    
+    // Plays header drop in immediately if scrolling
+    window.addEventListener('scroll', () => {
+        if (!hamburger_transition_started) {
+            clearTimeout(hamburger_transition);
+            animateHamburger();
+        }
+    });
 };

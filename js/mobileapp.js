@@ -10,7 +10,7 @@ function animateHamburger() {
 
 function launchAnimationMobile() {
     hamburger.style.left = '100px';
-    hamburger_transition = setTimeout(() => animateHamburger, 4500);
+    hamburger_transition = setTimeout(animateHamburger, 4500);
 }
 
 function mobileApp() {

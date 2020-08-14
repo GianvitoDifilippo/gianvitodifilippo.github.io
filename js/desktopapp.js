@@ -1,16 +1,16 @@
+var header_transition;
+var header_transition_started = false;
+
+function animateHeader() {
+    header_transition_started = true;
+    header.style.transition = 'top .5s';
+    header.style.top = null;
+    setTimeout(() => header.style.transition = null, 500); // Style cleanup
+}
+
 function launchAnimationDesktop() {
     header.style.top = '-100px';
-
-    // Entering header
-    setTimeout(() => {
-        header.style.transition = 'top .5s';
-        header.style.top = null;
-    }, 4500);
-
-    // Style cleanup
-    setTimeout(() => {
-        header.style.transition = null;
-    }, 5000);
+    header_transition = setTimeout(animateHeader, 4500);
 };
 
 function desktopApp() {
@@ -38,7 +38,7 @@ function desktopApp() {
     // Adds flag event listener
     if (can_hover) {
         lang.addEventListener('mouseenter', showFlags);
-        lang.addEventListener('mouseleave', hideFlags);
+        lang.addEventListener('mouseleave', () => setTimeout(hideFlags, 100));
     }
     else {
         flags.forEach(flag => flag.addEventListener('click', () => {
@@ -49,4 +49,12 @@ function desktopApp() {
 
     // Hides flags at launch
     hideFlags();
+    
+    // Plays header drop in immediately if scrolling
+    window.addEventListener('scroll', () => {
+        if (!header_transition_started) {
+            clearTimeout(header_transition);
+            animateHeader();
+        }
+    });
 };

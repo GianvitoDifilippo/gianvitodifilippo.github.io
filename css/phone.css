@@ -7,6 +7,12 @@
 html {
     font-size: 8px;
 }
+
+.section-title {
+    left: 0;
+    padding-left: 1rem;
+    font-size: 7.5rem;
+}
     
 /* ----------------------------------------   HEADER   ---------------------------------------- */
 #header .navbar .brand h1 {

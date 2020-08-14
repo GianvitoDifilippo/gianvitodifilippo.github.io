@@ -10,5 +10,8 @@
         "h2": "Ingegnere dell'Automazione",
         "contactme": "Contattami",
         "downloadcv": "Scarica il mio CV"
+    },
+    "messages": {
+        "copied": "Copiato!"
     }
 }

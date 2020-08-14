@@ -10,5 +10,8 @@
         "h2": "Automation Engineer",
         "contactme": "Contact Me",
         "downloadcv": "Download my CV"
+    },
+    "messages": {
+        "copied": "Copied!"
     }
 }

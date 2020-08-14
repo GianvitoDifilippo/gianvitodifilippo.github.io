@@ -38,10 +38,12 @@ function mobileApp() {
     function showLang() {
         langVisible = true;
         lang.style.left = '3%';
+        lang.style.transitionDelay = '.2s';
     }
     function hideLang() {
         langVisible = false;
         lang.style.left = `${-flag_width * 1.5}px`;
+        lang.style.transitionDelay = flagsVisible ? '.1s' : '0s';
         if (flagsVisible) {
             hideFlags();
         }
@@ -61,28 +63,11 @@ function mobileApp() {
         }
     }
 
-    // Toggles nav-list when click on hamburger
+    // Toggles navlist when clicking on hamburger
     hamburger.addEventListener('click', toggleNavlistActive);
     
-    
-    // Neon animation for mobile
-    header_brand.addEventListener('click', () => {
-        header_brand.classList.add('neon_animation');
-    });
-    neon_items.forEach(item => {
-        item.addEventListener('animationend', () => {
-            header_brand.classList.remove('neon_animation');
-            menu_items.forEach(item => {
-                item.classList.remove('neon_animation');
-            });
-        });
-    });
-    menu_items.forEach(item =>
-        item.addEventListener('click', () => {
-            item.classList.add('neon_animation');
-            setTimeout(toggleNavlistActive, 100);
-        })
-    );
+    // Toggles navlist when clicking on list items
+    menu_items.forEach(item => item.addEventListener('click', () => setTimeout(toggleNavlistActive, 100)));
 
     // Adds click event listener
     flags.forEach(flag => flag.addEventListener('click', () => {

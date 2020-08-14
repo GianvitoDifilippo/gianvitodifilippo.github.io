@@ -9,28 +9,30 @@
     <link rel="stylesheet" type="text/css" href="./css/desktop.css">
     <link rel="stylesheet" type="text/css" href="./css/tablet.css">
     <link rel="stylesheet" type="text/css" href="./css/phone.css">
+    
+    <script src="https://kit.fontawesome.com/2150929a5b.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <!-- ------------------------------------------       HEADER       ------------------------------------------ -->
-    <div id="header">
+    <div id="header" class="noselect">
         <div class="navbar">
-            <a href="#hero" class="brand">
+            <a href="#hero" class="brand blueshadow_click">
                 <h1><span class="neon">Gia</span>nvito<br><span class="neon">Dif</span>ilippo</h1>
             </a>
             <div class="hamburger">
                 <div class="bar"></div>
             </div>
             <ul class="navlist">
-                <li><a class="neon" data-lang="section_titles:about" href="#about">Su di me</a></li>
-                <li><a class="neon" data-lang="section_titles:experience" href="#experience">Esperienza</a></li>
-                <li><a class="neon" data-lang="section_titles:education" href="#education">Educazione</a></li>
-                <li><a class="neon" data-lang="section_titles:skills" href="#skills">Skills</a></li>
-                <li><a class="neon" data-lang="section_titles:projects" href="#projects">Progetti</a></li>
+                <li><a class="neon blueshadow_click" data-lang="section_titles:about" href="#about">Su di me</a></li>
+                <li><a class="neon blueshadow_click" data-lang="section_titles:experience" href="#experience">Esperienza</a></li>
+                <li><a class="neon blueshadow_click" data-lang="section_titles:education" href="#education">Educazione</a></li>
+                <li><a class="neon blueshadow_click" data-lang="section_titles:skills" href="#skills">Skills</a></li>
+                <li><a class="neon blueshadow_click" data-lang="section_titles:projects" href="#projects">Progetti</a></li>
             </ul>
             <div id="lang">
                 <ul>
-                    <li                              ><div></div></li>
+                    <li><div></div></li>
                     <li onclick="translatePage('en')"><div></div></li>
                     <li onclick="translatePage('es')"><div></div></li>
                 </ul>
@@ -50,43 +52,75 @@
     </section>
     <!-- ------------------------------------------   ABOUT SECTION    ------------------------------------------ -->
     <section id="about" class="section">
-        <h1 class="section-title" data-lang="section_titles:about">Su di me</h1>
         <div class="container">
-
+            <img src="./assets/img/photo.jpg" alt="" class="noselect">
+            <div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quibusdam molestiae, consequuntur
+                    non nobis voluptas sapiente, illum omnis necessitatibus, deleniti id? Aliquid eligendi iste porro
+                    cupiditate inventore laborum voluptates minus, sapiente itaque recusandae velit, enim ex adipisci
+                    temporibus molestiae vero quisquam. Laborum, ut quasi eos commodi incidunt vel fugit. Nesciunt,
+                    repudiandae repellendus maiores omnis molestias facilis eius dolore voluptas ipsam exercitationem
+                    quibusdam quasi explicabo perspiciatis facere laborum at veritatis tenetur esse rerum similique impedit,
+                    modi asperiores. Corporis vero nulla impedit accusamus illo provident dignissimos magnam autem sequi
+                    odio!
+                </p>
+                <ul>
+                    <li><div class="neon secondary blueshadow_click" onclick="emailOnClick('center', 'bottom-top,6')">
+                        <div class="i-wrapper"><i class="fas fa-envelope fa-2x"></i></div>
+                        <span id="emailaddress" class="noselect">gianvito.difilippo@gmail.com</span>
+                    </a></li>
+                    <li><a class="neon secondary blueshadow_click" href="https://www.linkedin.com/in/gianvito-difilippo/" target="_blank">
+                        <div class="i-wrapper"><i class="fab fa-linkedin fa-2x"></i></div>
+                        <span class="noselect">gianvito-difilippo</span>
+                    </a></li>
+                    <li><div class="neon secondary blueshadow_click" onclick="phonenumberOnClick('center', 'bottom-top,6')">
+                        <div class="i-wrapper"><i class="fas fa-mobile-alt fa-2x"></i></div>
+                        <span id="phonenumber" class="noselect">+39 3898331018</span>
+                    </div></li>
+                    <li><a class="neon secondary blueshadow_click" href="https://github.com/gianvitodifilippo" target="_blank">
+                        <div class="i-wrapper"><i class="fab fa-github fa-2x"></i></div>
+                        <span class="noselect">gianvitodifilippo</span>
+                    </a></li>
+                </ul>
+            </div>
         </div>
+        <h1 class="section-title noselect" data-lang="section_titles:about">Su di me</h1>
     </section>
     <!-- ------------------------------------------ EXPERIENCE SECTION ------------------------------------------ -->
     <section id="experience" class="section">
-        <h1 class="section-title" data-lang="section_titles:experience">Esperienza</h1>
         <div class="container">
 
         </div>
+        <h1 class="section-title noselect" data-lang="section_titles:experience">Esperienza</h1>
     </section>
     <!-- ------------------------------------------ EDUCATION SECTION  ------------------------------------------ -->
     <section id="education" class="section">
-        <h1 class="section-title" data-lang="section_titles:education">Educazione</h1>
         <div class="container">
 
         </div>
+        <h1 class="section-title noselect" data-lang="section_titles:education">Educazione</h1>
     </section>
     <!-- ------------------------------------------   SKILLS SECTION   ------------------------------------------ -->
     <section id="skills" class="section">
-        <h1 class="section-title" data-lang="section_titles:skills">Skills</h1>
         <div class="container">
 
         </div>
+        <h1 class="section-title noselect" data-lang="section_titles:skills">Skills</h1>
     </section>
     <!-- ------------------------------------------  PROJECTS SECTION  ------------------------------------------ -->
     <section id="projects" class="section">
-        <h1 class="section-title" data-lang="section_titles:projects">Progetti</h1>
         <div class="container">
 
         </div>
+        <h1 class="section-title noselect" data-lang="section_titles:projects">Progetti</h1>
     </section>
     <!-- ------------------------------------------       FOOTER       ------------------------------------------ -->
     <div id="footer">
 
     </div>
+    <!-- ------------------------------------------       MESSAGE      ------------------------------------------ -->
+    <div id="message" class="noselect"></div>
 
     <script type="text/javascript" src="./js/cookies.js"></script>
     <script type="text/javascript" src="./js/translate.js"></script>

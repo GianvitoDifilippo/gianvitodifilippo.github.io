@@ -7,17 +7,25 @@
     --flag_rest_left_mobile: 0px;
 }
 
+html {
+    font-size: 9px;
+}
+
+body {
+    min-width: unset;
+}
+
 body.stop_scroll {
     height: 100%;
     overflow: hidden;
 }
-    
-*.neon_animation .neon {
-    animation: neon_mobile .3s;
-}
 
 .section {
-    overflow-x: hidden;
+    overflow: hidden;
+}
+
+.section-title {
+    font-size: 13rem;
 }
 
 /* ----------------------------------------    FLAGS     ---------------------------------------- */
@@ -27,11 +35,6 @@ body.stop_scroll {
     right: unset;
     left: -100px;
     transition: left .2s linear;
-    transition-delay: .2s;
-}
-
-#lang.visible {
-    left: 0px;
 }
 
 #lang ul {
@@ -134,6 +137,7 @@ body.stop_scroll {
     left: 100vw;
     width: 100vw;
     transition: left .5s;
+    transition-delay: .2s;
     height: 100vh;
     background-color: var(--background_color_dark);
     display: flex;
@@ -145,6 +149,7 @@ body.stop_scroll {
 
 #header .navbar .navlist.active {
     left: 0;
+    transition-delay: 0s;
 }
 
 #header .navbar .navlist li {
@@ -157,4 +162,14 @@ body.stop_scroll {
 
 /* ----------------------------------------     HERO     ---------------------------------------- */
 
+}
+
+@media (any-hover: none) {
+    .neon.blueshadow_animation {
+        animation: blueshadow_mobile .3s;
+    }
+
+    .neon.secondary.blueshadow_animation {
+        animation: blueshadow_mobile_secondary .3s;
+    }
 }

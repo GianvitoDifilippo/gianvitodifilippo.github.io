@@ -5,6 +5,8 @@ const message = document.getElementById('message');
 
 /* ------------------------------------------------      LANG ELEMENTS      ------------------------------------------------ */
 const lang = document.querySelector('#lang');
+const flags = document.querySelectorAll('#lang ul li');
+const flag_imgs = document.querySelectorAll('#lang ul li div');
 
 /* ------------------------------------------------     HEADER ELEMENTS     ------------------------------------------------ */
 const header = document.querySelector('#header');
@@ -32,6 +34,8 @@ const flag_rest_top = Math.floor(-lang.getBoundingClientRect().top - flag_height
 const flag_rest_left = Math.ceil(window.innerWidth - lang.getBoundingClientRect().right + flag_width * 1.5);
 const can_hover = parseInt(getComputedStyle(document.body).getPropertyValue('--can_hover')) == 1;
 var scroll_position = window.scrollY;
+
+console.log(lang.getBoundingClientRect().top);
 
 /* ------------------------------------------------         SCRIPT          ------------------------------------------------ */
 
@@ -131,6 +135,8 @@ if (mobile) {
     desktopApp();
 }
 
+document.body.classList.add('visible');
+
 /* ------------------------------------------------          UTILS          ------------------------------------------------ */
 function copyToClipboard(id) {
     element = document.getElementById(id);
@@ -138,7 +144,7 @@ function copyToClipboard(id) {
     if (noselect) {
         element.classList.remove('noselect');
     }
-    var range, selection, worked;
+    var range, selection;
 
     if (document.body.createTextRange) {
         range = document.body.createTextRange();
@@ -159,7 +165,9 @@ function copyToClipboard(id) {
             element.classList.add('noselect');
         }
     }
-    catch { }
+    catch (err) {
+        console.log(err);
+    }
 }
 
 function phonenumberOnClick(x, y) {

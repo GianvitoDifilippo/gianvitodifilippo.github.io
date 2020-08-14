@@ -1,6 +1,4 @@
 const lang_list = ['it', 'en', 'es'];
-const flags = document.querySelectorAll('#lang ul li');
-const flag_imgs = document.querySelectorAll('#lang ul li div');
 
 var current_language;
 var languages = {};

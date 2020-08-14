@@ -27,6 +27,11 @@ html {
 
 body {
     min-width: fit-content;
+    visibility: hidden;
+}
+
+body.visible {
+    visibility: visible;
 }
 
 ::-webkit-scrollbar {
@@ -70,7 +75,7 @@ a {
     font-size: 18rem;
     color: white;
     font-weight: 300;
-    opacity: .6;
+    opacity: .3;
 }
 
 .neon.blueshadow_animation {
@@ -363,7 +368,6 @@ a {
     color: white;
     text-transform: uppercase;
     font-weight: 500;
-    z-index: 1000;
     opacity: 0;
     animation: message_animation 3s;
     transition: opacity, transform;

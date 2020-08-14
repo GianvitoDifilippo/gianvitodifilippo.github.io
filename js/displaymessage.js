@@ -94,10 +94,12 @@ function displayMessage(text, x, y, element) {
         });
         xPos += window.scrollX;
         yPos += window.scrollY;
+        newMessage.style.zIndex = getComputedStyle(element).zIndex;
     }
     else {
         xPos = x;
         yPos = y;
+        newMessage.style.zIndex = 1000;
     }
     newMessage.style.left = `${xPos}px`;
     newMessage.style.top = `${yPos}px`;

@@ -79,7 +79,7 @@ function mobileApp() {
     hideFlags();
     hideLang();
     
-    // Plays header drop in immediately if scrolling
+    // Plays hamburger drop in immediately if scrolling
     window.addEventListener('scroll', () => {
         if (!hamburger_transition_started) {
             clearTimeout(hamburger_transition);

@@ -26,7 +26,8 @@ const flag_width = parseInt(getComputedStyle(document.body).getPropertyValue('--
 const flag_height = parseInt(getComputedStyle(document.body).getPropertyValue('--flag_height'));
 
 /* ------------------------------------------------       VARS/CONSTS       ------------------------------------------------ */
-const mobile = window.innerWidth <= 1024;
+const desktop_minWidth = 1366;
+const mobile = window.innerWidth <= desktop_minWidth;
 const flag_rest_top = Math.floor(-lang.getBoundingClientRect().top - flag_height * 1.5);
 const flag_rest_left = Math.ceil(window.innerWidth - lang.getBoundingClientRect().right + flag_width * 1.5);
 const can_hover = parseInt(getComputedStyle(document.body).getPropertyValue('--can_hover')) == 1;
@@ -98,7 +99,7 @@ document.addEventListener('scroll', () => {
 });
 
 window.addEventListener('resize', () => {
-    if (window.innerWidth <= 1024 ^ mobile) {
+    if (window.innerWidth <= desktop_minWidth ^ mobile) {
         window.location.reload();
     }
 });

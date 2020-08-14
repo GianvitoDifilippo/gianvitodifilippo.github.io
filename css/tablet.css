@@ -33,9 +33,12 @@ body.stop_scroll {
 /* ----------------------------------------    FLAGS     ---------------------------------------- */
 
 #lang {
+    z-index: 1;
     right: unset;
     left: -100px;
     transition: left .2s linear;
+    width: 0;
+    height: 0;
 }
 
 #lang ul {

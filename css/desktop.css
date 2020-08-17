@@ -89,7 +89,7 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: calc(var(--section_title_top) + 10rem) 10vw 0px 10vw;
+    margin: calc(var(--section_title_top) + 13rem) 10vw 0px 10vw;
     z-index: 1;
 }
 
@@ -357,7 +357,15 @@ a {
 
 /* ----------------------------------------  EXPERIENCE  ---------------------------------------- */
 
+#experience.section {
+    min-height: 100vh;
+}
+
 /* ----------------------------------------    SKILLS    ---------------------------------------- */
+
+#skills.section {
+    min-height: 100vh;
+}
 
 /* ----------------------------------------  EDUCATION   ---------------------------------------- */
 
@@ -417,6 +425,10 @@ a {
 }
 
 /* ----------------------------------------   PROJECTS   ---------------------------------------- */
+
+#projects.section {
+    min-height: 100vh;
+}
 
 /* ----------------------------------------   MESSAGE    ---------------------------------------- */
 

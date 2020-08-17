@@ -34,8 +34,8 @@
             <div class="brand">
                 <h1>Gianvito Difilippo</h1>
                 <h2 data-lang="hero:h2">Ingegnere dell'Automazione</h2>
-                <a href="mailto:gianvito.difilippo@gmail.com" data-lang="hero:contactme">Contattami</a>
-                <a href="./assets/cv.pdf" data-lang="hero:downloadcv">Scarica il mio CV</a>
+                <a class="noselect" href="mailto:gianvito.difilippo@gmail.com" data-lang="hero:contactme">Contattami</a>
+                <a class="noselect" href="./assets/cv.pdf" data-lang="hero:downloadcv">Scarica il mio CV</a>
             </div>
         </div>
     </section>
@@ -43,7 +43,7 @@
     <section id="about" class="section">
         <div class="container">
             <div class="profile">
-                <img src="./assets/img/photo.jpg" alt="">
+                <img class="noselect" src="./assets/img/photo.jpg" alt="">
                 <div>
                     <p class="box">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quibusdam molestiae, consequuntur
@@ -55,29 +55,29 @@
                         modi asperiores. Corporis vero nulla impedit accusamus illo provident dignissimos magnam autem sequi
                         odio!
                     </p>
-                    <ul class="noselect">
+                    <ul>
                         <li>
                             <div class="neon_activator neon_secondary" onclick="emailOnClick('center', 'bottom-top,6')">
-                                <div class="i-wrapper"><i class="fas fa-envelope fa-2x"></i></div>
-                                <span id="emailaddress">gianvito.difilippo@gmail.com</span>
+                                <div class="i-wrapper noselect"><i class="fas fa-envelope fa-2x"></i></div>
+                                <span id="emailaddress" class="noselect">gianvito.difilippo@gmail.com</span>
                             </div>
                         </li>
                         <li>
                             <a class="neon_activator neon_secondary" href="https://www.linkedin.com/in/gianvito-difilippo/" target="_blank">
-                                <div class="i-wrapper"><i class="fab fa-linkedin fa-2x"></i></div>
-                                <span>gianvito-difilippo</span>
+                                <div class="i-wrapper noselect"><i class="fab fa-linkedin fa-2x"></i></div>
+                                <span class="noselect">gianvito-difilippo</span>
                             </a>
                         </li>
                         <li>
                             <div class="neon_activator neon_secondary" onclick="phonenumberOnClick('center', 'bottom-top,6')">
-                                <div class="i-wrapper"><i class="fas fa-mobile-alt fa-2x"></i></div>
-                                <span id="phonenumber">+39 3898331018</span>
+                                <div class="i-wrapper noselect"><i class="fas fa-mobile-alt fa-2x"></i></div>
+                                <span id="phonenumber" class="noselect">+39 3898331018</span>
                             </div>
                         </li>
                         <li>
                             <a class="neon_activator neon_secondary" href="https://github.com/gianvitodifilippo" target="_blank">
-                                <div class="i-wrapper"><i class="fab fa-github fa-2x"></i></div>
-                                <span>gianvitodifilippo</span>
+                                <div class="i-wrapper noselect"><i class="fab fa-github fa-2x"></i></div>
+                                <span class="noselect">gianvitodifilippo</span>
                             </a>
                         </li>
                     </ul>
@@ -99,7 +99,9 @@
     <!-- ------------------------------------------   SKILLS SECTION   ------------------------------------------ -->
     <section id="skills" class="section">
         <div class="container">
-
+            <div class="box">
+                
+            </div>
         </div>
         <h1 class="section-title noselect" data-lang="section_titles:skills">Skills</h1>
     </section>
@@ -108,37 +110,41 @@
         <div class="container">
             <div class="box bsc">
                 <a class="noselect" href="http://www.poliba.it/" target="_blank"><img src="./assets/img/edu/poliba.png" alt=""></a>
-                <div class="edu-descr">
-                    <h1>Laurea Triennale in Ingegneria Informatica e dell'Automazione</h1>
-                    <h2>2014-2017</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga amet odio atque explicabo nisi tempore ducimus fugiat, et minus sit.</p>
-                    <p>Voto finale: 110L</p>
-                </div>
+                <span class="edu-descr">
+                    <h1 data-lang="education:bsc:h1">Laurea Triennale in Ingegneria Informatica e dell'Automazione</h1>
+                    <h2>Politecnico di Bari</h2>
+                    <h3>2014-2017</h3>
+                    <p data-lang="education:bsc:p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga amet odio atque explicabo nisi tempore ducimus fugiat, et minus sit.</p>
+                    <p data-lang="education:bsc:score">Voto finale: 110/110 e Lode</p>
+                </span>
             </div>
             <div class="box msc">
                 <a class="noselect" href="http://www.poliba.it/" target="_blank"><img src="./assets/img/edu/poliba.png" alt=""></a>
                 <div class="edu-descr">
-                    <h1>Laurea Magistrale in Ingegneria dell'Automazione</h1>
-                    <h2>2017-2019</h2>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque optio ullam quis. Aut excepturi quo quidem quam impedit autem esse?</p>
-                    <p>Voto finale: 110L</p>
+                    <h1 data-lang="education:msc:h1">Laurea Magistrale in Ingegneria dell'Automazione</h1>
+                    <h2>Politecnico di Bari</h2>
+                    <h3>2017-2019</h3>
+                    <p data-lang="education:msc:p1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque optio ullam quis. Aut excepturi quo quidem quam impedit autem esse?</p>
+                    <p data-lang="education:msc:score">Voto finale: 110/110 e Lode</p>
                 </div>
             </div>
             <div class="box erasmus">
                 <a class="noselect" href="https://www.upm.es/" target="_blank"><img src="./assets/img/edu/upm.png" alt=""></a>
                 <div class="edu-descr">
-                    <h1>Erasmus a Universidad Politécnica de Madrid</h1>
-                    <h2>2019</h2>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem optio, omnis nihil quibusdam ex ducimus esse cum voluptatibus possimus quam.</p>
+                    <h1 data-lang="education:erasmus:h1">Master in Big Data e Telecomunicazioni - Erasmus semestrale</h1>
+                    <h2>Universidad Politécnica de Madrid</h2>
+                    <h3>2019</h3>
+                    <p data-lang="education:erasmus:p1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem optio, omnis nihil quibusdam ex ducimus esse cum voluptatibus possimus quam.</p>
                 </div>
             </div>
             <div class="box mmus">
                 <a class="noselect" href="http://www.consba.it/" target="_blank"><img src="./assets/img/edu/piccinni.png" alt=""></a>
                 <div class="edu-descr">
-                    <h1>Diploma di Secondo Livello in Chitarra</h1>
-                    <h2>2011-2018</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem laborum unde nisi eligendi maxime iure ratione saepe fugit, beatae ipsum?</p>
-                    <p>Voto finale: 10/10</p>
+                    <h1 data-lang="education:mmus:h1">Diploma di Secondo Livello in Chitarra</h1>
+                    <h2>Conservatorio di Musica N. Piccinni</h2>
+                    <h3>2011-2018</h3>
+                    <p data-lang="education:mmus:p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem laborum unde nisi eligendi maxime iure ratione saepe fugit, beatae ipsum?</p>
+                    <p data-lang="education:mmus:score"> Voto finale: 10/10</p>
                 </div>
             </div>
         </div>

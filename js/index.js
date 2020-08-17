@@ -86,7 +86,7 @@ function emailOnClick(x, y)
 /* ------------------------------------------------         SCRIPT          ------------------------------------------------ */
 
 
-if (!getCookie('session') || true) {
+if (!getCookie('session')) {
     launchAnimation();
     
     setCookie('session', 'session');

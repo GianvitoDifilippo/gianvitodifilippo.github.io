@@ -11,6 +11,23 @@
         "contactme": "Contact Me",
         "downloadcv": "Download my CV"
     },
+    "education": {
+        "bsc": {
+            "h1": "Bachelor's Degree in Computer Science and Automation Engineering",
+            "score": "Final score: 110/110 with honors"
+        },
+        "msc": {
+            "h1": "Master's Degree in Automation Engineering",
+            "score": "Final score: 110/110 with honors"
+        },
+        "erasmus": {
+            "h1":"Master in Big Data and Telecommunications"
+        },
+        "mmus": {
+            "h1": "Master of Music in Guitar",
+            "score": "Final score: 10/10"
+        }
+    },
     "messages": {
         "copied": "Copied!"
     }

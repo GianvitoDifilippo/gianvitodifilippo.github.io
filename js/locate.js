@@ -10,6 +10,7 @@ function translateText(selector) {
     let text = languageJson[selectors[0]];
     for (let i = 1; i < selectors.length; i++) {
         text = text[selectors[i]];
+        if (text == undefined) return null;
     }
     return text;
 }
@@ -20,5 +21,8 @@ async function translatePage(code) {
     if (!languageJson) return;
     setCookie('lang', code);
     let fields = document.querySelectorAll('[data-lang]');
-    fields.forEach(field => field.textContent = translateText(field.getAttribute('data-lang')));
+    fields.forEach(field => {
+        let translatedText = translateText(field.getAttribute('data-lang'));
+        if (translatedText != null) field.textContent = translatedText;
+    });
 }

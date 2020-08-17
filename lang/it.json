@@ -11,6 +11,23 @@
         "contactme": "Contattami",
         "downloadcv": "Scarica il mio CV"
     },
+    "education": {
+        "bsc": {
+            "h1": "Laurea Triennale in Ingegneria Informatica e dell'Automazione",
+            "score": "Voto finale: 110/110 e Lode"
+        },
+        "msc": {
+            "h1": "Laurea Magistrale in Ingegneria dell'Automazione",
+            "score": "Voto finale: 110/110 e Lode"
+        },
+        "erasmus": {
+            "h1":"Master in Big Data e Telecomunicazioni - Erasmus semestrale"
+        },
+        "mmus": {
+            "h1": "Diploma di Secondo Livello in Chitarra",
+            "score": "Voto finale: 10/10"
+        }
+    },
     "messages": {
         "copied": "Copiato!"
     }

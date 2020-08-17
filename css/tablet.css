@@ -28,13 +28,13 @@ body.stop_scroll {
     font-size: 13rem;
 }
 
+.container {
+    margin-top: calc(var(--section_title_top) + 8.5rem);
+}
+
 .neon.neon_animation,
 .neon_secondary.neon_animation {
     animation: neon_mobile var(--neon_animation_duration);
-}
-
-.container {
-    margin: 0px 5vw 0px 5vw;
 }
 
 /* ----------------------------------------    HEADER    ---------------------------------------- */
@@ -152,5 +152,9 @@ body.stop_scroll {
 }
 
 /* ----------------------------------------     HERO     ---------------------------------------- */
+
+
+/* ----------------------------------------  EDUCATION   ---------------------------------------- */
+
 
 }

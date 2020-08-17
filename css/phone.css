@@ -9,9 +9,12 @@ html {
 }
 
 .section-title {
-    left: 0;
-    padding-left: 1rem;
-    font-size: 7.5rem;
+    font-size: 6.5rem;
+    left: 4px;
+}
+
+.container {
+    margin-top: calc(var(--section_title_top) + 4rem);
 }
     
 /* ----------------------------------------   HEADER   ---------------------------------------- */
@@ -35,7 +38,7 @@ html {
 
 #hero .container .brand {
     align-items: center;
-    margin: 0px 0px;
+    left: unset;
 }
 
 #hero .container .brand h1 {
@@ -54,5 +57,40 @@ html {
 #hero .container .brand a {
     text-align: center;
     width: 220px;
+}
+
+/* ----------------------------------------  EDUCATION   ---------------------------------------- */
+
+#education .container .box {
+    position: relative;
+    display: block;
+    padding: 6px;
+}
+
+#education .container .box .edu-descr {
+    display: contents;
+}
+
+#education .container .box a {
+    float: left;
+    margin: 0px 6px 6px 0px;
+}
+
+#education .container .box a img {
+    width: 68px;
+    padding: 4px;
+}
+
+#education .container .box .edu-descr h1 {
+    font-size: 1.8rem;
+}
+
+#education .container .box .edu-descr h3 {
+    font-size: 2rem;
+}
+
+#education .container .box .edu-descr p {
+    display: block;
+    clear: left;
 }
 }

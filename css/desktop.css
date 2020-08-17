@@ -31,6 +31,8 @@
     --neon_animation_duration: 300ms;
     --fadein_animation_duration: 1000ms;
 
+    --section_title_top: 60px;
+
     --can_hover: 0;
 }
 
@@ -69,8 +71,16 @@ a {
 .section {
     position: relative;
     display: flex;
-    min-height: 100vh;
     background-color: var(--background_color);
+}
+
+.section-title {
+    position: absolute;
+    left: 20px;
+    top: var(--section_title_top);
+    font-size: 18rem;
+    font-weight: 300;
+    opacity: .3;
 }
 
 .container {
@@ -79,17 +89,8 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 0px 10vw 0px 10vw;
+    margin: calc(var(--section_title_top) + 10rem) 10vw 0px 10vw;
     z-index: 1;
-}
-
-.section-title {
-    position: absolute;
-    left: 4%;
-    top: 6%;
-    font-size: 18rem;
-    font-weight: 300;
-    opacity: .3;
 }
 
 .noselect {
@@ -226,6 +227,8 @@ a {
 }
 
 #hero .container {
+    margin: 0px;
+    width: 100vw;
     position: relative;
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
@@ -235,12 +238,15 @@ a {
 }
 
 #hero .container .brand {
+    position: relative;
     z-index: 1;
-    margin: 0px 5vw;
+    left: 14%;
 }
 
 #hero .container .brand .hidden {
     opacity: 0;
+    cursor: default;
+    pointer-events: none;
 }
 
 #hero .container .brand .fadein {
@@ -279,7 +285,6 @@ a {
 /* ----------------------------------------    ABOUT     ---------------------------------------- */
 
 #about .container {
-    margin: 0px 10vw 0px 10vw;
     display: flex;
     flex-direction: column;
 }
@@ -290,7 +295,7 @@ a {
 
 #about .container .profile {
     display: flex;
-    margin-top: 100px;
+    margin-top: 20px;
 }
 
 #about .container .profile img {
@@ -361,35 +366,42 @@ a {
     flex-direction: column;
     justify-self: stretch;
     flex: 1 1 0px;
-    margin-top: 180px;
 }
 
 #education .container .box {
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: stretch;
     width: 100%;
     margin: 10px;
+    padding: 10px;
 }
 
 #education .container .box a {
-    width: 8%;
     margin: 10px;
     margin-right: 30px;
 }
 
 #education .container .box a img {
-    width: 100%;
-    padding: 10px;
+    width: 130px;
 }
 
 #education .container .box .edu-descr h1 {
     font-size: 2.2rem;
     font-weight: 400;
+    margin-bottom: .4rem;
 }
 
+#education .container .box .edu-descr h2,
 #education .container .box .edu-descr h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+#education .container .box .edu-descr h3 {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -400,6 +412,7 @@ a {
 }
 
 #education .container .box .edu-descr p {
+    margin-bottom: .4rem;
     font-size: 1.6rem;
 }
 

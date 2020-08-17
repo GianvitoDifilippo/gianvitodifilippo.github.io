@@ -11,6 +11,23 @@
         "contactme": "Contáctame",
         "downloadcv": "Descarga mi CV"
     },
+    "education": {
+        "bsc": {
+            "h1": "Grado en Ingeniería Informática y Automática",
+            "score": "Puntuación final: 110/110 cum laude"
+        },
+        "msc": {
+            "h1": "Master en Ingeniería de Automatización",
+            "score": "Puntuación final: 110/110 cum laude"
+        },
+        "erasmus": {
+            "h1":"Master in Big Data and Telecommunications"
+        },
+        "mmus": {
+            "h1": "Master of Music in Guitar",
+            "score": "Puntuación final: 10/10"
+        }
+    },
     "messages": {
         "copied": "Copiado!"
     }

@@ -15,24 +15,17 @@
     <!-- ------------------------------------------       HEADER       ------------------------------------------ -->
     <div id="header" class="noselect">
         <div class="navbar">
-            <a href="#hero" class="brand blueshadow_click">
+            <a href="#hero" class="brand neon_activator">
                 <h1><span class="neon">Gia</span>nvito<br><span class="neon">Dif</span>ilippo</h1>
             </a>
             <div class="hamburger"><div class="bar"></div></div>
             <ul class="navlist">
-                <li><a class="neon blueshadow_click" data-lang="section_titles:about" href="#about">Su di me</a></li>
-                <li><a class="neon blueshadow_click" data-lang="section_titles:experience" href="#experience">Esperienza</a></li>
-                <li><a class="neon blueshadow_click" data-lang="section_titles:skills" href="#skills">Skills</a></li>
-                <li><a class="neon blueshadow_click" data-lang="section_titles:projects" href="#projects">Progetti</a></li>
-                <li><a class="neon blueshadow_click" data-lang="section_titles:education" href="#education">Educazione</a></li>
+                <li><a class="neon_activator neon" data-lang="section_titles:about" href="#about">Su di me</a></li>
+                <li><a class="neon_activator neon" data-lang="section_titles:experience" href="#experience">Esperienza</a></li>
+                <li><a class="neon_activator neon" data-lang="section_titles:skills" href="#skills">Skills</a></li>
+                <li><a class="neon_activator neon" data-lang="section_titles:education" href="#education">Educazione</a></li>
+                <li><a class="neon_activator neon" data-lang="section_titles:projects" href="#projects">Progetti</a></li>
             </ul>
-            <div id="lang">
-                <ul>
-                    <li><div></div></li>
-                    <li onclick="translatePage('en')"><div></div></li>
-                    <li onclick="translatePage('es')"><div></div></li>
-                </ul>
-            </div>
         </div>
     </div>
     <!-- ------------------------------------------    HERO SECTION    ------------------------------------------ -->
@@ -49,36 +42,49 @@
     <!-- ------------------------------------------   ABOUT SECTION    ------------------------------------------ -->
     <section id="about" class="section">
         <div class="container">
-            <img src="./assets/img/photo.jpg" alt="" class="noselect">
-            <div>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quibusdam molestiae, consequuntur
-                    non nobis voluptas sapiente, illum omnis necessitatibus, deleniti id? Aliquid eligendi iste porro
-                    cupiditate inventore laborum voluptates minus, sapiente itaque recusandae velit, enim ex adipisci
-                    temporibus molestiae vero quisquam. Laborum, ut quasi eos commodi incidunt vel fugit. Nesciunt,
-                    repudiandae repellendus maiores omnis molestias facilis eius dolore voluptas ipsam exercitationem
-                    quibusdam quasi explicabo perspiciatis facere laborum at veritatis tenetur esse rerum similique impedit,
-                    modi asperiores. Corporis vero nulla impedit accusamus illo provident dignissimos magnam autem sequi
-                    odio!
-                </p>
-                <ul>
-                    <li><div class="neon secondary blueshadow_click" onclick="emailOnClick('center', 'bottom-top,6')">
-                        <div class="i-wrapper"><i class="fas fa-envelope fa-2x"></i></div>
-                        <span id="emailaddress" class="noselect">gianvito.difilippo@gmail.com</span>
-                    </a></li>
-                    <li><a class="neon secondary blueshadow_click" href="https://www.linkedin.com/in/gianvito-difilippo/" target="_blank">
-                        <div class="i-wrapper"><i class="fab fa-linkedin fa-2x"></i></div>
-                        <span class="noselect">gianvito-difilippo</span>
-                    </a></li>
-                    <li><div class="neon secondary blueshadow_click" onclick="phonenumberOnClick('center', 'bottom-top,6')">
-                        <div class="i-wrapper"><i class="fas fa-mobile-alt fa-2x"></i></div>
-                        <span id="phonenumber" class="noselect">+39 3898331018</span>
-                    </div></li>
-                    <li><a class="neon secondary blueshadow_click" href="https://github.com/gianvitodifilippo" target="_blank">
-                        <div class="i-wrapper"><i class="fab fa-github fa-2x"></i></div>
-                        <span class="noselect">gianvitodifilippo</span>
-                    </a></li>
-                </ul>
+            <div class="profile">
+                <img src="./assets/img/photo.jpg" alt="">
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quibusdam molestiae, consequuntur
+                        non nobis voluptas sapiente, illum omnis necessitatibus, deleniti id? Aliquid eligendi iste porro
+                        cupiditate inventore laborum voluptates minus, sapiente itaque recusandae velit, enim ex adipisci
+                        temporibus molestiae vero quisquam. Laborum, ut quasi eos commodi incidunt vel fugit. Nesciunt,
+                        repudiandae repellendus maiores omnis molestias facilis eius dolore voluptas ipsam exercitationem
+                        quibusdam quasi explicabo perspiciatis facere laborum at veritatis tenetur esse rerum similique impedit,
+                        modi asperiores. Corporis vero nulla impedit accusamus illo provident dignissimos magnam autem sequi
+                        odio!
+                    </p>
+                    <ul class="noselect">
+                        <li>
+                            <div class="neon_activator neon_secondary" onclick="emailOnClick('center', 'bottom-top,6')">
+                                <i class="icon icon-email">&#xf0e0;</i>
+                                <span id="emailaddress">gianvito.difilippo@gmail.com</span>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/gianvito-difilippo/" target="_blank" class="neon_activator neon_secondary">
+                                <i class="icon icon-linkedin">&#xf30c;</i>
+                                <span>gianvito-difilippo</span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="neon_activator neon_secondary" onclick="phonenumberOnClick('center', 'bottom-top,6')">
+                                <i class="icon icon-phone">&#xe800;</i>
+                                <span id="phonenumber">+39 3898331018</span>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="https://github.com/gianvitodifilippo" target="_blank" class="neon_activator neon_secondary">
+                                <i class="icon icon-github">&#xf09b;</i>
+                                <span>gianvitodifilippo</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="reviews">
+
             </div>
         </div>
         <h1 class="section-title noselect" data-lang="section_titles:about">Su di me</h1>
@@ -97,6 +103,38 @@
         </div>
         <h1 class="section-title noselect" data-lang="section_titles:skills">Skills</h1>
     </section>
+    <!-- ------------------------------------------ EDUCATION SECTION  ------------------------------------------ -->
+    <section id="education" class="section">
+        <div class="container">
+            <div class="edu-section bsc">
+                <div class="i-wrapper noselect">
+                    <i class="icon icon-laurel">&#xe803;</i>
+                    <span>3</span>
+                </div>
+                <h1>Laurea Triennale in Ingegneria Informatica e dell'Automazione</h1>
+            </div>
+            <div class="edu-section msc">
+                <div class="i-wrapper noselect">
+                    <i class="icon icon-laurel">&#xe803;</i>
+                    <span>2</span>
+                </div>
+                <h1>Laurea Magistrale in Ingegneria dell'Automazione</h1>
+            </div>
+            <div class="edu-section erasmus">
+                <div class="i-wrapper noselect">
+                    <i class="icon icon-erasmus">&#xe801;</i>
+                </div>
+                <h1>Erasmus a Universidad Politécnica de Madrid</h1>
+            </div>
+            <div class="edu-section mmus">
+                <div class="i-wrapper noselect">
+                    <i class="icon icon-guitar">&#xe802;</i>
+                </div>
+                <h1>Diploma di Secondo Livello in Chitarra</h1>
+            </div>
+        </div>
+        <h1 class="section-title noselect" data-lang="section_titles:education">Educazione</h1>
+    </section>
     <!-- ------------------------------------------  PROJECTS SECTION  ------------------------------------------ -->
     <section id="projects" class="section">
         <div class="container">
@@ -104,27 +142,19 @@
         </div>
         <h1 class="section-title noselect" data-lang="section_titles:projects">Progetti</h1>
     </section>
-    <!-- ------------------------------------------ EDUCATION SECTION  ------------------------------------------ -->
-    <section id="education" class="section">
-        <div class="container">
-        </div>
-        <h1 class="section-title noselect" data-lang="section_titles:education">Educazione</h1>
-    </section>
     <!-- ------------------------------------------       FOOTER       ------------------------------------------ -->
-    <div id="footer">
+    <div id="footer" style="height: 100px; background-color: black;">
 
     </div>
     <!-- ------------------------------------------       MESSAGE      ------------------------------------------ -->
     <div id="message" class="noselect"></div>
 
     <!-- ------------------------------------------       SCRIPTS      ------------------------------------------ -->
-    <script src="https://kit.fontawesome.com/2150929a5b.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./js/cookies.js"></script>
-    <script type="text/javascript" src="./js/displaymessage.js"></script>
-    <script type="text/javascript" src="./js/translate.js"></script>
-    <script type="text/javascript" src="./js/mobileapp.js"></script>
-    <script type="text/javascript" src="./js/desktopapp.js"></script>
-    <script type="text/javascript" src="./js/app.js"></script>
+    <script type="text/javascript" src="./js/utils.js"></script>
+    <script type="text/javascript" src="./js/locate.js"></script>
+    <script type="text/javascript" src="./js/index_desktop.js"></script>
+    <script type="text/javascript" src="./js/index_mobile.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
 </body>
 
 </html>

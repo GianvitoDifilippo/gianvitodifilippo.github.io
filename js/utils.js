@@ -1,4 +1,62 @@
-function displayMessage(text, x, y, element) {
+function copyToClipboard(id)
+{
+    element = document.getElementById(id);
+    if (!element) return;
+    let noselect = element.classList.contains('noselect');
+    if (noselect) {
+        element.classList.remove('noselect');
+    }
+    var range, selection;
+
+    if (document.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText(element);
+        range.select();
+    } else if (window.getSelection) {
+        selection = window.getSelection();        
+        range = document.createRange();
+        range.selectNodeContents(element);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+  
+    try {
+        document.execCommand('copy');
+        selection.removeAllRanges();
+        if (noselect) {
+            element.classList.add('noselect');
+        }
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+
+function setCookie(name, value, days)
+{
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(name)
+{
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+function displayMessage(text, x, y, element)
+{
     let newMessage = message.cloneNode(false);
     document.body.appendChild(newMessage);
     newMessage.textContent = text;

@@ -5,8 +5,6 @@
     --navbar_color_hero: transparent;
 
     --navigation_position: 200;
-
-    --flag_rest_left_mobile: 0px;
 }
 
 html {
@@ -30,33 +28,11 @@ body.stop_scroll {
     font-size: 13rem;
 }
 
-/* ----------------------------------------    FLAGS     ---------------------------------------- */
-
-#lang {
-    z-index: 1;
-    right: unset;
-    left: -100px;
-    transition: left .2s linear;
-    width: 0;
-    height: 0;
-}
-
-#lang ul {
-    flex-direction: row;
-}
-
-#lang ul li {
-    padding-bottom: 0px;
-    padding-right: 6px;
-    transition: top .2s;
-    -webkit-tap-highlight-color: transparent;
-}
-
-#lang:hover ul li {
-    left: unset;
-}
-
 /* ----------------------------------------    HEADER    ---------------------------------------- */
+
+#header.hidden {
+    transform: none;
+}
 
 #header .navbar {
     position: relative;
@@ -97,8 +73,10 @@ body.stop_scroll {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     z-index: 2;
-    transition: left .5s;
-    transition-delay: 5s;
+}
+
+#header.hidden .navbar .hamburger {
+    transform: translateX(100px);
 }
 
 #header .navbar .hamburger .bar {
@@ -166,14 +144,4 @@ body.stop_scroll {
 
 /* ----------------------------------------     HERO     ---------------------------------------- */
 
-}
-
-@media (any-hover: none) {
-    .neon.blueshadow_animation {
-        animation: blueshadow_mobile .3s;
-    }
-
-    .neon.secondary.blueshadow_animation {
-        animation: blueshadow_mobile_secondary .3s;
-    }
 }

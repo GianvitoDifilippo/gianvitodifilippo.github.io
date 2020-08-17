@@ -28,6 +28,15 @@ body.stop_scroll {
     font-size: 13rem;
 }
 
+.neon.neon_animation,
+.neon_secondary.neon_animation {
+    animation: neon_mobile var(--neon_animation_duration);
+}
+
+.container {
+    margin: 0px 5vw 0px 5vw;
+}
+
 /* ----------------------------------------    HEADER    ---------------------------------------- */
 
 #header.hidden {

@@ -45,7 +45,7 @@
             <div class="profile">
                 <img src="./assets/img/photo.jpg" alt="">
                 <div>
-                    <p>
+                    <p class="box">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quibusdam molestiae, consequuntur
                         non nobis voluptas sapiente, illum omnis necessitatibus, deleniti id? Aliquid eligendi iste porro
                         cupiditate inventore laborum voluptates minus, sapiente itaque recusandae velit, enim ex adipisci
@@ -58,25 +58,25 @@
                     <ul class="noselect">
                         <li>
                             <div class="neon_activator neon_secondary" onclick="emailOnClick('center', 'bottom-top,6')">
-                                <i class="icon icon-email">&#xf0e0;</i>
+                                <div class="i-wrapper"><i class="fas fa-envelope fa-2x"></i></div>
                                 <span id="emailaddress">gianvito.difilippo@gmail.com</span>
                             </div>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/gianvito-difilippo/" target="_blank" class="neon_activator neon_secondary">
-                                <i class="icon icon-linkedin">&#xf30c;</i>
+                            <a class="neon_activator neon_secondary" href="https://www.linkedin.com/in/gianvito-difilippo/" target="_blank">
+                                <div class="i-wrapper"><i class="fab fa-linkedin fa-2x"></i></div>
                                 <span>gianvito-difilippo</span>
                             </a>
                         </li>
                         <li>
                             <div class="neon_activator neon_secondary" onclick="phonenumberOnClick('center', 'bottom-top,6')">
-                                <i class="icon icon-phone">&#xe800;</i>
+                                <div class="i-wrapper"><i class="fas fa-mobile-alt fa-2x"></i></div>
                                 <span id="phonenumber">+39 3898331018</span>
                             </div>
                         </li>
                         <li>
-                            <a href="https://github.com/gianvitodifilippo" target="_blank" class="neon_activator neon_secondary">
-                                <i class="icon icon-github">&#xf09b;</i>
+                            <a class="neon_activator neon_secondary" href="https://github.com/gianvitodifilippo" target="_blank">
+                                <div class="i-wrapper"><i class="fab fa-github fa-2x"></i></div>
                                 <span>gianvitodifilippo</span>
                             </a>
                         </li>
@@ -106,31 +106,40 @@
     <!-- ------------------------------------------ EDUCATION SECTION  ------------------------------------------ -->
     <section id="education" class="section">
         <div class="container">
-            <div class="edu-section bsc">
-                <div class="i-wrapper noselect">
-                    <i class="icon icon-laurel">&#xe803;</i>
-                    <span>3</span>
+            <div class="box bsc">
+                <a class="noselect" href="http://www.poliba.it/" target="_blank"><img src="./assets/img/edu/poliba.png" alt=""></a>
+                <div class="edu-descr">
+                    <h1>Laurea Triennale in Ingegneria Informatica e dell'Automazione</h1>
+                    <h2>2014-2017</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga amet odio atque explicabo nisi tempore ducimus fugiat, et minus sit.</p>
+                    <p>Voto finale: 110L</p>
                 </div>
-                <h1>Laurea Triennale in Ingegneria Informatica e dell'Automazione</h1>
             </div>
-            <div class="edu-section msc">
-                <div class="i-wrapper noselect">
-                    <i class="icon icon-laurel">&#xe803;</i>
-                    <span>2</span>
+            <div class="box msc">
+                <a class="noselect" href="http://www.poliba.it/" target="_blank"><img src="./assets/img/edu/poliba.png" alt=""></a>
+                <div class="edu-descr">
+                    <h1>Laurea Magistrale in Ingegneria dell'Automazione</h1>
+                    <h2>2017-2019</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque optio ullam quis. Aut excepturi quo quidem quam impedit autem esse?</p>
+                    <p>Voto finale: 110L</p>
                 </div>
-                <h1>Laurea Magistrale in Ingegneria dell'Automazione</h1>
             </div>
-            <div class="edu-section erasmus">
-                <div class="i-wrapper noselect">
-                    <i class="icon icon-erasmus">&#xe801;</i>
+            <div class="box erasmus">
+                <a class="noselect" href="https://www.upm.es/" target="_blank"><img src="./assets/img/edu/upm.png" alt=""></a>
+                <div class="edu-descr">
+                    <h1>Erasmus a Universidad Politécnica de Madrid</h1>
+                    <h2>2019</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem optio, omnis nihil quibusdam ex ducimus esse cum voluptatibus possimus quam.</p>
                 </div>
-                <h1>Erasmus a Universidad Politécnica de Madrid</h1>
             </div>
-            <div class="edu-section mmus">
-                <div class="i-wrapper noselect">
-                    <i class="icon icon-guitar">&#xe802;</i>
+            <div class="box mmus">
+                <a class="noselect" href="http://www.consba.it/" target="_blank"><img src="./assets/img/edu/piccinni.png" alt=""></a>
+                <div class="edu-descr">
+                    <h1>Diploma di Secondo Livello in Chitarra</h1>
+                    <h2>2011-2018</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem laborum unde nisi eligendi maxime iure ratione saepe fugit, beatae ipsum?</p>
+                    <p>Voto finale: 10/10</p>
                 </div>
-                <h1>Diploma di Secondo Livello in Chitarra</h1>
             </div>
         </div>
         <h1 class="section-title noselect" data-lang="section_titles:education">Educazione</h1>
@@ -150,6 +159,7 @@
     <div id="message" class="noselect"></div>
 
     <!-- ------------------------------------------       SCRIPTS      ------------------------------------------ -->
+    <script src="https://kit.fontawesome.com/2150929a5b.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./js/utils.js"></script>
     <script type="text/javascript" src="./js/locate.js"></script>
     <script type="text/javascript" src="./js/index_desktop.js"></script>

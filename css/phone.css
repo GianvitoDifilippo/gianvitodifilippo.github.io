@@ -16,7 +16,7 @@ html {
 }
 
 .container {
-    margin-top: calc(var(--section_title_top) + 3.5rem);
+    margin: calc(var(--section_title_top) + 3.5rem) 5vw 0px 5vw;
 }
     
 /* ----------------------------------------   HEADER   ---------------------------------------- */
@@ -59,6 +59,64 @@ html {
 #hero .container .brand a {
     text-align: center;
     width: 220px;
+}
+
+/* ----------------------------------------    ABOUT     ---------------------------------------- */
+
+#about .container .profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about .container .profile h1 {
+    font-size: 2.6rem; /**/
+    align-self: center;
+}
+
+#about .container .profile > div > div .contacts,
+#about .container .profile > div > div .social {
+    font-size: 1.8rem; /**/
+}
+
+#about .container .profile > div p {
+    order: 1;
+    font-size: 1.8rem; /**/
+    grid-row: unset;
+    grid-column-start: unset;
+    grid-column-end: unset;
+    padding: 10px; /**/
+}
+
+#about .container .profile > div > div {
+    order: 2;
+    grid-row: unset;
+    grid-column: unset;
+    margin: 5px;
+}
+
+#about .container .profile > div > div .contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#about .container .profile > div > div .contacts > div {
+    margin-left: 0px; /**/
+    margin-right: 0px;
+}
+
+#about .container .profile > div > div .social a {
+    margin-left: 0px; /**/
+}
+
+#about .container .profile img {
+    order: 3;
+    grid-row: unset;
+    grid-column: unset;
+    justify-self: unset;
+    margin: 10px; /**/
 }
 
 /* ----------------------------------------  EDUCATION   ---------------------------------------- */

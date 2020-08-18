@@ -29,7 +29,7 @@ body.stop_scroll {
 }
 
 .container {
-    margin-top: calc(var(--section_title_top) + 8.5rem);
+    margin: calc(var(--section_title_top) + 8.5rem) 7.5vw 0px 7.5vw;
 }
 
 .neon.neon_animation {
@@ -156,6 +156,61 @@ body.stop_scroll {
 
 /* ----------------------------------------     HERO     ---------------------------------------- */
 
+
+/* ----------------------------------------    ABOUT     ---------------------------------------- */
+
+#about .container .profile {
+    display: grid;
+}
+
+#about .container .profile > div {
+    display: contents;
+}
+
+#about .container .profile h1 {
+    font-size: 2.6rem;
+}
+
+#about .container .profile > div > div .contacts,
+#about .container .profile > div > div .social {
+    font-size: 1.8rem;
+}
+
+#about .container .profile > div p {
+    font-size: 1.8rem;
+    grid-row: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding: 10px;
+}
+
+#about .container .profile > div > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-row: 2;
+    grid-column: 1;
+    margin: 10px;
+    margin-right: 5px;
+}
+
+#about .container .profile > div > div .contacts > div {
+    margin-left: 0px;
+}
+
+#about .container .profile > div > div .social a {
+    margin-left: 0px;
+}
+
+#about .container .profile img {
+    width: 180px;
+    height: 180px;
+    grid-row: 2;
+    grid-column: 2;
+    justify-self: right;
+    margin: 10px;
+    margin-left: 5px;
+}
 
 /* ----------------------------------------  EDUCATION   ---------------------------------------- */
 

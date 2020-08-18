@@ -32,9 +32,12 @@ body.stop_scroll {
     margin-top: calc(var(--section_title_top) + 8.5rem);
 }
 
-.neon.neon_animation,
-.neon_secondary.neon_animation {
+.neon.neon_animation {
     animation: neon_mobile var(--neon_animation_duration);
+}
+
+.neon_secondary.neon_animation {
+    animation: neon_mobile_secondary var(--neon_animation_duration);
 }
 
 /* ----------------------------------------    HEADER    ---------------------------------------- */

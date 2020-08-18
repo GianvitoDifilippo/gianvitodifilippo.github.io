@@ -85,7 +85,7 @@ function emailOnClick(x, y)
 
 /* ------------------------------------------------         SCRIPT          ------------------------------------------------ */
 
-
+// Session cookie settings
 if (!getCookie('session')) {
     launchAnimation();
     
@@ -100,6 +100,7 @@ if (!getCookie('session')) {
     await translatePage(code);
 })();
 
+// Adds neon animation on click
 neon_activator_items.forEach(item => item.addEventListener('click', () => {
     let children = Array.from(item.getElementsByClassName('neon')).concat(Array.from(item.getElementsByClassName('neon_secondary')));
     if (item.classList.contains('neon') || item.classList.contains('neon_secondary')) children.push(item);
@@ -108,10 +109,6 @@ neon_activator_items.forEach(item => item.addEventListener('click', () => {
         setTimeout(() => child.classList.remove('neon_animation'), neon_animation_duration);
     });
 }));
-
-if (scroll_position > navigation_position) {
-    navbar.classList.add('navigating');    
-}
 
 // Scroll effects
 document.addEventListener('scroll', () => {
@@ -131,9 +128,10 @@ document.addEventListener('scroll', () => {
     }
 
     // Hero background parallax effect
-    hero.style.backgroundPositionY = `${scroll_position * 0.6}px`;
+    hero.style.backgroundPositionY = `${scroll_position * 0.7}px`;
 });
 
+// Device-specific scripts
 if (mobile) {
     indexMobile();
 }
@@ -141,4 +139,8 @@ else {
     indexDesktop();
 }
 
+// Adds classes to elements before displaying
+if (scroll_position > navigation_position) {
+    navbar.classList.add('navigating');    
+}
 body.classList.add('visible');

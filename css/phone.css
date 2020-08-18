@@ -2,6 +2,8 @@
 /* ----------------------------------------   COMMON   ---------------------------------------- */
 :root {
     --navigation_position: 80;
+
+    --section_title_top: 60px;
 }
         
 html {
@@ -14,7 +16,7 @@ html {
 }
 
 .container {
-    margin-top: calc(var(--section_title_top) + 4rem);
+    margin-top: calc(var(--section_title_top) + 3.5rem);
 }
     
 /* ----------------------------------------   HEADER   ---------------------------------------- */
@@ -69,6 +71,7 @@ html {
 
 #education .container .box .edu-descr {
     display: contents;
+    margin: unset;
 }
 
 #education .container .box a {

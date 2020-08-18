@@ -31,7 +31,7 @@
     --neon_animation_duration: 300ms;
     --fadein_animation_duration: 1000ms;
 
-    --section_title_top: 60px;
+    --section_title_top: 50px;
 
     --can_hover: 0;
 }
@@ -89,7 +89,7 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: calc(var(--section_title_top) + 13rem) 10vw 0px 10vw;
+    margin: calc(var(--section_title_top) + 11rem) 10vw 0px 10vw;
     z-index: 1;
 }
 
@@ -393,6 +393,14 @@ a {
 
 #education .container .box a img {
     width: 130px;
+}
+
+#education .container .mmus a img {
+    border-radius: 8%;
+}
+
+#education .container .box .edu-descr {
+    margin: 8px;
 }
 
 #education .container .box .edu-descr h1 {

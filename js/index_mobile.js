@@ -12,5 +12,5 @@ function indexMobile()
     hamburger.addEventListener('click', toggleNavlistActive);
     
     // Toggles navlist when clicking on list items
-    menu_items.forEach(item => item.addEventListener('click', () => setTimeout(toggleNavlistActive, 100)));
+    menu_items.forEach(item => item.addEventListener('click', toggleNavlistActive));
 }

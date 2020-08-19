@@ -284,7 +284,6 @@ a {
 
 /* ----------------------------------------    ABOUT     ---------------------------------------- */
 
-
 #about .container {
     display: flex;
     flex-direction: column;
@@ -313,13 +312,15 @@ a {
 }
 
 #about .container .profile > div > div {
-    margin: 20px;
+    margin: 10px;
+    margin-top: 20px;
 }
 
 #about .container .profile > div > div .contacts,
 #about .container .profile > div > div .social {
     font-size: 2rem;
     font-weight: 300;
+    margin-bottom: 16px;
 }
 
 #about .container .profile h1 {
@@ -333,7 +334,7 @@ a {
     align-items: center;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
-    margin: 4px;
+    margin-top: 8px;
 }
 
 #about .i-wrapper {
@@ -348,9 +349,48 @@ a {
     white-space: nowrap;
 }
 
-#about .container .profile > div > div .social a {
+#about .container .profile > div > div .social .icons a {
     display: inline-block;
-    margin: 4px;
+    margin: 8px 4px 0px 8px;
+}
+
+#about .container .profile .icon {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    transition: background-image .1s linear;
+}
+
+#about .container .profile > div > div .social .icons a .icon-linkedin {
+    background-image: url(/assets/img/icons/linkedin.png);
+}
+
+#about .container .profile > div > div .social .icons a .icon-linkedin:hover {
+    background-image: url(/assets/img/icons/linkedin_hover.png);
+}
+
+#about .container .profile > div > div .social .icons a .icon-github {
+    background-image: url(/assets/img/icons/github.png);
+}
+
+#about .container .profile > div > div .social .icons a .icon-github:hover {
+    background-image: url(/assets/img/icons/github_hover.png);
+}
+
+#about .container .profile > div > div .social .icons a .icon-instagram {
+    background-image: url(/assets/img/icons/instagram.png);
+}
+
+#about .container .profile > div > div .social .icons a .icon-instagram:hover {
+    background-image: url(/assets/img/icons/instagram_hover.png);
+}
+
+#about .container .profile > div > div .social .icons a .icon-facebook {
+    background-image: url(/assets/img/icons/facebook.png);
+}
+
+#about .container .profile > div > div .social .icons a .icon-facebook:hover {
+    background-image: url(/assets/img/icons/facebook_hover.png);
 }
 
 #about .container .reviews {

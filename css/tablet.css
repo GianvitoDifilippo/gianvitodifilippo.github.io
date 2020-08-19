@@ -190,16 +190,11 @@ body.stop_scroll {
     justify-content: center;
     grid-row: 2;
     grid-column: 1;
-    margin: 10px;
-    margin-right: 5px;
 }
 
-#about .container .profile > div > div .contacts > div {
-    margin-left: 0px;
-}
-
-#about .container .profile > div > div .social a {
-    margin-left: 0px;
+#about .container .profile .icon {
+    width: 32px;
+    height: 32px;
 }
 
 #about .container .profile img {
@@ -208,6 +203,7 @@ body.stop_scroll {
     grid-row: 2;
     grid-column: 2;
     justify-self: right;
+    align-self: center;
     margin: 10px;
     margin-left: 5px;
 }

@@ -28,6 +28,12 @@
             "score": "Voto finale: 10/10"
         }
     },
+    "skills": {
+        "languages": "Linguaggi",
+        "tools": "Strumenti",
+        "backend": "Back-end",
+        "webdev": "Sviluppo web"
+    },
     "messages": {
         "copied": "Copiato!"
     }

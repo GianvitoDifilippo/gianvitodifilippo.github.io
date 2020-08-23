@@ -31,7 +31,7 @@
     --neon_animation_duration: 300ms;
     --fadein_animation_duration: 1000ms;
 
-    --section_title_top: 50px;
+    --section_title_top: 45px;
 
     --can_hover: 0;
 }
@@ -89,7 +89,7 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: calc(var(--section_title_top) + 11rem) 10vw 0px 10vw;
+    margin: calc(var(--section_title_top) + 11rem) 8vw 0px 8vw;
     z-index: 1;
 }
 
@@ -132,6 +132,10 @@ a {
     /* Font smoothing. That was taken from TWBS */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.box {
+    position: relative;
 }
 
 .box::before {
@@ -411,6 +415,75 @@ a {
     min-height: 100vh;
 }
 
+#skills .container {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#skills .container .box {
+    align-items: stretch;
+}
+
+#skills .container .box h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 4px 0px 0px 10px;
+}
+
+#skills .container .skill-list {
+    list-style: none;
+}
+
+#skills .container .skill-list li {
+    margin: 10px 0px 10px 0px;
+    padding: 10px;
+}
+
+#skills .container ul li:nth-child(1) {
+    margin-top: 0px;
+}
+
+#skills .container ul li:nth-last-child(1) {
+    margin-bottom: 0px;
+}
+
+#skills .skill-item {
+    margin: 8px;
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 2px 2px 5px var(--background_color_dark);
+    border-radius: 2%;
+    cursor: pointer;
+}
+
+#skills .skill-item h2 {
+    color: black;
+    font-weight: 600;
+    text-align: center;
+    margin: 6px;
+    font-size: 1.7rem;
+}
+
+#skills .skill-item .skill-icon {
+    width: 80px;
+    height: 80px;
+    margin: 20px;
+}
+
+#skills .container .skill-preview {
+    width: 50%;
+}
+
+#skills .container .skill-preview {
+    padding: 10px;
+}
+
+#skills .icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 /* ----------------------------------------  EDUCATION   ---------------------------------------- */
 
 #education .container {
@@ -554,11 +627,11 @@ a {
         color: var(--secondary_color) !important;
     }
 
-    #education .container .box::before {
-        transition: background-color .2s;
+    #skills .skill-item {
+        transition: background-color .1s linear;
     }
 
-    #education .container .box:hover::before {
-        background-color: var(--secondary_color);
+    #skills .skill-item:hover {
+        background-color: white;
     }
 }

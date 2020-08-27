@@ -11,6 +11,10 @@
         "contactme": "Contáctame",
         "downloadcv": "Descarga mi CV"
     },
+    "about": {
+        "contacts": "Contactos",
+        "findme": "Buscame en"
+    },
     "education": {
         "bsc": {
             "h1": "Grado en Ingeniería Informática y Automática",

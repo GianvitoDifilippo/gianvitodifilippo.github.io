@@ -11,6 +11,10 @@
         "contactme": "Contattami",
         "downloadcv": "Scarica il mio CV"
     },
+    "about": {
+        "contacts": "Contatti",
+        "findme": "Mi trovi anche su"
+    },
     "education": {
         "bsc": {
             "h1": "Laurea Triennale in Ingegneria Informatica e dell'Automazione",

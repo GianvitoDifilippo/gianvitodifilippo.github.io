@@ -11,6 +11,10 @@
         "contactme": "Contact Me",
         "downloadcv": "Download my CV"
     },
+    "about": {
+        "contacts": "Contacts",
+        "findme": "Find me on"
+    },
     "education": {
         "bsc": {
             "h1": "Bachelor's Degree in Computer Science and Automation Engineering",

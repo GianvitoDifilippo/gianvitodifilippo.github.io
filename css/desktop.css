@@ -434,6 +434,7 @@ a {
 
 #skills .container .skill-list {
     list-style: none;
+    margin-right: 10px;
 }
 
 #skills .container .skill-list li {
@@ -455,6 +456,7 @@ a {
     box-shadow: 2px 2px 5px var(--background_color_dark);
     border-radius: 2%;
     cursor: pointer;
+    width: fit-content;
 }
 
 #skills .skill-item h2 {
@@ -472,11 +474,34 @@ a {
 }
 
 #skills .container .skill-preview {
-    width: 50%;
+    width: 60%;
+    padding: 10px;
+    margin-left: 10px;
+    display: none;
 }
 
-#skills .container .skill-preview {
-    padding: 10px;
+#skills .container .skill-preview .skill-brief .skill-item {
+    margin-right: 20px;
+}
+
+#skills .container .skill-preview .skill-brief {
+    margin: 8px;
+    display: flex;
+}
+
+#skills .container .skill-preview .skill-brief .skill-item .skill-icon {
+    width: 120px;
+    height: 120px;
+}
+
+#skills .container .skill-preview .skill-brief div h2 {
+    font-size: 2.6rem;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+#skills .container .skill-preview .skill-brief .skill-item h2 {
+    color: transparent;
 }
 
 #skills .icons {
@@ -633,5 +658,13 @@ a {
 
     #skills .skill-item:hover {
         background-color: white;
+    }
+
+    #education .box::before {
+        transition: background-color .1s linear;
+    }
+
+    #education .box:hover::before {
+        background-color: var(--secondary_color);
     }
 }

@@ -116,6 +116,15 @@ html {
     align-items: center;
 }
 
+/* ----------------------------------------    SKILLS    ---------------------------------------- */
+
+
+#skills .skill-item .skill-icon {
+    width: 60px;
+    height: 60px;
+    margin: 16px;
+}
+
 /* ----------------------------------------  EDUCATION   ---------------------------------------- */
 
 #education .container .box {

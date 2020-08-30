@@ -20,15 +20,17 @@ html {
 }
     
 /* ----------------------------------------   HEADER   ---------------------------------------- */
-#header .navbar .brand h1 {
+
+#navbar .brand h1 {
     font-size: 3rem;
 }
 
-#header .navbar .navlist li a {
+#navlist li a {
     font-size: 3rem;
 }
         
 /* ----------------------------------------    HERO    ---------------------------------------- */
+
 #hero.section {
     justify-content: center;
 }
@@ -38,25 +40,22 @@ html {
     text-align: center;
 }
 
-#hero .container .brand {
+#hero-main {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     left: unset;
 }
 
-#hero .container .brand h1 {
+#hero-main h1 {
     font-size: 4.5rem;
 }
 
-#hero .container .brand h2 {
+#hero-main h2 {
     font-size: 2.5rem;
 }
 
-#hero .container .brand {
-    display: flex;
-    flex-direction: column;
-}
-
-#hero .container .brand a {
+#hero-main a {
     text-align: center;
     width: 220px;
 }
@@ -68,32 +67,32 @@ html {
     margin: 0px 2px 0px 2px;
 }
 
-#about .container .profile {
+#profile {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#about .container .profile h1 {
+#profile h1 {
     align-self: center;
 }
 
-#about .container .profile > div p {
+#profile > div p {
     order: 1;
     grid-row: unset;
     grid-column-start: unset;
     grid-column-end: unset;
 }
 
-#about .container .profile > div > div {
+#profile > div > div {
     order: 2;
     grid-row: unset;
     grid-column: unset;
     margin: 10px;
 }
 
-#about .container .profile > div > div .contacts {
+#contacts {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -101,7 +100,7 @@ html {
     align-items: center;
 }
 
-#about .container .profile img {
+#profile img {
     order: 3;
     grid-row: unset;
     grid-column: unset;
@@ -109,7 +108,7 @@ html {
     margin: 0px;
 }
 
-#about .container .profile > div > div .social {
+#social {
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
@@ -118,6 +117,22 @@ html {
 
 /* ----------------------------------------    SKILLS    ---------------------------------------- */
 
+#skills .icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#skills .icons > li {
+    margin: 6px;
+}
+
+#skills .icons > li:nth-child(1) {
+    margin: 6px;
+}
+
+#skills .icons > li:nth-last-child(1) {
+    margin: 6px;
+}
 
 #skills .skill-item .skill-icon {
     width: 60px;

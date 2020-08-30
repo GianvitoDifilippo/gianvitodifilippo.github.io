@@ -14,12 +14,12 @@
 <body>
     <!-- ------------------------------------------       HEADER       ------------------------------------------ -->
     <div id="header" class="noselect">
-        <div class="navbar">
+        <div id="navbar">
             <a href="#hero" class="brand neon_activator">
                 <h1><span class="neon">Gia</span>nvito<br><span class="neon">Dif</span>ilippo</h1>
             </a>
-            <div class="hamburger"><div class="bar"></div></div>
-            <ul class="navlist">
+            <div id="hamburger"><div class="bar"></div></div>
+            <ul id="navlist">
                 <li><a class="neon_activator neon" data-lang="section_titles:about" href="#about">Su di me</a></li>
                 <li><a class="neon_activator neon" data-lang="section_titles:experience" href="#experience">Esperienza</a></li>
                 <li><a class="neon_activator neon" data-lang="section_titles:skills" href="#skills">Skills</a></li>
@@ -31,18 +31,18 @@
     <!-- ------------------------------------------    HERO SECTION    ------------------------------------------ -->
     <section id="hero" class="section">
         <div class="container">
-            <div class="brand">
+            <div id="hero-main">
                 <h1>Gianvito Difilippo</h1>
                 <h2 data-lang="hero:h2">Ingegnere dell'Automazione</h2>
                 <a class="noselect" href="mailto:gianvito.difilippo@gmail.com" data-lang="hero:contactme">Contattami</a>
-                <a class="noselect" href="./assets/cv.pdf" data-lang="hero:downloadcv">Scarica il mio CV</a>
+                <a class="noselect" href="./assets/cv.pdf" target="_blank" data-lang="hero:downloadcv">Scarica il mio CV</a>
             </div>
         </div>
     </section>
     <!-- ------------------------------------------   ABOUT SECTION    ------------------------------------------ -->
     <section id="about" class="section">
         <div class="container">
-            <div class="profile">
+            <div id="profile">
                 <img class="noselect" src="./assets/img/photo.jpg" alt="">
                 <div>
                     <p class="box">
@@ -56,7 +56,7 @@
                         odio!
                     </p>
                     <div>
-                        <div class="contacts">
+                        <div id="contacts">
                             <h1 data-lang="about:contacts">Contatti</h1>
                             <div class="neon_activator neon_secondary" onclick="emailOnClick('center', 'bottom-top,-6')">
                                 <div class="i-wrapper noselect"><i class="fas fa-envelope fa-2x"></i></div>
@@ -67,7 +67,7 @@
                                 <span id="phonenumber" class="noselect">+39 3898331018</span>
                             </div>
                         </div>
-                        <div class="social">
+                        <div id="social">
                             <h1 data-lang="about:findme">Mi trovi anche su</h1>
                             <div class="icons">
                                 <a href="https://www.linkedin.com/in/gianvito-difilippo/" target="_blank">
@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </div>
-            <div class="reviews">
+            <div id="reviews">
 
             </div>
         </div>
@@ -103,93 +103,102 @@
     <!-- ------------------------------------------   SKILLS SECTION   ------------------------------------------ -->
     <section id="skills" class="section">
         <div class="container">
-            <ul class="skill-list">
+            <ul id="skill-list">
                 <li class="box languages">
-                    <h1 data-lang="skills:languages">Linguaggi</h1>
-                    <div class="icons">
-                        <div class="skill-item">
-                            <img class="skill-icon noselect" src="./assets/img/skills/cplusplus.png" alt="">
+                    <h1 data-lang="skills:skill-list:languages">Linguaggi</h1>
+                    <ul class="icons">
+                        <li class="skill-item" onclick="showSkillDetails('cplusplus')">
+                            <img class="skill-icon noselect" src="./assets/img/skills/cplusplus.svg" alt="">
                             <h2 class="noselect">C++</h2>
-                        </div>
-                        <div class="skill-item">
-                            <img class="skill-icon noselect" src="./assets/img/skills/csharp.png" alt="">
+                        </li>
+                        <li class="skill-item" onclick="showSkillDetails('csharp')">
+                            <img class="skill-icon noselect" src="./assets/img/skills/csharp.svg" alt="">
                             <h2 class="noselect">C#</h2>
-                        </div>
-                        <div class="skill-item">
-                            <img class="skill-icon noselect" src="./assets/img/skills/python.png" alt="">
+                        </li>
+                        <li class="skill-item" onclick="showSkillDetails('python')">
+                            <img class="skill-icon noselect" src="./assets/img/skills/python.svg" alt="">
                             <h2 class="noselect">Python</h2>
-                        </div>
-                        <div class="skill-item">
-                            <img class="skill-icon noselect" src="./assets/img/skills/java.png" alt="">
+                        </li>
+                        <li class="skill-item" onclick="showSkillDetails('java')">
+                            <img class="skill-icon noselect" src="./assets/img/skills/java.svg" alt="">
                             <h2 class="noselect">Java</h2>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </li>
                 <li class="box tools">
-                    <h1 data-lang="skills:tools">Strumenti</h1>
-                    <div class="icons">
-                        <div class="skill-item">
+                    <h1 data-lang="skills:skill-list:tools">Strumenti</h1>
+                    <ul class="icons">
+                        <li class="skill-item" onclick="showSkillDetails('matlab')">
                             <img class="skill-icon noselect" src="./assets/img/skills/matlab.png" alt="">
                             <h2 class="noselect">Matlab</h2>
-                        </div>
-                        <div class="skill-item">
+                        </li>
+                        <li class="skill-item" onclick="showSkillDetails('labview')">
                             <img class="skill-icon noselect" src="./assets/img/skills/labview.png" alt="">
                             <h2 class="noselect">LabVIEW</h2>
-                        </div>
-                        <div class="skill-item">
-                            <img class="skill-icon noselect" src="./assets/img/skills/docker.png" alt="">
+                        </li>
+                        <li class="skill-item" onclick="showSkillDetails('docker')">
+                            <img class="skill-icon noselect" src="./assets/img/skills/docker.svg" alt="">
                             <h2 class="noselect">Docker</h2>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </li>
                 <li class="box backend">
-                    <h1 data-lang="skills:backend">Back-end</h1>
-                    <div class="icons">
-                        <div class="skill-item">
-                            <img class="skill-icon noselect" src="./assets/img/skills/dotnet.png" alt="">
+                    <h1 data-lang="skills:skill-list:backend">Back-end</h1>
+                    <ul class="icons">
+                        <li class="skill-item" onclick="showSkillDetails('dotnet')">
+                            <img class="skill-icon noselect" src="./assets/img/skills/dotnet.svg" alt="">
                             <h2 class="noselect">.NET Core</h2>
-                        </div>
-                        <div class="skill-item">
-                            <img class="skill-icon noselect" src="./assets/img/skills/postgresql.png" alt="">
+                        </li>
+                        <li class="skill-item" onclick="showSkillDetails('postgresql')">
+                            <img class="skill-icon noselect" src="./assets/img/skills/postgresql.svg" alt="">
                             <h2 class="noselect">PostgreSQL</h2>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </li>
                 <li class="box webdev">
-                    <h1 data-lang="skills:webdev">Sviluppo web</h1>
-                    <div class="icons">
-                        <div class="skill-item">
-                            <img class="skill-icon noselect" src="./assets/img/skills/html5.png" alt="">
-                            <h2 class="noselect">HTML5</h2>
-                        </div>
-                        <div class="skill-item">
-                            <img class="skill-icon noselect" src="./assets/img/skills/css3.png" alt="">
-                            <h2 class="noselect">CSS3</h2>
-                        </div>
-                        <div class="skill-item">
-                            <img class="skill-icon noselect" src="./assets/img/skills/javascript.png" alt="">
+                    <h1 data-lang="skills:skill-list:webdev">Sviluppo web</h1>
+                    <ul class="icons">
+                        <li class="skill-item" onclick="showSkillDetails('html')">
+                            <img class="skill-icon noselect" src="./assets/img/skills/html.svg" alt="">
+                            <h2 class="noselect">HTML</h2>
+                        </li>
+                        <li class="skill-item" onclick="showSkillDetails('css')">
+                            <img class="skill-icon noselect" src="./assets/img/skills/css.svg" alt="">
+                            <h2 class="noselect">CSS</h2>
+                        </li>
+                        <li class="skill-item" onclick="showSkillDetails('javascript')">
+                            <img class="skill-icon noselect" src="./assets/img/skills/javascript.svg" alt="">
                             <h2 class="noselect">JavaScript</h2>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </li>
             </ul>
-            <div class="box skill-preview">
-                <h1>Dettagli</h1>
-                <div class="skill-brief">
-                    <div class="skill-item">
-                        <img class="skill-icon noselect" src="./assets/img/skills/placeholder.png" alt="">
-                        <h2 class="noselect">...</h2>
+            <div id="skill-preview" class="box">
+                <h1 class="message" data-lang="skills:skill-preview:message">Clicca su una skill per mostrarne i dettagli</h1>
+                <h1 class="details" data-lang="skills:skill-preview:details">Dettagli</h1>
+                <div id="skill-preview-content">
+                    <div id="skill-brief">
+                        <div class="skill-item">
+                            <div class="skill-icon"></div>
+                            <h2 class="skill-name noselect">...</h2>
+                        </div>
+                        <div class="skill-details">
+                            <h2 class="skill-name">...</h2>
+                            <h3 class="skill-experience">
+                                <span class="key bold" data-lang="skills:skill-preview:experience:key">Esperienza:</span> <span class="value">...</span>
+                            </h3>
+                            <h3 class="skill-since">
+                                <span class="key bold" data-lang="skills:skill-preview:since">Programmo dal:</span> <span class="value">...</span>
+                            </h3>
+                        </div>
+                        <p class="skill-descr"></p>
                     </div>
-                    <div>
-                        <h2>C++</h2>
-                        <h2>Esperienza: Professionale</h2>
-                        <h2>Programmo da: 5 anni</h2>
-                    </div>
+                    <h1 data-lang="skills:skill-preview:projects">Progetti</h1>
+                    <ul id="skill-projects"></ul>
+                    <p id="skill-noprojects" data-lang="skills:skill-preview:noprojects">
+                        Non ci sono progetti per questa skill al momento, ma possiamo avviare il primo insieme. Contattami!
+                    </p>
                 </div>
-                <h1>Progetti</h1>
-                <ul class="skill-projects">
-                    
-                </ul>
             </div>
         </div>
         <h1 class="section-title noselect" data-lang="section_titles:skills">Skills</h1>
@@ -197,7 +206,7 @@
     <!-- ------------------------------------------ EDUCATION SECTION  ------------------------------------------ -->
     <section id="education" class="section">
         <div class="container">
-            <div class="box bsc">
+            <div id="bsc" class="box">
                 <a class="noselect" href="http://www.poliba.it/" target="_blank"><img src="./assets/img/edu/poliba.png" alt=""></a>
                 <span class="edu-descr">
                     <h1 data-lang="education:bsc:h1">Laurea Triennale in Ingegneria Informatica e dell'Automazione</h1>
@@ -207,7 +216,7 @@
                     <p data-lang="education:bsc:score">Voto finale: 110/110 e Lode</p>
                 </span>
             </div>
-            <div class="box msc">
+            <div id="msc" class="box">
                 <a class="noselect" href="http://www.poliba.it/" target="_blank"><img src="./assets/img/edu/poliba.png" alt=""></a>
                 <div class="edu-descr">
                     <h1 data-lang="education:msc:h1">Laurea Magistrale in Ingegneria dell'Automazione</h1>
@@ -217,7 +226,7 @@
                     <p data-lang="education:msc:score">Voto finale: 110/110 e Lode</p>
                 </div>
             </div>
-            <div class="box erasmus">
+            <div id="erasmus" class="box">
                 <a class="noselect" href="https://www.upm.es/" target="_blank"><img src="./assets/img/edu/upm.png" alt=""></a>
                 <div class="edu-descr">
                     <h1 data-lang="education:erasmus:h1">Master in Big Data e Telecomunicazioni</h1>
@@ -226,7 +235,7 @@
                     <p data-lang="education:erasmus:p1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem optio, omnis nihil quibusdam ex ducimus esse cum voluptatibus possimus quam.</p>
                 </div>
             </div>
-            <div class="box mmus">
+            <div id="mmus" class="box">
                 <a class="noselect" href="http://www.consba.it/" target="_blank"><img src="./assets/img/edu/piccinni.png" alt=""></a>
                 <div class="edu-descr">
                     <h1 data-lang="education:mmus:h1">Diploma di Secondo Livello in Chitarra</h1>
@@ -261,5 +270,25 @@
     <script type="text/javascript" src="./js/index_mobile.js"></script>
     <script type="text/javascript" src="./js/index.js"></script>
 </body>
+    <!-- *********************************************
+     _   _              _   _                   _
+    | | | | ___ _   _  | |_| |__   ___ _ __ ___| |
+    | |_| |/ _ \ | | | | __| '_ \ / _ \ '__/ _ \ |
+    |  _  |  __/ |_| | | |_| | | |  __/ | |  __/_|
+    |_| |_|\___|\__, |  \__|_| |_|\___|_|  \___(_)
+                |___/
 
+    Looking at the source code, huh?
+    If you like my work, consider having a look at my
+    Github repository.
+    
+    I'm always open to new opportunities, so be sure
+    to drop me a line, whether you wish to talk about
+    projects, ideas or just to enjoy a nice and
+    inspiring chat!
+
+    Have a nice day :)
+
+    - Gianvito
+    ********************************************** -->
 </html>

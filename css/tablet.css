@@ -46,35 +46,35 @@ body.stop_scroll {
     transform: none;
 }
 
-#header .navbar {
+#navbar {
     position: relative;
     justify-content: space-between;
 }
 
-#header .navbar .brand {
+#navbar .brand {
     pointer-events: none;
 }
 
-#header .navbar .brand.inactive {
+#navbar .brand.inactive {
     pointer-events: none;
 }
 
-#header .navbar.navigating .brand {
+#navbar.navigating .brand {
     pointer-events: visible;
 }
 
-#header .navbar .brand h1 {
+#navbar .brand h1 {
     position: relative;
     opacity: 0;
     transition: opacity .2s;
     margin-left: 10px;
 }
 
-#header .navbar.navigating .brand h1 {
+#navbar.navigating .brand h1 {
     opacity: 1;
 }
     
-#header .navbar .hamburger {
+#hamburger {
     position: relative;
     display: flex;
     justify-content: center;
@@ -87,19 +87,19 @@ body.stop_scroll {
     z-index: 2;
 }
 
-#header.hidden .navbar .hamburger {
+#header.hidden #hamburger {
     transform: translateX(100px);
 }
 
-#header .navbar .hamburger .bar {
+#hamburger .bar {
     position: relative;
     width: 25px;
     height: 3px;
     background-color: white;
 }
 
-#header .navbar .hamburger .bar::before,
-#header .navbar .hamburger .bar::after {
+#hamburger .bar::before,
+#hamburger .bar::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -107,25 +107,25 @@ body.stop_scroll {
     background-color: white;
 }
 
-#header .navbar .hamburger .bar::before {
+#hamburger .bar::before {
     bottom: 7px;
     transition: bottom .3s;
 }
 
-#header .navbar .hamburger.active .bar::before {
+#hamburger.active .bar::before {
     bottom: 0px;
 }
 
-#header .navbar .hamburger .bar::after {
+#hamburger .bar::after {
     top: 7px;
     transition: top .3s;
 }
 
-#header .navbar .hamburger.active .bar::after {
+#hamburger.active .bar::after {
     top: 0px;
 }
 
-#header .navbar .navlist {
+#navlist {
     position: absolute;
     top: 0;
     left: 100vw;
@@ -141,16 +141,16 @@ body.stop_scroll {
     z-index: 1;
 }
 
-#header .navbar .navlist.active {
+#navlist.active {
     left: 0;
     transition-delay: 0s;
 }
 
-#header .navbar .navlist li {
+#navlist li {
     padding: 2.5rem;
 }
 
-#header .navbar .navlist li a {
+#navlist li a {
     font-size: 3.5rem;
 }
 
@@ -167,24 +167,24 @@ body.stop_scroll {
 @media only screen and (max-width: 1024px) {
 /* ----------------------------------------    ABOUT     ---------------------------------------- */
 
-#about .container .profile {
+#profile {
     display: grid;
 }
 
-#about .container .profile > div {
+#profile > div {
     display: contents;
 }
 
-#about .container .profile h1 {
+#profile h1 {
     font-size: 2.6rem;
 }
 
-#about .container .profile > div > div .contacts,
-#about .container .profile > div > div .social {
+#contacts,
+#social {
     font-size: 1.8rem;
 }
 
-#about .container .profile > div p {
+#profile > div p {
     font-size: 1.8rem;
     grid-row: 1;
     grid-column-start: 1;
@@ -192,7 +192,7 @@ body.stop_scroll {
     padding: 10px;
 }
 
-#about .container .profile > div > div {
+#profile > div > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -200,12 +200,12 @@ body.stop_scroll {
     grid-column: 1;
 }
 
-#about .container .profile .icon {
+#profile .icon {
     width: 32px;
     height: 32px;
 }
 
-#about .container .profile img {
+#profile img {
     width: 180px;
     height: 180px;
     grid-row: 2;

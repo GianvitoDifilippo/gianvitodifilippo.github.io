@@ -121,21 +121,19 @@ a {
     text-decoration: inherit;
     width: 1em;
     text-align: center;
-     
-    /* For safety - reset parent styles, that can break glyph codes*/
+    
     font-variant: normal;
     text-transform: none;
     
-    /* fix buttons height, for twitter bootstrap */
     line-height: 1em;
-     
-    /* Font smoothing. That was taken from TWBS */
+    
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 .box {
     position: relative;
+    padding: 10px;
 }
 
 .box::before {
@@ -165,7 +163,7 @@ a {
     transform: translateY(-100%);
 }
 
-#header .navbar {
+#navbar {
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -174,30 +172,30 @@ a {
     transition: background-color .2s;
 }
 
-#header .navbar .hamburger {
+#hamburger {
     display: none;
 }
 
-#header .navbar.navigating {
+#navbar.navigating {
     background-color: var(--navbar_color_navigation);
 }
 
-#header .navbar .brand h1 {
+#navbar .brand h1 {
     font-size: 2.5rem;
     font-weight: 500;
     text-transform: uppercase;
     padding: 5px;
 }
 
-#header .navbar .navlist {
+#navlist {
     list-style: none;
 }
 
-#header .navbar .navlist li {
+#navlist li {
     display: inline;
 }
 
-#header .navbar .navlist li a {
+#navlist li a {
     font-size: 1.8rem;
     font-weight: 500;
     text-transform: uppercase;
@@ -241,33 +239,33 @@ a {
     align-items: center;
 }
 
-#hero .container .brand {
+#hero-main {
     position: relative;
     z-index: 1;
     left: 14%;
 }
 
-#hero .container .brand .hidden {
+#hero-main .hidden {
     opacity: 0;
     cursor: default;
     pointer-events: none;
 }
 
-#hero .container .brand .fadein {
+#hero-main .fadein {
     transition: opacity var(--fadein_animation_duration);
 }
 
-#hero .container .brand h1 {
+#hero-main h1 {
     font-size: 5rem;
     font-weight: 600;
 }
 
-#hero .container .brand h2 {
+#hero-main h2 {
     font-size: 3rem;
     font-weight: 200;
 }
 
-#hero .container .brand a {
+#hero-main a {
     display: inline-block;
     max-width: 300px;
     text-align: center;
@@ -281,7 +279,7 @@ a {
     transition: background-color .3s, color .3s;
 }
 
-#hero .container .brand a:hover {
+#hero-main a:hover {
     background-color: var(--primary_color);
     color: black;
 }
@@ -297,42 +295,42 @@ a {
     background-color: var(--secondary_color);
 }
 
-#about .container .profile {
+#profile {
     display: flex;
 }
 
-#about .container .profile img {
+#profile img {
     width: 400px;
     height: 400px;
-    border-radius: 50%;
     margin: 20px;
+    border-radius: 50%;
 }
 
-#about .container .profile > div p {
+#profile > div p {
     position: relative;
     font-size: 2rem;
     font-weight: 200;
     padding: 20px;
 }
 
-#about .container .profile > div > div {
+#profile > div > div {
     margin: 10px;
     margin-top: 20px;
 }
 
-#about .container .profile > div > div .contacts,
-#about .container .profile > div > div .social {
+#contacts,
+#social {
     font-size: 2rem;
     font-weight: 300;
     margin-bottom: 16px;
 }
 
-#about .container .profile h1 {
+#profile h1 {
     font-size: 3rem;
     font-weight: 300;
 }
 
-#about .container .profile > div > div .contacts > div {
+#contacts > div {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -348,56 +346,39 @@ a {
     align-items: center;
 }
 
-#about .container .profile > div > div .contacts > div span {
+#contacts > div span {
     padding: 8px;
     white-space: nowrap;
 }
 
-#about .container .profile > div > div .social .icons a {
+#social .icons a {
     display: inline-block;
     margin: 8px 4px 0px 8px;
 }
 
-#about .container .profile .icon {
+#profile .icon {
     width: 40px;
     height: 40px;
     background-size: cover;
-    transition: background-image .1s linear;
 }
 
-#about .container .profile > div > div .social .icons a .icon-linkedin {
+#social .icons a .icon-linkedin {
     background-image: url(/assets/img/icons/linkedin.png);
 }
 
-#about .container .profile > div > div .social .icons a .icon-linkedin:hover {
-    background-image: url(/assets/img/icons/linkedin_hover.png);
-}
-
-#about .container .profile > div > div .social .icons a .icon-github {
+#social .icons a .icon-github {
     background-image: url(/assets/img/icons/github.png);
 }
 
-#about .container .profile > div > div .social .icons a .icon-github:hover {
-    background-image: url(/assets/img/icons/github_hover.png);
-}
-
-#about .container .profile > div > div .social .icons a .icon-instagram {
+#social .icons a .icon-instagram {
     background-image: url(/assets/img/icons/instagram.png);
 }
 
-#about .container .profile > div > div .social .icons a .icon-instagram:hover {
-    background-image: url(/assets/img/icons/instagram_hover.png);
-}
-
-#about .container .profile > div > div .social .icons a .icon-facebook {
+#social .icons a .icon-facebook {
     background-image: url(/assets/img/icons/facebook.png);
 }
 
-#about .container .profile > div > div .social .icons a .icon-facebook:hover {
-    background-image: url(/assets/img/icons/facebook_hover.png);
-}
-
-#about .container .reviews {
+#reviews {
     width: 100%;
     height: 200px;
     margin-top: 20px;
@@ -415,6 +396,10 @@ a {
     min-height: 100vh;
 }
 
+#skills #skill-message-h1 {
+    display: none;
+}
+
 #skills .container {
     flex-direction: row;
     width: 100%;
@@ -422,24 +407,18 @@ a {
     align-items: flex-start;
 }
 
-#skills .container .box {
-    align-items: stretch;
-}
-
 #skills .container .box h1 {
     font-size: 3rem;
     font-weight: 400;
-    margin: 4px 0px 0px 10px;
+    margin: 5px 0px 0px 10px;
 }
 
-#skills .container .skill-list {
+#skill-list {
     list-style: none;
-    margin-right: 10px;
 }
 
-#skills .container .skill-list li {
+#skill-list > li {
     margin: 10px 0px 10px 0px;
-    padding: 10px;
 }
 
 #skills .container ul li:nth-child(1) {
@@ -451,12 +430,34 @@ a {
 }
 
 #skills .skill-item {
-    margin: 8px;
     background-color: rgba(255, 255, 255, 0.75);
     box-shadow: 2px 2px 5px var(--background_color_dark);
     border-radius: 2%;
-    cursor: pointer;
     width: fit-content;
+}
+
+#skills .icons {
+    display: flex;
+    margin: 10px;
+    list-style: none;
+}
+
+#skills .icons > li {
+    margin: 0px 7px 0px 7px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#skills .icons > li:nth-child(1) {
+    margin-left: 0px;
+}
+
+#skills .icons > li:nth-last-child(1) {
+    margin-right: 0px;
+}
+
+#skill-preview-content .skill-item {
+    background-color: white;
 }
 
 #skills .skill-item h2 {
@@ -473,40 +474,120 @@ a {
     margin: 20px;
 }
 
-#skills .container .skill-preview {
+#skill-preview {
     width: 60%;
-    padding: 10px;
-    margin-left: 10px;
-    display: none;
+    margin-left: 20px;
 }
 
-#skills .container .skill-preview .skill-brief .skill-item {
+#skill-preview h1 {
+    white-space: nowrap;
+}
+
+#skill-preview-content {
+    overflow: hidden;
+}
+
+#skill-brief {
+    margin: 10px;
+    display: inline-block;
+}
+
+#skill-brief .skill-item {
     margin-right: 20px;
+    margin-bottom: 10px;
+    float: left;
 }
 
-#skills .container .skill-preview .skill-brief {
-    margin: 8px;
+#skill-brief .skill-item .skill-icon {
+    transition: background-image .1s linear;
+    background-image: url(../assets/img/skills/placeholder.svg);
+    background-size: cover;
+}
+
+#skill-brief .skill-details {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-#skills .container .skill-preview .skill-brief .skill-item .skill-icon {
-    width: 120px;
-    height: 120px;
-}
-
-#skills .container .skill-preview .skill-brief div h2 {
+#skill-brief .skill-details h2 {
     font-size: 2.6rem;
-    font-weight: 400;
-    margin-bottom: 4px;
+    font-weight: 700;
+    line-height: 2rem;
+    margin-bottom: 5px;
 }
 
-#skills .container .skill-preview .skill-brief .skill-item h2 {
-    color: transparent;
+#skill-brief .skill-details h3 {
+    font-size: 2.3rem;
+    font-weight: 200;
 }
 
-#skills .icons {
+#skill-brief .skill-details h3 .bold {
+    font-weight: 500;
+}
+
+#skill-brief p {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+#skill-noprojects {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin: 10px;
+}
+
+#skill-projects {
+    list-style: none;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 18px;
+    margin: 10px;
+}
+
+#skill-projects .project {
+    position: relative;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 5px var(--background_color_dark);
+    margin: 0px;
+    cursor: pointer;
+}
+
+#skill-projects .project::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(10, 30, 60);
+    opacity: 0;
+}
+
+#skill-projects .project .space {
+    height: 290px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#skill-projects .project h2 {
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    line-height: 40px;
+    z-index: 2;
+    justify-self: end;
+}
+
+#skills .fa-search-plus {
+    font-size: 3rem;
+    display: none;
+    z-index: 2;
 }
 
 /* ----------------------------------------  EDUCATION   ---------------------------------------- */
@@ -537,7 +618,7 @@ a {
     width: 130px;
 }
 
-#education .container .mmus a img {
+#mmus a img {
     border-radius: 8%;
 }
 
@@ -652,12 +733,40 @@ a {
         color: var(--secondary_color) !important;
     }
 
-    #skills .skill-item {
+    #profile .icon {
+        transition: background-image .1s linear;
+    }
+
+    #social .icons a .icon-linkedin:hover {
+        background-image: url(/assets/img/icons/linkedin_hover.png);
+    }
+    
+    #social .icons a .icon-github:hover {
+        background-image: url(/assets/img/icons/github_hover.png);
+    }
+    
+    #social .icons a .icon-instagram:hover {
+        background-image: url(/assets/img/icons/instagram_hover.png);
+    }
+    
+    #social .icons a .icon-facebook:hover {
+        background-image: url(/assets/img/icons/facebook_hover.png);
+    }
+
+    #skill-list .skill-item {
         transition: background-color .1s linear;
     }
 
-    #skills .skill-item:hover {
+    #skill-list .skill-item .skill-icon {
+        transition: transform .2s;
+    }
+
+    #skill-list .skill-item:hover {
         background-color: white;
+    }
+
+    #skill-list .skill-item:hover .skill-icon {
+        transform: scale(1.05);
     }
 
     #education .box::before {
@@ -666,5 +775,35 @@ a {
 
     #education .box:hover::before {
         background-color: var(--secondary_color);
+    }
+
+    #skill-projects .project {
+        transition: transform .3s;
+    }
+
+    #skill-projects .project:hover {
+        transform: scale(1.01);
+    }
+
+    #skill-projects .project::after {
+        opacity: 0;
+        transition: opacity .1s linear;
+    }
+
+    #skill-projects .project:hover::after {
+        opacity: 0.7;
+    }
+
+    #skill-projects .project:hover .fa-search-plus {
+        transform: translateY(0%);
+        opacity: 0.8;
+        transition: transform .4s, opacity .2s;
+    }
+
+    #skill-projects .fa-search-plus {
+        display: initial;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform .4s, opacity .2s .1s;
     }
 }

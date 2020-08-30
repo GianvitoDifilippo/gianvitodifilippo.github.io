@@ -33,10 +33,49 @@
         }
     },
     "skills": {
-        "languages": "Linguaggi",
-        "tools": "Strumenti",
-        "backend": "Back-end",
-        "webdev": "Sviluppo web"
+        "skill-list": {
+            "languages": "Linguaggi",
+            "tools": "Strumenti",
+            "backend": "Back-end",
+            "webdev": "Sviluppo web"
+        },
+        "skill-preview": {
+            "message": "Clicca su una skill per mostrarne i dettagli",
+            "details": "Dettagli",
+            "experience": {
+                "key": "Esperienza:",
+                "value": {
+                    "cplusplus": "universitaria, personale",
+                    "csharp": "professionale",
+                    "python": "universitaria, professionale",
+                    "java": "personale",
+                    "matlab": "universitaria",
+                    "labview": "universitaria",
+                    "docker": "professionale",
+                    "dotnet": "professionale",
+                    "postgresql": "professionale",
+                    "html": "personale",
+                    "css": "personale",
+                    "javascript": "personale"
+                }
+            },
+            "since": "Programmo dal:",
+            "descr": {
+                "cplusplus": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur cupiditate unde alias harum quo in obcaecati quibusdam tempora error cum assumenda saepe molestias nam illo ad voluptatibus adipisci animi, a fugit. Voluptatum cupiditate obcaecati rem illo, atque unde inventore ut!",
+                "csharp": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur cupiditate unde alias harum quo in obcaecati quibusdam tempora error cum assumenda saepe molestias nam illo ad voluptatibus adipisci animi, a fugit. Voluptatum cupiditate obcaecati rem illo, atque unde inventore ut!",
+                "python": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur cupiditate unde alias harum quo in obcaecati quibusdam tempora error cum assumenda saepe molestias nam illo ad voluptatibus adipisci animi, a fugit. Voluptatum cupiditate obcaecati rem illo, atque unde inventore ut!",
+                "java": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur cupiditate unde alias harum quo in obcaecati quibusdam tempora error cum assumenda saepe molestias nam illo ad voluptatibus adipisci animi, a fugit. Voluptatum cupiditate obcaecati rem illo, atque unde inventore ut!",
+                "matlab": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur cupiditate unde alias harum quo in obcaecati quibusdam tempora error cum assumenda saepe molestias nam illo ad voluptatibus adipisci animi, a fugit. Voluptatum cupiditate obcaecati rem illo, atque unde inventore ut!",
+                "labview": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur cupiditate unde alias harum quo in obcaecati quibusdam tempora error cum assumenda saepe molestias nam illo ad voluptatibus adipisci animi, a fugit. Voluptatum cupiditate obcaecati rem illo, atque unde inventore ut!",
+                "docker": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur cupiditate unde alias harum quo in obcaecati quibusdam tempora error cum assumenda saepe molestias nam illo ad voluptatibus adipisci animi, a fugit. Voluptatum cupiditate obcaecati rem illo, atque unde inventore ut!",
+                "dotnet": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur cupiditate unde alias harum quo in obcaecati quibusdam tempora error cum assumenda saepe molestias nam illo ad voluptatibus adipisci animi, a fugit. Voluptatum cupiditate obcaecati rem illo, atque unde inventore ut!",
+                "postgresql": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur cupiditate unde alias harum quo in obcaecati quibusdam tempora error cum assumenda saepe molestias nam illo ad voluptatibus adipisci animi, a fugit. Voluptatum cupiditate obcaecati rem illo, atque unde inventore ut!",
+                "html": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur cupiditate unde alias harum quo in obcaecati quibusdam tempora error cum assumenda saepe molestias nam illo ad voluptatibus adipisci animi, a fugit. Voluptatum cupiditate obcaecati rem illo, atque unde inventore ut!",
+                "css": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur cupiditate unde alias harum quo in obcaecati quibusdam tempora error cum assumenda saepe molestias nam illo ad voluptatibus adipisci animi, a fugit. Voluptatum cupiditate obcaecati rem illo, atque unde inventore ut!",
+                "javascript": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur cupiditate unde alias harum quo in obcaecati quibusdam tempora error cum assumenda saepe molestias nam illo ad voluptatibus adipisci animi, a fugit. Voluptatum cupiditate obcaecati rem illo, atque unde inventore ut!"
+            },
+            "projects": "Progetti"
+        }
     },
     "messages": {
         "copied": "Copiato!"

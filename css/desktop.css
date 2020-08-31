@@ -13,6 +13,16 @@
 
 /* ----------------------------------------    COMMON    ---------------------------------------- */
 
+#preloaded_images {
+    width: 0px;
+    height: 0px;
+    background-image: url(../assets/img/icons/facebook_hover.png);
+    background-image: url(../assets/img/icons/github_hover.png);
+    background-image: url(../assets/img/icons/instagram_hover.png);
+    background-image: url(../assets/img/icons/linkedin_hover.png);
+    background-image: url();
+}
+
 :root {
     --primary_color: aqua;
     --secondary_color: rgb(20, 140, 210);
@@ -430,10 +440,11 @@ a {
 }
 
 #skills .skill-item {
+    width: 120px;
+    height: 152px;
     background-color: rgba(255, 255, 255, 0.75);
     box-shadow: 2px 2px 5px var(--background_color_dark);
     border-radius: 2%;
-    width: fit-content;
 }
 
 #skills .icons {
@@ -472,6 +483,55 @@ a {
     width: 80px;
     height: 80px;
     margin: 20px;
+    background-size: cover;
+}
+
+#icon-cplusplus {
+    background-image: url(../assets/img/skills/cplusplus.svg);
+}
+
+#icon-csharp {
+    background-image: url(../assets/img/skills/csharp.svg);
+}
+
+#icon-python {
+    background-image: url(../assets/img/skills/python.svg);
+}
+
+#icon-java {
+    background-image: url(../assets/img/skills/java.svg);
+}
+
+#icon-matlab {
+    background-image: url(../assets/img/skills/matlab.png);
+}
+
+#icon-labview {
+    background-image: url(../assets/img/skills/labview.png);
+}
+
+#icon-docker {
+    background-image: url(../assets/img/skills/docker.svg);
+}
+
+#icon-dotnet {
+    background-image: url(../assets/img/skills/dotnet.svg);
+}
+
+#icon-postgresql {
+    background-image: url(../assets/img/skills/postgresql.svg);
+}
+
+#icon-html {
+    background-image: url(../assets/img/skills/html.svg);
+}
+
+#icon-css {
+    background-image: url(../assets/img/skills/css.svg);
+}
+
+#icon-javascript {
+    background-image: url(../assets/img/skills/javascript.svg);
 }
 
 #skill-preview {
@@ -543,12 +603,11 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 20px;
-    row-gap: 18px;
+    row-gap: 20px;
     margin: 10px;
 }
 
 #skill-projects .project {
-    position: relative;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -557,7 +616,15 @@ a {
     cursor: pointer;
 }
 
-#skill-projects .project::after {
+#skill-projects .project .space {
+    position: relative;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#skill-projects .project .space::after {
     content: '';
     position: absolute;
     left: 0;
@@ -568,16 +635,9 @@ a {
     opacity: 0;
 }
 
-#skill-projects .project .space {
-    height: 290px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #skill-projects .project h2 {
     height: 40px;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.85);
     text-align: center;
     line-height: 40px;
     z-index: 2;
@@ -777,20 +837,12 @@ a {
         background-color: var(--secondary_color);
     }
 
-    #skill-projects .project {
-        transition: transform .3s;
-    }
-
-    #skill-projects .project:hover {
-        transform: scale(1.01);
-    }
-
-    #skill-projects .project::after {
+    #skill-projects .project .space::after {
         opacity: 0;
         transition: opacity .1s linear;
     }
 
-    #skill-projects .project:hover::after {
+    #skill-projects .project:hover .space::after {
         opacity: 0.7;
     }
 

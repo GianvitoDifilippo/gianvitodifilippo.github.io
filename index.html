@@ -108,19 +108,19 @@
                     <h1 data-lang="skills:skill-list:languages">Linguaggi</h1>
                     <ul class="icons">
                         <li class="skill-item" onclick="showSkillDetails('cplusplus')">
-                            <img class="skill-icon noselect" src="./assets/img/skills/cplusplus.svg" alt="">
+                            <div id="icon-cplusplus" class="skill-icon"></div>
                             <h2 class="noselect">C++</h2>
                         </li>
                         <li class="skill-item" onclick="showSkillDetails('csharp')">
-                            <img class="skill-icon noselect" src="./assets/img/skills/csharp.svg" alt="">
+                            <div id="icon-csharp" class="skill-icon"></div>
                             <h2 class="noselect">C#</h2>
                         </li>
                         <li class="skill-item" onclick="showSkillDetails('python')">
-                            <img class="skill-icon noselect" src="./assets/img/skills/python.svg" alt="">
+                            <div id="icon-python" class="skill-icon"></div>
                             <h2 class="noselect">Python</h2>
                         </li>
                         <li class="skill-item" onclick="showSkillDetails('java')">
-                            <img class="skill-icon noselect" src="./assets/img/skills/java.svg" alt="">
+                            <div id="icon-java" class="skill-icon"></div>
                             <h2 class="noselect">Java</h2>
                         </li>
                     </ul>
@@ -129,15 +129,15 @@
                     <h1 data-lang="skills:skill-list:tools">Strumenti</h1>
                     <ul class="icons">
                         <li class="skill-item" onclick="showSkillDetails('matlab')">
-                            <img class="skill-icon noselect" src="./assets/img/skills/matlab.png" alt="">
+                            <div id="icon-matlab" class="skill-icon"></div>
                             <h2 class="noselect">Matlab</h2>
                         </li>
                         <li class="skill-item" onclick="showSkillDetails('labview')">
-                            <img class="skill-icon noselect" src="./assets/img/skills/labview.png" alt="">
+                            <div id="icon-labview" class="skill-icon"></div>
                             <h2 class="noselect">LabVIEW</h2>
                         </li>
                         <li class="skill-item" onclick="showSkillDetails('docker')">
-                            <img class="skill-icon noselect" src="./assets/img/skills/docker.svg" alt="">
+                            <div id="icon-docker" class="skill-icon"></div>
                             <h2 class="noselect">Docker</h2>
                         </li>
                     </ul>
@@ -146,11 +146,11 @@
                     <h1 data-lang="skills:skill-list:backend">Back-end</h1>
                     <ul class="icons">
                         <li class="skill-item" onclick="showSkillDetails('dotnet')">
-                            <img class="skill-icon noselect" src="./assets/img/skills/dotnet.svg" alt="">
+                            <div id="icon-dotnet" class="skill-icon"></div>
                             <h2 class="noselect">.NET Core</h2>
                         </li>
                         <li class="skill-item" onclick="showSkillDetails('postgresql')">
-                            <img class="skill-icon noselect" src="./assets/img/skills/postgresql.svg" alt="">
+                            <div id="icon-postgresql" class="skill-icon"></div>
                             <h2 class="noselect">PostgreSQL</h2>
                         </li>
                     </ul>
@@ -159,15 +159,15 @@
                     <h1 data-lang="skills:skill-list:webdev">Sviluppo web</h1>
                     <ul class="icons">
                         <li class="skill-item" onclick="showSkillDetails('html')">
-                            <img class="skill-icon noselect" src="./assets/img/skills/html.svg" alt="">
+                            <div id="icon-html" class="skill-icon"></div>
                             <h2 class="noselect">HTML</h2>
                         </li>
                         <li class="skill-item" onclick="showSkillDetails('css')">
-                            <img class="skill-icon noselect" src="./assets/img/skills/css.svg" alt="">
+                            <div id="icon-css" class="skill-icon"></div>
                             <h2 class="noselect">CSS</h2>
                         </li>
                         <li class="skill-item" onclick="showSkillDetails('javascript')">
-                            <img class="skill-icon noselect" src="./assets/img/skills/javascript.svg" alt="">
+                            <div id="icon-javascript" class="skill-icon"></div>
                             <h2 class="noselect">JavaScript</h2>
                         </li>
                     </ul>
@@ -259,8 +259,9 @@
     <div id="footer" style="height: 100px; background-color: black;">
 
     </div>
-    <!-- ------------------------------------------       MESSAGE      ------------------------------------------ -->
+    <!-- ------------------------------------------        MISC        ------------------------------------------ -->
     <div id="message" class="noselect"></div>
+    <div id="preloaded_images"></div>
 
     <!-- ------------------------------------------       SCRIPTS      ------------------------------------------ -->
     <script src="https://kit.fontawesome.com/2150929a5b.js" crossorigin="anonymous"></script>

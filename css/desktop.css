@@ -13,16 +13,6 @@
 
 /* ----------------------------------------    COMMON    ---------------------------------------- */
 
-#preloaded_images {
-    width: 0px;
-    height: 0px;
-    background-image: url(../assets/img/icons/facebook_hover.png);
-    background-image: url(../assets/img/icons/github_hover.png);
-    background-image: url(../assets/img/icons/instagram_hover.png);
-    background-image: url(../assets/img/icons/linkedin_hover.png);
-    background-image: url();
-}
-
 :root {
     --primary_color: aqua;
     --secondary_color: rgb(20, 140, 210);
@@ -99,7 +89,7 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: calc(var(--section_title_top) + 11rem) 8vw 0px 8vw;
+    margin: calc(var(--section_title_top) + 13rem) 8vw 0px 8vw;
     z-index: 1;
 }
 
@@ -373,18 +363,22 @@ a {
 }
 
 #social .icons a .icon-linkedin {
+    background-image: url(/assets/img/icons/linkedin_hover.png);
     background-image: url(/assets/img/icons/linkedin.png);
 }
 
 #social .icons a .icon-github {
+    background-image: url(/assets/img/icons/github_hover.png);
     background-image: url(/assets/img/icons/github.png);
 }
 
 #social .icons a .icon-instagram {
+    background-image: url(/assets/img/icons/instagram_hover.png);
     background-image: url(/assets/img/icons/instagram.png);
 }
 
 #social .icons a .icon-facebook {
+    background-image: url(/assets/img/icons/facebook_hover.png);
     background-image: url(/assets/img/icons/facebook.png);
 }
 
@@ -598,6 +592,10 @@ a {
     margin: 10px;
 }
 
+#skill-noprojects a {
+    font-weight: 500;
+}
+
 #skill-projects {
     list-style: none;
     display: grid;
@@ -608,12 +606,22 @@ a {
 }
 
 #skill-projects .project {
-    background-size: cover;
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     box-shadow: 2px 2px 5px var(--background_color_dark);
     margin: 0px;
     cursor: pointer;
+}
+
+#skill-projects .project .project-background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
 }
 
 #skill-projects .project .space {
@@ -818,7 +826,7 @@ a {
     }
 
     #skill-list .skill-item .skill-icon {
-        transition: transform .2s;
+        transition: transform .2s ease-out;
     }
 
     #skill-list .skill-item:hover {
@@ -837,9 +845,17 @@ a {
         background-color: var(--secondary_color);
     }
 
+    #skill-projects .project .project-background {
+        transition: transform .4s ease-out;
+    }
+
+    #skill-projects .project:hover .project-background {
+        transform: scale(1.04);
+    }
+
     #skill-projects .project .space::after {
         opacity: 0;
-        transition: opacity .1s linear;
+        transition: opacity .2s linear;
     }
 
     #skill-projects .project:hover .space::after {
@@ -849,13 +865,13 @@ a {
     #skill-projects .project:hover .fa-search-plus {
         transform: translateY(0%);
         opacity: 0.8;
-        transition: transform .4s, opacity .2s;
+        transition: transform .4s ease-out, opacity .2s linear;
     }
 
     #skill-projects .fa-search-plus {
         display: initial;
         transform: translateY(-100%);
         opacity: 0;
-        transition: transform .4s, opacity .2s .1s;
+        transition: transform .4s ease-out, opacity .2s .1s linear;
     }
 }

@@ -122,28 +122,37 @@ function showSkillDetails(skill)
         skill_descr.textContent = translateText(`skills:skill-preview:descr:${skill}`);
 
         Array.from(skill_projects.getElementsByTagName('li')).forEach(child => skill_projects.removeChild(child));
-
+        
         if (projects != undefined) {
             projects.forEach(project => {
                 let li = document.createElement('li');
                 li.classList.add('project');
-                    let div = document.createElement('div');
-                    div.classList.add('space');
+                    let background = document.createElement('div');
+                    background.classList.add('project-background');
+                    let space = document.createElement('div');
+                    space.classList.add('space');
                         let i = document.createElement('i');
                         i.classList.add('fas');
                         i.classList.add('fa-search-plus');
-                        div.appendChild(i);
+                        space.appendChild(i);
                     let h2 = document.createElement('h2');
                     h2.textContent = project.name;
-                li.appendChild(div);
+                li.appendChild(background);
+                li.appendChild(space);
                 li.appendChild(h2);
                 
-                li.style.backgroundImage = `url(./assets/img/projects/${project.id}_thumbnail.jpg)`;
+                background.style.backgroundImage = `url(./assets/img/projects/${project.id}_thumbnail.jpg)`;
                 if (project.backgroundPositionX != undefined) {
-                    li.style.backgroundPositionX = `${project.backgroundPositionX}px`;
+                    background.style.backgroundPositionX = project.backgroundPositionX;
                 }
                 if (project.backgroundPositionY != undefined) {
-                    li.style.backgroundPositionY = `${project.backgroundPositionY}px`;
+                    background.style.backgroundPositionY = project.backgroundPositionY;
+                }
+                if (project.backgroundScale != undefined && !isNaN(project.backgroundScale) && project.backgroundScale > 1) {
+                    background.style.width = `${project.backgroundScale * 100}%`;
+                    background.style.height = `${project.backgroundScale * 100}%`;
+                    background.style.left = `${-(project.backgroundScale - 1) * 50}%`;
+                    background.style.top = `${-(project.backgroundScale - 1) * 50}%`;
                 }
                 skill_projects.appendChild(li);
             });
@@ -173,9 +182,9 @@ function showSkillDetails(skill)
                 break;
             case 'java':
                 setDetails('Java', 2014, 'svg', [
-                    { id: 'magicbet', name: 'MagicBet'},
-                    { id: 'voicenotes', name: 'Voice Notes', backgroundPositionX: -70 },
-                    { id: 'supermario', name: 'Super Mario Clone', backgroundPositionY: -144 }
+                    { id: 'magicbet', name: 'MagicBet', backgroundScale: 1.1 },
+                    { id: 'voicenotes', name: 'Voice Notes', backgroundPositionX: '-70px' },
+                    { id: 'supermario', name: 'Super Mario Clone', backgroundPositionY: '-144px' }
                 ]);
                 break;
             case 'matlab':
@@ -194,13 +203,19 @@ function showSkillDetails(skill)
                 setDetails('PostgreSQL', 2020, 'svg');
                 break;
             case 'html':
-                setDetails('HTML', 2020, 'svg');
+                setDetails('HTML', 2020, 'svg', [
+                    { id: 'portfolio', name: 'This portfolio website', backgroundPositionX: 'center' }
+                ]);
                 break;
             case 'css':
-                setDetails('CSS', 2020, 'svg');
+                setDetails('CSS', 2020, 'svg', [
+                    { id: 'portfolio', name: 'This portfolio website', backgroundPositionX: 'center' }
+                ]);
                 break;
             case 'javascript':
-                setDetails('JavaScript', 2020, 'svg');
+                setDetails('JavaScript', 2020, 'svg', [
+                    { id: 'portfolio', name: 'This portfolio website', backgroundPositionX: 'center' }
+                ]);
                 break;
         }
         if (current_skill == null) {

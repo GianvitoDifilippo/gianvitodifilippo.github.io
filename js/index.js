@@ -115,8 +115,8 @@ function showSkillDetails(skill)
     function setDetails(skillName, sinceYear, imgExtension, projects) {
         skill_icon.style.backgroundImage = `url(./assets/img/skills/${skill}.${imgExtension})`;
         skill_name.forEach(item => item.textContent = skillName);
-        skill_exp_value.setAttribute('data-lang', `skills:skill-preview:experience:value:${skill}`);
-        skill_exp_value.textContent = translateText(`skills:skill-preview:experience:value:${skill}`);
+        skill_exp_value.setAttribute('data-lang', `skills:skill-preview:experience:values:${skill}`);
+        skill_exp_value.textContent = translateText(`skills:skill-preview:experience:values:${skill}`);
         skill_since_value.textContent = String(sinceYear);
         skill_descr.setAttribute('data-lang', `skills:skill-preview:descr:${skill}`);
         skill_descr.textContent = translateText(`skills:skill-preview:descr:${skill}`);
@@ -124,22 +124,22 @@ function showSkillDetails(skill)
         Array.from(skill_projects.getElementsByTagName('li')).forEach(child => skill_projects.removeChild(child));
         
         if (projects != undefined) {
-            projects.forEach(project => {
+            projects.filter(project => project.id != undefined).forEach(project => {
                 let li = document.createElement('li');
                 li.classList.add('project');
                     let background = document.createElement('div');
                     background.classList.add('project-background');
                     let space = document.createElement('div');
                     space.classList.add('space');
-                        let i = document.createElement('i');
-                        i.classList.add('fas');
-                        i.classList.add('fa-search-plus');
-                        space.appendChild(i);
-                    let h2 = document.createElement('h2');
-                    h2.textContent = project.name;
+                        let search = document.createElement('i');
+                        search.classList.add('fas');
+                        search.classList.add('fa-search-plus');
+                        space.appendChild(search);
+                    let name = document.createElement('h2');
+                    name.textContent = project.name != undefined ? project.name : project.id;
                 li.appendChild(background);
                 li.appendChild(space);
-                li.appendChild(h2);
+                li.appendChild(name);
                 
                 background.style.backgroundImage = `url(./assets/img/projects/${project.id}_thumbnail.jpg)`;
                 if (project.backgroundPositionX != undefined) {
@@ -171,7 +171,7 @@ function showSkillDetails(skill)
         switch(skill) {
             case 'cplusplus':
                 setDetails('C++', 2014, 'svg', [
-                    { id: 'audioengineer', name: 'AudioEngineer'}
+                    { id: 'audioengineer', name: 'AudioEngineer' }
                 ]);
                 break;
             case 'csharp':
@@ -182,8 +182,8 @@ function showSkillDetails(skill)
                 break;
             case 'java':
                 setDetails('Java', 2014, 'svg', [
-                    { id: 'magicbet', name: 'MagicBet', backgroundScale: 1.1 },
-                    { id: 'voicenotes', name: 'Voice Notes', backgroundPositionX: '-70px' },
+                    { id: 'magicbet',   name: 'MagicBet',          backgroundScale: 1.1 },
+                    { id: 'voicenotes', name: 'Voice Notes',       backgroundPositionX: '-70px' },
                     { id: 'supermario', name: 'Super Mario Clone', backgroundPositionY: '-144px' }
                 ]);
                 break;
@@ -204,17 +204,17 @@ function showSkillDetails(skill)
                 break;
             case 'html':
                 setDetails('HTML', 2020, 'svg', [
-                    { id: 'portfolio', name: 'This portfolio website', backgroundPositionX: 'center' }
+                    { id: 'portfolio', name: 'Portfolio website', backgroundPositionX: 'center' }
                 ]);
                 break;
             case 'css':
                 setDetails('CSS', 2020, 'svg', [
-                    { id: 'portfolio', name: 'This portfolio website', backgroundPositionX: 'center' }
+                    { id: 'portfolio', name: 'Portfolio website', backgroundPositionX: 'center' }
                 ]);
                 break;
             case 'javascript':
                 setDetails('JavaScript', 2020, 'svg', [
-                    { id: 'portfolio', name: 'This portfolio website', backgroundPositionX: 'center' }
+                    { id: 'portfolio', name: 'Portfolio website', backgroundPositionX: 'center' }
                 ]);
                 break;
         }

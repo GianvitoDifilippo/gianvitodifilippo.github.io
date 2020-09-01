@@ -104,7 +104,7 @@ a {
 
 .neon,
 .neon_secondary {
-    transition: color .2s;
+    transition: color .3s;
 }
 
 .neon.neon_animation,
@@ -363,22 +363,18 @@ a {
 }
 
 #social .icons a .icon-linkedin {
-    background-image: url(/assets/img/icons/linkedin_hover.png);
     background-image: url(/assets/img/icons/linkedin.png);
 }
 
 #social .icons a .icon-github {
-    background-image: url(/assets/img/icons/github_hover.png);
     background-image: url(/assets/img/icons/github.png);
 }
 
 #social .icons a .icon-instagram {
-    background-image: url(/assets/img/icons/instagram_hover.png);
     background-image: url(/assets/img/icons/instagram.png);
 }
 
 #social .icons a .icon-facebook {
-    background-image: url(/assets/img/icons/facebook_hover.png);
     background-image: url(/assets/img/icons/facebook.png);
 }
 
@@ -396,16 +392,11 @@ a {
 
 /* ----------------------------------------    SKILLS    ---------------------------------------- */
 
-#skills.section {
-    min-height: 100vh;
-}
-
 #skills #skill-message-h1 {
     display: none;
 }
 
 #skills .container {
-    flex-direction: row;
     width: 100%;
     justify-content: space-between;
     align-items: flex-start;
@@ -481,51 +472,51 @@ a {
 }
 
 #icon-cplusplus {
-    background-image: url(../assets/img/skills/cplusplus.svg);
+    background-image: url(/assets/img/skills/cplusplus.svg);
 }
 
 #icon-csharp {
-    background-image: url(../assets/img/skills/csharp.svg);
+    background-image: url(/assets/img/skills/csharp.svg);
 }
 
 #icon-python {
-    background-image: url(../assets/img/skills/python.svg);
+    background-image: url(/assets/img/skills/python.svg);
 }
 
 #icon-java {
-    background-image: url(../assets/img/skills/java.svg);
+    background-image: url(/assets/img/skills/java.svg);
 }
 
 #icon-matlab {
-    background-image: url(../assets/img/skills/matlab.png);
+    background-image: url(/assets/img/skills/matlab.png);
 }
 
 #icon-labview {
-    background-image: url(../assets/img/skills/labview.png);
+    background-image: url(/assets/img/skills/labview.png);
 }
 
 #icon-docker {
-    background-image: url(../assets/img/skills/docker.svg);
+    background-image: url(/assets/img/skills/docker.svg);
 }
 
 #icon-dotnet {
-    background-image: url(../assets/img/skills/dotnet.svg);
+    background-image: url(/assets/img/skills/dotnet.svg);
 }
 
 #icon-postgresql {
-    background-image: url(../assets/img/skills/postgresql.svg);
+    background-image: url(/assets/img/skills/postgresql.svg);
 }
 
 #icon-html {
-    background-image: url(../assets/img/skills/html.svg);
+    background-image: url(/assets/img/skills/html.svg);
 }
 
 #icon-css {
-    background-image: url(../assets/img/skills/css.svg);
+    background-image: url(/assets/img/skills/css.svg);
 }
 
 #icon-javascript {
-    background-image: url(../assets/img/skills/javascript.svg);
+    background-image: url(/assets/img/skills/javascript.svg);
 }
 
 #skill-preview {
@@ -542,6 +533,7 @@ a {
 }
 
 #skill-brief {
+    width: 100%;
     margin: 10px;
     display: inline-block;
 }
@@ -554,7 +546,7 @@ a {
 
 #skill-brief .skill-item .skill-icon {
     transition: background-image .1s linear;
-    background-image: url(../assets/img/skills/placeholder.svg);
+    background-image: url(/assets/img/skills/placeholder.svg);
     background-size: cover;
 }
 
@@ -580,7 +572,7 @@ a {
     font-weight: 500;
 }
 
-#skill-brief p {
+#skill-brief .skill-descr {
     font-size: 1.6rem;
     font-weight: 300;
     margin-top: 10px;
@@ -667,22 +659,36 @@ a {
     flex: 1 1 0px;
 }
 
-#education .container .box {
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    justify-content: stretch;
-    width: 100%;
-    margin: 10px;
-    padding: 10px;
+#education .container ul {
+    list-style: none;
 }
 
-#education .container .box a {
+#education .container ul > li {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: stretch;
+    margin: 10px 0px 10px 0px;
+}
+
+#education .container ul > li:nth-child(1) {
+    margin-top: 0px;
+}
+
+#education .container ul > li:nth-last-child(1) {
+    margin-bottom: 0px;
+}
+
+#education .container ul .box {
+    position: relative;
+    width: 100%;
+}
+
+#education .container ul .box > a {
     margin: 10px;
     margin-right: 30px;
 }
 
-#education .container .box a img {
+#education .container ul .box a img {
     width: 130px;
 }
 
@@ -690,25 +696,24 @@ a {
     border-radius: 8%;
 }
 
-#education .container .box .edu-descr {
+#education .container ul .box .edu-descr {
     margin: 8px;
 }
 
-#education .container .box .edu-descr h1 {
+#education .container ul .box .edu-descr h1 {
     font-size: 2.2rem;
     font-weight: 400;
     margin-bottom: .4rem;
 }
 
-#education .container .box .edu-descr h2,
-#education .container .box .edu-descr h2 {
+#education .container ul .box .edu-descr h2 {
     font-size: 1.6rem;
     font-weight: 700;
     display: block;
     margin-bottom: 1rem;
 }
 
-#education .container .box .edu-descr h3 {
+#education .container ul .box .edu-descr h3 {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -718,7 +723,7 @@ a {
     margin-right: 6px;
 }
 
-#education .container .box .edu-descr p {
+#education .container ul .box .edu-descr p {
     margin-bottom: .4rem;
     font-size: 1.6rem;
 }

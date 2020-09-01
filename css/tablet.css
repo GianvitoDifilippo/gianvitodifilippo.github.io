@@ -29,7 +29,7 @@ body.stop_scroll {
 }
 
 .container {
-    margin: calc(var(--section_title_top) + 8.5rem) 7.5vw 0px 7.5vw;
+    margin: calc(var(--section_title_top) + 10rem) 7.5vw 0px 7.5vw;
 }
 
 .neon.neon_animation {

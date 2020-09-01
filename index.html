@@ -180,24 +180,28 @@
                     <div id="skill-brief">
                         <div class="skill-item">
                             <div class="skill-icon"></div>
-                            <h2 class="skill-name noselect">...</h2>
+                            <h2 class="skill-name noselect"></h2>
                         </div>
                         <div class="skill-details">
-                            <h2 class="skill-name">...</h2>
+                            <h2 class="skill-name"></h2>
                             <h3 class="skill-experience">
-                                <span class="key bold" data-lang="skills:skill-preview:experience:key">Esperienza:</span> <span class="value">...</span>
+                                <span class="key bold" data-lang="skills:skill-preview:experience:key">Esperienza:</span> <span class="value"></span>
                             </h3>
                             <h3 class="skill-since">
-                                <span class="key bold" data-lang="skills:skill-preview:since">Programmo dal:</span> <span class="value">...</span>
+                                <span class="key bold" data-lang="skills:skill-preview:since">Programmo dal:</span> <span class="value"></span>
                             </h3>
                         </div>
                         <p class="skill-descr"></p>
                     </div>
                     <h1 data-lang="skills:skill-preview:projects">Progetti</h1>
                     <ul id="skill-projects"></ul>
-                    <p id="skill-noprojects" data-lang="skills:skill-preview:noprojects">
-                        Non ci sono progetti per questa skill al momento, ma possiamo avviare il primo insieme. 
-                        <a href="mailto:gianvito.difilippo@gmail.com" class="neon_activator neon">Contattami!</a>
+                    <p id="skill-noprojects">
+                        <span data-lang="skills:skill-preview:noprojects_message">
+                            Non ci sono progetti per questa skill al momento, ma possiamo avviare il primo insieme.
+                        </span> 
+                        <a href="mailto:gianvito.difilippo@gmail.com" class="neon_activator neon" data-lang="skills:skill-preview:noprojects_contactme">
+                            Contattami!
+                        </a>
                     </p>
                 </div>
             </div>
@@ -207,45 +211,47 @@
     <!-- ------------------------------------------ EDUCATION SECTION  ------------------------------------------ -->
     <section id="education" class="section">
         <div class="container">
-            <div id="bsc" class="box">
-                <a class="noselect" href="http://www.poliba.it/" target="_blank"><img src="./assets/img/edu/poliba.png" alt=""></a>
-                <span class="edu-descr">
-                    <h1 data-lang="education:bsc:h1">Laurea Triennale in Ingegneria Informatica e dell'Automazione</h1>
-                    <h2>Politecnico di Bari</h2>
-                    <h3>2014-2017</h3>
-                    <p data-lang="education:bsc:p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga amet odio atque explicabo nisi tempore ducimus fugiat, et minus sit.</p>
-                    <p data-lang="education:bsc:score">Voto finale: 110/110 e Lode</p>
-                </span>
-            </div>
-            <div id="msc" class="box">
-                <a class="noselect" href="http://www.poliba.it/" target="_blank"><img src="./assets/img/edu/poliba.png" alt=""></a>
-                <div class="edu-descr">
-                    <h1 data-lang="education:msc:h1">Laurea Magistrale in Ingegneria dell'Automazione</h1>
-                    <h2>Politecnico di Bari</h2>
-                    <h3>2017-2019</h3>
-                    <p data-lang="education:msc:p1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque optio ullam quis. Aut excepturi quo quidem quam impedit autem esse?</p>
-                    <p data-lang="education:msc:score">Voto finale: 110/110 e Lode</p>
-                </div>
-            </div>
-            <div id="erasmus" class="box">
-                <a class="noselect" href="https://www.upm.es/" target="_blank"><img src="./assets/img/edu/upm.png" alt=""></a>
-                <div class="edu-descr">
-                    <h1 data-lang="education:erasmus:h1">Master in Big Data e Telecomunicazioni</h1>
-                    <h2>Universidad Politécnica de Madrid</h2>
-                    <h3>2019</h3>
-                    <p data-lang="education:erasmus:p1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem optio, omnis nihil quibusdam ex ducimus esse cum voluptatibus possimus quam.</p>
-                </div>
-            </div>
-            <div id="mmus" class="box">
-                <a class="noselect" href="http://www.consba.it/" target="_blank"><img src="./assets/img/edu/piccinni.png" alt=""></a>
-                <div class="edu-descr">
-                    <h1 data-lang="education:mmus:h1">Diploma di Secondo Livello in Chitarra</h1>
-                    <h2>Conservatorio di Musica N. Piccinni</h2>
-                    <h3>2011-2018</h3>
-                    <p data-lang="education:mmus:p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem laborum unde nisi eligendi maxime iure ratione saepe fugit, beatae ipsum?</p>
-                    <p data-lang="education:mmus:score"> Voto finale: 10/10</p>
-                </div>
-            </div>
+            <ul>
+                <li id="bsc" class="box">
+                    <a class="noselect" href="http://www.poliba.it/" target="_blank"><img src="./assets/img/edu/poliba.png" alt=""></a>
+                    <span class="edu-descr">
+                        <h1 data-lang="education:bsc:h1">Laurea Triennale in Ingegneria Informatica e dell'Automazione</h1>
+                        <h2><a href="http://www.poliba.it/" target="_blank">Politecnico di Bari</a></h2>
+                        <h3>2014-2017</h3>
+                        <p data-lang="education:bsc:p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga amet odio atque explicabo nisi tempore ducimus fugiat, et minus sit.</p>
+                        <p data-lang="education:bsc:score">Voto finale: 110/110 e Lode</p>
+                    </span>
+                </li>
+                <li id="msc" class="box">
+                    <a class="noselect" href="http://www.poliba.it/" target="_blank"><img src="./assets/img/edu/poliba.png" alt=""></a>
+                    <div class="edu-descr">
+                        <h1 data-lang="education:msc:h1">Laurea Magistrale in Ingegneria dell'Automazione</h1>
+                        <h2><a href="http://www.poliba.it/" target="_blank">Politecnico di Bari</a></h2>
+                        <h3>2017-2019</h3>
+                        <p data-lang="education:msc:p1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque optio ullam quis. Aut excepturi quo quidem quam impedit autem esse?</p>
+                        <p data-lang="education:msc:score">Voto finale: 110/110 e Lode</p>
+                    </div>
+                </li>
+                <li id="erasmus" class="box">
+                    <a class="noselect" href="https://www.upm.es/" target="_blank"><img src="./assets/img/edu/upm.png" alt=""></a>
+                    <div class="edu-descr">
+                        <h1 data-lang="education:erasmus:h1">Master in Big Data e Telecomunicazioni</h1>
+                        <h2><a href="https://www.upm.es/" target="_blank">Universidad Politécnica de Madrid</a></h2>
+                        <h3>2019</h3>
+                        <p data-lang="education:erasmus:p1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem optio, omnis nihil quibusdam ex ducimus esse cum voluptatibus possimus quam.</p>
+                    </div>
+                </li>
+                <li id="mmus" class="box">
+                    <a class="noselect" href="http://www.consba.it/" target="_blank"><img src="./assets/img/edu/piccinni.png" alt=""></a>
+                    <div class="edu-descr">
+                        <h1 data-lang="education:mmus:h1">Diploma di Secondo Livello in Chitarra</h1>
+                        <h2><a href="http://www.consba.it/" target="_blank">Conservatorio di Musica N. Piccinni</a></h2>
+                        <h3>2011-2018</h3>
+                        <p data-lang="education:mmus:p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem laborum unde nisi eligendi maxime iure ratione saepe fugit, beatae ipsum?</p>
+                        <p data-lang="education:mmus:score"> Voto finale: 10/10</p>
+                    </div>
+                </li>
+            </ul>
         </div>
         <h1 class="section-title noselect" data-lang="section_titles:education">Educazione</h1>
     </section>

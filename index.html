@@ -109,19 +109,19 @@
                     <ul class="icons">
                         <li class="skill-item" onclick="showSkillDetails('cplusplus')">
                             <div id="icon-cplusplus" class="skill-icon"></div>
-                            <h2 class="noselect">C++</h2>
+                            <div class="skill-name noselect">C++</div>
                         </li>
                         <li class="skill-item" onclick="showSkillDetails('csharp')">
                             <div id="icon-csharp" class="skill-icon"></div>
-                            <h2 class="noselect">C#</h2>
+                            <div class="skill-name noselect">C#</div>
                         </li>
                         <li class="skill-item" onclick="showSkillDetails('python')">
                             <div id="icon-python" class="skill-icon"></div>
-                            <h2 class="noselect">Python</h2>
+                            <div class="skill-name noselect">Python</div>
                         </li>
                         <li class="skill-item" onclick="showSkillDetails('java')">
                             <div id="icon-java" class="skill-icon"></div>
-                            <h2 class="noselect">Java</h2>
+                            <div class="skill-name noselect">Java</div>
                         </li>
                     </ul>
                 </li>
@@ -130,15 +130,15 @@
                     <ul class="icons">
                         <li class="skill-item" onclick="showSkillDetails('matlab')">
                             <div id="icon-matlab" class="skill-icon"></div>
-                            <h2 class="noselect">Matlab</h2>
+                            <div class="skill-name noselect">Matlab</div>
                         </li>
                         <li class="skill-item" onclick="showSkillDetails('labview')">
                             <div id="icon-labview" class="skill-icon"></div>
-                            <h2 class="noselect">LabVIEW</h2>
+                            <div class="skill-name noselect">LabVIEW</div>
                         </li>
                         <li class="skill-item" onclick="showSkillDetails('docker')">
                             <div id="icon-docker" class="skill-icon"></div>
-                            <h2 class="noselect">Docker</h2>
+                            <div class="skill-name noselect">Docker</div>
                         </li>
                     </ul>
                 </li>
@@ -147,11 +147,11 @@
                     <ul class="icons">
                         <li class="skill-item" onclick="showSkillDetails('dotnet')">
                             <div id="icon-dotnet" class="skill-icon"></div>
-                            <h2 class="noselect">.NET Core</h2>
+                            <div class="skill-name noselect">.NET Core</div>
                         </li>
                         <li class="skill-item" onclick="showSkillDetails('postgresql')">
                             <div id="icon-postgresql" class="skill-icon"></div>
-                            <h2 class="noselect">PostgreSQL</h2>
+                            <div class="skill-name noselect">PostgreSQL</div>
                         </li>
                     </ul>
                 </li>
@@ -160,49 +160,57 @@
                     <ul class="icons">
                         <li class="skill-item" onclick="showSkillDetails('html')">
                             <div id="icon-html" class="skill-icon"></div>
-                            <h2 class="noselect">HTML</h2>
+                            <div class="skill-name noselect">HTML</div>
                         </li>
                         <li class="skill-item" onclick="showSkillDetails('css')">
                             <div id="icon-css" class="skill-icon"></div>
-                            <h2 class="noselect">CSS</h2>
+                            <div class="skill-name noselect">CSS</div>
                         </li>
                         <li class="skill-item" onclick="showSkillDetails('javascript')">
                             <div id="icon-javascript" class="skill-icon"></div>
-                            <h2 class="noselect">JavaScript</h2>
+                            <div class="skill-name noselect">JavaScript</div>
                         </li>
                     </ul>
                 </li>
             </ul>
             <div id="skill-preview" class="box">
-                <h1 class="message" data-lang="skills:skill-preview:message">Clicca su una skill per mostrarne i dettagli</h1>
-                <h1 class="details" data-lang="skills:skill-preview:details">Dettagli</h1>
-                <div id="skill-preview-content">
-                    <div id="skill-brief">
-                        <div class="skill-item">
-                            <div class="skill-icon"></div>
-                            <h2 class="skill-name noselect"></h2>
+                <h1 id="skill-message" data-lang="skills:skill-preview-message">Clicca su una skill per mostrarne i dettagli</h1>
+                <div id="skill-content">
+                    <div class="overlay-wrapper">
+                        <h1 id="skill-details-title" data-lang="skills:skill-preview:details">Dettagli</h1>
+                        <div id="skill-details-content">
+                            <div class="skill-item">
+                                <div class="skill-icon"></div>
+                                <div class="skill-name noselect"></div>
+                            </div>
+                            <div id="skill-brief">
+                                <h2 class="skill-name">Java</h2>
+                                <h3>
+                                    <span class="key bold" data-lang="skills:skill-preview:experience:key">
+                                        Esperienza:
+                                    </span> <span class="value"></span>
+                                </h3>
+                                <h3>
+                                    <span class="key bold" data-lang="skills:skill-preview:since:key">
+                                        Programmo dal:
+                                    </span> <span class="value"></span>
+                                </h3>
+                            </div>
+                            <p id="skill-descr">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet porro unde ab numquam quae suscipit expedita deserunt hic harum amet dolor ea facilis quis dolores quo sapiente doloremque voluptates, quod velit veniam praesentium enim? Praesentium quasi quidem accusamus ipsam, eveniet eaque similique delectus nemo placeat quaerat exercitationem voluptatem, at totam.
+                            </p>
                         </div>
-                        <div class="skill-details">
-                            <h2 class="skill-name"></h2>
-                            <h3 class="skill-experience">
-                                <span class="key bold" data-lang="skills:skill-preview:experience:key">Esperienza:</span> <span class="value"></span>
-                            </h3>
-                            <h3 class="skill-since">
-                                <span class="key bold" data-lang="skills:skill-preview:since">Programmo dal:</span> <span class="value"></span>
-                            </h3>
-                        </div>
-                        <p class="skill-descr"></p>
+                        <h1 id="skill-projects-title">Progetti</h1>
+                        <ul id="skill-projects-content"></ul>
+                        <p id="skill-noprojects">
+                            <span data-lang="skills:skill-preview:noprojects_message">
+                                Non ci sono progetti per questa skill al momento, ma possiamo avviare il primo insieme.
+                            </span> 
+                            <a href="mailto:gianvito.difilippo@gmail.com" class="neon_activator neon" data-lang="skills:skill-preview:noprojects_contactme">
+                                Contattami!
+                            </a>
+                        </p>
                     </div>
-                    <h1 data-lang="skills:skill-preview:projects">Progetti</h1>
-                    <ul id="skill-projects"></ul>
-                    <p id="skill-noprojects">
-                        <span data-lang="skills:skill-preview:noprojects_message">
-                            Non ci sono progetti per questa skill al momento, ma possiamo avviare il primo insieme.
-                        </span> 
-                        <a href="mailto:gianvito.difilippo@gmail.com" class="neon_activator neon" data-lang="skills:skill-preview:noprojects_contactme">
-                            Contattami!
-                        </a>
-                    </p>
                 </div>
             </div>
         </div>

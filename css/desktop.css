@@ -432,6 +432,21 @@ a {
     border-radius: 2%;
 }
 
+#skills .skill-item .skill-icon {
+    width: 80px;
+    height: 80px;
+    margin: 20px;
+    background-size: cover;
+}
+
+#skills .skill-item .skill-name {
+    color: black;
+    font-weight: 600;
+    text-align: center;
+    margin: 6px;
+    font-size: 1.7rem;
+}
+
 #skills .icons {
     display: flex;
     margin: 10px;
@@ -452,23 +467,56 @@ a {
     margin-right: 0px;
 }
 
-#skill-preview-content .skill-item {
-    background-color: white;
+#skill-preview {
+    width: 60%;
+    margin-left: 20px;
 }
 
-#skills .skill-item h2 {
-    color: black;
-    font-weight: 600;
-    text-align: center;
-    margin: 6px;
-    font-size: 1.7rem;
+#skill-content {
+    position: relative;
 }
 
-#skills .skill-item .skill-icon {
-    width: 80px;
-    height: 80px;
-    margin: 20px;
-    background-size: cover;
+#skill-details-content .skill-item {
+    margin: 10px 30px 10px 10px;
+    float: left;
+}
+
+#skill-brief {
+    margin: 10px 0px 0px 10px;
+}
+
+#skill-brief h2 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 2rem;
+    margin-bottom: 5px;
+}
+
+#skill-brief h3 {
+    font-size: 2.3rem;
+    font-weight: 200;
+}
+
+#skill-brief .bold {
+    font-weight: 500;
+}
+
+#skill-descr {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin: 10px 0px 0px 10px;
+}
+
+
+
+#skill-noprojects {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin: 10px;
+}
+
+#skill-noprojects a {
+    font-weight: 500;
 }
 
 #icon-cplusplus {
@@ -517,137 +565,6 @@ a {
 
 #icon-javascript {
     background-image: url(/assets/img/skills/javascript.svg);
-}
-
-#skill-preview {
-    width: 60%;
-    margin-left: 20px;
-}
-
-#skill-preview h1 {
-    white-space: nowrap;
-}
-
-#skill-preview-content {
-    overflow: hidden;
-}
-
-#skill-brief {
-    width: 100%;
-    margin: 10px;
-    display: inline-block;
-}
-
-#skill-brief .skill-item {
-    margin-right: 20px;
-    margin-bottom: 10px;
-    float: left;
-}
-
-#skill-brief .skill-item .skill-icon {
-    transition: background-image .1s linear;
-    background-image: url(/assets/img/skills/placeholder.svg);
-    background-size: cover;
-}
-
-#skill-brief .skill-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#skill-brief .skill-details h2 {
-    font-size: 2.6rem;
-    font-weight: 700;
-    line-height: 2rem;
-    margin-bottom: 5px;
-}
-
-#skill-brief .skill-details h3 {
-    font-size: 2.3rem;
-    font-weight: 200;
-}
-
-#skill-brief .skill-details h3 .bold {
-    font-weight: 500;
-}
-
-#skill-brief .skill-descr {
-    font-size: 1.6rem;
-    font-weight: 300;
-    margin-top: 10px;
-}
-
-#skill-noprojects {
-    font-size: 1.6rem;
-    font-weight: 300;
-    margin: 10px;
-}
-
-#skill-noprojects a {
-    font-weight: 500;
-}
-
-#skill-projects {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 20px;
-    row-gap: 20px;
-    margin: 10px;
-}
-
-#skill-projects .project {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 2px 2px 5px var(--background_color_dark);
-    margin: 0px;
-    cursor: pointer;
-}
-
-#skill-projects .project .project-background {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-}
-
-#skill-projects .project .space {
-    position: relative;
-    height: 280px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#skill-projects .project .space::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(10, 30, 60);
-    opacity: 0;
-}
-
-#skill-projects .project h2 {
-    height: 40px;
-    background-color: rgba(0, 0, 0, 0.85);
-    text-align: center;
-    line-height: 40px;
-    z-index: 2;
-    justify-self: end;
-}
-
-#skills .fa-search-plus {
-    font-size: 3rem;
-    display: none;
-    z-index: 2;
 }
 
 /* ----------------------------------------  EDUCATION   ---------------------------------------- */
@@ -830,12 +747,12 @@ a {
         transition: background-color .1s linear;
     }
 
-    #skill-list .skill-item .skill-icon {
-        transition: transform .2s ease-out;
-    }
-
     #skill-list .skill-item:hover {
         background-color: white;
+    }
+
+    #skill-list .skill-item .skill-icon {
+        transition: transform .2s ease-out;
     }
 
     #skill-list .skill-item:hover .skill-icon {
@@ -848,35 +765,5 @@ a {
 
     #education .box:hover::before {
         background-color: var(--secondary_color);
-    }
-
-    #skill-projects .project .project-background {
-        transition: transform .4s ease-out;
-    }
-
-    #skill-projects .project:hover .project-background {
-        transform: scale(1.04);
-    }
-
-    #skill-projects .project .space::after {
-        opacity: 0;
-        transition: opacity .2s linear;
-    }
-
-    #skill-projects .project:hover .space::after {
-        opacity: 0.7;
-    }
-
-    #skill-projects .project:hover .fa-search-plus {
-        transform: translateY(0%);
-        opacity: 0.8;
-        transition: transform .4s ease-out, opacity .2s linear;
-    }
-
-    #skill-projects .fa-search-plus {
-        display: initial;
-        transform: translateY(-100%);
-        opacity: 0;
-        transition: transform .4s ease-out, opacity .2s .1s linear;
     }
 }

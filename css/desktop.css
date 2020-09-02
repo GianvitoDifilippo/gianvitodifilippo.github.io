@@ -33,7 +33,7 @@
 
     --section_title_top: 45px;
 
-    --can_hover: 0;
+    --canHover: 0;
 }
 
 html {
@@ -392,10 +392,6 @@ a {
 
 /* ----------------------------------------    SKILLS    ---------------------------------------- */
 
-#skills #skill-message-h1 {
-    display: none;
-}
-
 #skills .container {
     width: 100%;
     justify-content: space-between;
@@ -410,10 +406,12 @@ a {
 
 #skill-list {
     list-style: none;
+    display: flex;
+    flex-direction: column;
 }
 
 #skill-list > li {
-    margin: 10px 0px 10px 0px;
+    margin: 5px 0px 5px 0px;
 }
 
 #skills .container ul li:nth-child(1) {
@@ -474,11 +472,29 @@ a {
 
 #skill-content {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#skill-details-content {
+    margin-bottom: 10px;
 }
 
 #skill-details-content .skill-item {
     margin: 10px 30px 10px 10px;
     float: left;
+    background-color: white;
+}
+
+#skill-details-content .skill-item .skill-icon {
+    transition: background-image .1s linear;
+}
+
+#skill-details-content .skill-descr {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin: 10px 0px 0px 10px;
 }
 
 #skill-brief {
@@ -501,13 +517,18 @@ a {
     font-weight: 500;
 }
 
-#skill-descr {
-    font-size: 1.6rem;
-    font-weight: 300;
-    margin: 10px 0px 0px 10px;
+#skill-projects-content-wrapper {
+    margin: 10px;
+    position: relative;
 }
 
-
+#skill-projects-content {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+}
 
 #skill-noprojects {
     font-size: 1.6rem;
@@ -653,7 +674,7 @@ a {
 
 /* ----------------------------------------   MESSAGE    ---------------------------------------- */
 
-#message {
+.message {
     position: absolute;
     font-size: 1.6rem;
     text-transform: uppercase;
@@ -661,6 +682,61 @@ a {
     opacity: 0;
     animation: message_animation 3s;
     transition: opacity, transform;
+}
+
+/* ----------------------------------------  PROJ-THUMBN ---------------------------------------- */
+
+.project-thumbnail {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 5px var(--background_color_dark);
+    margin: 0px;
+    cursor: pointer;
+}
+
+.project-thumbnail .project-background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.project-thumbnail .space {
+    position: relative;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-thumbnail .space::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(10, 30, 60);
+    opacity: 0;
+}
+
+.project-thumbnail .space .fa-search-plus {
+    font-size: 3rem;
+    display: none;
+    z-index: 2;
+}
+
+.project-thumbnail h2 {
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.85);
+    text-align: center;
+    line-height: 40px;
+    z-index: 2;
+    justify-self: end;
 }
 
 /* ----------------------------------------  ANIMATIONS  ---------------------------------------- */
@@ -710,7 +786,7 @@ a {
 /* ----------------------------------------   HOVERING   ---------------------------------------- */
 @media (any-hover: hover) {
     :root {
-        --can_hover: 1;
+        --canHover: 1;
     }
 
     .neon_activator:hover .neon,

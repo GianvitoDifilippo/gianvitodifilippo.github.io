@@ -107,19 +107,19 @@
                 <li class="box languages">
                     <h1 data-lang="skills:skill-list:languages">Linguaggi</h1>
                     <ul class="icons">
-                        <li class="skill-item" onclick="showSkillDetails('cplusplus')">
+                        <li class="skill-item" onclick="toggleSkill('cplusplus')">
                             <div id="icon-cplusplus" class="skill-icon"></div>
                             <div class="skill-name noselect">C++</div>
                         </li>
-                        <li class="skill-item" onclick="showSkillDetails('csharp')">
+                        <li class="skill-item" onclick="toggleSkill('csharp')">
                             <div id="icon-csharp" class="skill-icon"></div>
                             <div class="skill-name noselect">C#</div>
                         </li>
-                        <li class="skill-item" onclick="showSkillDetails('python')">
+                        <li class="skill-item" onclick="toggleSkill('python')">
                             <div id="icon-python" class="skill-icon"></div>
                             <div class="skill-name noselect">Python</div>
                         </li>
-                        <li class="skill-item" onclick="showSkillDetails('java')">
+                        <li class="skill-item" onclick="toggleSkill('java')">
                             <div id="icon-java" class="skill-icon"></div>
                             <div class="skill-name noselect">Java</div>
                         </li>
@@ -128,15 +128,15 @@
                 <li class="box tools">
                     <h1 data-lang="skills:skill-list:tools">Strumenti</h1>
                     <ul class="icons">
-                        <li class="skill-item" onclick="showSkillDetails('matlab')">
+                        <li class="skill-item" onclick="toggleSkill('matlab')">
                             <div id="icon-matlab" class="skill-icon"></div>
                             <div class="skill-name noselect">Matlab</div>
                         </li>
-                        <li class="skill-item" onclick="showSkillDetails('labview')">
+                        <li class="skill-item" onclick="toggleSkill('labview')">
                             <div id="icon-labview" class="skill-icon"></div>
                             <div class="skill-name noselect">LabVIEW</div>
                         </li>
-                        <li class="skill-item" onclick="showSkillDetails('docker')">
+                        <li class="skill-item" onclick="toggleSkill('docker')">
                             <div id="icon-docker" class="skill-icon"></div>
                             <div class="skill-name noselect">Docker</div>
                         </li>
@@ -145,11 +145,11 @@
                 <li class="box backend">
                     <h1 data-lang="skills:skill-list:backend">Back-end</h1>
                     <ul class="icons">
-                        <li class="skill-item" onclick="showSkillDetails('dotnet')">
+                        <li class="skill-item" onclick="toggleSkill('dotnet')">
                             <div id="icon-dotnet" class="skill-icon"></div>
                             <div class="skill-name noselect">.NET Core</div>
                         </li>
-                        <li class="skill-item" onclick="showSkillDetails('postgresql')">
+                        <li class="skill-item" onclick="toggleSkill('postgresql')">
                             <div id="icon-postgresql" class="skill-icon"></div>
                             <div class="skill-name noselect">PostgreSQL</div>
                         </li>
@@ -158,15 +158,15 @@
                 <li class="box webdev">
                     <h1 data-lang="skills:skill-list:webdev">Sviluppo web</h1>
                     <ul class="icons">
-                        <li class="skill-item" onclick="showSkillDetails('html')">
+                        <li class="skill-item" onclick="toggleSkill('html')">
                             <div id="icon-html" class="skill-icon"></div>
                             <div class="skill-name noselect">HTML</div>
                         </li>
-                        <li class="skill-item" onclick="showSkillDetails('css')">
+                        <li class="skill-item" onclick="toggleSkill('css')">
                             <div id="icon-css" class="skill-icon"></div>
                             <div class="skill-name noselect">CSS</div>
                         </li>
-                        <li class="skill-item" onclick="showSkillDetails('javascript')">
+                        <li class="skill-item" onclick="toggleSkill('javascript')">
                             <div id="icon-javascript" class="skill-icon"></div>
                             <div class="skill-name noselect">JavaScript</div>
                         </li>
@@ -176,41 +176,41 @@
             <div id="skill-preview" class="box">
                 <h1 id="skill-message" data-lang="skills:skill-preview-message">Clicca su una skill per mostrarne i dettagli</h1>
                 <div id="skill-content">
-                    <div class="overlay-wrapper">
-                        <h1 id="skill-details-title" data-lang="skills:skill-preview:details">Dettagli</h1>
-                        <div id="skill-details-content">
-                            <div class="skill-item">
-                                <div class="skill-icon"></div>
-                                <div class="skill-name noselect"></div>
-                            </div>
-                            <div id="skill-brief">
-                                <h2 class="skill-name">Java</h2>
-                                <h3>
-                                    <span class="key bold" data-lang="skills:skill-preview:experience:key">
-                                        Esperienza:
-                                    </span> <span class="value"></span>
-                                </h3>
-                                <h3>
-                                    <span class="key bold" data-lang="skills:skill-preview:since:key">
-                                        Programmo dal:
-                                    </span> <span class="value"></span>
-                                </h3>
-                            </div>
-                            <p id="skill-descr">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet porro unde ab numquam quae suscipit expedita deserunt hic harum amet dolor ea facilis quis dolores quo sapiente doloremque voluptates, quod velit veniam praesentium enim? Praesentium quasi quidem accusamus ipsam, eveniet eaque similique delectus nemo placeat quaerat exercitationem voluptatem, at totam.
-                            </p>
+                    <h1 id="skill-details-title" data-lang="skills:skill-preview:details">Dettagli</h1>
+                    <div id="skill-details-content">
+                        <div class="skill-item">
+                            <div class="skill-icon"></div>
+                            <div class="skill-name noselect"></div>
                         </div>
-                        <h1 id="skill-projects-title">Progetti</h1>
-                        <ul id="skill-projects-content"></ul>
-                        <p id="skill-noprojects">
-                            <span data-lang="skills:skill-preview:noprojects_message">
-                                Non ci sono progetti per questa skill al momento, ma possiamo avviare il primo insieme.
-                            </span> 
-                            <a href="mailto:gianvito.difilippo@gmail.com" class="neon_activator neon" data-lang="skills:skill-preview:noprojects_contactme">
-                                Contattami!
-                            </a>
+                        <div id="skill-brief">
+                            <h2 class="skill-name">Java</h2>
+                            <h3 id="skill-experience">
+                                <span class="key bold" data-lang="skills:skill-preview:experience:key">
+                                    Esperienza:
+                                </span> <span class="value"></span>
+                            </h3>
+                            <h3 id="skill-since">
+                                <span class="key bold" data-lang="skills:skill-preview:since:key">
+                                    Programmo dal:
+                                </span> <span class="value"></span>
+                            </h3>
+                        </div>
+                        <p class="skill-descr">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet porro unde ab numquam quae suscipit expedita deserunt hic harum amet dolor ea facilis quis dolores quo sapiente doloremque voluptates, quod velit veniam praesentium enim? Praesentium quasi quidem accusamus ipsam.
                         </p>
                     </div>
+                    <h1 id="skill-projects-title">Progetti</h1>
+                    <div id="skill-projects-content-wrapper">
+                        <ul id="skill-projects-content"></ul>
+                    </div>
+                    <p id="skill-noprojects">
+                        <span data-lang="skills:skill-preview:noprojects_message">
+                            Non ci sono progetti per questa skill al momento, ma possiamo avviare il primo insieme.
+                        </span> 
+                        <a href="mailto:gianvito.difilippo@gmail.com" class="neon_activator neon" data-lang="skills:skill-preview:noprojects_contactme">
+                            Contattami!
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -275,7 +275,14 @@
 
     </div>
     <!-- ------------------------------------------        MISC        ------------------------------------------ -->
-    <div id="message" class="noselect"></div>
+    <div class="message noselect" style="display: none;"></div>
+    <li class="project-thumbnail" style="display: none;">
+        <div class="project-background"></div>
+        <div class="space">
+            <i class="fas fa-search-plus"></i>
+        </div>
+        <h2 class="project-name"></h2>
+    </li>
 
     <!-- ------------------------------------------       SCRIPTS      ------------------------------------------ -->
     <script src="https://kit.fontawesome.com/2150929a5b.js" crossorigin="anonymous"></script>

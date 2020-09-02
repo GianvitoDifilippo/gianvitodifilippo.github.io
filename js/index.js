@@ -24,14 +24,13 @@ const skill_preview = document.querySelector('#skill-preview');
 const skill_message = document.querySelector('#skill-message');
 const skill_content = document.querySelector('#skill-content');
 const skill_details_title = document.querySelector('#skill-details-title');
-const skill_projects_content_wrapper = document.querySelector('#skill-projects-content-wrapper');
-var skill_projects_content = document.querySelector('#skill-projects-content-wrapper .skill-projects-content');
+const skill_projects_content_wrapper = document.querySelector('#skill-projects-content');
 const skill_icon = document.querySelector('#skill-details-content .skill-item .skill-icon');
 const skill_name = document.querySelectorAll('#skill-preview .skill-name');
 const skill_exp_value = document.querySelector('#skill-experience .value');
 const skill_since_value = document.querySelector('#skill-since .value');
 const skill_descr = document.querySelector('#skill-details-content .skill-descr');
-const skill_noprojects = document.querySelector('#skill-noprojects');
+const skill_projects_none = document.querySelector('#skill-projects-none');
 
 /* ------------------------------------------------      CSS VARIABLES      ------------------------------------------------ */
 const navigationPosition = parseInt(getComputedStyle(document.body).getPropertyValue('--navigation_position'));
@@ -44,8 +43,9 @@ const mobile = window.innerWidth <= desktopMinWidth;
 const canHover = parseInt(getComputedStyle(document.body).getPropertyValue('--canHover')) == 1;
 var headerPopinHandle = null;
 var currentSkill = null;
-var skillDetailsShown = false;
 var skillContentAnimation = null;
+var skill_projects_content = null;
+var skill_projects_content_old = null;
 
 /* ------------------------------------------------        FUNCTIONS        ------------------------------------------------ */
 
@@ -114,11 +114,13 @@ function scrollCallback(scrollY)
 }
 
 function createProject(project) {
-    let new_project = project_thumbnail.cloneNode(true);
-    new_project.style = null;
+    let project_new = project_thumbnail.cloneNode(true);
+    project_new.style = null;
 
-    let background = new_project.getElementsByClassName('project-background')[0];
+    let background = project_new.getElementsByClassName('project-background')[0];
+    let project_name = project_new.getElementsByClassName('project-name')[0];
     background.style.backgroundImage = `url(./assets/img/projects/${project.id}_thumbnail.jpg)`;
+    project_name.textContent = project.name != undefined ? project.name : project.id.toUpperCase();
     if (project.backgroundPositionX != undefined) {
         background.style.backgroundPositionX = project.backgroundPositionX;
     }
@@ -132,12 +134,12 @@ function createProject(project) {
         background.style.top = `${-(project.backgroundScale - 1) * 50}%`;
     }
 
-    return new_project;
+    return project_new;
 }
 
 function toggleSkill(skill) {
-    function setDetails(name, since, ext, projects) {
-        skill_icon.style.backgroundImage = `url(./assets/img/skills/${skill}.${ext})`;
+    function setDetails(name, since, imgExt, projects) {
+        skill_icon.style.backgroundImage = `url(./assets/img/skills/${skill}.${imgExt})`;
         skill_name.forEach(item => item.textContent = name);
         skill_exp_value.setAttribute('data-lang', `skills:skill-preview:experience:values:${skill}`);
         skill_exp_value.textContent = translateText(`skills:skill-preview:experience:values:${skill}`);
@@ -145,35 +147,18 @@ function toggleSkill(skill) {
         skill_descr.setAttribute('data-lang', `skills:skill-preview:descr:${skill}`);
         skill_descr.textContent = translateText(`skills:skill-preview:descr:${skill}`);
 
-        let new_skill_projects_content = skill_projects_content.cloneNode(false);
-        let width = skill_projects_content.getBoundingClientRect().width;
-        let height = skill_projects_content.getBoundingClientRect().height;
-        skill_projects_content.style.position = 'absolute';
-        skill_projects_content.style.zIndex = 100;
-        skill_projects_content.style.width = `${width}px`;
-        skill_projects_content.style.height = `${height}px`;
-
         if (projects != undefined) {
-            skill_noprojects.style.display = 'none';
-            projects.forEach(project => {
-                new_skill_projects_content.appendChild(createProject(project));
-            });
+            skill_projects_none.style.display = 'none';
+            skill_projects_content_wrapper.style.position = null;
+            skill_projects_content = document.createElement('ul');
+            skill_projects_content.classList.add('skill-projects-list');
+            projects.forEach(project => skill_projects_content.appendChild(createProject(project)));
+            skill_projects_content_wrapper.appendChild(skill_projects_content);
         }
         else {
-            skill_noprojects.style.display = null;
-        }
-
-        skill_projects_content_wrapper.appendChild(new_skill_projects_content);
-        skill_projects_content.animate([
-            {
-                opacity: 1
-            },
-            {
-                opacity: 0
-            }
-        ], { duration: 150 }).onfinish = () => {
-            skill_projects_content_wrapper.removeChild(skill_projects_content);
-            skill_projects_content = new_skill_projects_content;
+            skill_projects_content_wrapper.style.position = 'absolute';
+            skill_projects_none.style.display = null;
+            skill_projects_content = null;
         }
     }
 
@@ -231,72 +216,81 @@ function toggleSkill(skill) {
         currentSkill = skill;
     }
 
-    function animateHeight(element, startHeight, endHeight, duration, onfinish) {
-        if (skillContentAnimation != null) {
-            skillContentAnimation.cancel();
-        }
-        skillContentAnimation = element.animate([
-            {
-                height: startHeight
-            },
-            {
-                height: endHeight
-            }
-        ], { duration: duration });
-        if (onfinish != undefined) {
-            skillContentAnimation.onfinish = function() {
-                onfinish();
-                skillContentAnimation = null;
-            }
-        }
-    }
-
     function hideSkillDetails() {
         skill_message.style.display = null;
         skill_details_title.style.display = 'none';
-        skillDetailsShown = false;
     }
 
     function showSkillDetails() {
         skill_message.style.display = 'none';
         skill_details_title.style.display = null;
-
-        skillDetailsShown = true;
     }
 
-    function changeSkillDetails() {
-        setSkill();
+    function removeOldProjects()
+    {
+        skill_projects_content_old = skill_projects_content;
+        if (skill_projects_content_old != null) {
+            console.log(skill_projects_content_old);
+            let width = skill_projects_content_old.getBoundingClientRect().width;
+            let height = skill_projects_content_old.getBoundingClientRect().height;
+            skill_projects_content_old.style.position = 'absolute';
+            skill_projects_content_old.style.zIndex = 10;
+            skill_projects_content_old.style.width = `${width}px`;
+            skill_projects_content_old.style.height = `${height}px`;
+            skill_projects_content_old.animate([
+                {
+                    opacity: 1
+                },
+                {
+                    opacity: 0
+                }
+            ], { duration: 200 }).onfinish = () => skill_projects_content_wrapper.removeChild(skill_projects_content_old);
+        }
     }
 
-    let oldHeight = null;
+    if (skillContentAnimation !== null) return;
+
+    let oldHeight = `${skill_content.getBoundingClientRect().height}px`;
     let newHeight = null;
     let onfinish = null;
-    
-    if (!skillDetailsShown) {
-        if (currentSkill !== skill) {
-            changeSkillDetails();
-        }
+
+    if (currentSkill === null) {
+        setSkill();
         showSkillDetails();
-        oldHeight = '0px';
         newHeight = `${skill_content.scrollHeight}px`;
         onfinish = () => skill_content.style.height = null;
     }
     else {
-        oldHeight = `${skill_content.scrollHeight}px`;
+        removeOldProjects();
         if (currentSkill === skill) {
             hideSkillDetails();
+            currentSkill = null;
+            skill_projects_content = null;
             newHeight = '0px';
             onfinish = () => skill_content.style.height = '0px';
         }
         else {
-            changeSkillDetails();
+            setSkill();
             newHeight = `${skill_content.clientHeight}px`;
             onfinish = () => skill_content.style.height = null;
         }
     }
-    animateHeight(skill_content, oldHeight, newHeight, 400, onfinish);
-}
 
+    skillContentAnimation = skill_content.animate([
+        {
+            height: oldHeight
+        },
+        {
+            height: newHeight
+        }
+    ], { duration: 500 });
+    if (onfinish !== null) {
+        skillContentAnimation.onfinish = () => {
+            onfinish();
+            skillContentAnimation = null;
+        }
+    }
+}
 
 /* ------------------------------------------------         SCRIPT          ------------------------------------------------ */
 

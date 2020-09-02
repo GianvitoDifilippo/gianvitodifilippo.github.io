@@ -517,12 +517,16 @@ a {
     font-weight: 500;
 }
 
-#skill-projects-content-wrapper {
+#skill-projects-wrapper {
+    position: relative;
+}
+
+#skill-projects-content {
     margin: 10px;
     position: relative;
 }
 
-#skill-projects-content-wrapper .skill-projects-content {
+#skill-projects-content .skill-projects-list {
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -530,13 +534,13 @@ a {
     row-gap: 20px;
 }
 
-#skill-noprojects {
+#skill-projects-none {
     font-size: 1.6rem;
     font-weight: 300;
     margin: 10px;
 }
 
-#skill-noprojects a {
+#skill-projects-none a {
     font-weight: 500;
 }
 
@@ -833,6 +837,36 @@ a {
 
     #skill-list .skill-item:hover .skill-icon {
         transform: scale(1.05);
+    }
+
+    .project-thumbnail .project-background {
+        transition: transform .4s ease-out;
+    }
+
+    .project-thumbnail:hover .project-background {
+        transform: scale(1.04);
+    }
+
+    .project-thumbnail .space::after {
+        opacity: 0;
+        transition: opacity .2s linear;
+    }
+
+    .project-thumbnail:hover .space::after {
+        opacity: 0.7;
+    }
+
+    .project-thumbnail .space .fa-search-plus {
+        display: initial;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform .4s ease-out, opacity .2s .1s linear;
+    }
+
+    .project-thumbnail:hover .space .fa-search-plus {
+        transform: translateY(0%);
+        opacity: 0.8;
+        transition: transform .4s ease-out, opacity .2s linear;
     }
 
     #education .box::before {

@@ -136,9 +136,9 @@ html {
 
 #skills .skill-item .skill-icon,
 #skill-preview .skill-item .skill-icon {
-    width: 60px;
-    height: 60px;
-    margin: 10px;
+    width: 65px;
+    height: 65px;
+    margin: 10px 15px 10px 15px;
 }
 
 #skill-projects-content .skill-projects-list {
@@ -146,6 +146,12 @@ html {
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 20px;
+}
+
+#skills .skill-item .skill-name,
+#skill-preview .skill-item .skill-name {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #skill-brief .skill-name {

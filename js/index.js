@@ -3,18 +3,19 @@ const body = document.body;
 const neon_activator_items = document.querySelectorAll('.neon_activator');
 const message = document.querySelector('.message');
 const project_thumbnail = document.querySelector('.project-thumbnail');
+const footer = document.getElementById('footer');
 
 /* ------------------------------------------------     HEADER ELEMENTS     ------------------------------------------------ */
-const header = document.querySelector('#header');
-const navbar = document.querySelector('#navbar');
-const navlist = document.querySelector('#navlist');
-const hamburger = document.querySelector('#hamburger');
+const header = document.getElementById('header');
+const navbar = document.getElementById('navbar');
+const navlist = document.getElementById('navlist');
+const hamburger = document.getElementById('hamburger');
 const menu_items = document.querySelectorAll('#navlist li');
 const header_brand = document.querySelector('#navbar .brand');
 
 /* ------------------------------------------------      HERO ELEMENTS      ------------------------------------------------ */
-const hero = document.querySelector('#hero');
-const hero_brand = document.querySelector('#hero-main');
+const hero = document.getElementById('hero');
+const hero_brand = document.getElementById('hero-main');
 const hero_h1 = document.querySelector('#hero-main h1');
 const hero_h2 = document.querySelector('#hero-main h2');
 const hero_a = document.querySelectorAll('#hero-main a');
@@ -32,6 +33,7 @@ const skill_name = document.querySelectorAll('#skill-preview .skill-name');
 const skill_exp_value = document.querySelector('#skill-experience .value');
 const skill_since_value = document.querySelector('#skill-since .value');
 const skill_descr = document.getElementById('skill-descr');
+const skill_back = document.querySelector('#skill-preview-popup .fa-angle-double-left');
 
 /* ------------------------------------------------      CSS VARIABLES      ------------------------------------------------ */
 const navigationPosition = parseInt(getComputedStyle(document.body).getPropertyValue('--navigation_position'));

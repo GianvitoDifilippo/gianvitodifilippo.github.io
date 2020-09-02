@@ -1,17 +1,22 @@
+var allBodyElements = Array.from(document.getElementsByTagName('section'));
+allBodyElements.push(header);
+allBodyElements.push(footer);
+
+
 function toggleSkillMobile(skill) {
-    body.classList.toggle('stop_scroll');
-    Array.from(document.getElementsByTagName('section'))
-        .forEach(item => {
-            item.animate([
-                {
-                    filter: 'blur(0px)'
-                },
-                {
-                    filter: 'blur(4px)'
-                }
-            ], { duration: 200, fill: 'forwards' });
-        });
-    setTimeout(function() {
+    function showSkillPopup() {
+        body.classList.add('stop_scroll');
+
+        allBodyElements.forEach(item => {
+                item.animate([
+                    {
+                        filter: 'blur(0px)'
+                    },
+                    {
+                        filter: 'blur(4px)'
+                    }
+                ], { duration: 200, fill: 'forwards' });
+            });
         skill_preview.style.display = null;
         skill_preview.animate([
             {
@@ -22,19 +27,82 @@ function toggleSkillMobile(skill) {
                 opacity: 1,
                 transform: 'scale(1)'
             }
-        ], { duration: 200 })
-    }, 100);
-    skill_preview_popup.style.display = null;
-    skill_preview_popup.animate([
-        {
-            opacity: 0
-        },
-        {
-            opacity: 1
+        ], { duration: 300 });
+        skill_preview_popup.style.display = null;
+        skill_preview_popup.animate([
+            {
+                opacity: 0
+            },
+            {
+                opacity: 1
+            }
+        ], { duration: 200 });
+        skill_back.animate([
+            {
+                transform: 'translateY(300%)'
+            },
+            {
+                transform: 'translateY(0%)'
+            }
+        ], { duration: 400 });
+        skill_preview_popup.prepend(skill_preview);
+        setSkill(skill);
+    }
+
+    function hideSkillPopup() {
+        body.classList.remove('stop_scroll');
+        currentSkill = null;
+        skill_preview_popup.animate([
+            {
+                opacity: 1
+            },
+            {
+                opacity: 0
+            }
+        ], { duration: 200 }).onfinish = () => skill_preview_popup.style.display = 'none';
+        skill_back.animate([
+            {
+                transform: 'translateY(0%)'
+            },
+            {
+                transform: 'translateY(300%)'
+            }
+        ], { duration: 300 });
+        allBodyElements.forEach(item => {
+            item.animate([
+                {
+                    filter: 'blur(4px)'
+                },
+                {
+                    filter: 'blur(0px)'
+                }
+            ], { duration: 200, fill: 'forwards' });
+        });
+        skill_preview.animate([
+            {
+                opacity: 1,
+                transform: 'scale(1)'
+            },
+            {
+                opacity: 0,
+                transform: 'scale(0)'
+            }
+        ], { duration: 300 }).onfinish = function() {
+            skill_preview.style.display = 'none';
+            skill_preview_popup.removeChild(skill_preview);
+            if (skill_projects_content != null) {
+                skill_projects_content_wrapper.removeChild(skill_projects_content);
+                skill_projects_content = null;
+            }
         }
-    ], { duration: 200 });
-    skill_preview_popup.appendChild(skill_preview);
-    setSkill(skill);
+    }
+
+    if (currentSkill === null) {
+        showSkillPopup();
+    }
+    else {
+        hideSkillPopup();
+    }
 }
 
 function indexMobile()
@@ -54,4 +122,5 @@ function indexMobile()
     menu_items.forEach(item => item.addEventListener('click', toggleNavlistActive));
 
     skill_preview.style.display = 'none';
+    skill_preview.onclick = event => event.stopPropagation();
 }

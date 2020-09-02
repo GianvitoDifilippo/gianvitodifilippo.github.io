@@ -7,16 +7,16 @@ function toggleSkillMobile(skill) {
     function showSkillPopup() {
         body.classList.add('stop_scroll');
 
-        allBodyElements.forEach(item => {
-                item.animate([
-                    {
-                        filter: 'blur(0px)'
-                    },
-                    {
-                        filter: 'blur(4px)'
-                    }
-                ], { duration: 200, fill: 'forwards' });
-            });
+        // allBodyElements.forEach(item => {
+        //         item.animate([
+        //             {
+        //                 filter: 'blur(0px)'
+        //             },
+        //             {
+        //                 filter: 'blur(4px)'
+        //             }
+        //         ], { duration: 200, fill: 'forwards' });
+        //     });
         skill_preview.style.display = null;
         skill_preview.animate([
             {
@@ -68,16 +68,16 @@ function toggleSkillMobile(skill) {
                 transform: 'translateY(300%)'
             }
         ], { duration: 300 });
-        allBodyElements.forEach(item => {
-            item.animate([
-                {
-                    filter: 'blur(4px)'
-                },
-                {
-                    filter: 'blur(0px)'
-                }
-            ], { duration: 200, fill: 'forwards' });
-        });
+        // allBodyElements.forEach(item => {
+        //     item.animate([
+        //         {
+        //             filter: 'blur(4px)'
+        //         },
+        //         {
+        //             filter: 'blur(0px)'
+        //         }
+        //     ], { duration: 200, fill: 'forwards' });
+        // });
         skill_preview.animate([
             {
                 opacity: 1,

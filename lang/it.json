@@ -40,7 +40,7 @@
             "webdev": "Sviluppo web"
         },
         "skill-preview": {
-            "message": "Clicca su una skill per mostrarne i dettagli",
+            "message": "Clicca su una skill per i dettagli",
             "details": "Dettagli",
             "experience": {
                 "key": "Esperienza:",

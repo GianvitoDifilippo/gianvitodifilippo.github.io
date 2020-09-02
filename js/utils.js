@@ -59,6 +59,7 @@ function displayMessage(text, x, y, element)
 {
     let newMessage = message.cloneNode(false);
     document.body.appendChild(newMessage);
+    newMessage.style.display = null;
     newMessage.textContent = text;
     let xPos = 0;
     let yPos = 0;

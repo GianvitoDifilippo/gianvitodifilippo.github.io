@@ -117,21 +117,16 @@ html {
 
 /* ----------------------------------------    SKILLS    ---------------------------------------- */
 
-#skills .icons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+
+#skill-preview {
+    display: none;
+    width: unset;
+    margin: 0px 5vw 0px 5vw;
 }
 
-#skills .icons > li {
-    margin: 6px;
-}
-
-#skills .icons > li:nth-child(1) {
-    margin: 6px;
-}
-
-#skills .icons > li:nth-last-child(1) {
-    margin: 6px;
+#skills .skill-item {
+    width: auto;
+    height: auto;
 }
 
 #skills .skill-item .skill-icon {

@@ -1,3 +1,10 @@
+function toggleSkillMobile(skill) {
+    body.classList.toggle('stop_scroll');
+    skill_preview_popup.style.display = null;
+    skill_preview.style.display = 'initial';
+    skill_preview_popup.appendChild(skill_preview);
+}
+
 function indexMobile()
 {
     // Shows/hides nav-list, disables scrolling, disables header brand button

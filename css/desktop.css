@@ -414,15 +414,20 @@ a {
     margin: 5px 0px 5px 0px;
 }
 
-#skills .container ul li:nth-child(1) {
+#skill-list > li:nth-child(1) {
     margin-top: 0px;
 }
 
-#skills .container ul li:nth-last-child(1) {
+#skill-list > li:nth-last-child(1) {
     margin-bottom: 0px;
 }
 
-#skills .skill-item {
+#skills .skill-item,
+#skill-preview .skill-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 120px;
     height: 152px;
     background-color: rgba(255, 255, 255, 0.75);
@@ -430,14 +435,16 @@ a {
     border-radius: 2%;
 }
 
-#skills .skill-item .skill-icon {
+#skills .skill-item .skill-icon,
+#skill-preview .skill-item .skill-icon {
     width: 80px;
     height: 80px;
     margin: 20px;
     background-size: cover;
 }
 
-#skills .skill-item .skill-name {
+#skills .skill-item .skill-name,
+#skill-preview .skill-item .skill-name {
     color: black;
     font-weight: 600;
     text-align: center;

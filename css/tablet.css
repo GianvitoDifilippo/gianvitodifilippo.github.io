@@ -238,10 +238,10 @@ body.stop_scroll {
 }
 
 #skill-preview {
-    display: none;
     width: calc(100% - 15vw);
     max-height: calc(100% - min(15vw, 15vh));
     margin: 0px 7.5vw 0px 7.5vw;
+    overflow: hidden;
 }
 
 #skill-message {

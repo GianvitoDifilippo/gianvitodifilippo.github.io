@@ -3,6 +3,7 @@ function toggleSkillMobile(skill) {
     skill_preview_popup.style.display = null;
     skill_preview.style.display = 'initial';
     skill_preview_popup.appendChild(skill_preview);
+    setSkill(skill);
 }
 
 function indexMobile()
@@ -20,4 +21,6 @@ function indexMobile()
     
     // Toggles navlist when clicking on list items
     menu_items.forEach(item => item.addEventListener('click', toggleNavlistActive));
+
+    openFullscreen();
 }

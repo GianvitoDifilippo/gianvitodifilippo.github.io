@@ -1,5 +1,4 @@
-function copyToClipboard(id)
-{
+function copyToClipboard(id) {
     element = document.getElementById(id);
     if (!element) return;
     let noselect = element.classList.contains('noselect');
@@ -13,13 +12,13 @@ function copyToClipboard(id)
         range.moveToElementText(element);
         range.select();
     } else if (window.getSelection) {
-        selection = window.getSelection();        
+        selection = window.getSelection();
         range = document.createRange();
         range.selectNodeContents(element);
         selection.removeAllRanges();
         selection.addRange(range);
     }
-  
+
     try {
         document.execCommand('copy');
         selection.removeAllRanges();
@@ -32,8 +31,7 @@ function copyToClipboard(id)
     }
 }
 
-function setCookie(name, value, days)
-{
+function setCookie(name, value, days) {
     let expires = "";
     if (days) {
         let date = new Date();
@@ -43,8 +41,7 @@ function setCookie(name, value, days)
     document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
 
-function getCookie(name)
-{
+function getCookie(name) {
     let nameEQ = name + "=";
     let ca = document.cookie.split(';');
     for (let i = 0; i < ca.length; i++) {
@@ -55,8 +52,7 @@ function getCookie(name)
     return null;
 }
 
-function displayMessage(text, x, y, element)
-{
+function displayMessage(text, x, y, element) {
     let newMessage = message.cloneNode(false);
     document.body.appendChild(newMessage);
     newMessage.style.display = null;
@@ -164,4 +160,28 @@ function displayMessage(text, x, y, element)
     newMessage.style.top = `${yPos}px`;
     newMessage.addEventListener('animationend', newMessage.remove);
     return newMessage;
+}
+
+function openFullscreen() {
+    if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) {
+        document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) {
+        document.documentElement.webkitRequestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) {
+        document.documentElement.msRequestFullscreen();
+    }
+}
+
+function closeFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+    }
 }

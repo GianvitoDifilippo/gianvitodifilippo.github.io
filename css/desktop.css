@@ -398,7 +398,8 @@ a {
     align-items: flex-start;
 }
 
-#skills .container .box h1 {
+#skills .container .box h1,
+#skill-preview h1 {
     font-size: 3rem;
     font-weight: 400;
     margin: 5px 0px 0px 10px;

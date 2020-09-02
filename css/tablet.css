@@ -216,6 +216,10 @@ body.stop_scroll {
     align-items: center;
 }
 
+#skill-preview .skill-item {
+    margin-right: 20px;
+}
+
 #skill-preview-popup {
     position: fixed;
     top: 0;
@@ -231,7 +235,7 @@ body.stop_scroll {
 
 #skill-preview {
     display: none;
-    width: unset;
+    width: max-content;
     margin: 0px 7.5vw 0px 7.5vw;
 }
 

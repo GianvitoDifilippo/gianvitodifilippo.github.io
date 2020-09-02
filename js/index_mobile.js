@@ -1,5 +1,11 @@
 function toggleSkillMobile(skill) {
     body.classList.toggle('stop_scroll');
+    Array.from(document.getElementsByTagName('section'))
+        .forEach(item => {
+            item.style.filter = 'blur(0px)';
+            item.style.transition = 'filter 3s';
+            setTimeout(() => item.style.filter = 'blur(4px)', 1000);
+        });
     skill_preview_popup.style.display = null;
     skill_preview.style.display = 'initial';
     skill_preview_popup.appendChild(skill_preview);

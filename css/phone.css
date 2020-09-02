@@ -18,6 +18,10 @@ html {
 .container {
     margin: calc(var(--section_title_top) + 5rem) 5vw 10px 5vw;
 }
+
+.box {
+    padding: 6px;
+}
     
 /* ----------------------------------------   HEADER   ---------------------------------------- */
 
@@ -117,22 +121,53 @@ html {
 
 /* ----------------------------------------    SKILLS    ---------------------------------------- */
 
-
 #skill-preview {
-    display: none;
-    width: unset;
+    width: calc(100% - 10vw);
+    max-height: calc(100% - min(10vw, 10vh));
+    overflow-y: hidden;
     margin: 0px 5vw 0px 5vw;
 }
 
-#skills .skill-item {
+#skills .skill-item,
+#skill-preview .skill-item {
     width: auto;
     height: auto;
+    margin-right: 15px;
 }
 
-#skills .skill-item .skill-icon {
+#skills .skill-item .skill-icon,
+#skill-preview .skill-item .skill-icon {
     width: 60px;
     height: 60px;
     margin: 16px;
+}
+
+#skill-projects-content .skill-projects-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+    overflow-y: scroll;
+}
+
+#skill-brief .skill-name {
+    display: none;
+}
+
+#skill-details-title {
+    display: none;
+}
+
+#skill-brief h3 span {
+    display: block;
+}
+
+#skill-brief h3 .value {
+    font-size: 1.9rem;
+}
+
+#skill-descr {
+    clear: left;
 }
 
 /* ----------------------------------------  EDUCATION   ---------------------------------------- */
@@ -140,7 +175,6 @@ html {
 #education .container ul .box {
     position: relative;
     display: block;
-    padding: 6px;
 }
 
 #education .container ul .box .edu-descr {
@@ -170,4 +204,8 @@ html {
     display: block;
     clear: left;
 }
+
+/* ----------------------------------------  PROJ-THUMBN ---------------------------------------- */
+
+
 }

@@ -499,7 +499,7 @@ a {
     transition: background-image .1s linear;
 }
 
-#skill-details-content .skill-descr {
+#skill-descr {
     font-size: 1.6rem;
     font-weight: 300;
     margin: 10px 0px 0px 10px;
@@ -706,6 +706,7 @@ a {
     box-shadow: 2px 2px 5px var(--background_color_dark);
     margin: 0px;
     cursor: pointer;
+    height: fit-content;
 }
 
 .project-thumbnail .project-background {

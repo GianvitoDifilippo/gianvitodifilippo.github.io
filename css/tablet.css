@@ -220,6 +220,10 @@ body.stop_scroll {
     margin-right: 20px;
 }
 
+#skill-projects-wrapper {
+    overflow: scroll;
+}
+
 #skill-preview-popup {
     position: fixed;
     top: 0;
@@ -235,7 +239,8 @@ body.stop_scroll {
 
 #skill-preview {
     display: none;
-    width: max-content;
+    width: calc(100% - 15vw);
+    max-height: calc(100% - min(15vw, 15vh));
     margin: 0px 7.5vw 0px 7.5vw;
 }
 
@@ -270,5 +275,19 @@ body.stop_scroll {
 
 /* ----------------------------------------  EDUCATION   ---------------------------------------- */
 
+/* ----------------------------------------  PROJ-THUMBN ---------------------------------------- */
+
+.project-thumbnail .space {
+    height: 20rem;
+}
+
+.project-thumbnail h2 {
+    height: 4rem;
+    background-color: rgba(0, 0, 0, 0.85);
+    text-align: center;
+    line-height: 4rem;
+    z-index: 2;
+    justify-self: end;
+}
 
 }

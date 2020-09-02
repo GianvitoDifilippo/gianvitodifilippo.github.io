@@ -31,7 +31,7 @@ const skill_icon = document.querySelector('#skill-details-content .skill-item .s
 const skill_name = document.querySelectorAll('#skill-preview .skill-name');
 const skill_exp_value = document.querySelector('#skill-experience .value');
 const skill_since_value = document.querySelector('#skill-since .value');
-const skill_descr = document.querySelector('#skill-details-content .skill-descr');
+const skill_descr = document.getElementById('skill-descr');
 
 /* ------------------------------------------------      CSS VARIABLES      ------------------------------------------------ */
 const navigationPosition = parseInt(getComputedStyle(document.body).getPropertyValue('--navigation_position'));
@@ -166,7 +166,7 @@ function setSkill(skill) {
     switch(skill) {
         case 'cplusplus':
             setDetails('C++', 2014, 'svg', [
-                { id: 'audioengineer', name: 'AudioEngineer'}
+                { id: 'audioengineer', name: 'AudioEngineer', backgroundPositionX: 'center' }
             ]);
             break;
         case 'csharp':

@@ -89,7 +89,7 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: calc(var(--section_title_top) + 13rem) 8vw 0px 8vw;
+    margin: calc(var(--section_title_top) + 13rem) 8vw 10px 8vw;
     z-index: 1;
 }
 

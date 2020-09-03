@@ -21,6 +21,10 @@ const hero_h1 = document.querySelector('#hero-main h1');
 const hero_h2 = document.querySelector('#hero-main h2');
 const hero_a = document.querySelectorAll('#hero-main a');
 
+/* ------------------------------------------------     ABOUT ELEMENTS      ------------------------------------------------ */
+const phonenumber = document.getElementById('phonenumber');
+const emailaddress = document.getElementById('emailaddress');
+
 /* ------------------------------------------------     SKILLS ELEMENTS     ------------------------------------------------ */
 const skill_preview_popup = document.getElementById('skill-preview-popup');
 const skill_preview = document.getElementById('skill-preview');
@@ -91,16 +95,20 @@ function launchAnimation()
 
 function phonenumberOnClick(x, y)
 {
-    let selector = 'messages:copied';
-    copyToClipboard('phonenumber');
-    displayMessage(translateText(selector), x, y, document.getElementById('phonenumber')).setAttribute('data-lang', selector);
+    if (!mobile) {
+        let selector = 'messages:copied';
+        copyToClipboard('phonenumber');
+        displayMessage(translateText(selector), x, y, phonenumber).setAttribute('data-lang', selector);
+    }
+    // Phone number - call on click
+    window.open('tel:+393898331018', '_parent');
 }
 
 function emailOnClick(x, y)
 {
     let selector = 'messages:copied';
     copyToClipboard('emailaddress');
-    displayMessage(translateText(selector), x, y, document.getElementById('emailaddress')).setAttribute('data-lang', selector);
+    displayMessage(translateText(selector), x, y, emailaddress).setAttribute('data-lang', selector);
 }
 
 function scrollCallback(scrollY)

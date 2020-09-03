@@ -9,6 +9,7 @@
 
 html {
     font-size: 9px;
+    transition: filter .2s linear;
 }
 
 body {
@@ -18,6 +19,14 @@ body {
 body.stop_scroll {
     height: 100%;
     overflow: hidden;
+}
+
+html.blurred {
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
 }
 
 .section {

@@ -1,5 +1,6 @@
 /* ------------------------------------------------     COMMON ELEMENTS     ------------------------------------------------ */
 const body = document.body;
+const html = document.documentElement;
 const neon_activator_items = document.querySelectorAll('.neon_activator');
 const message = document.querySelector('.message');
 const project_thumbnail = document.querySelector('.project-thumbnail');

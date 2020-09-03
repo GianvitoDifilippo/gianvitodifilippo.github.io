@@ -40,13 +40,13 @@ html {
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     scroll-behavior: smooth;
+    background-color: var(--background_color);
 }
 
 body {
     min-width: fit-content;
     visibility: hidden;
     color: var(--text_color);
-    background-color: var(--background_color);
 }
 
 body.visible {

@@ -18,7 +18,7 @@
     --secondary_color: rgb(20, 140, 210);
     --background_color: rgb(40, 40, 40);
     --background_color_dark: rgb(20, 20, 20);
-    --background_color_light: rgb(90, 90, 100);
+    --box_background_color: rgb(90, 90, 100, 0.6);
     --navbar_color_hero: rgba(20, 20, 20, 0.5);
     --navbar_color_navigation: rgb(50, 60, 70);
     --text_color: white;
@@ -143,9 +143,8 @@ a {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--background_color_light);
+    background-color: var(--box_background_color);
     box-shadow: 5px 5px 5px var(--background_color_dark);
-    opacity: .6;
     z-index: -1;
 }
 

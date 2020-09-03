@@ -85,6 +85,7 @@ function indexMobile()
     function toggleNavlistActive() {
         header_brand.classList.toggle('inactive');
         navlist.classList.toggle('active');
+        options_icon.classList.toggle('active');
         hamburger.classList.toggle('active');
         body.classList.toggle('stop_scroll');
     }

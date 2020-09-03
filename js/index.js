@@ -13,6 +13,7 @@ const navlist = document.getElementById('navlist');
 const hamburger = document.getElementById('hamburger');
 const menu_items = document.querySelectorAll('#navlist li');
 const header_brand = document.querySelector('#navbar .brand');
+const options_icon = document.querySelector('#navlist .fa-cog');
 
 /* ------------------------------------------------      HERO ELEMENTS      ------------------------------------------------ */
 const hero = document.getElementById('hero');

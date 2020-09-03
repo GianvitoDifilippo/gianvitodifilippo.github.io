@@ -126,13 +126,13 @@ body.stop_scroll {
 }
 
 #navlist {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 100vw;
     width: 100vw;
     transition: left .5s;
     transition-delay: .2s;
-    height: 100vh;
+    height: 100%;
     background-color: var(--background_color_dark);
     display: flex;
     flex-direction: column;
@@ -152,6 +152,21 @@ body.stop_scroll {
 
 #navlist li a {
     font-size: 3.5rem;
+}
+
+#navlist .fa-cog {
+    position: fixed;
+    display: block;
+    font-size: 3.5rem;
+    left: 0;
+    bottom: 15px;
+    transform: translateX(-100%);
+    transition: transform .2s;
+}
+
+#navlist .fa-cog.active {
+    transform: translateX(15px);
+    transition: transform .2s .4s;
 }
 
 /* ----------------------------------------    ABOUT     ---------------------------------------- */
@@ -230,21 +245,16 @@ body.stop_scroll {
     -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 1) 10px, rgba(0, 0, 0, 1) calc(100% - 10px), rgba(0, 0, 0, 0) 100%);
 }
 
-#skill-preview-popup {
+.popup {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     z-index: 100;
-    padding: 20px 0px 20px 0px;
 }
 
-#skill-preview-popup::before {
+.popup::before {
     content: '';
     position: absolute;
     width: 100vw;
@@ -253,6 +263,14 @@ body.stop_scroll {
     left: 0;
     background-color: rgb(0, 0, 0, 0.95);
     z-index: -1;
+}
+
+#skill-preview-popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px 20px 0px;
 }
 
 #skill-preview {

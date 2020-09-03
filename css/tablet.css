@@ -190,6 +190,10 @@ body.stop_scroll {
     grid-column: 1;
 }
 
+#contacts {
+    margin-right: -10px;
+}
+
 #profile .icon {
     width: 32px;
     height: 32px;

@@ -109,6 +109,7 @@ function emailOnClick(x, y)
     let selector = 'messages:copied';
     copyToClipboard('emailaddress');
     displayMessage(translateText(selector), x, y, emailaddress).setAttribute('data-lang', selector);
+    openFullscreen();
 }
 
 function scrollCallback(scrollY)

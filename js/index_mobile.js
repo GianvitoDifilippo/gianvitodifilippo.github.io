@@ -1,7 +1,6 @@
 function toggleSkillMobile(skill) {
     function showSkillPopup() {
         body.classList.add('stop_scroll');
-        html.classList.add('blurred');
         skill_preview.style.display = null;
         skill_preview.animate([
             {
@@ -36,7 +35,6 @@ function toggleSkillMobile(skill) {
 
     function hideSkillPopup() {
         body.classList.remove('stop_scroll');
-        html.classList.remove('blurred');
         currentSkill = null;
         skill_preview_popup.animate([
             {

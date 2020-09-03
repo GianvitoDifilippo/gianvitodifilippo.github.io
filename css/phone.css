@@ -131,7 +131,10 @@ html {
 #skill-preview .skill-item {
     width: auto;
     height: auto;
-    margin-right: 15px;
+}
+
+#skill-preview .skill-item {
+    margin: 15px 15px 5px 10px;
 }
 
 #skills .skill-item .skill-icon,
@@ -171,7 +174,11 @@ html {
 }
 
 #skill-descr {
-    clear: left;
+    margin-top: 5px;
+}
+
+#skill-preview h1 {
+    margin-top: 0px;
 }
 
 /* ----------------------------------------  EDUCATION   ---------------------------------------- */

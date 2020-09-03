@@ -95,6 +95,6 @@ function indexMobile()
     // Toggles navlist when clicking on list items
     menu_items.forEach(item => item.addEventListener('click', toggleNavlistActive));
 
+    // Prevents #skill-preview from displaying in the document flow.
     skill_preview.style.display = 'none';
-    skill_preview.onclick = event => event.stopPropagation();
 }

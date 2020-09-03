@@ -19,6 +19,7 @@
     --background_color: rgb(40, 40, 40);
     --background_color_dark: rgb(20, 20, 20);
     --box_background_color: rgb(90, 90, 100, 0.6);
+    --box_background_secondary_color: rgb(20, 140, 210, 0.6);
     --navbar_color_hero: rgba(20, 20, 20, 0.5);
     --navbar_color_navigation: rgb(50, 60, 70);
     --text_color: white;
@@ -115,18 +116,7 @@ a {
 .box {
     position: relative;
     padding: 10px;
-}
-
-.box::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
     background-color: var(--box_background_color);
-    box-shadow: 5px 5px 5px var(--background_color_dark);
-    z-index: -1;
 }
 
 /* ----------------------------------------    HEADER    ---------------------------------------- */
@@ -271,8 +261,8 @@ a {
     flex-direction: column;
 }
 
-#about .box::before {
-    background-color: var(--secondary_color);
+#about .box {
+    background-color: var(--box_background_secondary_color);
 }
 
 #profile {
@@ -860,11 +850,11 @@ a {
         transition: transform .4s ease-out, opacity .2s linear;
     }
 
-    #education .box::before {
+    #education .box {
         transition: background-color .1s linear;
     }
 
-    #education .box:hover::before {
-        background-color: var(--secondary_color);
+    #education .box:hover {
+        background-color: var(--box_background_secondary_color);
     }
 }

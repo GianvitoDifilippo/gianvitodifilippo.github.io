@@ -43,8 +43,8 @@ const fadeinAnimationDuration = parseInt(getComputedStyle(document.body).getProp
 
 /* ------------------------------------------------       VARS/CONSTS       ------------------------------------------------ */
 const desktopMinWidth = 1366;
-const mobile = window.innerWidth <= desktopMinWidth;
 const canHover = parseInt(getComputedStyle(document.body).getPropertyValue('--canHover')) == 1;
+var mobile = window.innerWidth <= desktopMinWidth;
 var headerPopinHandle = null;
 var currentSkill = null;
 var skillContentAnimation = null;
@@ -229,6 +229,15 @@ function toggleSkill(skill) {
 }
 
 /* ------------------------------------------------         SCRIPT          ------------------------------------------------ */
+
+// Screen resize listener
+window.addEventListener('resize', function() {
+    let mobile_new = window.innerWidth <= desktopMinWidth;
+    if (mobile_new != mobile) {
+        location.reload();
+        mobile = mobile_new;
+    }
+});
 
 // Session cookie settings
 if (!getCookie('session')) {

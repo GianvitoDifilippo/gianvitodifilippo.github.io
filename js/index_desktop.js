@@ -13,7 +13,6 @@ function toggleSkillDesktop(skill) {
     {
         skill_projects_content_old = skill_projects_content;
         if (skill_projects_content_old != null) {
-            console.log(skill_projects_content_old);
             let width = skill_projects_content_old.getBoundingClientRect().width;
             let height = skill_projects_content_old.getBoundingClientRect().height;
             skill_projects_content_old.style.position = 'absolute';

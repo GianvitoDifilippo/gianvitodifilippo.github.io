@@ -109,7 +109,6 @@ function emailOnClick(x, y)
     let selector = 'messages:copied';
     copyToClipboard('emailaddress');
     displayMessage(translateText(selector), x, y, emailaddress).setAttribute('data-lang', selector);
-    openFullscreen();
 }
 
 function scrollCallback(scrollY)
@@ -154,11 +153,11 @@ function setSkill(skill) {
     function setDetails(name, since, imgExt, projects) {
         skill_icon.style.backgroundImage = `url(./assets/img/skills/${skill}.${imgExt})`;
         skill_name.forEach(item => item.textContent = name);
-        skill_exp_value.setAttribute('data-lang', `skills:skill-preview:experience:values:${skill}`);
-        skill_exp_value.textContent = translateText(`skills:skill-preview:experience:values:${skill}`);
+        skill_exp_value.setAttribute('data-lang', `skills:preview:experience:values:${skill}`);
+        skill_exp_value.textContent = translateText(`skills:preview:experience:values:${skill}`);
         skill_since_value.textContent = String(since);
-        skill_descr.setAttribute('data-lang', `skills:skill-preview:descr:${skill}`);
-        skill_descr.textContent = translateText(`skills:skill-preview:descr:${skill}`);
+        skill_descr.setAttribute('data-lang', `skills:preview:descr:${skill}`);
+        skill_descr.textContent = translateText(`skills:preview:descr:${skill}`);
 
         if (projects != undefined) {
             skill_projects_none.style.display = 'none';
@@ -248,10 +247,10 @@ window.addEventListener('resize', function() {
     }
 });
 
-// Session cookie settings
-if (!getCookie('session')) {
+// Session settings
+if (window.sessionStorage.getItem('session') === null) {
     launchAnimation();
-    setCookie('session', 'session');
+    window.sessionStorage.setItem('session', 'session');
 }
 
 // Adds neon animation on click
@@ -293,9 +292,9 @@ scrollCallback(window.scrollY);
 // Async code
 (async () => {
     // Translates page in preferred browser language
-    let code = getCookie('lang');
-    if (!code) code = navigator.language.split('-')[0];
-    setCookie('lang', code);
+    let code = window.sessionStorage.getItem('lang');
+    if (code === null) code = navigator.language.split('-')[0];
+    window.sessionStorage.setItem('lang', code);
     await translatePage(code);
 })().then(() => {
     // Shows the page when everything is done

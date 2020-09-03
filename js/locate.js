@@ -19,7 +19,7 @@ async function translatePage(code) {
     languageJson = await loadLanguageJson(code);
     if (!languageJson) languageJson = await loadLanguageJson('en');
     if (!languageJson) return;
-    setCookie('lang', code);
+    window.sessionStorage.setItem('lang', code);
     let fields = document.querySelectorAll('[data-lang]');
     fields.forEach(field => {
         let translatedText = translateText(field.getAttribute('data-lang'));

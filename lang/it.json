@@ -33,13 +33,13 @@
         }
     },
     "skills": {
-        "skill-list": {
+        "list": {
             "languages": "Linguaggi",
             "tools": "Strumenti",
             "backend": "Back-end",
             "webdev": "Sviluppo web"
         },
-        "skill-preview": {
+        "preview": {
             "message": "Clicca su una skill per i dettagli",
             "details": "Dettagli",
             "experience": {
@@ -75,8 +75,8 @@
                 "javascript": "Insieme a HTML e CSS, sta da poco entrando tra le mie skill."
             },
             "projects": "Progetti",
-            "noprojects_message": "Non ci sono progetti per questa skill al momento, ma possiamo avviare il primo insieme.",
-            "noprojects_contactme": "Contattami!"
+            "noprojects": "Non ci sono progetti per questa skill al momento, ma possiamo avviare il primo insieme.",
+            "contactme": "Contattami!"
         }
     },
     "messages": {

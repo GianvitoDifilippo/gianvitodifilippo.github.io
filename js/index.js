@@ -185,10 +185,9 @@ function setSkill(skill) {
         if (projects != undefined) {
             skill_projects_none.style.display = 'none';
             skill_projects_content.style.position = null;
-            skill_projects_list = document.createElement('ul');
-            skill_projects_list.classList.add('skill-projects-list');
-            projects.forEach(project => skill_projects_list.appendChild(createProject(project)));
-            skill_projects_content.appendChild(skill_projects_list);
+            skill_projects_list = new ProjectList(projects);
+            skill_projects_list.element.classList.add('skill-projects-list');
+            skill_projects_content.appendChild(skill_projects_list.element);
         }
         else {
             skill_projects_content.style.position = 'absolute';
@@ -200,7 +199,7 @@ function setSkill(skill) {
     switch(skill) {
         case 'cplusplus':
             setDetails('C++', 2014, 'svg', [
-                { id: 'audioengineer', name: 'AudioEngineer', backgroundPositionX: 'center' }
+                { name: 'AudioEngineer', background: { imgSrc: 'audioengineer_thumbnail.jpg' } } // backgroundPositionX: 'center'
             ]);
             break;
         case 'csharp':
@@ -211,9 +210,9 @@ function setSkill(skill) {
             break;
         case 'java':
             setDetails('Java', 2014, 'svg', [
-                { id: 'magicbet', name: 'MagicBet', backgroundScale: 1.1 },
-                { id: 'voicenotes', name: 'Voice Notes', backgroundPositionX: '-70px' },
-                { id: 'supermario', name: 'Super Mario Clone', backgroundPositionY: '-144px' }
+                { name: 'MagicBet', background: { imgSrc: 'magicbet_thumbnail.jpg' } }, // backgroundScale: 1.1
+                { name: 'Voice Notes', background: { imgSrc: 'voicenotes_thumbnail.jpg' } }, // backgroundPositionX: '-70px'
+                { name: 'Super Mario Clone', background: { imgSrc: 'supermario_thumbnail.jpg' } } // backgroundPositionY: '-144px'
             ]);
             break;
         case 'matlab':
@@ -233,17 +232,17 @@ function setSkill(skill) {
             break;
         case 'html':
             setDetails('HTML', 2020, 'svg', [
-                { id: 'portfolio', name: 'This portfolio website', backgroundPositionX: 'center' }
+                { name: 'This portfolio website', background: { imgSrc: 'portfolio_thumbnail.jpg' } } // backgroundPositionX: 'center'
             ]);
             break;
         case 'css':
             setDetails('CSS', 2020, 'svg', [
-                { id: 'portfolio', name: 'This portfolio website', backgroundPositionX: 'center' }
+                { name: 'This portfolio website', background: { imgSrc: 'portfolio_thumbnail.jpg' } } // backgroundPositionX: 'center'
             ]);
             break;
         case 'javascript':
             setDetails('JavaScript', 2020, 'svg', [
-                { id: 'portfolio', name: 'This portfolio website', backgroundPositionX: 'center' }
+                { name: 'This portfolio website', background: { imgSrc: 'portfolio_thumbnail.jpg' } } // backgroundPositionX: 'center'
             ]);
             break;
     }

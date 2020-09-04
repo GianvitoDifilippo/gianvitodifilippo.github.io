@@ -13,20 +13,20 @@ function toggleSkillDesktop(skill) {
     {
         skill_projects_list_old = skill_projects_list;
         if (skill_projects_list_old != null) {
-            let width = skill_projects_list_old.getBoundingClientRect().width;
-            let height = skill_projects_list_old.getBoundingClientRect().height;
-            skill_projects_list_old.style.position = 'absolute';
-            skill_projects_list_old.style.zIndex = 10;
-            skill_projects_list_old.style.width = `${width}px`;
-            skill_projects_list_old.style.height = `${height}px`;
-            skill_projects_list_old.animate([
+            let width = skill_projects_list_old.element.getBoundingClientRect().width;
+            let height = skill_projects_list_old.element.getBoundingClientRect().height;
+            skill_projects_list_old.element.style.position = 'absolute';
+            skill_projects_list_old.element.style.zIndex = 10;
+            skill_projects_list_old.element.style.width = `${width}px`;
+            skill_projects_list_old.element.style.height = `${height}px`;
+            skill_projects_list_old.element.animate([
                 {
                     opacity: 1
                 },
                 {
                     opacity: 0
                 }
-            ], { duration: 200 }).onfinish = () => skill_projects_content.removeChild(skill_projects_list_old);
+            ], { duration: 200 }).onfinish = () => skill_projects_content.removeChild(skill_projects_list_old.element);
         }
     }
 

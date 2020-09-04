@@ -340,19 +340,19 @@ a {
 }
 
 #social .icons a .icon-linkedin {
-    background-image: url(/assets/img/icons/linkedin.png);
+    background-image: url(/assets/img/icons/linkedin_hover.png);
 }
 
 #social .icons a .icon-github {
-    background-image: url(/assets/img/icons/github.png);
+    background-image: url(/assets/img/icons/github_hover.png);
 }
 
 #social .icons a .icon-instagram {
-    background-image: url(/assets/img/icons/instagram.png);
+    background-image: url(/assets/img/icons/instagram_hover.png);
 }
 
 #social .icons a .icon-facebook {
-    background-image: url(/assets/img/icons/facebook.png);
+    background-image: url(/assets/img/icons/facebook_hover.png);
 }
 
 #reviews {
@@ -794,18 +794,34 @@ a {
 
     #profile .icon {
         transition: background-image .1s linear;
+    } 
+
+    #social .icons a .icon-linkedin {
+        background-image: url(/assets/img/icons/linkedin.png);
     }
 
     #social .icons a .icon-linkedin:hover {
         background-image: url(/assets/img/icons/linkedin_hover.png);
     }
+
+    #social .icons a .icon-github {
+        background-image: url(/assets/img/icons/github.png);
+    }
     
     #social .icons a .icon-github:hover {
         background-image: url(/assets/img/icons/github_hover.png);
     }
+
+    #social .icons a .icon-instagram {
+        background-image: url(/assets/img/icons/instagram.png);
+    }
     
     #social .icons a .icon-instagram:hover {
         background-image: url(/assets/img/icons/instagram_hover.png);
+    }
+
+    #social .icons a .icon-facebook {
+        background-image: url(/assets/img/icons/facebook.png);
     }
     
     #social .icons a .icon-facebook:hover {
@@ -865,4 +881,9 @@ a {
     #education .box:hover {
         background-color: var(--box_background_secondary_color);
     }
+}
+
+@media (any-hover: none) {
+
+    
 }

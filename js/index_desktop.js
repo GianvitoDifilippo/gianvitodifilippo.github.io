@@ -33,7 +33,7 @@ function toggleSkillDesktop(skill) {
     if (skillContentAnimation !== null) return;
 
     let oldHeight = skill_content.getBoundingClientRect().height;
-    let newHeight = null;
+    let newHeight = oldHeight;
     let onfinish = null;
 
     if (currentSkill === null) {

@@ -26,7 +26,6 @@ const phonenumber = document.getElementById('phonenumber');
 const emailaddress = document.getElementById('emailaddress');
 
 /* ------------------------------------------------     SKILLS ELEMENTS     ------------------------------------------------ */
-const skill_preview_popup = document.getElementById('skill-preview-popup');
 const skill_preview = document.getElementById('skill-preview');
 const skill_message = document.getElementById('skill-message');
 const skill_content = document.getElementById('skill-content');
@@ -54,6 +53,7 @@ var currentSkill = null;
 var skillContentAnimation = null;
 var skill_projects_list = null;
 var skill_projects_list_old = null;
+var skill_popup = null;
 
 const projectThumbnails = {
     audioengineer: { id: 'audioengineer', name: 'AudioEngineer', options: { backgroundPositionX: 'center' } },
@@ -113,7 +113,7 @@ function phonenumberOnClick()
     let text = translateText(selector);
     if (text === null) text = 'Copiato!';
     let message = new Message(text);
-    document.body.appendChild(message);
+    document.body.appendChild(message.element);
     if (device !== 'phone') {
         message.setX('center', phonenumber);
     }
@@ -135,7 +135,7 @@ function emailOnClick()
     let text = translateText(selector);
     if (text === null) text = 'Copiato!';
     let message = new Message(text);
-    document.body.appendChild(message);
+    document.body.appendChild(message.element);
     if (device !== 'phone') {
         message.setX('center', emailaddress);
     }

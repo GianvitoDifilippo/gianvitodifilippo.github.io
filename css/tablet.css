@@ -275,7 +275,7 @@ body.stop_scroll {
     z-index: -1;
 }
 
-#skill-preview-popup {
+.skill-popup {
     display: flex;
     flex-direction: column;
     justify-content: space-between;

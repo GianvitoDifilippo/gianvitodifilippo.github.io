@@ -12,46 +12,15 @@ function toggleSkillMobile(skill) {
                 transform: 'scale(1)'
             }
         ], { duration: 300 });
-        skill_preview_popup.style.display = null;
-        skill_preview_popup.animate([
-            {
-                opacity: 0
-            },
-            {
-                opacity: 1
-            }
-        ], { duration: 200 });
-        skill_back.animate([
-            {
-                transform: 'translateY(300%)'
-            },
-            {
-                transform: 'translateY(0%)'
-            }
-        ], { duration: 400 });
-        skill_preview_popup.prepend(skill_preview);
+        skill_popup = new SkillPopup(skill_preview);
         setSkill(skill);
+        skill_popup.open();
     }
 
     function hideSkillPopup() {
         body.classList.remove('stop_scroll');
         currentSkill = null;
-        skill_preview_popup.animate([
-            {
-                opacity: 1
-            },
-            {
-                opacity: 0
-            }
-        ], { duration: 200 }).onfinish = () => skill_preview_popup.style.display = 'none';
-        skill_back.animate([
-            {
-                transform: 'translateY(0%)'
-            },
-            {
-                transform: 'translateY(300%)'
-            }
-        ], { duration: 300 });
+        skill_popup.close();
         skill_preview.animate([
             {
                 opacity: 1,
@@ -63,10 +32,10 @@ function toggleSkillMobile(skill) {
             }
         ], { duration: 300 }).onfinish = function() {
             skill_preview.style.display = 'none';
-            skill_preview_popup.removeChild(skill_preview);
             if (skill_projects_list != null) {
                 skill_projects_content.removeChild(skill_projects_list.element);
                 skill_projects_list = null;
+                skill_popup = null;
             }
         }
     }

@@ -2,7 +2,6 @@
 const body = document.body;
 const html = document.documentElement;
 const neon_activator_items = document.querySelectorAll('.neon_activator');
-const message = document.querySelector('.message');
 const project_thumbnail = document.querySelector('.project-thumbnail');
 const footer = document.getElementById('footer');
 
@@ -46,17 +45,21 @@ const navigationPosition = parseInt(getComputedStyle(document.body).getPropertyV
 const neonAnimationDuration = parseInt(getComputedStyle(document.body).getPropertyValue('--neon_animation_duration'));
 const fadeinAnimationDuration = parseInt(getComputedStyle(document.body).getPropertyValue('--fadein_animation_duration'));
 
-/* ------------------------------------------------       VARS/CONSTS       ------------------------------------------------ */
+/* ------------------------------------------------  VARS/CONSTS/FUNCTIONS  ------------------------------------------------ */
 const desktopMinWidth = 1366;
+const tabletMinWidth = 600;
 const canHover = parseInt(getComputedStyle(document.body).getPropertyValue('--canHover')) == 1;
-var mobile = window.innerWidth <= desktopMinWidth;
 var headerPopinHandle = null;
 var currentSkill = null;
 var skillContentAnimation = null;
 var skill_projects_content = null;
 var skill_projects_content_old = null;
 
-/* ------------------------------------------------        FUNCTIONS        ------------------------------------------------ */
+function deviceType(width = window.innerWidth) { return width > desktopMinWidth ? 'desktop' : width > tabletMinWidth ? 'tablet' : 'phone'; }
+function isMobile(width = window.innerWidth) { return deviceType(width) === 'tablet' || deviceType(width) === 'phone'; }
+
+const device = deviceType();
+const mobile = isMobile();
 
 function headerPopin()
 {
@@ -94,22 +97,39 @@ function launchAnimation()
     headerPopinHandle = setTimeout(headerPopin, 4500);
 }
 
-function phonenumberOnClick(x, y)
+function phonenumberOnClick()
 {
-    if (!mobile) {
-        let selector = 'messages:copied';
-        copyToClipboard('phonenumber');
-        displayMessage(translateText(selector), x, y, phonenumber).setAttribute('data-lang', selector);
+    copyToClipboard('phonenumber');
+
+    let selector = 'messages:copied';
+    let message = new Message(translateText(selector));
+    if (device !== 'phone') {
+        message.setX('center', phonenumber);
     }
+    else {
+        message.setX('center');
+    }
+    message.setY('bottom-top,-6px', phonenumber);
+    message.element.setAttribute('data-lang', selector);
+    
     // Phone number - call on click
     window.open('tel:+393898331018', '_parent');
 }
 
-function emailOnClick(x, y)
+function emailOnClick()
 {
-    let selector = 'messages:copied';
     copyToClipboard('emailaddress');
-    displayMessage(translateText(selector), x, y, emailaddress).setAttribute('data-lang', selector);
+
+    let selector = 'messages:copied';
+    let message = new Message(translateText(selector));
+    if (device !== 'phone') {
+        message.setX('center', emailaddress);
+    }
+    else {
+        message.setX('center');
+    }
+    message.setY('bottom-top,-6px', emailaddress);
+    message.element.setAttribute('data-lang', selector);
 }
 
 function scrollCallback(scrollY)
@@ -241,10 +261,8 @@ function toggleSkill(skill) {
 
 // Screen resize listener
 window.addEventListener('resize', function() {
-    let mobile_new = window.innerWidth <= desktopMinWidth;
-    if (mobile_new != mobile) {
+    if (deviceType() !== device) {
         location.reload();
-        mobile = mobile_new;
     }
 });
 

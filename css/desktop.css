@@ -667,7 +667,7 @@ a {
 /* ----------------------------------------   MESSAGE    ---------------------------------------- */
 
 .message {
-    position: absolute;
+    position: fixed;
     font-size: 1.6rem;
     text-transform: uppercase;
     font-weight: 500;

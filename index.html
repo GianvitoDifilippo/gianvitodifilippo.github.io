@@ -59,11 +59,11 @@
                     <div>
                         <div id="contacts">
                             <h1 data-lang="about:contacts">Contatti</h1>
-                            <div class="neon_activator neon_secondary" onclick="emailOnClick('center', 'bottom-top,-6')">
+                            <div class="neon_activator neon_secondary" onclick="emailOnClick()">
                                 <div class="i-wrapper noselect"><i class="fas fa-envelope fa-2x"></i></div>
                                 <span id="emailaddress" class="noselect">gianvito.difilippo@gmail.com</span>
                             </div>
-                            <div class="neon_activator neon_secondary" onclick="phonenumberOnClick('center', 'bottom-top,-6')">
+                            <div class="neon_activator neon_secondary" onclick="phonenumberOnClick()">
                                 <div class="i-wrapper noselect"><i class="fas fa-mobile-alt fa-2x"></i></div>
                                 <span id="phonenumber" class="noselect">+39 3898331018</span>
                             </div>
@@ -275,7 +275,6 @@
 
     </div>
     <!-- ------------------------------------------        MISC        ------------------------------------------ -->
-    <div class="message noselect" style="display: none;"></div>
     <li class="project-thumbnail" style="display: none;">
         <div class="project-background"></div>
         <div class="space">
@@ -291,8 +290,9 @@
 
     <!-- ------------------------------------------       SCRIPTS      ------------------------------------------ -->
     <script src="https://kit.fontawesome.com/2150929a5b.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./js/utils.js"></script>
-    <script type="text/javascript" src="./js/locate.js"></script>
+    <script type="text/javascript" src="./js/utils/utils.js"></script>
+    <script type="text/javascript" src="./js/utils/message.js"></script>
+    <script type="text/javascript" src="./js/utils/locate.js"></script>
     <script type="text/javascript" src="./js/index_desktop.js"></script>
     <script type="text/javascript" src="./js/index_mobile.js"></script>
     <script type="text/javascript" src="./js/index.js"></script>

@@ -6,7 +6,7 @@ class ProjectList
 
         projects.forEach(project => {
             let li = document.createElement('li');
-            li.appendChild(new ProjectThumbnail(project.name, project.background).element);
+            li.appendChild(new ProjectThumbnail(project.id, project.name, project.options).element);
             this.element.appendChild(li);
         });
     }

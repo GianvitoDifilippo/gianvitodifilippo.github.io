@@ -55,6 +55,14 @@ var skillContentAnimation = null;
 var skill_projects_list = null;
 var skill_projects_list_old = null;
 
+const projectThumbnails = {
+    audioengineer: { id: 'audioengineer', name: 'AudioEngineer', options: { backgroundPositionX: 'center' } },
+    magicbet: { id: 'magicbet', name: 'MagicBet', options: { backgroundScale: 1.1 } },
+    voicenotes: { id: 'voicenotes', name: 'Voice Notes', options: { backgroundPositionX: '-70px' } },
+    supermario: { id: 'supermario', name: 'Super Mario Clone', options: { backgroundPositionY: '-144px' } },
+    portfolio: { id: 'portfolio', name: 'Questo sito!', options: { backgroundPositionX: 'center', data_lang: 'misc:thiswebsite' } }
+};
+
 function deviceType(width = window.innerWidth) { return width > desktopMinWidth ? 'desktop' : width > tabletMinWidth ? 'tablet' : 'phone'; }
 function isMobile(width = window.innerWidth) { return deviceType(width) === 'tablet' || deviceType(width) === 'phone'; }
 
@@ -102,7 +110,9 @@ function phonenumberOnClick()
     copyToClipboard('phonenumber');
 
     let selector = 'messages:copied';
-    let message = new Message(translateText(selector));
+    let text = translateText(selector);
+    if (text === null) text = 'Copiato!';
+    let message = new Message(text);
     document.body.appendChild(message);
     if (device !== 'phone') {
         message.setX('center', phonenumber);
@@ -122,7 +132,9 @@ function emailOnClick()
     copyToClipboard('emailaddress');
 
     let selector = 'messages:copied';
-    let message = new Message(translateText(selector));
+    let text = translateText(selector);
+    if (text === null) text = 'Copiato!';
+    let message = new Message(text);
     document.body.appendChild(message);
     if (device !== 'phone') {
         message.setX('center', emailaddress);
@@ -146,30 +158,6 @@ function scrollCallback(scrollY)
 
     // Hero background parallax effect
     hero.style.backgroundPositionY = `${scrollY * 0.7}px`;
-}
-
-function createProject(project) {
-    let project_new = project_thumbnail.cloneNode(true);
-    project_new.style = null;
-
-    let background = project_new.getElementsByClassName('project-background')[0];
-    let project_name = project_new.getElementsByClassName('project-name')[0];
-    background.style.backgroundImage = `url(./assets/img/projects/${project.id}_thumbnail.jpg)`;
-    project_name.textContent = project.name != undefined ? project.name : project.id.toUpperCase();
-    if (project.backgroundPositionX != undefined) {
-        background.style.backgroundPositionX = project.backgroundPositionX;
-    }
-    if (project.backgroundPositionY != undefined) {
-        background.style.backgroundPositionY = project.backgroundPositionY;
-    }
-    if (project.backgroundScale != undefined && !isNaN(project.backgroundScale) && project.backgroundScale > 1) {
-        background.style.width = `${project.backgroundScale * 100}%`;
-        background.style.height = `${project.backgroundScale * 100}%`;
-        background.style.left = `${-(project.backgroundScale - 1) * 50}%`;
-        background.style.top = `${-(project.backgroundScale - 1) * 50}%`;
-    }
-
-    return project_new;
 }
 
 function setSkill(skill) {
@@ -199,7 +187,7 @@ function setSkill(skill) {
     switch(skill) {
         case 'cplusplus':
             setDetails('C++', 2014, 'svg', [
-                { name: 'AudioEngineer', background: { imgSrc: 'audioengineer_thumbnail.jpg' } } // backgroundPositionX: 'center'
+                projectThumbnails.audioengineer
             ]);
             break;
         case 'csharp':
@@ -210,9 +198,9 @@ function setSkill(skill) {
             break;
         case 'java':
             setDetails('Java', 2014, 'svg', [
-                { name: 'MagicBet', background: { imgSrc: 'magicbet_thumbnail.jpg' } }, // backgroundScale: 1.1
-                { name: 'Voice Notes', background: { imgSrc: 'voicenotes_thumbnail.jpg' } }, // backgroundPositionX: '-70px'
-                { name: 'Super Mario Clone', background: { imgSrc: 'supermario_thumbnail.jpg' } } // backgroundPositionY: '-144px'
+                projectThumbnails.magicbet,
+                projectThumbnails.voicenotes,
+                projectThumbnails.supermario
             ]);
             break;
         case 'matlab':
@@ -232,17 +220,17 @@ function setSkill(skill) {
             break;
         case 'html':
             setDetails('HTML', 2020, 'svg', [
-                { name: 'This portfolio website', background: { imgSrc: 'portfolio_thumbnail.jpg' } } // backgroundPositionX: 'center'
+                projectThumbnails.portfolio
             ]);
             break;
         case 'css':
             setDetails('CSS', 2020, 'svg', [
-                { name: 'This portfolio website', background: { imgSrc: 'portfolio_thumbnail.jpg' } } // backgroundPositionX: 'center'
+                projectThumbnails.portfolio
             ]);
             break;
         case 'javascript':
             setDetails('JavaScript', 2020, 'svg', [
-                { name: 'This portfolio website', background: { imgSrc: 'portfolio_thumbnail.jpg' } } // backgroundPositionX: 'center'
+                projectThumbnails.portfolio
             ]);
             break;
     }

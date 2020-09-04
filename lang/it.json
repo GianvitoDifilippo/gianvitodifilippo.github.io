@@ -81,5 +81,8 @@
     },
     "messages": {
         "copied": "Copiato!"
+    },
+    "misc": {
+        "thiswebsite": "Questo sito!"
     }
 }

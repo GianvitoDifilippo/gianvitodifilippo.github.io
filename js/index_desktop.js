@@ -11,22 +11,22 @@ function toggleSkillDesktop(skill) {
 
     function removeOldProjects()
     {
-        skill_projects_content_old = skill_projects_content;
-        if (skill_projects_content_old != null) {
-            let width = skill_projects_content_old.getBoundingClientRect().width;
-            let height = skill_projects_content_old.getBoundingClientRect().height;
-            skill_projects_content_old.style.position = 'absolute';
-            skill_projects_content_old.style.zIndex = 10;
-            skill_projects_content_old.style.width = `${width}px`;
-            skill_projects_content_old.style.height = `${height}px`;
-            skill_projects_content_old.animate([
+        skill_projects_list_old = skill_projects_list;
+        if (skill_projects_list_old != null) {
+            let width = skill_projects_list_old.getBoundingClientRect().width;
+            let height = skill_projects_list_old.getBoundingClientRect().height;
+            skill_projects_list_old.style.position = 'absolute';
+            skill_projects_list_old.style.zIndex = 10;
+            skill_projects_list_old.style.width = `${width}px`;
+            skill_projects_list_old.style.height = `${height}px`;
+            skill_projects_list_old.animate([
                 {
                     opacity: 1
                 },
                 {
                     opacity: 0
                 }
-            ], { duration: 200 }).onfinish = () => skill_projects_content_wrapper.removeChild(skill_projects_content_old);
+            ], { duration: 200 }).onfinish = () => skill_projects_content.removeChild(skill_projects_list_old);
         }
     }
 
@@ -47,7 +47,7 @@ function toggleSkillDesktop(skill) {
         if (currentSkill === skill) {
             hideSkillDetails();
             currentSkill = null;
-            skill_projects_content = null;
+            skill_projects_list = null;
             newHeight = 0;
             onfinish = () => skill_content.style.height = '0px';
         }

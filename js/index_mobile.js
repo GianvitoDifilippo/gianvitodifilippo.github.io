@@ -64,9 +64,9 @@ function toggleSkillMobile(skill) {
         ], { duration: 300 }).onfinish = function() {
             skill_preview.style.display = 'none';
             skill_preview_popup.removeChild(skill_preview);
-            if (skill_projects_content != null) {
-                skill_projects_content_wrapper.removeChild(skill_projects_content);
-                skill_projects_content = null;
+            if (skill_projects_list != null) {
+                skill_projects_content.removeChild(skill_projects_list);
+                skill_projects_list = null;
             }
         }
     }

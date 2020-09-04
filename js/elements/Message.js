@@ -13,8 +13,6 @@ class Message
         if (y !== undefined) {
             this.element.style.top = y;
         }
-        
-        document.body.appendChild(this.element);
     }
 
     setX(x, parent)

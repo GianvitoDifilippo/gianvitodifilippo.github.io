@@ -31,7 +31,7 @@ const skill_preview = document.getElementById('skill-preview');
 const skill_message = document.getElementById('skill-message');
 const skill_content = document.getElementById('skill-content');
 const skill_details_title = document.getElementById('skill-details-title');
-const skill_projects_content_wrapper = document.getElementById('skill-projects-content');
+const skill_projects_content = document.getElementById('skill-projects-content');
 const skill_projects_none = document.getElementById('skill-projects-none');
 const skill_icon = document.querySelector('#skill-details-content .skill-item .skill-icon');
 const skill_name = document.querySelectorAll('#skill-preview .skill-name');
@@ -52,8 +52,8 @@ const canHover = parseInt(getComputedStyle(document.body).getPropertyValue('--ca
 var headerPopinHandle = null;
 var currentSkill = null;
 var skillContentAnimation = null;
-var skill_projects_content = null;
-var skill_projects_content_old = null;
+var skill_projects_list = null;
+var skill_projects_list_old = null;
 
 function deviceType(width = window.innerWidth) { return width > desktopMinWidth ? 'desktop' : width > tabletMinWidth ? 'tablet' : 'phone'; }
 function isMobile(width = window.innerWidth) { return deviceType(width) === 'tablet' || deviceType(width) === 'phone'; }
@@ -103,6 +103,7 @@ function phonenumberOnClick()
 
     let selector = 'messages:copied';
     let message = new Message(translateText(selector));
+    document.body.appendChild(message);
     if (device !== 'phone') {
         message.setX('center', phonenumber);
     }
@@ -122,6 +123,7 @@ function emailOnClick()
 
     let selector = 'messages:copied';
     let message = new Message(translateText(selector));
+    document.body.appendChild(message);
     if (device !== 'phone') {
         message.setX('center', emailaddress);
     }
@@ -182,16 +184,16 @@ function setSkill(skill) {
 
         if (projects != undefined) {
             skill_projects_none.style.display = 'none';
-            skill_projects_content_wrapper.style.position = null;
-            skill_projects_content = document.createElement('ul');
-            skill_projects_content.classList.add('skill-projects-list');
-            projects.forEach(project => skill_projects_content.appendChild(createProject(project)));
-            skill_projects_content_wrapper.appendChild(skill_projects_content);
+            skill_projects_content.style.position = null;
+            skill_projects_list = document.createElement('ul');
+            skill_projects_list.classList.add('skill-projects-list');
+            projects.forEach(project => skill_projects_list.appendChild(createProject(project)));
+            skill_projects_content.appendChild(skill_projects_list);
         }
         else {
-            skill_projects_content_wrapper.style.position = 'absolute';
+            skill_projects_content.style.position = 'absolute';
             skill_projects_none.style.display = null;
-            skill_projects_content = null;
+            skill_projects_list = null;
         }
     }
     

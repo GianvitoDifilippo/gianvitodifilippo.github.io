@@ -1,17 +1,19 @@
 function toggleSkillMobile(skill) {
+    let skill_previewKeyframes = [
+        {
+            opacity: 0,
+            transform: 'scale(0)'
+        },
+        {
+            opacity: 1,
+            transform: 'scale(1)'
+        }
+    ];
+
     function showSkillPopup() {
         body.classList.add('stop_scroll');
         skill_preview.style.display = null;
-        skill_preview.animate([
-            {
-                opacity: 0,
-                transform: 'scale(0)'
-            },
-            {
-                opacity: 1,
-                transform: 'scale(1)'
-            }
-        ], { duration: 300 });
+        skill_preview.animate(skill_previewKeyframes, { duration: 300 });
         skill_popup = new SkillPopup(skill_preview);
         setSkill(skill);
         skill_popup.open();
@@ -21,16 +23,7 @@ function toggleSkillMobile(skill) {
         body.classList.remove('stop_scroll');
         currentSkill = null;
         skill_popup.close();
-        skill_preview.animate([
-            {
-                opacity: 1,
-                transform: 'scale(1)'
-            },
-            {
-                opacity: 0,
-                transform: 'scale(0)'
-            }
-        ], { duration: 300 }).onfinish = function() {
+        skill_preview.animate(skill_previewKeyframes, { duration: 300, direction: 'reverse' }).onfinish = function() {
             skill_preview.style.display = 'none';
             if (skill_projects_list != null) {
                 skill_projects_content.removeChild(skill_projects_list.element);

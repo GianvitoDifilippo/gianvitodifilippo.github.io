@@ -21,8 +21,13 @@ class Popup
         this.element.animate(Popup.keyframes, { duration: 200 });
     }
 
-    close()
+    close(onfinish = () => this.ondismiss())
     {
-        this.element.animate(Popup.keyframes, { duration: 200, direction: 'reverse' }).onfinish = () => document.body.removeChild(this.element);
+        this.element.animate(Popup.keyframes, { duration: 200, direction: 'reverse' }).onfinish = onfinish;
+    }
+
+    ondismiss()
+    {
+        document.body.removeChild(this.element);
     }
 }

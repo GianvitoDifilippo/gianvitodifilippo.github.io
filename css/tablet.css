@@ -40,9 +40,29 @@ body.stop_scroll {
     animation: neon_mobile_secondary var(--neon_animation_duration);
 }
 
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.popup::before {
+    content: '';
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0, 0.95);
+    z-index: -1;
+}
+
 /* ----------------------------------------    HEADER    ---------------------------------------- */
 
-#header.hidden {
+header.hidden {
     transform: none;
 }
 
@@ -87,7 +107,7 @@ body.stop_scroll {
     z-index: 2;
 }
 
-#header.hidden #hamburger {
+header.hidden #hamburger {
     transform: translateX(100px);
 }
 
@@ -255,37 +275,25 @@ body.stop_scroll {
     -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 1) 10px, rgba(0, 0, 0, 1) calc(100% - 10px), rgba(0, 0, 0, 0) 100%);
 }
 
-.popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 100;
-}
-
-.popup::before {
-    content: '';
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background-color: rgb(0, 0, 0, 0.95);
-    z-index: -1;
-}
-
 .skill-popup {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     padding: 20px 0px 20px 0px;
 }
 
+.skill-popup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    justify-self: center;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
 #skill-preview {
     width: calc(100% - 15vw);
-    max-height: calc(100% - min(15vw, 15vh));
     margin: 0px 7.5vw 0px 7.5vw;
     overflow: hidden;
 }

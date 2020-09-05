@@ -6,7 +6,7 @@ const project_thumbnail = document.querySelector('.project-thumbnail');
 const footer = document.getElementById('footer');
 
 /* ------------------------------------------------     HEADER ELEMENTS     ------------------------------------------------ */
-const header = document.getElementById('header');
+const header = document.getElementsByTagName('header')[0];
 const navbar = document.getElementById('navbar');
 const navlist = document.getElementById('navlist');
 const hamburger = document.getElementById('hamburger');

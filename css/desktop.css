@@ -123,7 +123,7 @@ a {
 
 /* ----------------------------------------    HEADER    ---------------------------------------- */
 
-#header {
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -131,7 +131,7 @@ a {
     z-index: 10;
 }
 
-#header.hidden {
+header.hidden {
     transform: translateY(-100%);
 }
 
@@ -664,6 +664,13 @@ a {
     min-height: 100vh;
 }
 
+/* ----------------------------------------    FOOTER    ---------------------------------------- */
+
+footer {
+    background-color: var(--background_color_dark);
+    height: 100px;
+}
+
 /* ----------------------------------------   MESSAGE    ---------------------------------------- */
 
 .message {
@@ -881,9 +888,4 @@ a {
     #education .box:hover {
         background-color: var(--box_background_secondary_color);
     }
-}
-
-@media (any-hover: none) {
-
-    
 }

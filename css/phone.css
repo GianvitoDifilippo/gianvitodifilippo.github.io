@@ -132,7 +132,6 @@ html {
 
 #skill-preview {
     width: calc(100% - 10vw);
-    max-height: calc(100% - min(10vw, 10vh));
     margin: 0px 5vw 0px 5vw;
 }
 

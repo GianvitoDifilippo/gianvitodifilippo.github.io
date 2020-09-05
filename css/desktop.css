@@ -175,8 +175,16 @@ header.hidden {
     padding: 20px;
 }
 
-#navlist .fa-cog {
-    display: none;
+#options-button {
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+    opacity: 0.5;
+    font-size: 2.5rem;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 10;
 }
 
 /* ----------------------------------------     HERO     ---------------------------------------- */
@@ -217,7 +225,6 @@ header.hidden {
 
 #hero-main {
     position: relative;
-    z-index: 1;
     left: 14%;
 }
 
@@ -783,6 +790,15 @@ footer {
     }
 }
 
+@keyframes rotate120 {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(120deg);
+    }
+}
+
 /* ----------------------------------------   HOVERING   ---------------------------------------- */
 @media (any-hover: hover) {
     :root {
@@ -887,5 +903,14 @@ footer {
 
     #education .box:hover {
         background-color: var(--box_background_secondary_color);
+    }
+
+    #options-button {
+        transition: opacity .1s linear;
+    }
+
+    #options-button:hover {
+        opacity: 1;
+        animation: rotate120 .5s ease;
     }
 }

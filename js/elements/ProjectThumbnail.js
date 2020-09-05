@@ -1,6 +1,6 @@
 class ProjectThumbnail
 {
-    constructor(id, name, options)
+    constructor(name, title, options)
     {
         this.element = document.createElement('div');
         this.element.classList.add('project-thumbnail');
@@ -13,20 +13,19 @@ class ProjectThumbnail
             icon.classList.add('fas');
             icon.classList.add('fa-search-plus');
             space.appendChild(icon);
-        let project_name = document.createElement('h2');
-        project_name.classList.add('project-name');
+        let project_title = document.createElement('h2');
         this.element.appendChild(project_background);
         this.element.appendChild(space);
-        this.element.appendChild(project_name);
+        this.element.appendChild(project_title);
 
-        project_name.textContent = name;
+        project_title.textContent = title;
         if (options.data_lang !== undefined) {
             let name_lang = translateText(options.data_lang);
-            if (name_lang !== null) project_name.textContent = name_lang;
-            project_name.setAttribute('data-lang', options.data_lang);
+            if (name_lang !== null) project_title.textContent = name_lang;
+            project_title.setAttribute('data-lang', options.data_lang);
         }
         
-        project_background.style.backgroundImage = `url(./assets/img/projects/${id}_thumbnail.jpg)`;
+        project_background.style.backgroundImage = `url(./assets/img/projects/${name}_thumbnail.jpg)`;
         
         if (options !== undefined) {
             if (options.backgroundPositionX !== undefined) {

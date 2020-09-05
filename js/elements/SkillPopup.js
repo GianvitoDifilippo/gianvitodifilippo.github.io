@@ -9,15 +9,14 @@ class SkillPopup extends Popup
         }
     ];
 
-    constructor(skill_preview)
+    constructor()
     {
         super();
 
         this.element.classList.add('skill-popup');
         this.skill_popup_container = document.createElement('div');
         this.skill_popup_container.classList.add('skill-popup-container');
-            this.skill_preview = skill_preview;
-            this.skill_popup_container.appendChild(skill_preview);
+        this.skill_popup_container.appendChild(skill_preview);
         this.icon = document.createElement('i');
         this.icon.classList.add('fas');
         this.icon.classList.add('fa-angle-double-left');
@@ -42,6 +41,6 @@ class SkillPopup extends Popup
     ondismiss()
     {
         super.ondismiss();
-        this.skill_popup_container.removeChild(this.skill_preview);
+        this.skill_popup_container.removeChild(skill_preview);
     }
 }

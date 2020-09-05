@@ -184,18 +184,21 @@ header.hidden #hamburger {
     font-size: 3.5rem;
 }
 
-#navlist .fa-cog {
-    position: fixed;
-    display: block;
+#options-button {
     font-size: 3.5rem;
-    left: 0;
+    left: 15px;
     bottom: 15px;
-    transform: translateX(-100%);
+    transform: translateX(calc(-15px - 3.5rem));
     transition: transform .2s;
 }
 
-#navlist .fa-cog.active {
-    transform: translateX(15px);
+#options-button:hover {
+    opacity: 0.5;
+    animation: none;
+}
+
+#options-button.active {
+    transform: translateX(0%);
     transition: transform .2s .4s;
 }
 

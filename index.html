@@ -25,7 +25,6 @@
                 <li><a class="neon_activator neon" data-lang="section_titles:skills" href="#skills">Skills</a></li>
                 <li><a class="neon_activator neon" data-lang="section_titles:education" href="#education">Educazione</a></li>
                 <li><a class="neon_activator neon" data-lang="section_titles:projects" href="#projects">Progetti</a></li>
-                <i class="fas fa-cog"></i>
             </ul>
         </div>
     </header>
@@ -59,13 +58,13 @@
                     <div>
                         <div id="contacts">
                             <h1 data-lang="about:contacts">Contatti</h1>
-                            <div class="neon_activator neon_secondary" onclick="emailOnClick()">
-                                <div class="i-wrapper noselect"><i class="fas fa-envelope fa-2x"></i></div>
-                                <span id="emailaddress" class="noselect">gianvito.difilippo@gmail.com</span>
+                            <div class="neon_activator">
+                                <a href="mailto:gianvito.difilippo@gmail.com" class="i-wrapper neon_secondary noselect"><i class="fas fa-envelope fa-2x"></i></a>
+                                <span id="emailaddress" class="neon_secondary noselect" onclick="emailOnClick()">gianvito.difilippo@gmail.com</span>
                             </div>
-                            <div class="neon_activator neon_secondary" onclick="phonenumberOnClick()">
-                                <div class="i-wrapper noselect"><i class="fas fa-mobile-alt fa-2x"></i></div>
-                                <span id="phonenumber" class="noselect">+39 3898331018</span>
+                            <div class="neon_activator">
+                                <a href="tel:+393898331018" class="i-wrapper neon_secondary noselect"><i class="fas fa-mobile-alt fa-2x"></i></a>
+                                <span id="phonenumber" class="neon_secondary noselect" onclick="phonenumberOnClick()">+39 3898331018</span>
                             </div>
                         </div>
                         <div id="social">
@@ -272,8 +271,11 @@
     </section>
     <!-- ------------------------------------------       FOOTER       ------------------------------------------ -->
     <footer>
+        <test-element>
 
+        </test-element>
     </footer>
+    <i id="options-button" class="fas fa-cog"></i>
 
     <!-- ------------------------------------------       SCRIPTS      ------------------------------------------ -->
     <script src="https://kit.fontawesome.com/2150929a5b.js" crossorigin="anonymous"></script>

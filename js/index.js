@@ -4,6 +4,7 @@ const html = document.documentElement;
 const neon_activator_items = document.querySelectorAll('.neon_activator');
 const project_thumbnail = document.querySelector('.project-thumbnail');
 const footer = document.getElementById('footer');
+const options_icon = document.getElementById('options-button');
 
 /* ------------------------------------------------     HEADER ELEMENTS     ------------------------------------------------ */
 const header = document.getElementsByTagName('header')[0];
@@ -12,7 +13,6 @@ const navlist = document.getElementById('navlist');
 const hamburger = document.getElementById('hamburger');
 const menu_items = document.querySelectorAll('#navlist li');
 const header_brand = document.querySelector('#navbar .brand');
-const options_icon = document.querySelector('#navlist .fa-cog');
 
 /* ------------------------------------------------      HERO ELEMENTS      ------------------------------------------------ */
 const hero = document.getElementById('hero');
@@ -122,9 +122,6 @@ function phonenumberOnClick()
     }
     message.setY('bottom-top,-6px', phonenumber);
     message.element.setAttribute('data-lang', selector);
-    
-    // Phone number - call on click
-    window.open('tel:+393898331018', '_parent');
 }
 
 function emailOnClick()

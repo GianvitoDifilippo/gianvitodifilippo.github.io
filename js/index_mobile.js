@@ -14,7 +14,7 @@ function toggleSkillMobile(skill) {
         body.classList.add('stop_scroll');
         skill_preview.style.display = null;
         skill_preview.animate(skill_previewKeyframes, { duration: 300 });
-        skill_popup = new SkillPopup(skill_preview);
+        skill_popup = document.createElement('div', { is: 'skill-popup' });
         setSkill(skill);
         skill_popup.open();
     }

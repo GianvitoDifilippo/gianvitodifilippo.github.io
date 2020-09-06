@@ -1,4 +1,4 @@
-class SkillPopup extends Popup
+class SkillPopup extends BasePopup
 {
     static iconKeyframes = [
         {
@@ -13,7 +13,7 @@ class SkillPopup extends Popup
     {
         super();
 
-        this.element.classList.add('skill-popup');
+        this.classList.add('skill-popup');
         this.skill_popup_container = document.createElement('div');
         this.skill_popup_container.classList.add('skill-popup-container');
         this.skill_popup_container.appendChild(skill_preview);
@@ -22,8 +22,8 @@ class SkillPopup extends Popup
         this.icon.classList.add('fa-angle-double-left');
         this.icon.onclick = toggleSkill;
 
-        this.element.appendChild(this.skill_popup_container);
-        this.element.appendChild(this.icon);
+        this.appendChild(this.skill_popup_container);
+        this.appendChild(this.icon);
     }
 
     open()
@@ -44,3 +44,5 @@ class SkillPopup extends Popup
         this.skill_popup_container.removeChild(skill_preview);
     }
 }
+
+window.customElements.define('skill-popup', SkillPopup, { extends: 'div' });

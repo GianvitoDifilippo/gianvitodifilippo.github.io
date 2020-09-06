@@ -2,7 +2,6 @@
 const body = document.body;
 const html = document.documentElement;
 const neon_activator_items = document.querySelectorAll('.neon_activator');
-const project_thumbnail = document.querySelector('.project-thumbnail');
 const footer = document.getElementById('footer');
 const options_icon = document.getElementById('options-button');
 
@@ -163,7 +162,6 @@ function setSkill(skill) {
             skill_projects_none.style.display = 'none';
             skill_projects_content.style.position = null;
             skill_projects_list = document.createElement('div', { is: 'project-list' }).from(projects);
-            skill_projects_list.classList.add('skill-projects-list');
             skill_projects_content.appendChild(skill_projects_list);
         }
         else {

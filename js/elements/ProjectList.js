@@ -3,6 +3,7 @@ class ProjectListDivElement extends HTMLDivElement
     constructor()
     {
         super();
+        this.className = 'skill-projects-list';
     }
 
     from(projects)

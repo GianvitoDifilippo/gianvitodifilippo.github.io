@@ -26,7 +26,7 @@ function toggleSkillMobile(skill) {
         skill_preview.animate(skill_previewKeyframes, { duration: 300, direction: 'reverse' }).onfinish = function() {
             skill_preview.style.display = 'none';
             if (skill_projects_list != null) {
-                skill_projects_content.removeChild(skill_projects_list.element);
+                skill_projects_content.removeChild(skill_projects_list);
                 skill_projects_list = null;
                 skill_popup = null;
             }

@@ -1,13 +1,21 @@
-class ProjectList
+class ProjectListDivElement extends HTMLDivElement
 {
-    constructor(projects)
+    constructor()
     {
-        this.element = document.createElement('ul');
+        super();
+    }
 
+    from(projects)
+    {
         projects.forEach(project => {
             let li = document.createElement('li');
-            li.appendChild(new ProjectThumbnail(project.id, project.name, project.options).element);
-            this.element.appendChild(li);
+
+            li.appendChild(document.createElement('div', { is: 'project-thumbnail' }).from(project.id, project.name, project.options));
+            this.appendChild(li);
         });
+
+        return this;
     }
 }
+
+window.customElements.define('project-list', ProjectListDivElement, { extends: 'div' });

@@ -162,9 +162,9 @@ function setSkill(skill) {
         if (projects != undefined) {
             skill_projects_none.style.display = 'none';
             skill_projects_content.style.position = null;
-            skill_projects_list = new ProjectList(projects);
-            skill_projects_list.element.classList.add('skill-projects-list');
-            skill_projects_content.appendChild(skill_projects_list.element);
+            skill_projects_list = document.createElement('div', { is: 'project-list' }).from(projects);
+            skill_projects_list.classList.add('skill-projects-list');
+            skill_projects_content.appendChild(skill_projects_list);
         }
         else {
             skill_projects_content.style.position = 'absolute';

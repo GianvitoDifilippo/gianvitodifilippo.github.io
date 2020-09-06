@@ -1,25 +1,25 @@
-class PopinMessage extends HTMLDivElement
+class PopinMessageDivElement extends HTMLDivElement
 {
-    static keyframes = [
+    static keyframesIn = [
         {
             opacity: 0,
             transform: 'translateY(-80%)'
         },
         {
             opacity: 1,
-            transform: 'translateY(0%)',
-            offset: 0.15
-        },
+            transform: 'translateY(0%)'
+        }
+    ];
+
+    static keyframesOut = [
         {
             opacity: 1,
-            transform: 'translateY(0%)',
-            offset: 0.7
         },
         {
             opacity: 0
         }
     ];
-    
+
     constructor()
     {
         super();
@@ -27,43 +27,47 @@ class PopinMessage extends HTMLDivElement
         this.className = 'message';
     }
 
-    show()
+    from(text, x, y)
     {
-        document.body.appendChild(this);
-        this.animate(PopinMessage.keyframes, { duration: 3000 }).onfinish = () => this.remove();
+        this.textContent = text;
+        this.x = x;
+        this.y = y;
+        return this;
     }
 
-    get x() { return this.style.left; }
-    get y() { return this.style.top; }
-
-    set x(value)
+    show(onfinish = function() { })
     {
-        let x, relativeTo;
-        if (typeof value === 'string') {
-            x = value;
-        }
-        else {
-            x = value.x;
-            relativeTo = value.relativeTo;
-        }
+        document.body.appendChild(this);
+        this.style.left = this.computeLeftPx();
+        this.style.top = this.computeTopPx();
+        this.animate(PopinMessageDivElement.keyframesIn, { duration: 500, easing: 'ease' });
+        setTimeout(() => {
+            this.animate(PopinMessageDivElement.keyframesOut, { duration: 500, easing: 'linear' }).onfinish = () => {
+                onfinish();
+                this.remove();
+            }
+        }, 2000);
+    }
 
+    computeLeftPx()
+    {
         let left = 0;
         let width = this.getBoundingClientRect().width;
         
         let parentWidth, parentLeft, parentRight;
-        if (relativeTo === undefined) {
+        if (typeof this.x === 'string' || this.x.relativeTo === undefined) {
             parentWidth = window.innerWidth;
             parentLeft = 0;
             parentRight = parentWidth;
         }
         else {
-            let parentRect = relativeTo.getBoundingClientRect();
+            let parentRect = this.x.relativeTo.getBoundingClientRect();
             parentWidth = parentRect.width;
             parentLeft = parentRect.left;
             parentRight = parentRect.right;
         }
 
-        let rules = x.split(',');
+        let rules = typeof this.x === 'string' ? this.x.split(',') : this.x.value.split(',');
         rules.forEach(rule => {
             if (rule.endsWith('px')) {
                 left += Number(rule.replace('px', ''));
@@ -103,37 +107,29 @@ class PopinMessage extends HTMLDivElement
                     break;
             }
         });
-        this.style.left = `${left}px`;
+        left += window.scrollX;
+        return `${left}px`;
     }
 
-    set y(value)
+    computeTopPx()
     {
-        let y, relativeTo;
-        if (typeof value === 'string') {
-            y = value;
-        }
-        else {
-            y = value.y;
-            relativeTo = value.relativeTo;
-        }
-
         let top = 0;
         let height = this.getBoundingClientRect().height;
-
+        
         let parentHeight, parentTop, parentBottom;
-        if (relativeTo === undefined) {
-            parentHeight = window.innerHeight;
+        if (typeof this.y === 'string' || this.y.relativeTo === undefined) {
+            parentHeight = window.innerWidth;
             parentTop = 0;
             parentBottom = parentHeight;
         }
         else {
-            let parentRect = relativeTo.getBoundingClientRect();
+            let parentRect = this.y.relativeTo.getBoundingClientRect();
             parentHeight = parentRect.height;
             parentTop = parentRect.top;
             parentBottom = parentRect.bottom;
         }
 
-        let rules = y.split(',');
+        let rules = typeof this.y === 'string' ? this.y.split(',') : this.y.value.split(',');
         rules.forEach(rule => {
             if (rule.endsWith('px')) {
                 top += Number(rule.replace('px', ''));
@@ -173,8 +169,9 @@ class PopinMessage extends HTMLDivElement
                     break;
             }
         });
-        this.style.top = `${top}px`;
+        top += window.scrollY;
+        return `${top}px`;
     }
 }
 
-window.customElements.define('popin-message', PopinMessage, { extends: 'div' });
+window.customElements.define('popin-message', PopinMessageDivElement, { extends: 'div' });

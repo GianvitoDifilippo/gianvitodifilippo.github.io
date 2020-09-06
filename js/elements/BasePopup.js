@@ -1,4 +1,4 @@
-class BasePopup extends HTMLDivElement
+class BasePopupDivElement extends HTMLDivElement
 {
     static keyframes = [
         {
@@ -12,25 +12,23 @@ class BasePopup extends HTMLDivElement
     constructor()
     {
         super();
-        
+
         this.className = 'popup';
     }
 
     open()
     {
         document.body.appendChild(this);
-        this.animate(BasePopup.keyframes, { duration: 200 });
+        this.animate(BasePopupDivElement.keyframes, { duration: 200 });
     }
 
-    close(onfinish = () => this.ondismiss())
+    close(onfinish = function() { })
     {
-        this.animate(BasePopup.keyframes, { duration: 200, direction: 'reverse' }).onfinish = onfinish;
-    }
-
-    ondismiss()
-    {
-        document.body.removeChild(this);
+        this.animate(BasePopupDivElement.keyframes, { duration: 200, direction: 'reverse' }).onfinish = () => {
+            onfinish();
+            this.remove();
+        };
     }
 }
 
-window.customElements.define('base-popup', BasePopup, { extends: 'div' });
+window.customElements.define('base-popup', BasePopupDivElement, { extends: 'div' });

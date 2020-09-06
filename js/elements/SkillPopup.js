@@ -1,4 +1,4 @@
-class SkillPopup extends BasePopup
+class SkillPopupDivElement extends BasePopupDivElement
 {
     static iconKeyframes = [
         {
@@ -29,20 +29,17 @@ class SkillPopup extends BasePopup
     open()
     {
         super.open();
-        this.icon.animate(SkillPopup.iconKeyframes, { duration: 300 });
+        this.icon.animate(SkillPopupDivElement.iconKeyframes, { duration: 300 });
     }
 
-    close(onfinish = () => this.ondismiss())
+    close(onfinish = function() { })
     {
-        super.close(onfinish);
-        this.icon.animate(SkillPopup.iconKeyframes, { duration: 300, direction: 'reverse' });
-    }
-
-    ondismiss()
-    {
-        super.ondismiss();
-        this.skill_popup_container.removeChild(skill_preview);
+        super.close(() => {
+            onfinish();
+            this.skill_popup_container.removeChild(skill_preview);
+        });
+        this.icon.animate(SkillPopupDivElement.iconKeyframes, { duration: 300, direction: 'reverse' });
     }
 }
 
-window.customElements.define('skill-popup', SkillPopup, { extends: 'div' });
+window.customElements.define('skill-popup', SkillPopupDivElement, { extends: 'div' });

@@ -112,17 +112,12 @@ function phonenumberOnClick()
     let selector = 'messages:copied';
     let text = translateText(selector);
     if (text === null) text = 'Copiato!';
-    let message = document.createElement('div', { is: 'popin-message' });
-    message.textContent = text;
-    message.show();
-    if (device !== 'phone') {
-        message.x = { x: 'center', relativeTo: phonenumber };
-    }
-    else {
-        message.x = 'center';
-    }
-    message.y = { y: 'bottom-top,-6px', relativeTo: phonenumber };
+    let message = document.createElement('div', { is: 'popin-message' }).from(
+        text,
+        device === 'phone' ? 'center' : { value: 'center', relativeTo: phonenumber },
+        { value: 'bottom-top,-6px', relativeTo: phonenumber });
     message.setAttribute('data-lang', selector);
+    message.show();
 }
 
 function emailOnClick()
@@ -132,17 +127,12 @@ function emailOnClick()
     let selector = 'messages:copied';
     let text = translateText(selector);
     if (text === null) text = 'Copiato!';
-    let message = document.createElement('div', { is: 'popin-message' });
-    message.textContent = text;
-    message.show();
-    if (device !== 'phone') {
-        message.x = { x: 'center', relativeTo: emailaddress };
-    }
-    else {
-        message.x = 'center';
-    }
-    message.y = { y: 'bottom-top,-6px', relativeTo: emailaddress };
+    let message = document.createElement('div', { is: 'popin-message' }).from(
+        text,
+        device === 'phone' ? 'center' : { value: 'center', relativeTo: emailaddress },
+        { value: 'bottom-top,-6px', relativeTo: emailaddress });
     message.setAttribute('data-lang', selector);
+    message.show();
 }
 
 function scrollCallback(scrollY)

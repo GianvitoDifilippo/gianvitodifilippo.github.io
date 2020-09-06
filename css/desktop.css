@@ -681,7 +681,7 @@ footer {
 /* ----------------------------------------   MESSAGE    ---------------------------------------- */
 
 .message {
-    position: fixed;
+    position: absolute;
     font-size: 1.6rem;
     text-transform: uppercase;
     font-weight: 500;

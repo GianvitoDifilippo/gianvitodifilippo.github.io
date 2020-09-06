@@ -112,8 +112,9 @@ function phonenumberOnClick()
     let selector = 'messages:copied';
     let text = translateText(selector);
     if (text === null) text = 'Copiato!';
-    let message = new Message(text);
-    document.body.appendChild(message.element);
+    let message = document.createElement('div', { is: 'popin-message' });
+    message.textContent = text;
+    message.show();
     if (device !== 'phone') {
         message.x = { x: 'center', relativeTo: phonenumber };
     }
@@ -121,7 +122,7 @@ function phonenumberOnClick()
         message.x = 'center';
     }
     message.y = { y: 'bottom-top,-6px', relativeTo: phonenumber };
-    message.element.setAttribute('data-lang', selector);
+    message.setAttribute('data-lang', selector);
 }
 
 function emailOnClick()
@@ -131,8 +132,9 @@ function emailOnClick()
     let selector = 'messages:copied';
     let text = translateText(selector);
     if (text === null) text = 'Copiato!';
-    let message = new Message(text);
-    document.body.appendChild(message.element);
+    let message = document.createElement('div', { is: 'popin-message' });
+    message.textContent = text;
+    message.show();
     if (device !== 'phone') {
         message.x = { x: 'center', relativeTo: emailaddress };
     }
@@ -140,7 +142,7 @@ function emailOnClick()
         message.x = 'center';
     }
     message.y = { y: 'bottom-top,-6px', relativeTo: emailaddress };
-    message.element.setAttribute('data-lang', selector);
+    message.setAttribute('data-lang', selector);
 }
 
 function scrollCallback(scrollY)

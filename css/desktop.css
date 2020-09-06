@@ -347,19 +347,19 @@ header.hidden {
 }
 
 #social .icons a .icon-linkedin {
-    background-image: url(/assets/img/icons/linkedin_hover.png);
+    background-image: url(/assets/img/icons/linkedin.png);
 }
 
 #social .icons a .icon-github {
-    background-image: url(/assets/img/icons/github_hover.png);
+    background-image: url(/assets/img/icons/github.png);
 }
 
 #social .icons a .icon-instagram {
-    background-image: url(/assets/img/icons/instagram_hover.png);
+    background-image: url(/assets/img/icons/instagram.png);
 }
 
 #social .icons a .icon-facebook {
-    background-image: url(/assets/img/icons/facebook_hover.png);
+    background-image: url(/assets/img/icons/facebook.png);
 }
 
 #reviews {
@@ -685,9 +685,6 @@ footer {
     font-size: 1.6rem;
     text-transform: uppercase;
     font-weight: 500;
-    opacity: 0;
-    animation: message_animation 3s;
-    transition: opacity, transform;
 }
 
 /* ----------------------------------------  PROJ-THUMBN ---------------------------------------- */
@@ -817,34 +814,18 @@ footer {
 
     #profile .icon {
         transition: background-image .1s linear;
-    } 
-
-    #social .icons a .icon-linkedin {
-        background-image: url(/assets/img/icons/linkedin.png);
     }
 
     #social .icons a .icon-linkedin:hover {
         background-image: url(/assets/img/icons/linkedin_hover.png);
     }
-
-    #social .icons a .icon-github {
-        background-image: url(/assets/img/icons/github.png);
-    }
     
     #social .icons a .icon-github:hover {
         background-image: url(/assets/img/icons/github_hover.png);
     }
-
-    #social .icons a .icon-instagram {
-        background-image: url(/assets/img/icons/instagram.png);
-    }
     
     #social .icons a .icon-instagram:hover {
         background-image: url(/assets/img/icons/instagram_hover.png);
-    }
-
-    #social .icons a .icon-facebook {
-        background-image: url(/assets/img/icons/facebook.png);
     }
     
     #social .icons a .icon-facebook:hover {

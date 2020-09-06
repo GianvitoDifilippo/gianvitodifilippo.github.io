@@ -1,22 +1,40 @@
-class Message
+class PopinMessage extends HTMLDivElement
 {
-    constructor(text, x, y)
+    static keyframes = [
+        {
+            opacity: 0,
+            transform: 'translateY(-80%)'
+        },
+        {
+            opacity: 1,
+            transform: 'translateY(0%)',
+            offset: 0.15
+        },
+        {
+            opacity: 1,
+            transform: 'translateY(0%)',
+            offset: 0.7
+        },
+        {
+            opacity: 0
+        }
+    ];
+    
+    constructor()
     {
-        this.element = document.createElement('div');
-        this.element.textContent = text;
-        this.element.classList.add('message');
-        this.element.addEventListener('animationend', this.element.remove);
+        super();
 
-        if (x !== undefined) {
-            this.element.style.left = x;
-        }
-        if (y !== undefined) {
-            this.element.style.top = y;
-        }
+        this.className = 'message';
     }
 
-    get x() { return this.element.style.left; }
-    get y() { return this.element.style.top; }
+    show()
+    {
+        document.body.appendChild(this);
+        this.animate(PopinMessage.keyframes, { duration: 3000 }).onfinish = () => this.remove();
+    }
+
+    get x() { return this.style.left; }
+    get y() { return this.style.top; }
 
     set x(value)
     {
@@ -30,7 +48,7 @@ class Message
         }
 
         let left = 0;
-        let width = this.element.getBoundingClientRect().width;
+        let width = this.getBoundingClientRect().width;
         
         let parentWidth, parentLeft, parentRight;
         if (relativeTo === undefined) {
@@ -85,7 +103,7 @@ class Message
                     break;
             }
         });
-        this.element.style.left = `${left}px`;
+        this.style.left = `${left}px`;
     }
 
     set y(value)
@@ -100,7 +118,7 @@ class Message
         }
 
         let top = 0;
-        let height = this.element.getBoundingClientRect().height;
+        let height = this.getBoundingClientRect().height;
 
         let parentHeight, parentTop, parentBottom;
         if (relativeTo === undefined) {
@@ -155,6 +173,8 @@ class Message
                     break;
             }
         });
-        this.element.style.top = `${top}px`;
+        this.style.top = `${top}px`;
     }
 }
+
+window.customElements.define('popin-message', PopinMessage, { extends: 'div' });

@@ -15,19 +15,31 @@ class Message
         }
     }
 
-    setX(x, parent)
+    get x() { return this.element.style.left; }
+    get y() { return this.element.style.top; }
+
+    set x(value)
     {
+        let x, relativeTo;
+        if (typeof value === 'string') {
+            x = value;
+        }
+        else {
+            x = value.x;
+            relativeTo = value.relativeTo;
+        }
+
         let left = 0;
         let width = this.element.getBoundingClientRect().width;
         
         let parentWidth, parentLeft, parentRight;
-        if (parent === undefined) {
+        if (relativeTo === undefined) {
             parentWidth = window.innerWidth;
             parentLeft = 0;
             parentRight = parentWidth;
         }
         else {
-            let parentRect = parent.getBoundingClientRect();
+            let parentRect = relativeTo.getBoundingClientRect();
             parentWidth = parentRect.width;
             parentLeft = parentRect.left;
             parentRight = parentRect.right;
@@ -76,19 +88,28 @@ class Message
         this.element.style.left = `${left}px`;
     }
 
-    setY(y, parent)
+    set y(value)
     {
+        let y, relativeTo;
+        if (typeof value === 'string') {
+            y = value;
+        }
+        else {
+            y = value.y;
+            relativeTo = value.relativeTo;
+        }
+
         let top = 0;
         let height = this.element.getBoundingClientRect().height;
 
         let parentHeight, parentTop, parentBottom;
-        if (parent === undefined) {
+        if (relativeTo === undefined) {
             parentHeight = window.innerHeight;
             parentTop = 0;
             parentBottom = parentHeight;
         }
         else {
-            let parentRect = parent.getBoundingClientRect();
+            let parentRect = relativeTo.getBoundingClientRect();
             parentHeight = parentRect.height;
             parentTop = parentRect.top;
             parentBottom = parentRect.bottom;

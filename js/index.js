@@ -115,12 +115,12 @@ function phonenumberOnClick()
     let message = new Message(text);
     document.body.appendChild(message.element);
     if (device !== 'phone') {
-        message.setX('center', phonenumber);
+        message.x = { x: 'center', relativeTo: phonenumber };
     }
     else {
-        message.setX('center');
+        message.x = 'center';
     }
-    message.setY('bottom-top,-6px', phonenumber);
+    message.y = { y: 'bottom-top,-6px', relativeTo: phonenumber };
     message.element.setAttribute('data-lang', selector);
 }
 
@@ -134,12 +134,12 @@ function emailOnClick()
     let message = new Message(text);
     document.body.appendChild(message.element);
     if (device !== 'phone') {
-        message.setX('center', emailaddress);
+        message.x = { x: 'center', relativeTo: emailaddress };
     }
     else {
-        message.setX('center');
+        message.x = 'center';
     }
-    message.setY('bottom-top,-6px', emailaddress);
+    message.y = { y: 'bottom-top,-6px', relativeTo: emailaddress };
     message.element.setAttribute('data-lang', selector);
 }
 

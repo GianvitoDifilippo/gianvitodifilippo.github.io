@@ -1,7 +1,11 @@
 var languageJson;
 
 async function loadLanguageJson(code) {
-    return (await fetch(`../lang/${code}.json`)).json();
+    try {
+        return await (await fetch(`../lang/${code}.json`)).json();
+    } catch {
+        return await (await fetch('../lang/en.json')).json();
+    }
 }
 
 function translateText(selector) {
@@ -17,6 +21,7 @@ function translateText(selector) {
 }
 
 async function translatePage(code) {
+    console.log(code);
     languageJson = await loadLanguageJson(code);
     if (!languageJson) languageJson = await loadLanguageJson('en');
     if (!languageJson) return;

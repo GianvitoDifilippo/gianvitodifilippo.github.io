@@ -1,126 +1,128 @@
-#skill-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+#skill-preview {
+    #skill-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
 
-    > .skill-details-content {
-        margin-bottom: 10px;
+        > .skill-details-content {
+            margin-bottom: 10px;
 
-        .skill-item {
-            margin: 10px 30px 10px 10px;
-            float: left;
-            background-color: white;
+            .skill-item {
+                margin: 10px 30px 10px 10px;
+                float: left;
+                background-color: white;
 
-            >.skill-icon {
-                transition: background-image .1s linear;
+                >.skill-icon {
+                    transition: background-image .1s linear;
+                }
+
+                @media (any-hover: hover) {
+                    transition: none;
+
+                    &:hover>.skill-icon {
+                        transform: none;
+                    }
+                }
             }
 
-            @media (any-hover: hover) {
-                transition: none;
+            > .skill-brief {
+                margin: 10px 0px 0px 10px;
 
-                &:hover>.skill-icon {
-                    transform: none;
+                h2 {
+                    font-size: 2.6rem;
+                    font-weight: 700;
+                    line-height: 2rem;
+                    margin-bottom: 5px;
+                }
+
+                h3 {
+                    font-size: 2.3rem;
+                    font-weight: 200;
+                }
+
+                .bold {
+                    font-weight: 500;
+                }
+            }
+
+            > .skill-descr {
+                font-size: 1.6rem;
+                font-weight: 300;
+                margin: 10px 0px 0px 10px;
+            }
+        }
+
+        > .skill-projects-content {
+            margin: 10px;
+            position: relative;
+
+            ul.skill-projects-list {
+                list-style: none;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 20px;
+                row-gap: 20px;
+
+                >li>.project-thumbnail {
+                    margin: auto;
+                }
+            }
+
+            .skill-projects-none {
+                font-size: 1.6rem;
+                font-weight: 300;
+
+                a {
+                    font-weight: 500;
+                    text-decoration: underline;
                 }
             }
         }
-
-        > .skill-brief {
-            margin: 10px 0px 0px 10px;
-
-            h2 {
-                font-size: 2.6rem;
-                font-weight: 700;
-                line-height: 2rem;
-                margin-bottom: 5px;
-            }
-
-            h3 {
-                font-size: 2.3rem;
-                font-weight: 200;
-            }
-
-            .bold {
-                font-weight: 500;
-            }
-        }
-
-        > .skill-descr {
-            font-size: 1.6rem;
-            font-weight: 300;
-            margin: 10px 0px 0px 10px;
-        }
     }
 
-    > .skill-projects-content {
-        margin: 10px;
-        position: relative;
-
-        ul.skill-projects-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            column-gap: 20px;
-            row-gap: 20px;
-
-            >li>.project-thumbnail {
-                margin: auto;
-            }
-        }
-
-        .skill-projects-none {
-            font-size: 1.6rem;
-            font-weight: 300;
-
-            a {
-                font-weight: 500;
-                text-decoration: underline;
-            }
-        }
+    .cross-fade-leave {
+        opacity: 1;
     }
-}
 
-.cross-fade-leave {
-    opacity: 1;
-}
+    .cross-fade-leave.cross-fade-leave-active {
+        opacity: 0;
+        transition: opacity .15s ease-in;
+    }
 
-.cross-fade-leave.cross-fade-leave-active {
-    opacity: 0;
-    transition: opacity .15s ease-in;
-}
+    .cross-fade-enter {
+        opacity: 0;
+    }
 
-.cross-fade-enter {
-    opacity: 0;
-}
+    .cross-fade-enter.cross-fade-enter-active {
+        opacity: 1;
+        transition: opacity .15s ease-in;
+    }
 
-.cross-fade-enter.cross-fade-enter-active {
-    opacity: 1;
-    transition: opacity .15s ease-in;
-}
-
-.cross-fade-height {
-    transition: height .4s ease-in-out;
-}
+    .cross-fade-height {
+        transition: height .4s ease-in-out;
+    }
 
 
-.fade-wait-leave {
-    opacity: 1;
-}
+    .fade-wait-leave {
+        opacity: 1;
+    }
 
-.fade-wait-leave.fade-wait-leave-active {
-    opacity: 0;
-    transition: opacity 0.4s ease-in;
-}
+    .fade-wait-leave.fade-wait-leave-active {
+        opacity: 0;
+        transition: opacity 0.4s ease-in;
+    }
 
-.fade-wait-enter {
-    opacity: 0;
-}
+    .fade-wait-enter {
+        opacity: 0;
+    }
 
-.fade-wait-enter.fade-wait-enter-active {
-    opacity: 1;
-    transition: opacity 0.4s ease-in;
-}
+    .fade-wait-enter.fade-wait-enter-active {
+        opacity: 1;
+        transition: opacity 0.4s ease-in;
+    }
 
-.fade-wait-height {
-    transition: height 0.6s ease-in-out;
+    .fade-wait-height {
+        transition: height 0.6s ease-in-out;
+    }
 }

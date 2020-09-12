@@ -23,7 +23,6 @@ function translateText(selector) {
 async function translatePage(code) {
     console.log(code);
     languageJson = await loadLanguageJson(code);
-    if (!languageJson) languageJson = await loadLanguageJson('en');
     if (!languageJson) return;
     window.sessionStorage.setItem('lang', code);
     let fields = document.querySelectorAll('[data-lang]');

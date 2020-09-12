@@ -1,0 +1,35 @@
+#skill-list {
+    display: flex;
+    flex-direction: column;
+
+    > li {
+        margin: 5px 0px 5px 0px;
+
+        > ul.icons {
+            display: flex;
+            margin: 10px;
+
+            > li.skill-item {
+                margin: 0px 7px 0px 7px;
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            > li.skill-item:nth-child(1) {
+                margin-left: 0px;
+            }
+
+            > li.skill-item:nth-last-child(1) {
+                margin-right: 0px;
+            }
+        }
+    }
+
+    > li:nth-child(1) {
+        margin-top: 0px;
+    }
+
+    > li:nth-last-child(1) {
+        margin-bottom: 0px;
+    }
+}

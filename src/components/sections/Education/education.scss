@@ -1,0 +1,81 @@
+@import '../../common.scss';
+
+#education {
+    > .container {
+        position: relative;
+        flex-direction: column;
+        justify-self: stretch;
+        flex: 1 1 0px;
+
+        > ul > li {
+            position: relative;
+            width: 100%;
+            display: inline-flex;
+            align-items: flex-start;
+            justify-content: stretch;
+            margin: 10px 0px 10px 0px;
+
+            &:nth-child(1) {
+                margin-top: 0px;
+            }
+
+            &:nth-last-child(1) {
+                margin-bottom: 0px;
+            }
+
+            > a {
+                margin: 10px;
+                margin-right: 30px;
+
+                > img {
+                    width: 130px;
+                }
+            }
+
+            &.mmus > a > img {
+                border-radius: 8%;
+            }
+
+            > .edu-descr {
+                margin: 8px;
+
+                > h2 {
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    display: block;
+                    margin-bottom: 1rem;
+                }
+
+                > h3 {
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    font-size: 3rem;
+                    font-weight: 400;
+                    opacity: .5;
+                    margin-right: 6px;
+                }
+
+                > p {
+                    margin-bottom: .4rem;
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+    
+    .box .box-heading {
+        font-size: 2.2rem;
+        margin-bottom: 0.4rem;
+    }
+
+    @media (any-hover: hover) {
+        .box {
+            transition: background-color .1s linear;
+
+            &:hover {
+                background-color: $box_color2;
+            }
+        }
+    }
+}

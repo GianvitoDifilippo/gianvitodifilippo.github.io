@@ -1,0 +1,166 @@
+@import '../../common.scss';
+
+#settings {
+    &.active {
+        > ul.flags > li {
+            opacity: 1;
+            transform: translateY(0px);
+
+            &.it.active {
+                filter: drop-shadow(0 0 3px white);
+            }
+            &.en.active {
+                filter: drop-shadow(0 0 3px lighten(blue, 30%));
+            }
+            &.es.active {
+                filter: drop-shadow(0 0 3px lighten(red, 30%));
+            }
+        }
+
+        > .themeToggler {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        > .settings-button {
+            opacity: 1;
+            transform: translateX(0%) rotateZ(120deg);
+        }
+    }
+
+    > ul.flags {
+        padding: 0;
+        display: flex;
+        position: fixed;
+        right: 80px;
+        bottom: 11px;
+        z-index: 10;
+
+        > li {
+            padding-left: 4px;
+            padding-right: 4px;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(calc(100% + 11px));
+            
+            @for $i from 1 through 3 {
+                &:nth-child(#{$i}) {
+                    transition: filter .2s, transform .2s calc(#{$i} * .1s) ease-in-out, opacity .2s calc(#{$i} * .1s) linear;
+                }
+            }
+        }
+
+        img {
+            width: 60px;
+            height: 36px;
+        }
+    }
+
+    > .themeToggler {
+        position: fixed;
+        width: 60px;
+        height: 30px;
+        right: 340px;
+        bottom: 15px;
+        background-color: rgb(20, 20, 20);
+        border-radius: 30px;
+        opacity: 0;
+        transform: translateY(calc(100% + 15px));
+        transition: transform .2s, opacity .2s, background-color .3s, filter .3s;
+        cursor: pointer;
+        z-index: 10;
+        filter: drop-shadow(0 0 2px whitesmoke);
+
+        &.light-mode {
+            background-color: whitesmoke;
+            filter: drop-shadow(0 0 2px black);
+
+            .dot {
+                background-color: rgb(20, 20, 20);
+                left: calc(100% - 22px - 4px);
+            }
+            
+            .fa-icon {
+                &.sun {
+                    opacity: 1;
+                }
+
+                &.moon {
+                    opacity: 0;
+                }
+            }
+        }
+
+        .dot {
+            position: absolute;
+            top: 4px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background-color: whitesmoke;
+            left: 4px;
+            transition: background-color .3s, left .3s;
+        }
+
+        .fa-icon {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: calc((22px - 16px) / 2);
+            left: calc((22px - 16px) / 2);
+            transition: opacity .1s;
+
+            &.sun {
+                opacity: 0;
+                color: whitesmoke;
+                filter: drop-shadow(0 0 2px grey);
+            }
+
+            &.moon {
+                opacity: 1;
+                color: rgb(20, 20, 20);
+                filter: drop-shadow(0 0 2px black);
+            }
+        }
+    }
+
+    > .settings-button {
+        opacity: 0.5;
+        font-size: 3rem;
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        cursor: pointer;
+        transition: transform .5s ease-in-out, opacity .1s linear;
+        transform: translateX(0%) rotateZ(0deg);
+        z-index: 10;
+
+        &.hidden {
+            transform: translateX(calc(100% + 15px)) rotateZ(0deg);
+        }
+    
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .cross-fade-leave {
+        opacity: 1;
+    }
+    
+    .cross-fade-leave.cross-fade-leave-active {
+        opacity: 0;
+        transition: opacity .15s ease-in;
+    }
+    
+    .cross-fade-enter {
+        opacity: 0;
+    }
+    
+    .cross-fade-enter.cross-fade-enter-active {
+        opacity: 1;
+        transition: opacity .15s ease-in;
+    }
+}

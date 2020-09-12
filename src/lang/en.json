@@ -1,0 +1,88 @@
+{
+    "sections": {
+        "about": "About me",
+        "experience": "Experience",
+        "education": "Education",
+        "skills": "Skills",
+        "projects": "Projects"
+    },
+    "hero": {
+        "h2": "Automation Engineer",
+        "contactme": "Contact Me",
+        "downloadcv": "Download my CV"
+    },
+    "about": {
+        "contacts": "Contacts",
+        "findme": "Find me on"
+    },
+    "education": {
+        "bsc": {
+            "h1": "Bachelor's Degree in Computer Science and Automation Engineering",
+            "score": "Final score: 110/110 with honors"
+        },
+        "msc": {
+            "h1": "Master's Degree in Automation Engineering",
+            "score": "Final score: 110/110 with honors"
+        },
+        "erasmus": {
+            "h1":"Master in Big Data and Telecommunications"
+        },
+        "mmus": {
+            "h1": "Master of Music in Guitar",
+            "score": "Final score: 10/10"
+        }
+    },
+    "skills": {
+        "list": {
+            "languages": "Languages",
+            "tools": "Tools",
+            "backend": "Back-end",
+            "webdev": "Web development"
+        },
+        "preview": {
+            "message": "Click on a skill to show details",
+            "details": "Details",
+            "experience": {
+                "key": "Experience:",
+                "values": {
+                    "cplusplus": "academic, personal",
+                    "csharp": "professional",
+                    "python": "academic, professional",
+                    "java": "personal",
+                    "matlab": "academic",
+                    "labview": "academic",
+                    "docker": "professional",
+                    "dotnet": "professional",
+                    "postgresql": "professional",
+                    "html": "personal",
+                    "css": "personal",
+                    "javascript": "personal"
+                }
+            },
+            "since": "Programming since:",
+            "descr": {
+                "cplusplus": "È il linguaggio che preferisco!",
+                "csharp": "Uno degli ultimi linguaggi entrati nel mio arsenale.",
+                "python": "Ho dovuto approcciarmi a Python per lavoro ed ho subito adorato la sua sintassi potente e coincisa.",
+                "java": "È stato il primo linguaggio di programmazione che ho imparato.",
+                "matlab": "È lo strumento di calcolo principale utilizzato durante i corsi universitari.",
+                "labview": "L'ho utilizzato durante il mio Erasmus per controllare la strumentazione di laboratorio e leggere le misure.",
+                "docker": "Utilizzato durante la mia esperienza da programmatore back-end.",
+                "dotnet": "Ho appreso il framework .NET per lavoro, ma ho subito cominciato ad approfondirne la conoscienza per interesse personale.",
+                "postgresql": "Utilizzato durante la mia esperienza da programmatore back-end.",
+                "html": "Insieme a CSS e JavaScript, sta da poco entrando tra le mie skill.",
+                "css": "Insieme a HTML e JavaScript, sta da poco entrando tra le mie skill.",
+                "javascript": "Insieme a HTML e CSS, sta da poco entrando tra le mie skill."
+            },
+            "projects": "Projects",
+            "noprojects": "There are no projects for this skill right now, but how about starting the first one together?",
+            "contactme": "Contact me!"
+        }
+    },
+    "messages": {
+        "copied": "Copied!"
+    },
+    "misc": {
+        "thiswebsite": "This website!"
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "audioengineer": {
+        "name": "AudioEngineer",
+        "thumbnail": {
+            "backgroundPosition": "center"
+        }
+    },
+    "magicbet": {
+        "name": "MagicBet",
+        "thumbnail": {
+            "backgroundPosition": "center top"
+        }
+    },
+    "voicenotes": {
+        "name": "Voice Notes",
+        "thumbnail": {
+            "backgroundPosition": "center"
+        }
+    },
+    "supermario": {
+        "name": "Super Mario Clone",
+        "thumbnail": {
+            "backgroundPosition": "center 90%"
+        }
+    },
+    "portfolio": {
+        "name": "Portfolio website",
+        "thumbnail": {
+            "backgroundPosition": "center"
+        }
+    }
+}

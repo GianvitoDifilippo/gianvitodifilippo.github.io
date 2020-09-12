@@ -1,0 +1,21 @@
+.section {
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+
+    > .container {
+        position: relative;
+        margin: calc(45px + 13rem) 8vw 10px 8vw;
+        z-index: 1;
+        width: 100%;
+    }
+
+    > .section-title {
+        position: absolute;
+        left: 20px;
+        top: 45px;
+        font-size: 18rem;
+        font-weight: 300;
+        opacity: .3;
+    }
+}

@@ -1,0 +1,24 @@
+.message {
+    position: absolute;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.message.animated {
+    animation: message_popin 3s;
+}
+
+@keyframes message_popin {
+    0% {
+        transform: translateY(-80%);
+        opacity: 0;
+    }
+    15%, 70% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

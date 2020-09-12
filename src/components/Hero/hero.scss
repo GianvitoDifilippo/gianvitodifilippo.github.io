@@ -37,26 +37,24 @@
         left: 14%;
 
         > h1 {
-            opacity: 1;
             font-size: 5rem;
             font-weight: 600;
-            cursor: default;
 
             &.fadein {
                 opacity: 0;
+                cursor: default;
                 animation: fadein_title 1s 1s;
                 animation-fill-mode: forwards;
             }
         }
 
         > h2 {
-            opacity: 1;
             font-size: 3rem;
             font-weight: 200;
-            cursor: default;
 
             &.fadein {
                 opacity: 0;
+                cursor: default;
                 animation: fadein_title 1s 2.5s;
                 animation-fill-mode: forwards;
             }
@@ -74,10 +72,9 @@
             border: $color1 solid 2px;
             background-color: transparent;
             transition: background-color .3s, color .3s;
-            opacity: 1;
-            pointer-events: none;
 
             &.fadein {
+                pointer-events: none;
                 opacity: 0;
                 animation: fadein_button 1s 4s;
                 animation-fill-mode: forwards;
@@ -97,7 +94,6 @@
     }
     to {
         cursor: text;
-        visibility: visible;
         opacity: 1;
         pointer-events: unset;
     }
@@ -108,7 +104,6 @@
         opacity: 0;
     }
     to {
-        visibility: visible;
         opacity: 1;
         pointer-events: unset;
     }

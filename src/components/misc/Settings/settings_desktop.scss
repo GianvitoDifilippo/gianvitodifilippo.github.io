@@ -1,4 +1,6 @@
 #settings {
+    display: fixed;
+
     &.active {
         > ul.flags > li {
             opacity: 1;
@@ -27,7 +29,6 @@
     }
 
     > ul.flags {
-        padding: 0;
         display: flex;
         position: fixed;
         right: 80px;

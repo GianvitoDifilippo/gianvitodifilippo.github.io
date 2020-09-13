@@ -1,0 +1,59 @@
+@media only screen and (max-width: 1366px) {
+
+#settings {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    left: 0;
+    bottom: 0;
+    margin-bottom: 10px;
+
+    &.active {
+        > .settings-button {
+            transition: left .3s ease-in-out, transform .3s ease-in-out, opacity .1s;
+            transform: rotateZ(120deg);
+        }
+    }
+
+    > ul.flags {
+        position: relative;
+        right: unset;
+        bottom: unset;
+
+        > li {
+            @for $i from 1 through 3 {
+                &:nth-child(#{$i}) {
+                    transition: filter .2s, transform .2s calc(#{$i} * .05s) ease-in-out, opacity .2s calc(#{$i} * .05s) linear;
+                }
+            }
+        }
+    }
+
+    > .themeToggler {
+        position: relative;
+        right: unset;
+        bottom: unset;
+    }
+
+    > .settings-button {
+        opacity: 0.4;
+        font-size: 3rem;
+        top: 15px;
+        left: 15px;
+        cursor: pointer;
+        transition: left .3s ease-in-out .4s, transform .3s ease-in-out, opacity .1s;
+        transform: rotateZ(0deg);
+        z-index: 10;
+
+        &.hidden {
+            left: -30px;
+            transform: rotateZ(0deg);
+            transition: left .3s ease-in-out, opacity .1s;
+        }
+    }
+}
+
+}

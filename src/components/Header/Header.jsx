@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Translate from '../misc/Translate';
+import Settings from '../misc/Settings';
 
 import { DeviceContext } from '../../context.jsx';
 
@@ -16,7 +17,8 @@ class Header extends React.Component
 
         this.state = {
             isVisible: window.sessionStorage.getItem('launchanimation') === 'no',
-            navlistActive: false
+            isSettingsButtonVisible: window.sessionStorage.getItem('launchanimation') === 'no',
+            isNavlistActive: false
         };
 
         this.inNavigation = this.inNavigation.bind(this);
@@ -33,28 +35,43 @@ class Header extends React.Component
 
     navlistClassName()
     {
-        return this.state.navlistActive ? 'active' : null;
+        return this.state.isNavlistActive ? 'active' : null;
     }
 
     brandClassName()
     {
         let className = 'brand neon_activator';
-        if (this.state.navlistActive) className += ' inactive';
+        if (this.state.isNavlistActive) className += ' inactive';
         return className;
     }
 
     hamburgerClassName()
     {
         let className = 'hamburger';
-        if (this.state.navlistActive) className += ' active';
+        if (this.state.isNavlistActive) className += ' active';
         return className;
     }
 
     toggleNavlist()
     {
         if (this.context.device === 'desktop') return;
-        this.setState({ navlistActive: !this.state.navlistActive });
+        this.setState({ isNavlistActive: !this.state.isNavlistActive });
         document.body.classList.toggle('stop_scroll');
+        this.setState({
+            isSettingsButtonVisible: !this.state.isSettingsButtonVisible
+        });
+    }
+
+    show()
+    {
+        this.setState({
+            isVisible: true
+        });
+        if (this.context.device === 'desktop') {
+            setTimeout(() => this.setState({
+                isSettingsButtonVisible: true
+            }), 500);
+        }
     }
 
     render()
@@ -87,6 +104,12 @@ class Header extends React.Component
                         <li onClick={this.toggleNavlist}><a href="#projects" className="neon_activator neon1">
                             <Translate selector="sections:projects">Progetti</Translate>
                         </a></li>
+                        <Settings
+                            isNavlistActive={this.state.isNavlistActive}
+                            greenTheme={this.props.greenTheme}
+                            toggleTheme={this.props.toggleTheme}
+                            isButtonVisible={this.state.isSettingsButtonVisible}
+                        />
                     </ul>
                 </div>
             </header>
@@ -96,24 +119,25 @@ class Header extends React.Component
     shouldComponentUpdate(nextProps, nextState)
     {
         if (this.props.scrollY !== nextProps.scrollY && !this.state.isVisible) {
-            this.setState({
-                isVisible: true
-            });
+            this.show();
         }
         
         return (
             this.state !== nextState ||
+            this.props.greenTheme !== nextProps.greenTheme ||
             this.inNavigation(this.props.scrollY) !== this.inNavigation(nextProps.scrollY)
         );
     }
 
     componentDidMount()
     {
-        setTimeout(() => this.setState({
-            isVisible: true
-        }), 4500);
+        this.setState({
+            isSettingsButtonVisible: this.state.isSettingsButtonVisible && this.context.device === 'desktop'
+        });
+        setTimeout(() => this.show(), 4500);
     }
 }
+
 Header.contextType = DeviceContext;
 
 export default Header;

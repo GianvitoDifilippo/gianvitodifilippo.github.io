@@ -8,7 +8,6 @@ import Education from './sections/Education';
 import Experience from './sections/Experience';
 import Projects from './sections/Projects';
 import Footer from './Footer';
-import Settings from './misc/Settings';
 
 import { LocaleContext, DeviceContext, ModalContext } from '../context';
 
@@ -74,7 +73,7 @@ class App extends React.Component
             <DeviceContext.Provider value={this.state.deviceCtx}>
             <ModalContext.Provider  value={this.state.modalCtx}>
                 <div id="app" className={className}>
-                    <Header scrollY={this.state.scrollY}/>
+                    <Header scrollY={this.state.scrollY} greenTheme={this.state.greenTheme} toggleTheme={this.toggleTheme}/>
                     <Hero scrollY={this.state.scrollY}/>
                     <About/>
                     <Skills/>
@@ -82,7 +81,6 @@ class App extends React.Component
                     <Education/>
                     <Projects/>
                     <Footer/>
-                    <Settings scrollY={this.state.scrollY} greenTheme={this.state.greenTheme} toggleTheme={this.toggleTheme}/>
                 </div>
             </ModalContext.Provider>
             </DeviceContext.Provider>
@@ -109,6 +107,10 @@ class App extends React.Component
             let newDevice = deviceType();
             if (newDevice !== this.state.deviceCtx.device) {
                 this.setState({ deviceCtx: { device: newDevice } })
+                if (newDevice === 'desktop') {
+                    document.body.classList.remove('stop_scroll');
+                    this.forceUpdate();
+                }
             }
         });
 

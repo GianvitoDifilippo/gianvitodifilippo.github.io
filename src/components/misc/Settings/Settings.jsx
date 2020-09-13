@@ -13,14 +13,13 @@ import './settings_desktop.scss';
 import './settings_tablet.scss';
 import './settings_phone.scss';
 
-class Settings extends React.Component
+class Settings extends React.PureComponent
 {
     constructor(props)
     {
         super(props);
 
         this.state = {
-            isButtonVisible: window.sessionStorage.getItem('launchanimation') === 'no',
             isActive: false
         }
 
@@ -48,13 +47,19 @@ class Settings extends React.Component
     render()
     {
         let buttonClassName = 'settings-button';
-        if (!this.state.isButtonVisible) buttonClassName += ' hidden';
+        if (!this.props.isButtonVisible) buttonClassName += ' hidden';
         
         return (
             <LocaleContext.Consumer>
             {({ locale, setLocale }) => (
                 <div id="settings" className={this.state.isActive ? 'active' : null}>
                     <FontAwesomeIcon icon={faCog} className={buttonClassName} onClick={this.toggleActive}/>
+                    <div className={`themeToggler ${this.props.greenTheme ? 'green-mode' : null}`} onClick={this.props.toggleTheme}>
+                        <div className="dot">
+                            <FontAwesomeIcon className="fa-icon green" icon={faDragon}/>
+                            <FontAwesomeIcon className="fa-icon blue" icon={faCrow}/>
+                        </div>
+                    </div>
                     <ul className="flags noselect">
                         <li className={this.flagClassName(locale, 'it')} ref={this.itRef} onClick={() => setLocale('it')}>
                             <img src={flag_it} alt=""/>
@@ -66,34 +71,19 @@ class Settings extends React.Component
                             <img src={flag_es} alt=""/>
                         </li>
                     </ul>
-                    <div className={`themeToggler ${this.props.greenTheme ? 'green-mode' : null}`} onClick={this.props.toggleTheme}>
-                        <div className="dot">
-                            <FontAwesomeIcon className="fa-icon green" icon={faDragon}/>
-                            <FontAwesomeIcon className="fa-icon blue" icon={faCrow}/>
-                        </div>
-                    </div>
                 </div>
             )}
             </LocaleContext.Consumer>
         );
     }
 
-    shouldComponentUpdate(nextProps, nextState)
+    componentDidUpdate()
     {
-        if (this.props.scrollY !== nextProps.scrollY && !this.state.isButtonVisible) {
+        if (!this.props.isButtonVisible && this.state.isActive) {
             this.setState({
-                isButtonVisible: true
+                isActive: false
             });
         }
-        
-        return this.state !== nextState || this.props.greenTheme !== nextProps.greenTheme;
-    }
-
-    componentDidMount()
-    {
-        setTimeout(() => this.setState({
-            isButtonVisible: true
-        }), 5000);
     }
 }
 

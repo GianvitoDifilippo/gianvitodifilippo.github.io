@@ -32,7 +32,7 @@ class Message extends React.PureComponent
     }
 
     render() {
-        if (this.state.isOpen) console.log('MESSAGE being rendered');
+        // if (this.state.isOpen) console.log('MESSAGE being rendered');
         return this.state.isOpen
         ?
         ReactDOM.createPortal(

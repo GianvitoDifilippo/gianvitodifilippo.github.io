@@ -8,7 +8,7 @@ import es_json from '../../lang/es.json';
 
 const Translate = React.memo(props =>
 {
-    console.log('TRANSLATE being rendered');
+    // console.log('TRANSLATE being rendered');
     const { locale, setLocale } = React.useContext(LocaleContext);
     if (!locale || !props.selector) return <>{props.children}</>;
     let text;

@@ -52,9 +52,9 @@ class Settings extends React.PureComponent
         return (
             <LocaleContext.Consumer>
             {({ locale, setLocale }) => (
-                <div id="settings" className={this.state.isActive ? 'active' : null}>
+                <div id="settings" className={this.state.isActive ? 'active' : ''}>
                     <FontAwesomeIcon icon={faCog} className={buttonClassName} onClick={this.toggleActive}/>
-                    <div className={`themeToggler ${this.props.greenTheme ? 'green-mode' : null}`} onClick={this.props.toggleTheme}>
+                    <div className={`themeToggler ${this.props.greenTheme ? 'green-mode' : ''}`} onClick={this.props.toggleTheme}>
                         <div className="dot">
                             <FontAwesomeIcon className="fa-icon green" icon={faDragon}/>
                             <FontAwesomeIcon className="fa-icon blue" icon={faCrow}/>

@@ -76,10 +76,10 @@ class Header extends React.Component
 
     render()
     {
-        console.log('HEADER being rendered');
+        // console.log('HEADER being rendered');
         return(
-            <header id="header" className={this.state.isVisible ? null : "hidden"}>
-                <div id="navbar" className={this.inNavigation(this.props.scrollY) ? 'navigating' : null}>
+            <header id="header" className={this.state.isVisible ? '' : "hidden"}>
+                <div id="navbar" className={this.inNavigation(this.props.scrollY) ? 'navigating' : ''}>
                     <a className={this.brandClassName()} href="#hero">
                         <h1>
                             <span className="neon1">Gia</span>nvito<br/><span className="neon1">Dif</span>ilippo

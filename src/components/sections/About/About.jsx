@@ -26,7 +26,7 @@ class About extends React.PureComponent
 
     render()
     {
-        console.log('ABOUT being rendered');
+        // console.log('ABOUT being rendered');
         return (
             <Section id="about" defaultTitle="Su di me">
                 <div className="profile">

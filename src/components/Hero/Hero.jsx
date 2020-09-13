@@ -11,13 +11,13 @@ class Hero extends React.Component
     render()
     {
         let fadein = window.sessionStorage.getItem('launchanimation') !== 'no';
-        console.log('HERO being rendered');
+        // console.log('HERO being rendered');
         return (
             <section id="hero" ref="hero" className="section">
                 <div className="background" style={ { transform: `translateY(${this.props.scrollY * 0.7}px)` } }></div>
                 <div className="main">
-                    <h1 className={fadein ? 'fadein' : null}>Gianvito Difilippo</h1>
-                    <h2 className={fadein ? 'fadein' : null}>
+                    <h1 className={fadein ? 'fadein' : ''}>Gianvito Difilippo</h1>
+                    <h2 className={fadein ? 'fadein' : ''}>
                         <Translate selector="hero:h2">Ingegnere dell'Automazione</Translate>
                     </h2>
                     <a href="mailto:gianvito.difilippo@gmail.com" className={fadein ? 'fadein noselect' : 'noselect'}>

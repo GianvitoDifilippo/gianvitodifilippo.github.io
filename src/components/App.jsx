@@ -25,7 +25,7 @@ function isMobile(width = window.innerWidth)
     return deviceType(width) === 'tablet' || deviceType(width) === 'phone';
 }
 
-class App extends React.Component
+class App extends React.PureComponent
 {
     constructor(props)
     {

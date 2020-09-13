@@ -2,12 +2,15 @@ import React from 'react';
 
 import SkillContent from './SkillContent';
 import Translate from '../../../misc/Translate';
+import Modal from '../../../misc/Modal';
+
+import { DeviceContext } from '../../../../context';
 
 import './skillpreview_desktop.scss';
 import './skillpreview_tablet.scss';
 import './skillpreview_phone.scss';
 
-const SkillPreview = props => (
+const SkillPreviewDesktop = props => (
     <div id="skill-preview" className="box">
         <h1 className="box-heading">
             {props.currentSkill
@@ -20,5 +23,23 @@ const SkillPreview = props => (
         <SkillContent currentSkill={props.currentSkill}/>
     </div>
 );
+
+const SkillPreviewMobile = props => (
+    <Modal isOpen={props.currentSkill !== null}>
+        
+    </Modal>
+);
+
+const SkillPreview = props => {
+    const { device } = React.useContext(DeviceContext);
+
+    return (
+        device === 'desktop'
+        ?
+        <SkillPreviewDesktop {...props}/>
+        :
+        <SkillPreviewMobile {...props}/>
+    );
+};
 
 export default SkillPreview;

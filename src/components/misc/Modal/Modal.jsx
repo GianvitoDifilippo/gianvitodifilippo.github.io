@@ -4,31 +4,55 @@ import ReactDOM from 'react-dom';
 import './modal.scss';
 import { ModalContext } from '../../../context';
 
-const Modal = props => {
-    const { modal, setModal } = React.useContext(ModalContext);
-    const [ isOpen, setOpen ] = React.useState(false);
+class Modal extends React.PureComponent
+{
+    constructor(props)
+    {
+        super(props);
 
-    let className = 'modal';
+        this.state = {
+            isOpen: props.isOpen
+        };
 
-    if (!isOpen && modal === props.id) {
-        setOpen(true);
+        this.id = props.id;
     }
-    else if (isOpen && modal === null) {
-        className += ' closing';
-        setTimeout(() => setOpen(false), 100);
-    }
 
-    return isOpen
-    ?
-    ReactDOM.createPortal(
-        <div className={className} onClick={() => setModal(null)}>
-            <div onClick={e => e.stopPropagation()}>
-                {props.children}
+    render()
+    {
+        let className = 'modal';
+        if (this.state.isOpen && !this.props.isOpen) {
+            className += ' closing';
+        }
+
+        return this.state.isOpen
+        ?
+        ReactDOM.createPortal(
+            <div className={className}>
+                {this.props.children}
             </div>
-        </div>
-    , props.parent ? props.parent : document.body) :
-    null
-    ;
-};
+        , this.props.parent ? this.props.parent : document.body) :
+        null
+        ;
+    }
+
+    componentDidUpdate()
+    {
+        if (!this.state.isOpen && this.props.isOpen) {
+            this.setState({
+                isOpen: true
+            });
+            this.context.setModal(this.id);
+        } else if (this.state.isOpen && !this.props.isOpen) {
+            this.context.setModal(null);
+            setTimeout(() => {
+                this.setState({
+                    isOpen: false
+                })
+            }, 100);
+        }
+    }
+}
+
+Modal.contextType = ModalContext;
 
 export default Modal;

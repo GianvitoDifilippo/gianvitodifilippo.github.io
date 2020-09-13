@@ -7,7 +7,6 @@ import SkillList from './SkillList';
 import './skills_desktop.scss';
 import './skills_tablet.scss';
 import './skills_phone.scss';
-import { DeviceContext } from '../../../context';
 
 class Skills extends React.PureComponent
 {
@@ -31,19 +30,11 @@ class Skills extends React.PureComponent
 
     render()
     {
-        console.log('SKILLS being rendered');
+        // console.log('SKILLS being rendered');
         return (
             <Section id="skills" defaultTitle="Skills">
                 <SkillList setSkill={this.setSkill}/>
-                <DeviceContext.Consumer>
-                {({ device }) => (
-                    device === 'desktop'
-                    ?
-                    <SkillPreview currentSkill={this.state.currentSkill}/>
-                    :
-                    null
-                )}
-                </DeviceContext.Consumer>
+                <SkillPreview currentSkill={this.state.currentSkill}/>
             </Section>
         );
     }

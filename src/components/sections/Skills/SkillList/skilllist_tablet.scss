@@ -1,0 +1,29 @@
+@media only screen and (max-width: 1366px) {
+
+#skill-list {
+    > li {
+        > h1 {
+            text-align: center;
+            margin: 0px;
+        }
+
+        > ul.icons {
+            justify-content: center;
+            flex-flow: row wrap;
+
+            > li.skill-item {
+                margin: 5px;
+
+                &:nth-child(1) {
+                    margin: 5px;
+                }
+
+                &:nth-last-child(1) {
+                    margin: 5px;
+                }
+            }
+        }
+    }
+}
+
+}

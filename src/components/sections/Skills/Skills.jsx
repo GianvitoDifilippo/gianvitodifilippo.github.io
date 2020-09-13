@@ -4,7 +4,10 @@ import Section from '../Section';
 import SkillPreview from './SkillPreview';
 import SkillList from './SkillList';
 
-import './skills.scss';
+import './skills_desktop.scss';
+import './skills_tablet.scss';
+import './skills_phone.scss';
+import { DeviceContext } from '../../../context';
 
 class Skills extends React.PureComponent
 {
@@ -32,7 +35,15 @@ class Skills extends React.PureComponent
         return (
             <Section id="skills" defaultTitle="Skills">
                 <SkillList setSkill={this.setSkill}/>
-                <SkillPreview currentSkill={this.state.currentSkill}/>
+                <DeviceContext.Consumer>
+                {({ device }) => (
+                    device === 'desktop'
+                    ?
+                    <SkillPreview currentSkill={this.state.currentSkill}/>
+                    :
+                    null
+                )}
+                </DeviceContext.Consumer>
             </Section>
         );
     }

@@ -6,7 +6,9 @@ import Translate from '../../../../misc/Translate';
 import ProjectThumbnail from '../../../../misc/ProjectThumbnail';
 import ReactCSSTransitionReplace from 'react-css-transition-replace';
 
-import './skillcontent.scss';
+import './skillcontent_desktop.scss';
+import './skillcontent_tablet.scss';
+import './skillcontent_phone.scss';
 
 const ProjectList = props => (
     <ul className="skill-projects-list">
@@ -36,7 +38,7 @@ const SkillContent = props => {
                                 {': '}
                             </span>
                             {skill.experience.map((value, index) => (
-                                <span key={value}>
+                                <span className="value" key={value}>
                                     {index ? ', ' : ''}<Translate selector={`skills:preview:experience:values:${value}`}></Translate>
                                 </span>
                             ))}

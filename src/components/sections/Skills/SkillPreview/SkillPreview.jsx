@@ -3,7 +3,9 @@ import React from 'react';
 import SkillContent from './SkillContent';
 import Translate from '../../../misc/Translate';
 
-import './skillpreview.scss';
+import './skillpreview_desktop.scss';
+import './skillpreview_tablet.scss';
+import './skillpreview_phone.scss';
 
 const SkillPreview = props => (
     <div id="skill-preview" className="box">

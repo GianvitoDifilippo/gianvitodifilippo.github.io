@@ -9,7 +9,9 @@ import flag_it from '../../../assets/img/flags/flag_it.png';
 import flag_en from '../../../assets/img/flags/flag_en.png';
 import flag_es from '../../../assets/img/flags/flag_es.png';
 
-import './settings.scss';
+import './settings_desktop.scss';
+import './settings_tablet.scss';
+import './settings_phone.scss';
 
 class Settings extends React.Component
 {

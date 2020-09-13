@@ -1,0 +1,13 @@
+@media only screen and (max-width: 1366px) {
+
+#skill-preview {
+    width: calc(100% - 15vw);
+    margin: 0px 7.5vw 0px 7.5vw;
+    overflow: hidden;
+
+    > h1 {
+        display: none;
+    }
+}
+
+}

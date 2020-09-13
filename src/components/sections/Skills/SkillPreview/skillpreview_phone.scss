@@ -1,0 +1,13 @@
+@media only screen and (max-width: 600px) {
+
+#skill-preview {
+    > h1 {
+        display: none;
+    }
+
+    .skill-item {
+        margin: 15px 15px 5px 10px;
+    }
+}
+
+}

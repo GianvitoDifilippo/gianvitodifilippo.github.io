@@ -3,7 +3,9 @@ import React from 'react';
 import SkillItem from '../SkillItem';
 import Translate from '../../../misc/Translate';
 
-import './skilllist.scss';
+import './skilllist_desktop.scss';
+import './skilllist_tablet.scss';
+import './skilllist_phone.scss';
 
 const SkillSection = React.memo(props =>
 (

@@ -1,0 +1,16 @@
+@media only screen and (max-width: 1366px) {
+
+#skills {
+    > .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fa-angle-double-left {
+        font-size: 4rem;
+        padding: 10px;
+        margin: 10px -10px -10px -10px;
+    }
+}
+
+}

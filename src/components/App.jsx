@@ -67,10 +67,6 @@ class App extends React.Component
         let className = '';
         if (this.state.modalCtx.modal) {
             className += 'modal-open';
-            document.body.classList.add('stop_scroll');
-        }
-        else {
-            document.body.classList.remove('stop_scroll');
         }
 
         return (

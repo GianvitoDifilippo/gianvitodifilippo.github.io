@@ -1,0 +1,29 @@
+@media only screen and (max-width: 600px) {
+
+#skill-content {
+    > .skill-details-content {
+        > .skill-brief {
+            display: none;
+
+            > h3 {
+                > span {
+                    display: block;
+
+                    &.value {
+                        font-size: 1.9rem;
+                    }
+                }
+            }
+        }
+
+        > .skill-descr {
+            margin-top: 5px;
+        }
+    }
+
+    > h1 {
+        margin-top: 0px;
+    }
+}
+
+}

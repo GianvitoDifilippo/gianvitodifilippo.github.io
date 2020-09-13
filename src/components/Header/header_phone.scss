@@ -1,12 +1,14 @@
 @media only screen and (max-width: 600px) {
 
 #header {
-    #navbar > .brand h1 {
-        font-size: 3rem;
-    }
+    #navbar {
+        .brand h1 {
+            font-size: 3rem;
+        }
     
-    > ul > li > a {
-        font-size: 3rem;
+        > ul > li > a {
+            font-size: 3rem;
+        }
     }
 }
 

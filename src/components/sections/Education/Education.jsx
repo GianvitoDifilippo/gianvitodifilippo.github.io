@@ -7,7 +7,9 @@ import polibaImg from '../../../assets/img/edu/poliba.png';
 import upmImg from '../../../assets/img/edu/upm.png';
 import piccinniImg from '../../../assets/img/edu/piccinni.png';
 
-import './education.scss';
+import './education_desktop.scss';
+import './education_tablet.scss';
+import './education_phone.scss';
 
 const EducationItem = props => (
     <li className={`box ${props.id}`}>

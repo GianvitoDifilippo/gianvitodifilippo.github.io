@@ -18,11 +18,11 @@ if (!window.localStorage.getItem('locale')) {
 }
 
 if (!window.localStorage.getItem('theme')) {
-    window.localStorage.setItem('theme', 'dark');
+    window.localStorage.setItem('theme', 'blue');
 }
 
-if (window.localStorage.getItem('theme') === 'light') {
-    document.body.classList.add('light-mode');
+if (window.localStorage.getItem('theme') === 'green') {
+    document.body.classList.add('green-mode');
 }
 
 ReactDOM.render(<App/>, document.getElementById('root'));

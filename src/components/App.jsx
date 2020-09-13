@@ -12,7 +12,19 @@ import Settings from './misc/Settings';
 
 import { LocaleContext, DeviceContext, ModalContext } from '../context';
 
-import './app.scss';
+import './app_desktop.scss';
+import './app_tablet.scss';
+import './app_phone.scss';
+
+function deviceType(width = window.innerWidth)
+{
+    return width > 1366 ? 'desktop' : width > 600 ? 'tablet' : 'phone'
+}
+
+function isMobile(width = window.innerWidth)
+{
+    return deviceType(width) === 'tablet' || deviceType(width) === 'phone';
+}
 
 class App extends React.Component
 {
@@ -30,14 +42,14 @@ class App extends React.Component
                 }
             },
             deviceCtx: {
-                device: 'desktop'
+                device: deviceType()
             },
             modalCtx: {
                 modal: null,
                 setModal: newModal => this.setState({ modalCtx: { modal: newModal, setModal: this.state.modalCtx.setModal } })
             },
             isSettingsButtonVisible: false,
-            lightTheme: window.localStorage.getItem('theme') === 'light'
+            greenTheme: window.localStorage.getItem('theme') === 'green'
         };
 
         this.toggleTheme = this.toggleTheme.bind(this);
@@ -45,9 +57,9 @@ class App extends React.Component
     
     toggleTheme()
     {
-        this.setState({ lightTheme: !this.state.lightTheme });
-        window.localStorage.setItem('theme', !this.state.lightTheme ? 'light' : 'dark');
-        document.body.classList.toggle('light-mode');
+        this.setState({ greenTheme: !this.state.greenTheme });
+        window.localStorage.setItem('theme', !this.state.greenTheme ? 'green' : 'blue');
+        document.body.classList.toggle('green-mode');
     }
 
     render()
@@ -74,7 +86,7 @@ class App extends React.Component
                     <Education/>
                     <Projects/>
                     <Footer/>
-                    <Settings scrollY={this.state.scrollY} lightTheme={this.state.lightTheme} toggleTheme={this.toggleTheme}/>
+                    <Settings scrollY={this.state.scrollY} greenTheme={this.state.greenTheme} toggleTheme={this.toggleTheme}/>
                 </div>
             </ModalContext.Provider>
             </DeviceContext.Provider>
@@ -97,8 +109,16 @@ class App extends React.Component
             });
         });
 
+        window.addEventListener('resize', () => {
+            let newDevice = deviceType();
+            if (newDevice !== this.state.deviceCtx.device) {
+                this.setState({ deviceCtx: { device: newDevice } })
+            }
+        });
+
         setTimeout(() => window.sessionStorage.setItem('launchanimation', 'no'), 6000);
     }
 }
 
+export { deviceType, isMobile };
 export default App;

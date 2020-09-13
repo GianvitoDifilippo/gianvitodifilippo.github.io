@@ -7,7 +7,9 @@ import Translate from '../../misc/Translate';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
 
-import './about.scss';
+import './about_desktop.scss';
+import './about_tablet.scss';
+import './about_phone.scss';
 
 import photo from '../../../assets/img/photo.jpg';
 
@@ -44,7 +46,7 @@ class About extends React.PureComponent
                             <div className="contacts">
                                 <h1><Translate selector="about:contacts">Contatti</Translate></h1>
                                 <div className="neon_activator" onClick={() => this.refs.emailaddress_message.open()}>
-                                    <FontAwesomeIcon className="fa-icon neon2" icon={faEnvelope} fixedWidth />
+                                    <FontAwesomeIcon className="fa-icon neon2" icon={faEnvelope} />
                                     <span ref="emailaddress" className="neon2 noselect">
                                         gianvito.difilippo@gmail.com
                                         <Message ref="emailaddress_message"
@@ -55,7 +57,7 @@ class About extends React.PureComponent
                                     </span>
                                 </div>
                                 <div className="neon_activator" onClick={() => this.refs.phonenumber_message.open()}>
-                                    <FontAwesomeIcon className="fa-icon neon2" icon={faMobileAlt} fixedWidth />
+                                    <FontAwesomeIcon className="fa-icon neon2" icon={faMobileAlt} />
                                     <span ref="phonenumber" className="neon2 noselect">
                                         +39 3898331018
                                         <Message ref="phonenumber_message"

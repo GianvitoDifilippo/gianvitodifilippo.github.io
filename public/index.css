@@ -8,8 +8,6 @@ html {
 
 body {
     min-width: fit-content;
-    color: white;
-    background-color: #282828;
 }
 
 body.stop_scroll {
@@ -30,9 +28,24 @@ body.stop_scroll {
 a {
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
-    color: white;
 }
 
 #root {
     display: contents;
+}
+
+@media only screen and (max-width: 1366px) {
+    html {
+        font-size: 9px;
+    }
+    
+    body {
+        min-width: unset;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    html {
+        font-size: 8px;
+    }
 }

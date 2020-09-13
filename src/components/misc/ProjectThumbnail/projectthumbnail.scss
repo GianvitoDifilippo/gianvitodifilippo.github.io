@@ -1,5 +1,3 @@
-@import '../../common.scss';
-
 $name_height: 40px;
 
 .project-thumbnail {
@@ -7,7 +5,7 @@ $name_height: 40px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 2px 2px 5px $shadow_color;
+    box-shadow: 2px 2px 5px var(--shadow_color);
     margin: 0px;
     max-width: 450px;
     height: fit-content;
@@ -36,7 +34,7 @@ $name_height: 40px;
             right: 0;
             width: 100%;
             height: 100%;
-            background-color: rgb(10, 30, 60);
+            background-color: var(--dark_color);
             opacity: 0;
         }
 
@@ -66,10 +64,11 @@ $name_height: 40px;
             &:hover {
                 > .background {
                     transform: scale(1.04);
+                    filter: blur(2px);
                 }
     
                 &::after {
-                    opacity: 0.7;
+                    opacity: 0.9;
                 }
     
                 .fa-icon {

@@ -1,5 +1,3 @@
-@import '../../common.scss';
-
 #settings {
     &.active {
         > ul.flags > li {
@@ -62,7 +60,7 @@
         height: 30px;
         right: 340px;
         bottom: 15px;
-        background-color: rgb(20, 20, 20);
+        background-color: var(--dark_color);
         border-radius: 30px;
         opacity: 0;
         transform: translateY(calc(100% + 15px));
@@ -71,21 +69,17 @@
         z-index: 10;
         filter: drop-shadow(0 0 2px whitesmoke);
 
-        &.light-mode {
-            background-color: whitesmoke;
-            filter: drop-shadow(0 0 2px black);
-
+        &.green-mode {
             .dot {
-                background-color: rgb(20, 20, 20);
                 left: calc(100% - 22px - 4px);
             }
             
             .fa-icon {
-                &.sun {
+                &.green {
                     opacity: 1;
                 }
 
-                &.moon {
+                &.blue {
                     opacity: 0;
                 }
             }
@@ -109,17 +103,15 @@
             top: calc((22px - 16px) / 2);
             left: calc((22px - 16px) / 2);
             transition: opacity .1s;
+            color: var(--dark_color);
+            filter: drop-shadow(0 0 1px var(--dark_color));
 
-            &.sun {
+            &.green {
                 opacity: 0;
-                color: whitesmoke;
-                filter: drop-shadow(0 0 2px grey);
             }
 
-            &.moon {
+            &.blue {
                 opacity: 1;
-                color: rgb(20, 20, 20);
-                filter: drop-shadow(0 0 2px black);
             }
         }
     }

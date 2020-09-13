@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCog, faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
+import { faCog, faCrow, faDragon } from '@fortawesome/free-solid-svg-icons'
 
 import { LocaleContext } from '../../../context';
 
@@ -50,7 +50,7 @@ class Settings extends React.Component
         
         return (
             <LocaleContext.Consumer>
-            { ({ locale, setLocale }) => (
+            {({ locale, setLocale }) => (
                 <div id="settings" className={this.state.isActive ? 'active' : null}>
                     <FontAwesomeIcon icon={faCog} className={buttonClassName} onClick={this.toggleActive}/>
                     <ul className="flags noselect">
@@ -64,10 +64,10 @@ class Settings extends React.Component
                             <img src={flag_es} alt=""/>
                         </li>
                     </ul>
-                    <div className={`themeToggler ${this.props.lightTheme ? 'light-mode' : null}`} onClick={this.props.toggleTheme}>
+                    <div className={`themeToggler ${this.props.greenTheme ? 'green-mode' : null}`} onClick={this.props.toggleTheme}>
                         <div className="dot">
-                            <FontAwesomeIcon className="fa-icon sun" icon={faSun}/>
-                            <FontAwesomeIcon className="fa-icon moon" icon={faMoon}/>
+                            <FontAwesomeIcon className="fa-icon green" icon={faDragon}/>
+                            <FontAwesomeIcon className="fa-icon blue" icon={faCrow}/>
                         </div>
                     </div>
                 </div>
@@ -84,7 +84,7 @@ class Settings extends React.Component
             });
         }
         
-        return this.state !== nextState || this.props.lightTheme !== nextProps.lightTheme;
+        return this.state !== nextState || this.props.greenTheme !== nextProps.greenTheme;
     }
 
     componentDidMount()

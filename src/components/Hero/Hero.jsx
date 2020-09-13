@@ -2,7 +2,9 @@ import React from 'react';
 
 import Translate from '../misc/Translate';
 
-import './hero.scss';
+import './hero_desktop.scss';
+import './hero_tablet.scss';
+import './hero_phone.scss';
 
 class Hero extends React.Component
 {
@@ -29,7 +31,7 @@ class Hero extends React.Component
         );
     }
 
-    shouldComponentUpdate(nextProps)
+    shouldComponentUpdate()
     {
         return this.props.scrollY <= this.refs.hero.getBoundingClientRect().height;
     }

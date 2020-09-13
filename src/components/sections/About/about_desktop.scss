@@ -1,8 +1,6 @@
-@import '../../common.scss';
-
 #about {
     .box {
-        background-color: $box_color2;
+        background-color: var(--box_color2);
     }
 
     > .container {

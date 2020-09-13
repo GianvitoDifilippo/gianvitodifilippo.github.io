@@ -1,0 +1,17 @@
+@media only screen and (max-width: 1366px) {
+
+.section {
+    overflow: hidden;
+
+    > .container {
+        margin: calc(55px + 10rem) 7.5vw 10px 7.5vw;
+    }
+
+    > .section-title {
+        left: 5px;
+        top: 55px;
+        font-size: 13rem;
+    }
+}
+
+}

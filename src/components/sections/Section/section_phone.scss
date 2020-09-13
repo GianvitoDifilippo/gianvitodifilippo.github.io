@@ -1,0 +1,15 @@
+@media only screen and (max-width: 600px) {
+
+.section {
+    > .container {
+        margin: calc(65px + 5rem) 5vw 10px 5vw;
+    }
+
+    > .section-title {
+        top: 65px;
+        font-size: 6.5rem;
+        left: 4px;
+    }
+}
+
+}

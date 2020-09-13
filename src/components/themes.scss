@@ -1,0 +1,52 @@
+$background_color: rgb(40, 40, 40);
+$text_color: whitesmoke;
+
+$blue_theme: (
+    "color1": aqua,
+    "color2": rgb(20, 140, 210),
+    "dark_color": rgb(10, 20, 50),
+    "box_color1": rgba(90, 90, 90, 0.8),
+    "box_color2": rgba(20, 140, 210, 0.8),
+    "navbar_navigation_color": rgb(40, 60, 70),
+    "background_dark_color": rgb(0, 15, 30)
+);
+
+$green_theme: (
+    "color1": rgb(0, 240, 120),
+    "color2": rgb(32, 106, 93),
+    "dark_color": rgb(10, 50, 20),
+    "box_color1": rgba(90, 90, 90, 0.8),
+    "box_color2": rgba(32, 106, 93, 0.8),
+    "navbar_navigation_color": rgb(40, 70, 60),
+    "background_dark_color": rgb(0, 30, 15)
+);
+
+body {
+    @each $name, $color in $blue_theme {
+        --#{$name}: #{$color}
+    }
+    --shadow_color: rgba(20, 20, 20, 0.6);
+    --navbar_hero_color: rgba(20, 20, 20, 0.5);
+
+    background-color: $background_color;
+    color: $text_color;
+}
+
+body.green-mode {
+    @each $name, $color in $green_theme {
+        --#{$name}: #{$color}
+    }
+}
+
+a {
+    transition: color .2s;
+    color: $text_color;
+}
+
+@media only screen and (max-width: 1366px) {
+
+body {
+    --navbar_hero_color: transparent;
+}
+
+}

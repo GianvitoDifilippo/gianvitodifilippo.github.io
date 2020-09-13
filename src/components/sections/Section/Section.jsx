@@ -1,8 +1,10 @@
 import React from 'react';
 
-import './section.scss';
+import './section_desktop.scss';
+import './section_tablet.scss';
+import './section_phone.scss';
 
-import Translate from '../misc/Translate';
+import Translate from '../../misc/Translate';
 
 class Section extends React.PureComponent
 {

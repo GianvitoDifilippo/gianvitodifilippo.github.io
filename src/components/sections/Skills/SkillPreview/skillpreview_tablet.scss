@@ -2,12 +2,20 @@
 
 #skill-preview {
     width: calc(100% - 15vw);
-    margin: 0px 7.5vw 0px 7.5vw;
+    margin: auto;
     overflow: hidden;
 
     > h1 {
         display: none;
     }
+}
+
+.skill-preview-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 }

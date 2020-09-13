@@ -8,12 +8,30 @@
     justify-content: center;
     align-items: center;
     animation: fade_in .1s;
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 20;
 
     &.closing {
         animation: fade_out .1s forwards;
     }
+}
+
+.cross-fade-leave {
+    opacity: 1;
+}
+
+.cross-fade-leave.cross-fade-leave-active {
+    opacity: 0;
+    transition: opacity .15s ease-in;
+}
+
+.cross-fade-enter {
+    opacity: 0;
+}
+
+.cross-fade-enter.cross-fade-enter-active {
+    opacity: 1;
+    transition: opacity .15s ease-in;
 }
 
 @keyframes fade_in {

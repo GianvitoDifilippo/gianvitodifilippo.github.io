@@ -34,7 +34,7 @@ class Skills extends React.PureComponent
         return (
             <Section id="skills" defaultTitle="Skills">
                 <SkillList setSkill={this.setSkill}/>
-                <SkillPreview currentSkill={this.state.currentSkill}/>
+                <SkillPreview currentSkill={this.state.currentSkill} setSkill={this.setSkill}/>
             </Section>
         );
     }

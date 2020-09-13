@@ -1,0 +1,18 @@
+@media only screen and (max-width: 1366px) {
+
+.project-thumbnail {
+    > .space {
+        height: 20rem;
+    }
+
+    > h2 {
+        height: 4rem;
+        background-color: rgba(0, 0, 0, 0.85);
+        text-align: center;
+        line-height: 4rem;
+        z-index: 2;
+        justify-self: end;
+    }
+}
+
+}

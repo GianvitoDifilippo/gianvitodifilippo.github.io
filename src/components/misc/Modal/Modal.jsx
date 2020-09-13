@@ -1,58 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './modal.scss';
+import ReactCSSTransitionReplace from 'react-css-transition-replace';
+
 import { ModalContext } from '../../../context';
 
-class Modal extends React.PureComponent
-{
-    constructor(props)
-    {
-        super(props);
+import './modal.scss';
 
-        this.state = {
-            isOpen: props.isOpen
-        };
+const Modal = props => {
+    const { modal, setModal } = React.useContext(ModalContext);
 
-        this.id = props.id;
+    if (props.isOpen && modal !== props.id) {
+        setModal(props.id);
+    } else if (!props.isOpen && modal === props.id) {
+        setModal(null);
     }
 
-    render()
-    {
-        let className = 'modal';
-        if (this.state.isOpen && !this.props.isOpen) {
-            className += ' closing';
-        }
-
-        return this.state.isOpen
-        ?
-        ReactDOM.createPortal(
-            <div className={className}>
-                {this.props.children}
+    return ReactDOM.createPortal(
+        <ReactCSSTransitionReplace transitionName="cross-fade" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
+            {props.isOpen
+            ?
+            <div className="modal">
+                {props.children}
             </div>
-        , this.props.parent ? this.props.parent : document.body) :
-        null
-        ;
-    }
-
-    componentDidUpdate()
-    {
-        if (!this.state.isOpen && this.props.isOpen) {
-            this.setState({
-                isOpen: true
-            });
-            this.context.setModal(this.id);
-        } else if (this.state.isOpen && !this.props.isOpen) {
-            this.context.setModal(null);
-            setTimeout(() => {
-                this.setState({
-                    isOpen: false
-                })
-            }, 100);
-        }
-    }
-}
-
-Modal.contextType = ModalContext;
+            :
+            null
+            }
+        </ReactCSSTransitionReplace>
+    , props.parent ? props.parent : document.body);
+};
 
 export default Modal;

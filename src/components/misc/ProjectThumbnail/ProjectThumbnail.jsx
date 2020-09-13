@@ -1,6 +1,8 @@
 import React from 'react';
 
-import './projectthumbnail.scss';
+import './projectthumbnail_desktop.scss';
+import './projectthumbnail_tablet.scss';
+import './projectthumbnail_phone.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearchPlus } from '@fortawesome/free-solid-svg-icons';

@@ -66,6 +66,10 @@ class App extends React.PureComponent
         let className = '';
         if (this.state.modalCtx.modal) {
             className += 'modal-open';
+            document.body.classList.add('stop_scroll');
+        }
+        else {
+            document.body.classList.remove('stop_scroll');
         }
 
         return (
@@ -107,9 +111,6 @@ class App extends React.PureComponent
             let newDevice = deviceType();
             if (newDevice !== this.state.deviceCtx.device) {
                 this.setState({ deviceCtx: { device: newDevice } })
-                if (newDevice === 'desktop') {
-                    document.body.classList.remove('stop_scroll');
-                }
                 window.location.reload();
             }
         });

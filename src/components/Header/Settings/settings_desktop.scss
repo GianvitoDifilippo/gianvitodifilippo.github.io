@@ -5,6 +5,7 @@
     align-items: center;
     bottom: 0px;
     right: 0px;
+    z-index: 15;
 
     &.active {
         > ul.flags > li {
@@ -35,7 +36,6 @@
 
     > ul.flags {
         display: flex;
-        z-index: 10;
         margin: 0px 50px 0px 40px;
 
         > li {
@@ -66,7 +66,6 @@
         transform: translateY(calc(100% + 15px));
         transition: transform .2s, opacity .2s, background-color .3s, filter .3s;
         cursor: pointer;
-        z-index: 10;
         filter: drop-shadow(0 0 2px whitesmoke);
 
         &.green-mode {
@@ -123,7 +122,6 @@
         cursor: pointer;
         transition: transform .5s ease-in-out, opacity .1s linear;
         transform: translateX(0%) rotateZ(0deg);
-        z-index: 10;
 
         &.hidden {
             transform: translateX(calc(100% + 15px)) rotateZ(0deg);

@@ -44,8 +44,7 @@
         cursor: pointer;
         transition: left .3s ease-in-out .4s, transform .3s ease-in-out, opacity .1s;
         transform: rotateZ(0deg);
-        z-index: 10;
-
+        
         &.hidden {
             left: -35px;
             transform: rotateZ(0deg);

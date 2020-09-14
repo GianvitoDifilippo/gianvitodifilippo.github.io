@@ -24,6 +24,12 @@
     > h1 {
         margin-top: 0px;
     }
+
+    > .skill-projects-content {
+        ul.skill-projects-list {
+            grid-template-columns: 1fr;
+        }
+    }
 }
 
 }

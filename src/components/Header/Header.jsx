@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Translate from '../misc/Translate';
-import Settings from '../misc/Settings';
+import Settings from './Settings';
 
 import { DeviceContext } from '../../context.jsx';
 
@@ -104,14 +104,14 @@ class Header extends React.Component
                         <li onClick={this.toggleNavlist}><a href="#projects" className="neon_activator neon1">
                             <Translate selector="sections:projects">Progetti</Translate>
                         </a></li>
-                        <Settings
-                            isNavlistActive={this.state.isNavlistActive}
-                            greenTheme={this.props.greenTheme}
-                            toggleTheme={this.props.toggleTheme}
-                            isButtonVisible={this.state.isSettingsButtonVisible}
-                        />
                     </ul>
                 </div>
+                <Settings
+                    isNavlistActive={this.state.isNavlistActive}
+                    greenTheme={this.props.greenTheme}
+                    toggleTheme={this.props.toggleTheme}
+                    isButtonVisible={this.state.isSettingsButtonVisible}
+                />
             </header>
         )
     }

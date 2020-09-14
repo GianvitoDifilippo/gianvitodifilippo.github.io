@@ -1,86 +1,86 @@
-#skill-preview {
-    #skill-content {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
+#skill-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
 
-        > .skill-details-content {
-            margin-bottom: 10px;
+    > .skill-details-content {
+        margin-bottom: 10px;
 
-            .skill-item {
-                margin: 10px 30px 10px 10px;
-                float: left;
-                background-color: white;
+        .skill-item {
+            margin: 10px 30px 10px 10px;
+            float: left;
+            background-color: white;
 
-                >.skill-icon {
-                    transition: background-image .2s linear;
-                }
-
-                @media (any-hover: hover) {
-                    transition: none;
-
-                    &:hover>.skill-icon {
-                        transform: none;
-                    }
-                }
+            >.skill-icon {
+                transition: background-image .2s linear;
             }
 
-            > .skill-brief {
-                margin: 10px 0px 0px 10px;
+            @media (any-hover: hover) {
+                transition: none;
 
-                h2 {
-                    font-size: 2.6rem;
-                    font-weight: 700;
-                    line-height: 2rem;
-                    margin-bottom: 5px;
+                &:hover>.skill-icon {
+                    transform: none;
                 }
-
-                h3 {
-                    font-size: 2.3rem;
-                    font-weight: 200;
-                }
-
-                .bold {
-                    font-weight: 500;
-                }
-            }
-
-            > .skill-descr {
-                font-size: 1.6rem;
-                font-weight: 300;
-                margin: 10px 0px 0px 10px;
             }
         }
 
-        > .skill-projects-content {
-            margin: 10px;
-            position: relative;
+        > .skill-brief {
+            margin: 10px 0px 0px 10px;
 
-            ul.skill-projects-list {
-                list-style: none;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                column-gap: 20px;
-                row-gap: 20px;
-
-                >li>.project-thumbnail {
-                    margin: auto;
-                }
+            h2 {
+                font-size: 2.6rem;
+                font-weight: 700;
+                line-height: 2rem;
+                margin-bottom: 5px;
             }
 
-            .skill-projects-none {
-                font-size: 1.6rem;
-                font-weight: 300;
-
-                a {
-                    font-weight: 500;
-                    text-decoration: underline;
-                }
+            h3 {
+                font-size: 2.3rem;
+                font-weight: 200;
             }
+
+            .bold {
+                font-weight: 500;
+            }
+        }
+
+        > .skill-descr {
+            font-size: 1.6rem;
+            font-weight: 300;
+            margin: 10px 0px 0px 10px;
         }
     }
 
+    > .skill-projects-content {
+        position: relative;
+
+        ul.skill-projects-list {
+            margin: 10px;
+            list-style: none;
+            display: grid;                      // CAMBIARE FLEX-WRAP
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+            row-gap: 20px;
+
+            >li>.project-thumbnail {
+                margin: auto;
+            }
+        }
+
+        .skill-projects-none {
+            margin: 10px;
+            font-size: 1.6rem;
+            font-weight: 300;
+
+            a {
+                font-weight: 500;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+#skill-preview {
     .cross-fade-leave {
         opacity: 1;
     }

@@ -9,17 +9,17 @@
             display: flex;
             margin: 10px;
 
-            > li.skill-item {
+            > li {
                 margin: 0px 7px 0px 7px;
                 cursor: pointer;
                 -webkit-tap-highlight-color: transparent;
             }
 
-            > li.skill-item:nth-child(1) {
+            > li:nth-child(1) {
                 margin-left: 0px;
             }
 
-            > li.skill-item:nth-last-child(1) {
+            > li:nth-last-child(1) {
                 margin-right: 0px;
             }
         }

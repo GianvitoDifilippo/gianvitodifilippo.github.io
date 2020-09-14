@@ -25,25 +25,25 @@ class SkillList extends React.PureComponent
         return (
             <ul id="skill-list">
                 <SkillSection id="languages" defaultName="Linguaggi">
-                    <SkillItem id="cplusplus" onClick={this.props.setSkill}/>
-                    <SkillItem id="csharp" onClick={this.props.setSkill}/>
-                    <SkillItem id="python" onClick={this.props.setSkill}/>
-                    <SkillItem id="java" onClick={this.props.setSkill}/>
+                    <li><SkillItem id="cplusplus" onClick={this.props.setSkill}/></li>
+                    <li><SkillItem id="csharp" onClick={this.props.setSkill}/></li>
+                    <li><SkillItem id="python" onClick={this.props.setSkill}/></li>
+                    <li><SkillItem id="java" onClick={this.props.setSkill}/></li>
                 </SkillSection>
                 <SkillSection id="tools" defaultName="Strumenti">
-                    <SkillItem id="matlab" onClick={this.props.setSkill}/>
-                    <SkillItem id="labview" onClick={this.props.setSkill}/>
-                    <SkillItem id="docker" onClick={this.props.setSkill}/>
+                    <li><SkillItem id="matlab" onClick={this.props.setSkill}/></li>
+                    <li><SkillItem id="labview" onClick={this.props.setSkill}/></li>
+                    <li><SkillItem id="docker" onClick={this.props.setSkill}/></li>
                 </SkillSection>
                 <SkillSection id="backend" defaultName="Back-end">
-                    <SkillItem id="dotnet" onClick={this.props.setSkill}/>
-                    <SkillItem id="postgresql" onClick={this.props.setSkill}/>
+                    <li><SkillItem id="dotnet" onClick={this.props.setSkill}/></li>
+                    <li><SkillItem id="postgresql" onClick={this.props.setSkill}/></li>
                 </SkillSection>
                 <SkillSection id="webdev" defaultName="Sviluppo web">
-                    <SkillItem id="html" onClick={this.props.setSkill}/>
-                    <SkillItem id="css" onClick={this.props.setSkill}/>
-                    <SkillItem id="javascript" onClick={this.props.setSkill}/>
-                    <SkillItem id="react" onClick={this.props.setSkill}/>
+                    <li><SkillItem id="html" onClick={this.props.setSkill}/></li>
+                    <li><SkillItem id="css" onClick={this.props.setSkill}/></li>
+                    <li><SkillItem id="javascript" onClick={this.props.setSkill}/></li>
+                    <li><SkillItem id="react" onClick={this.props.setSkill}/></li>
                 </SkillSection>
             </ul>
         );

@@ -3,9 +3,12 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+    }
+}
 
-        .box .box-heading {
-            margin: 5px 0px 0px 10px;
-        }
+#skill-list,
+#skill-preview {
+    .box-heading {
+        margin: 5px 0px 0px 10px;
     }
 }

@@ -22,6 +22,11 @@ class About extends React.PureComponent
         this.state = {
             areRefsAssined: false
         };
+
+        this.emailaddressRef = React.createRef();
+        this.phonenumberRef = React.createRef();
+        this.emailaddress_messageRef = React.createRef();
+        this.phonenumber_messageRef = React.createRef();
     }
 
     render()
@@ -45,24 +50,24 @@ class About extends React.PureComponent
                         <div>
                             <div className="contacts">
                                 <h1><Translate selector="about:contacts">Contatti</Translate></h1>
-                                <div className="neon_activator" onClick={() => this.refs.emailaddress_message.open()}>
+                                <div className="neon_activator" onClick={() => this.emailaddress_messageRef.current.open()}>
                                     <FontAwesomeIcon className="fa-icon neon2" icon={faEnvelope} />
-                                    <span ref="emailaddress" className="neon2 noselect">
+                                    <span ref={this.emailaddressRef} className="neon2 noselect">
                                         gianvito.difilippo@gmail.com
-                                        <Message ref="emailaddress_message"
-                                            x="center" xParent={this.refs.emailaddress}
-                                            y="bottom,10px" yParent={this.refs.emailaddress}>
+                                        <Message ref={this.emailaddress_messageRef}
+                                            x="center" xParent={this.emailaddressRef.current}
+                                            y="bottom,10px" yParent={this.emailaddressRef.current}>
                                             <Translate selector="messages:copied">Copiato!</Translate>
                                         </Message>
                                     </span>
                                 </div>
-                                <div className="neon_activator" onClick={() => this.refs.phonenumber_message.open()}>
+                                <div className="neon_activator" onClick={() => this.phonenumber_messageRef.current.open()}>
                                     <FontAwesomeIcon className="fa-icon neon2" icon={faMobileAlt} />
-                                    <span ref="phonenumber" className="neon2 noselect">
+                                    <span ref={this.phonenumberRef} className="neon2 noselect">
                                         +39 3898331018
-                                        <Message ref="phonenumber_message"
-                                            x="center" xParent={this.refs.phonenumber}
-                                            y="bottom,10px" yParent={this.refs.phonenumber}>
+                                        <Message ref={this.phonenumber_messageRef}
+                                            x="center" xParent={this.phonenumberRef.current}
+                                            y="bottom,10px" yParent={this.phonenumberRef.current}>
                                             <Translate selector="messages:copied">Copiato!</Translate>
                                         </Message>
                                     </span>

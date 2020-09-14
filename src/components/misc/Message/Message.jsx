@@ -13,6 +13,8 @@ class Message extends React.PureComponent
             isOpen: false
         };
 
+        this.divRef = React.createRef();
+
         this.open = this.open.bind(this);
         this.close = this.close.bind(this);
     }
@@ -36,7 +38,7 @@ class Message extends React.PureComponent
         return this.state.isOpen
         ?
         ReactDOM.createPortal(
-            <div ref="div" className="message animated" onAnimationEnd={this.close}>
+            <div ref={this.divRef} className="message animated" onAnimationEnd={this.close}>
                 {this.props.children}
             </div>
             , document.body)
@@ -47,8 +49,8 @@ class Message extends React.PureComponent
     componentDidUpdate()
     {
         if (this.state.isOpen) {
-            this.refs.div.style.left = computeLeftPx(this.props.x, this.refs.div.getBoundingClientRect().width, this.props.xParent);
-            this.refs.div.style.top = computeTopPx(this.props.y, this.refs.div.getBoundingClientRect().height, this.props.yParent);
+            this.divRef.current.style.left = computeLeftPx(this.props.x, this.divRef.current.getBoundingClientRect().width, this.props.xParent);
+            this.divRef.current.style.top = computeTopPx(this.props.y, this.divRef.current.getBoundingClientRect().height, this.props.yParent);
         }
     }
 }

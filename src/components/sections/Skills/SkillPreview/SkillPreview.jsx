@@ -25,7 +25,7 @@ const SkillPreviewDesktop = props => (
 );
 
 const SkillPreviewMobile = props => (
-    <Modal isOpen={props.currentSkill !== null} id="skill-preview">
+    <Modal isOpen={props.currentSkill !== null} id="skill-preview-modal">
         <div className="skill-preview-container">
             <SkillPreviewDesktop {...props}/>
             <div style={{width: '10px', height: '10px', background: 'red'}} onClick={() => props.setSkill(null)}></div>

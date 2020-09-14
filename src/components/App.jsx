@@ -109,8 +109,8 @@ class App extends React.PureComponent
                 this.setState({ deviceCtx: { device: newDevice } })
                 if (newDevice === 'desktop') {
                     document.body.classList.remove('stop_scroll');
-                    this.forceUpdate();
                 }
+                window.location.reload();
             }
         });
 

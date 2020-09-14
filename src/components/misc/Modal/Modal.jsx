@@ -7,27 +7,36 @@ import { ModalContext } from '../../../context';
 
 import './modal.scss';
 
-const Modal = props => {
-    const { modal, setModal } = React.useContext(ModalContext);
-
-    if (props.isOpen && modal !== props.id) {
-        setModal(props.id);
-    } else if (!props.isOpen && modal === props.id) {
-        setModal(null);
-    }
-
-    return ReactDOM.createPortal(
-        <ReactCSSTransitionReplace transitionName="cross-fade" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
-            {props.isOpen
-            ?
-            <div className="modal">
-                {props.children}
-            </div>
-            :
-            null
+class Modal extends React.PureComponent
+{
+    render()
+    {
+        return ReactDOM.createPortal(
+            <ReactCSSTransitionReplace transitionName="cross-fade" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
+                {this.props.isOpen
+                ?
+                <div className="modal" id={this.props.id}>
+                    {this.props.children}
+                </div>
+                :
+                null
             }
-        </ReactCSSTransitionReplace>
-    , props.parent ? props.parent : document.body);
-};
+            </ReactCSSTransitionReplace>
+        , this.props.parent ? this.props.parent : document.body);
+    }
+    
+    componentDidUpdate()
+    {
+        if (this.context.modal !== this.props.id && this.props.isOpen) {
+            this.context.setModal(this.props.id);
+        }
+
+        if (this.context.modal === this.props.id && !this.props.isOpen) {
+            this.context.setModal(null);
+        }
+    }
+}
+
+Modal.contextType = ModalContext;
 
 export default Modal;

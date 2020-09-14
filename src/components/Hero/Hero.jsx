@@ -8,12 +8,19 @@ import './hero_phone.scss';
 
 class Hero extends React.Component
 {
+    constructor(props)
+    {
+        super(props);
+
+        this.heroRef = React.createRef();
+    }
+
     render()
     {
         let fadein = window.sessionStorage.getItem('launchanimation') !== 'no';
         // console.log('HERO being rendered');
         return (
-            <section id="hero" ref="hero" className="section">
+            <section id="hero" ref={this.heroRef} className="section">
                 <div className="background" style={ { transform: `translateY(${this.props.scrollY * 0.7}px)` } }></div>
                 <div className="main">
                     <h1 className={fadein ? 'fadein' : ''}>Gianvito Difilippo</h1>
@@ -33,7 +40,7 @@ class Hero extends React.Component
 
     shouldComponentUpdate()
     {
-        return this.props.scrollY <= this.refs.hero.getBoundingClientRect().height;
+        return this.props.scrollY <= this.heroRef.current.getBoundingClientRect().height;
     }
 }
 

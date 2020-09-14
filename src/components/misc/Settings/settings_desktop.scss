@@ -1,5 +1,10 @@
 #settings {
-    display: fixed;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0px;
+    right: 0px;
 
     &.active {
         > ul.flags > li {
@@ -30,14 +35,11 @@
 
     > ul.flags {
         display: flex;
-        position: fixed;
-        right: 80px;
-        bottom: 9px;
         z-index: 10;
+        margin: 0px 50px 0px 40px;
 
         > li {
-            padding-left: 4px;
-            padding-right: 4px;
+            padding: 5px;
             cursor: pointer;
             opacity: 0;
             transform: translateY(calc(100% + 11px));
@@ -56,11 +58,8 @@
     }
 
     > .themeToggler {
-        position: fixed;
         width: 60px;
         height: 30px;
-        right: 340px;
-        bottom: 15px;
         background-color: var(--dark_color);
         border-radius: 30px;
         opacity: 0;
@@ -119,10 +118,8 @@
 
     > .settings-button {
         opacity: 0.4;
+        margin: 15px;
         font-size: 3rem;
-        position: fixed;
-        bottom: 15px;
-        right: 15px;
         cursor: pointer;
         transition: transform .5s ease-in-out, opacity .1s linear;
         transform: translateX(0%) rotateZ(0deg);

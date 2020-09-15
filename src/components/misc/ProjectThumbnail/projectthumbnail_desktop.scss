@@ -7,12 +7,10 @@ $name_height: 40px;
     flex-direction: column;
     box-shadow: 2px 2px 5px var(--shadow_color);
     margin: 0px;
-    max-width: 450px;
     height: fit-content;
 
     > .space {
         position: relative;
-        height: 280px;
         display: flex;
         justify-content: center;
         align-items: center;

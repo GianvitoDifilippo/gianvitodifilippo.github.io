@@ -4,6 +4,9 @@ import SkillContent from './SkillContent';
 import Translate from '../../../misc/Translate';
 import Modal from '../../../misc/Modal';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
+
 import { DeviceContext } from '../../../../context';
 
 import './skillpreview_desktop.scss';
@@ -28,7 +31,7 @@ const SkillPreviewMobile = props => (
     <Modal isOpen={props.currentSkill !== null} id="skill-preview-modal">
         <div className="skill-preview-container">
             <SkillPreviewDesktop {...props}/>
-            <div style={{width: '10px', height: '10px', background: 'red'}} onClick={() => props.setSkill(null)}></div>
+            <FontAwesomeIcon className="fa-icon" icon={faAngleDoubleLeft} onClick={() => props.setSkill(null)}/>
         </div>
     </Modal>
 );

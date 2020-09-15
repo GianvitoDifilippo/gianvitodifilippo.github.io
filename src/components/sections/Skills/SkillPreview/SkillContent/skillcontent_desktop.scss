@@ -57,13 +57,18 @@
         ul.skill-projects-list {
             margin: 10px;
             list-style: none;
-            display: grid;                      // CAMBIARE FLEX-WRAP
+            display: grid;
             grid-template-columns: 1fr 1fr;
             column-gap: 20px;
             row-gap: 20px;
 
-            >li>.project-thumbnail {
+            > li > .project-thumbnail {
                 margin: auto;
+                max-width: 450px;
+
+                > .space {
+                    height: 280px;
+                }
             }
         }
 

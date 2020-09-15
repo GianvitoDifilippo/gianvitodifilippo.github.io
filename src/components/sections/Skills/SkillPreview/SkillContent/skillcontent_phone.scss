@@ -2,18 +2,24 @@
 
 #skill-content {
     > .skill-details-content {
+        .skill-item {
+            margin: 10px 15px 10px 10px;
+        }
+
         > .skill-brief {
-            display: none;
+            > h2 {
+                display: none;
+            }
 
             > h3 {
                 > span {
                     display: block;
-
-                    &.value {
-                        font-size: 1.9rem;
-                    }
                 }
             }
+        }
+
+        > p {
+            clear: both;
         }
 
         > .skill-descr {

@@ -46,8 +46,8 @@ const SkillContent = props => {
                         <h3>
                             <span className="bold">
                                 <Translate selector="skills:preview:since">Programmo dal</Translate>
+                                {': '}
                             </span>
-                            {': '}
                             <span>{skill.since}</span>
                         </h3>
                     </div>

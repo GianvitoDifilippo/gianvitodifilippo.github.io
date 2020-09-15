@@ -12,6 +12,7 @@ import './about_tablet.scss';
 import './about_phone.scss';
 
 import photo from '../../../assets/img/photo.jpg';
+import { DeviceContext } from '../../../context';
 
 class About extends React.PureComponent
 {
@@ -50,28 +51,18 @@ class About extends React.PureComponent
                         <div>
                             <div className="contacts">
                                 <h1><Translate selector="about:contacts">Contatti</Translate></h1>
-                                <div className="neon_activator" onClick={() => this.emailaddress_messageRef.current.open()}>
+                                <a className="neon_activator" href="mailto:gianvito.difilippo@gmail.com">
                                     <FontAwesomeIcon className="fa-icon neon2" icon={faEnvelope} />
-                                    <span ref={this.emailaddressRef} className="neon2 noselect">
+                                    <span ref={this.emailaddressRef} className="neon2">
                                         gianvito.difilippo@gmail.com
-                                        <Message ref={this.emailaddress_messageRef}
-                                            x="center" xParent={this.emailaddressRef.current}
-                                            y="bottom,10px" yParent={this.emailaddressRef.current}>
-                                            <Translate selector="messages:copied">Copiato!</Translate>
-                                        </Message>
                                     </span>
-                                </div>
-                                <div className="neon_activator" onClick={() => this.phonenumber_messageRef.current.open()}>
+                                </a>
+                                <a className="neon_activator" href="tel:+393898331018">
                                     <FontAwesomeIcon className="fa-icon neon2" icon={faMobileAlt} />
-                                    <span ref={this.phonenumberRef} className="neon2 noselect">
+                                    <span ref={this.phonenumberRef} className="neon2">
                                         +39 3898331018
-                                        <Message ref={this.phonenumber_messageRef}
-                                            x="center" xParent={this.phonenumberRef.current}
-                                            y="bottom,10px" yParent={this.phonenumberRef.current}>
-                                            <Translate selector="messages:copied">Copiato!</Translate>
-                                        </Message>
                                     </span>
-                                </div>
+                                </a>
                             </div>
                             <div className="social">
                                 <h1><Translate selector="about:findme">Mi trovi anche su</Translate></h1>
@@ -103,5 +94,7 @@ class About extends React.PureComponent
         });
     }
 }
+
+About.contextType = DeviceContext;
 
 export default About;

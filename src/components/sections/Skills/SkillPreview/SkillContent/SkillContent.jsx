@@ -37,11 +37,13 @@ const SkillContent = props => {
                                 <Translate selector="skills:preview:experience:key">Esperienza</Translate>
                                 {': '}
                             </span>
+                            <span className="value">
                             {skill.experience.map((value, index) => (
-                                <span className="value" key={value}>
+                                <span key={value}>
                                     {index ? ', ' : ''}<Translate selector={`skills:preview:experience:values:${value}`}></Translate>
                                 </span>
                             ))}
+                            </span>
                         </h3>
                         <h3>
                             <span className="bold">

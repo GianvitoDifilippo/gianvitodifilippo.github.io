@@ -1,6 +1,9 @@
 @media only screen and (max-width: 600px) {
 
 #skill-preview {
+    width: calc(100% - 10vw);
+    margin: 5vw 5vw 0vh 5vw;
+
     > h1 {
         display: none;
     }
@@ -8,6 +11,10 @@
     .skill-item {
         margin: 15px 15px 5px 10px;
     }
+}
+
+.skill-preview-container > .fa-icon {
+    margin: 15px;
 }
 
 }

@@ -1,32 +1,40 @@
 @media only screen and (max-width: 1366px) {
 
-.skill-preview-container {
+#skill-preview-modal {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    overflow: hidden;
 
-    #skill-preview {
-        width: calc(100% - 15vw);
-        margin: 7.5vw 7.5vw 0vh 7.5vw;
+    .skill-preview-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         overflow: hidden;
+        width: 100%;
         flex-grow: 1;
-    
-        > div,
-        > div > span {
-            display: flex;
+
+        #skill-preview {
+            width: calc(100% - 15vw);
+            margin: 7.5vw 7.5vw 0vh 7.5vw;
             overflow: hidden;
-            width: 100%;
-        }
-    
-        > h1 {
-            display: none;
-        }
-    
-        .box-heading {
-            margin: 0px 10px 0px 10px;
+        
+            > div,
+            > div > span {
+                display: flex;
+                overflow: hidden;
+                width: 100%;
+            }
+        
+            > h1 {
+                display: none;
+            }
+        
+            .box-heading {
+                margin: 0px 10px 0px 10px;
+            }
         }
     }
 

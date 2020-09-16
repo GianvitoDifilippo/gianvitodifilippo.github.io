@@ -44,6 +44,10 @@
     transition: opacity .15s ease-in;
 }
 
+.cross-fade-height {
+    transition: height .4s ease-in-out;
+}
+
 @keyframes fade_in {
     from {
         opacity: 0;

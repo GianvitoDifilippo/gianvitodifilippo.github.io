@@ -14,8 +14,13 @@
             transform: rotateZ(120deg);
         }
 
-        > .fullscreen-toggler-wrapper > .fullscreen-toggler {
-            transform: scale(1);
+        > .fullscreen-toggler {
+            .fullscreen-expand {
+                transform: scale(1);
+            }
+            .fullscreen-compress {
+                transform: scale(1);
+            }
         }
     }
 
@@ -38,7 +43,7 @@
         bottom: unset;
     }
 
-    > .fullscreen-toggler-wrapper {
+    > .fullscreen-toggler {
         position: fixed;
         display: flex;
         justify-content: center;
@@ -48,7 +53,8 @@
         width: 100%;
         pointer-events: none;
 
-        > .fullscreen-toggler {
+        .fullscreen-expand,
+        .fullscreen-compress {
             width: 25px;
             height: 25px;
             margin: 20px;

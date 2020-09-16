@@ -1,7 +1,9 @@
 import React from 'react';
 
+import ReactCSSTransitionReplace from 'react-css-transition-replace';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCog, faCrow, faDragon, faExpandArrowsAlt } from '@fortawesome/free-solid-svg-icons'
+import { faCog, faCompressArrowsAlt, faCrow, faDragon, faExpandArrowsAlt } from '@fortawesome/free-solid-svg-icons'
 
 import { LocaleContext } from '../../../context';
 
@@ -20,7 +22,8 @@ class Settings extends React.PureComponent
         super(props);
 
         this.state = {
-            isActive: false
+            isActive: false,
+            isAppFullscreen: false
         }
 
         this.itRef = React.createRef();
@@ -28,6 +31,7 @@ class Settings extends React.PureComponent
         this.esRef = React.createRef();
 
         this.toggleActive = this.toggleActive.bind(this);
+        this.toggleFullscren = this.toggleFullscren.bind(this);
     }
 
     toggleActive()
@@ -35,6 +39,19 @@ class Settings extends React.PureComponent
         this.setState({
             isActive: !this.state.isActive
         })
+    }
+
+    toggleFullscren()
+    {
+        if (this.state.isAppFullscreen) {
+            document.exitFullscreen();
+        }
+        else {
+            document.body.requestFullscreen();
+        }
+        this.setState({
+            isAppFullscreen: !this.state.isAppFullscreen
+        });
     }
 
     flagClassName(locale, flagLocale)
@@ -70,8 +87,13 @@ class Settings extends React.PureComponent
                             <img src={flag_es} alt=""/>
                         </li>
                     </ul>
-                    <div className="fullscreen-toggler-wrapper">
-                        <FontAwesomeIcon icon={faExpandArrowsAlt} className="fullscreen-toggler" onClick={() => document.body.requestFullscreen()}/>
+                    <div className="fullscreen-toggler">
+                        {this.state.isAppFullscreen
+                        ?
+                        <FontAwesomeIcon icon={faCompressArrowsAlt} key="compress" className="fullscreen-compress" onClick={this.toggleFullscren}/>
+                        :
+                        <FontAwesomeIcon icon={faExpandArrowsAlt} key="expand" className="fullscreen-expand" onClick={this.toggleFullscren}/>
+                        }
                     </div>
                     <FontAwesomeIcon icon={faCog} className={buttonClassName} onClick={this.toggleActive}/>
                 </div>

@@ -1,17 +1,17 @@
 import React from 'react';
 
-import { skills } from '../';
+import { skills } from '..';
 
-import './skillitem.scss';
+import './skillcard.scss';
 
-const SkillItem = React.memo(props => {
+const SkillCard = React.memo(props => {
     const { id, onClick } = props;
     return (
-        <div className="skill-item" onClick={() => onClick(id)}>
+        <div className="skill-card" onClick={() => onClick(id)}>
             <div className={`skill-icon icon-${id}`}></div>
             <div className="skill-name noselect">{skills[id].name}</div>
         </div>
     )
 });
 
-export default SkillItem;
+export default SkillCard;

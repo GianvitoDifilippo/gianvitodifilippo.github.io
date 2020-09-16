@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SkillItem from '../SkillItem';
+import SkillCard from '../SkillCard';
 import Translate from '../../../misc/Translate';
 
 import './skilllist_desktop.scss';
@@ -25,25 +25,25 @@ class SkillList extends React.PureComponent
         return (
             <ul id="skill-list">
                 <SkillSection id="languages" defaultName="Linguaggi">
-                    <li><SkillItem id="cplusplus" onClick={this.props.setSkill}/></li>
-                    <li><SkillItem id="csharp" onClick={this.props.setSkill}/></li>
-                    <li><SkillItem id="python" onClick={this.props.setSkill}/></li>
-                    <li><SkillItem id="java" onClick={this.props.setSkill}/></li>
+                    <li><SkillCard id="cplusplus" onClick={this.props.setSkill}/></li>
+                    <li><SkillCard id="csharp" onClick={this.props.setSkill}/></li>
+                    <li><SkillCard id="python" onClick={this.props.setSkill}/></li>
+                    <li><SkillCard id="java" onClick={this.props.setSkill}/></li>
                 </SkillSection>
                 <SkillSection id="tools" defaultName="Strumenti">
-                    <li><SkillItem id="matlab" onClick={this.props.setSkill}/></li>
-                    <li><SkillItem id="labview" onClick={this.props.setSkill}/></li>
-                    <li><SkillItem id="docker" onClick={this.props.setSkill}/></li>
+                    <li><SkillCard id="matlab" onClick={this.props.setSkill}/></li>
+                    <li><SkillCard id="labview" onClick={this.props.setSkill}/></li>
+                    <li><SkillCard id="docker" onClick={this.props.setSkill}/></li>
                 </SkillSection>
                 <SkillSection id="backend" defaultName="Back-end">
-                    <li><SkillItem id="dotnet" onClick={this.props.setSkill}/></li>
-                    <li><SkillItem id="postgresql" onClick={this.props.setSkill}/></li>
+                    <li><SkillCard id="dotnet" onClick={this.props.setSkill}/></li>
+                    <li><SkillCard id="postgresql" onClick={this.props.setSkill}/></li>
                 </SkillSection>
                 <SkillSection id="webdev" defaultName="Sviluppo web">
-                    <li><SkillItem id="html" onClick={this.props.setSkill}/></li>
-                    <li><SkillItem id="css" onClick={this.props.setSkill}/></li>
-                    <li><SkillItem id="javascript" onClick={this.props.setSkill}/></li>
-                    <li><SkillItem id="react" onClick={this.props.setSkill}/></li>
+                    <li><SkillCard id="html" onClick={this.props.setSkill}/></li>
+                    <li><SkillCard id="css" onClick={this.props.setSkill}/></li>
+                    <li><SkillCard id="javascript" onClick={this.props.setSkill}/></li>
+                    <li><SkillCard id="react" onClick={this.props.setSkill}/></li>
                 </SkillSection>
             </ul>
         );

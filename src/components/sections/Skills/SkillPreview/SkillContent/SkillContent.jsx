@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SkillItem from '../../SkillItem';
+import SkillCard from '../../SkillCard';
 import { skills } from '../../';
 import Translate from '../../../../misc/Translate';
 import ProjectThumbnail from '../../../../misc/ProjectThumbnail';
@@ -29,7 +29,7 @@ const SkillContent = props => {
             ?
             <>
                 <div className="skill-details-content">
-                    <SkillItem id={props.currentSkill}/>
+                    <SkillCard id={props.currentSkill}/>
                     <div className="skill-brief">
                         <h2>{skill.name}</h2>
                         <h3>

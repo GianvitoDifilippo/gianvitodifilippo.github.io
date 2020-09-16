@@ -6,24 +6,30 @@
     bottom: 0px;
     right: 0px;
     z-index: 15;
+    pointer-events: none;
 
     &.active {
-        > ul.flags > li {
-            opacity: 1;
-            transform: translateY(0px);
+        > ul.flags {
+            pointer-events: all;
 
-            &.it.active {
-                filter: drop-shadow(0 0 3px white);
-            }
-            &.en.active {
-                filter: drop-shadow(0 0 3px lighten(blue, 30%));
-            }
-            &.es.active {
-                filter: drop-shadow(0 0 3px lighten(red, 30%));
+            > li {
+                opacity: 1;
+                transform: translateY(0px);
+
+                &.it.active {
+                    filter: drop-shadow(0 0 3px white);
+                }
+                &.en.active {
+                    filter: drop-shadow(0 0 3px lighten(blue, 30%));
+                }
+                &.es.active {
+                    filter: drop-shadow(0 0 3px lighten(red, 30%));
+                }
             }
         }
 
         > .themeToggler {
+            pointer-events: all;
             opacity: 1;
             transform: translateY(0px);
         }
@@ -123,6 +129,7 @@
     }
 
     > .settings-button {
+        pointer-events: all;
         opacity: 0.4;
         margin: 15px;
         font-size: 3rem;

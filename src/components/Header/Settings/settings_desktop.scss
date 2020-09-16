@@ -117,6 +117,11 @@
         }
     }
 
+    > .fullscreen-toggler-wrapper {
+        display: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
     > .settings-button {
         opacity: 0.4;
         margin: 15px;

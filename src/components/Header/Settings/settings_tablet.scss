@@ -13,6 +13,10 @@
             transition: left .3s ease-in-out, transform .3s ease-in-out, opacity .1s;
             transform: rotateZ(120deg);
         }
+
+        > .fullscreen-toggler-wrapper > .fullscreen-toggler {
+            transform: scale(1);
+        }
     }
 
     > ul.flags {
@@ -32,6 +36,28 @@
     > .themeToggler {
         right: unset;
         bottom: unset;
+    }
+
+    > .fullscreen-toggler-wrapper {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        pointer-events: none;
+
+        > .fullscreen-toggler {
+            width: 25px;
+            height: 25px;
+            margin: 20px;
+            display: inline-block;
+            font-size: 3rem;
+            pointer-events: all;
+            transform: scale(0);
+            transition: transform .3s ease-in-out;
+        }
     }
 
     > .settings-button {

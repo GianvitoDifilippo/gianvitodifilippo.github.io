@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCog, faCrow, faDragon } from '@fortawesome/free-solid-svg-icons'
+import { faCog, faCrow, faDragon, faExpandArrowsAlt } from '@fortawesome/free-solid-svg-icons'
 
 import { LocaleContext } from '../../../context';
 
@@ -70,6 +70,9 @@ class Settings extends React.PureComponent
                             <img src={flag_es} alt=""/>
                         </li>
                     </ul>
+                    <div className="fullscreen-toggler-wrapper">
+                        <FontAwesomeIcon icon={faExpandArrowsAlt} className="fullscreen-toggler" onClick={() => document.body.requestFullscreen()}/>
+                    </div>
                     <FontAwesomeIcon icon={faCog} className={buttonClassName} onClick={this.toggleActive}/>
                 </div>
             )}

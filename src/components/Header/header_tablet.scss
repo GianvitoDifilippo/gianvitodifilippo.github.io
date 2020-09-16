@@ -76,13 +76,14 @@
     }
     
     .hamburger {
-        position: relative;
+        position: fixed;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 50px;
-        height: 50px;
-        margin-right: 10px;
+        height: 25px;
+        margin: 20px;
+        top: 0;
+        right: 0;
         cursor: pointer;
         -webkit-tap-highlight-color: transparent;
         z-index: 2;
@@ -105,12 +106,12 @@
 
             &::before {
                 bottom: 7px;
-                transition: bottom .3s;
+                transition: bottom .2s linear;
             }
             
             &::after {
                 top: 7px;
-                transition: top .3s;
+                transition: top .2s linear;
             }
         }
 

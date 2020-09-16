@@ -9,6 +9,7 @@
 
         > .profile {
             display: flex;
+            align-items: flex-start;
 
             h1 {
                 font-size: 3rem;
@@ -18,9 +19,9 @@
             > img {
                 width: 400px;
                 height: 400px;
-                margin: 20px;
+                margin-left: 20px;
                 margin-right: 60px;
-                border-radius: 50%;
+                box-shadow: 5px 5px 5px var(--shadow_color);
             }
 
             > div {

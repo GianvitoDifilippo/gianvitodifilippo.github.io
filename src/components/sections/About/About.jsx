@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Section from '../Section';
-import Message from '../../misc/Message'
 import Translate from '../../misc/Translate';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

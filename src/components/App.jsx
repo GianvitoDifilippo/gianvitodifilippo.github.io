@@ -66,10 +66,6 @@ class App extends React.PureComponent
         let className = '';
         if (this.state.modalCtx.modal) {
             className += 'modal-open';
-            document.body.classList.add('stop_scroll');
-        }
-        else {
-            document.body.classList.remove('stop_scroll');
         }
 
         return (
@@ -90,6 +86,18 @@ class App extends React.PureComponent
             </DeviceContext.Provider>
             </LocaleContext.Provider>
         );
+    }
+
+    componentDidUpdate(prevProps, prevState)
+    {
+        if (this.state.modalCtx.modal !== prevState.modalCtx.modal) {
+            if (this.state.modalCtx.modal) {
+                document.body.classList.add('stop_scroll');
+            }
+            else {
+                document.body.classList.remove('stop_scroll');
+            }
+        }
     }
 
     componentDidMount()

@@ -85,10 +85,8 @@ class Header extends React.Component
                             <span className="neon1">Gia</span>nvito<br/><span className="neon1">Dif</span>ilippo
                         </h1>
                     </a>
-                    <div>
-                        <div className={this.hamburgerClassName()} onClick={this.toggleNavlist}>
-                            <div className="bar"></div>
-                        </div>
+                    <div className={this.hamburgerClassName()} onClick={this.toggleNavlist}>
+                        <div className="bar"></div>
                     </div>
                     <ul className={this.navlistClassName()}>
                         <li onClick={this.toggleNavlist}><a href="#about" className="neon_activator neon1">

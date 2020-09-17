@@ -5,7 +5,7 @@ import ReactCSSTransitionReplace from 'react-css-transition-replace';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCog, faCompressArrowsAlt, faCrow, faDragon, faExpandArrowsAlt } from '@fortawesome/free-solid-svg-icons'
 
-import { LocaleContext } from '../../../context';
+import { FullscreenContext, LocaleContext } from '../../../context';
 
 import flag_it from '../../../assets/img/flags/flag_it.png';
 import flag_en from '../../../assets/img/flags/flag_en.png';
@@ -22,8 +22,7 @@ class Settings extends React.PureComponent
         super(props);
 
         this.state = {
-            isActive: false,
-            isAppFullscreen: false
+            isActive: false
         }
 
         this.itRef = React.createRef();
@@ -31,7 +30,6 @@ class Settings extends React.PureComponent
         this.esRef = React.createRef();
 
         this.toggleActive = this.toggleActive.bind(this);
-        this.toggleFullscren = this.toggleFullscren.bind(this);
     }
 
     toggleActive()
@@ -41,23 +39,22 @@ class Settings extends React.PureComponent
         })
     }
 
-    toggleFullscren()
+    toggleFullscren(fullscreenCtx)
     {
-        if (this.state.isAppFullscreen) {
+        if (fullscreenCtx.isFullscreen) {
             if      (document.exitFullscreen)       document.exitFullscreen();
             else if (document.mozCancelFullScreen)  document.mozCancelFullScreen();
             else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
             else if (document.msExitFullscreen)     document.msExitFullscreen();
+            fullscreenCtx.setFullscreen(false);
         }
         else {
             if      (document.documentElement.requestFullscreen)       document.documentElement.requestFullscreen();
             else if (document.documentElement.mozRequestFullScreen)    document.documentElement.mozRequestFullScreen();
             else if (document.documentElement.webkitRequestFullscreen) document.documentElement.webkitRequestFullscreen();
             else if (document.documentElement.msRequestFullscreen)     document.documentElement.msRequestFullscreen();
+            fullscreenCtx.setFullscreen(true);
         }
-        this.setState({
-            isAppFullscreen: !this.state.isAppFullscreen
-        });
     }
 
     flagClassName(locale, flagLocale)
@@ -94,12 +91,13 @@ class Settings extends React.PureComponent
                         </li>
                     </ul>
                     <div className="fullscreen-toggler">
-                        {this.state.isAppFullscreen
-                        ?
-                        <FontAwesomeIcon icon={faCompressArrowsAlt} key="compress" className="fullscreen-compress" onClick={this.toggleFullscren}/>
+                    <FullscreenContext.Consumer>
+                    {fullscreenCtx => fullscreenCtx.isFullscreen ?
+                        <FontAwesomeIcon icon={faCompressArrowsAlt} key="compress" className="fullscreen-compress" onClick={() => this.toggleFullscren(fullscreenCtx)}/>
                         :
-                        <FontAwesomeIcon icon={faExpandArrowsAlt} key="expand" className="fullscreen-expand" onClick={this.toggleFullscren}/>
-                        }
+                        <FontAwesomeIcon icon={faExpandArrowsAlt} key="expand" className="fullscreen-expand" onClick={() => this.toggleFullscren(fullscreenCtx)}/>
+                    }
+                    </FullscreenContext.Consumer>
                     </div>
                     <FontAwesomeIcon icon={faCog} className={buttonClassName} onClick={this.toggleActive}/>
                 </div>

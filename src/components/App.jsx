@@ -9,7 +9,7 @@ import Experience from './sections/Experience';
 import Projects from './sections/Projects';
 import Footer from './Footer';
 
-import { LocaleContext, DeviceContext, ModalContext } from '../context';
+import { LocaleContext, DeviceContext, ModalContext, FullscreenContext } from '../context';
 
 import './app_desktop.scss';
 import './app_tablet.scss';
@@ -37,7 +37,12 @@ class App extends React.PureComponent
                 locale: window.localStorage.getItem('locale'),
                 setLocale: newLocale => {
                     window.localStorage.setItem('locale', newLocale);
-                    this.setState({ localeCtx: { locale: newLocale, setLocale: this.state.localeCtx.setLocale } });
+                    this.setState({
+                        localeCtx: {
+                            locale: newLocale,
+                            setLocale: this.state.localeCtx.setLocale
+                        }
+                    });
                 }
             },
             deviceCtx: {
@@ -45,7 +50,21 @@ class App extends React.PureComponent
             },
             modalCtx: {
                 modal: null,
-                setModal: newModal => this.setState({ modalCtx: { modal: newModal, setModal: this.state.modalCtx.setModal } })
+                setModal: newModal => this.setState({
+                    modalCtx: {
+                        modal: newModal,
+                        setModal: this.state.modalCtx.setModal
+                    }
+                })
+            },
+            fullscreenCtx: {
+                isFullscreen: false,
+                setFullscreen: newIsFullscreen => this.setState({
+                    fullscreenCtx: {
+                        isFullscreen: newIsFullscreen,
+                        setFullscreen: this.state.fullscreenCtx.setFullscreen
+                    }
+                })
             },
             isSettingsButtonVisible: false,
             greenTheme: window.localStorage.getItem('theme') === 'green'
@@ -69,9 +88,10 @@ class App extends React.PureComponent
         }
 
         return (
-            <LocaleContext.Provider value={this.state.localeCtx}>
-            <DeviceContext.Provider value={this.state.deviceCtx}>
-            <ModalContext.Provider  value={this.state.modalCtx}>
+            <LocaleContext.Provider     value={this.state.localeCtx}>
+            <DeviceContext.Provider     value={this.state.deviceCtx}>
+            <ModalContext.Provider      value={this.state.modalCtx}>
+            <FullscreenContext.Provider value={this.state.fullscreenCtx}>
                 <div id="app" className={className}>
                     <Header scrollY={this.state.scrollY} greenTheme={this.state.greenTheme} toggleTheme={this.toggleTheme}/>
                     <Hero scrollY={this.state.scrollY}/>
@@ -82,6 +102,7 @@ class App extends React.PureComponent
                     <Projects/>
                     <Footer/>
                 </div>
+            </FullscreenContext.Provider>
             </ModalContext.Provider>
             </DeviceContext.Provider>
             </LocaleContext.Provider>
@@ -120,6 +141,12 @@ class App extends React.PureComponent
             if (newDevice !== this.state.deviceCtx.device) {
                 this.setState({ deviceCtx: { device: newDevice } })
                 window.location.reload();
+            }
+        });
+
+        document.addEventListener("fullscreenchange", () => {
+            if (!document.fullscreenElement) {
+                this.state.fullscreenCtx.setFullscreen(false);
             }
         });
 

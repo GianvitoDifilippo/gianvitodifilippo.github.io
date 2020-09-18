@@ -1,75 +1,125 @@
 @mixin clip-timeline-item($clip-start, $clip-end) {
-    -webkit-clip-path: polygon(0% $clip-start, 100% $clip-start, 100% $clip-end, 0% $clip-end);
-    clip-path: polygon(0% $clip-start, 100% $clip-start, 100% $clip-end, 0% $clip-end);
+    -webkit-clip-path: polygon(-400% $clip-start, 500% $clip-start, 500% $clip-end, -400% $clip-end);
+    clip-path: polygon(-400% $clip-start, 500% $clip-start, 500% $clip-end, -400% $clip-end);
 }
 
 #experience {
     $line-thickness: 34px;
     $hexagon-size: 140px;
-    $curve-diameter: 15vw;
+    $curve-diameter: 16vw;
     $line-height: calc(100% - #{$curve-diameter} - #{$hexagon-size * 0.75});
 
-    ul {
+    .container {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
 
-        &::before,
-        &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 100vw;
-            height: $curve-diameter;
-            border-radius: $curve-diameter;
-            border: $line-thickness solid var(--color2);
-        }
-
-        &::after {
-            right: 100%;
-        }
-
-        &::before {
-            display: none;
-        }
-    
-        > li.timeline-item {
+        ul.timeline {
+            position: relative;
             display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
-            width: $curve-diameter;
-            height: calc(#{$curve-diameter} + #{$line-height});
-            border-radius: $curve-diameter;
-            border: $line-thickness solid var(--color2);
-            margin: 0px #{-$line-thickness / 2};
-            transition: border .2s;
-        
-            .hexagon {
-                -webkit-clip-path: polygon(5% 25%, 5% 75%, 50% 100%, 95% 75%, 95% 25%, 50% 0%);
-                clip-path: polygon(5% 25%, 5% 75%, 50% 100%, 95% 75%, 95% 25%, 50% 0%);
-                width: $hexagon-size;
-                height: $hexagon-size;
-                background-color: var(--color1);
-                transition: background-color .2s;
-            }
+            height: 100%;
+            width: fit-content;
     
-            &:nth-child(2n + 1) {
-                @include clip-timeline-item(-$hexagon-size, 52%);
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                width: calc(100vw - 100%);
+                height: $curve-diameter;
+                border-radius: $curve-diameter;
+                border: $line-thickness solid var(--color2);
+            }
 
-                .hexagon {
-                    margin-top: -#{$hexagon-size * 0.75 - $line-thickness};
-                }
+            &::before {
+                top: calc(50% - #{$curve-diameter / 2} - #{$line-thickness});
+                right: calc(100% - #{$line-thickness / 2});
+                -webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+                clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
             }
+
+            &::after {
+                top: calc(50% - #{$curve-diameter / 2} - #{$line-thickness});
+                left: calc(100% - #{$line-thickness / 2});
+                -webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 0%, 0% 0%);
+                clip-path: polygon(0% 50%, 100% 50%, 100% 0%, 0% 0%);
+            }
+        
+            > li.timeline-item {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: $curve-diameter;
+                height: calc(#{$curve-diameter} + #{$line-height});
+                border-radius: $curve-diameter;
+                border: $line-thickness solid var(--color2);
+                margin: 0px #{-$line-thickness / 2};
+                transition: border .2s;
+
+                h1,
+                h2,
+                h3 {
+                    margin: 10px;
+                    white-space: nowrap;
+                }
+
+                h2 {
+                    font-size: 2.3rem;
+                }
+
+                div.box {
+                    text-align: center;
+                    width: 150%;
+                    background-color: var(--box_color1_opaque);
+
     
-            &:nth-child(2n) {
-                @include clip-timeline-item(48%, calc(100% + #{$hexagon-size}));
-                justify-content: flex-end;
-    
+                    h3 {
+                        font-size: 1.8rem;
+                        font-weight: 300;
+                    }
+                }
+            
                 .hexagon {
-                    margin-bottom: -#{$hexagon-size * 0.75 - $line-thickness};
-                    order: 10;
+                    // filter: drop-shadow(0 0 3px white);
+                    
+
+                    > .hexagon-content {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        -webkit-clip-path: polygon(5% 25%, 5% 75%, 50% 100%, 95% 75%, 95% 25%, 50% 0%);
+                        clip-path: polygon(5% 25%, 5% 75%, 50% 100%, 95% 75%, 95% 25%, 50% 0%);
+                        width: $hexagon-size;
+                        height: $hexagon-size;
+                        background-color: var(--color2);
+                        transition: background-color .2s;
+
+                        > .hexagon-image {
+                            -webkit-clip-path: polygon(5% 25%, 5% 75%, 50% 100%, 95% 75%, 95% 25%, 50% 0%);
+                            clip-path: polygon(5% 25%, 5% 75%, 50% 100%, 95% 75%, 95% 25%, 50% 0%);
+                            width: 90%;
+                            height: 90%;
+                        }
+                    }
+                }
+        
+                &:nth-child(2n + 1) {
+                    @include clip-timeline-item(-$hexagon-size, 51%);
+                    flex-direction: column;
+    
+                    .hexagon {
+                        margin-top: -#{$hexagon-size * 0.75 - $line-thickness};
+                    }
+                }
+        
+                &:nth-child(2n) {
+                    @include clip-timeline-item(49%, calc(100% + #{$hexagon-size}));
+                    flex-direction: column-reverse;
+        
+                    .hexagon {
+                        margin-bottom: -#{$hexagon-size * 0.75 - $line-thickness};
+                    }
                 }
             }
         }

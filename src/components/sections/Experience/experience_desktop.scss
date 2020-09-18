@@ -21,6 +21,8 @@ $line-height: calc(100% - #{$curve-diameter} - #{$hexagon-size * 0.75});
 }
 
 #experience {
+    overflow-x: hidden;
+
     .container {
         display: flex;
         justify-content: center;
@@ -90,6 +92,8 @@ $line-height: calc(100% - #{$curve-diameter} - #{$hexagon-size * 0.75});
                     text-align: center;
                     width: 150%;
                     background-color: var(--box_color1_opaque);
+                    z-index: 2;
+                    cursor: pointer;
     
                     h3 {
                         font-size: 1.8rem;

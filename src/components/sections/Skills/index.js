@@ -1,5 +1,5 @@
 import Skills from './Skills.jsx';
-import skills from './skills.json';
+import skills from './data.js';
 
 export { skills };
 export default Skills;

@@ -12,16 +12,13 @@ class Modal extends React.PureComponent
     render()
     {
         return ReactDOM.createPortal(
-            <ReactCSSTransitionReplace transitionName="cross-fade" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
-                {this.props.isOpen
-                ?
-                <div className="modal" id={this.props.id}>
-                    {this.props.children}
-                </div>
-                :
-                null
-            }
-            </ReactCSSTransitionReplace>
+            this.props.isOpen
+            ?
+            <div className="modal" id={this.props.id}>
+                {this.props.children}
+            </div>
+            :
+            null
         , this.props.parent ? this.props.parent : document.body);
     }
     

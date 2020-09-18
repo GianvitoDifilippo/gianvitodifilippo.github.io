@@ -66,14 +66,4 @@
         font-size: 2.2rem;
         margin-bottom: 0.4rem;
     }
-
-    @media (any-hover: hover) {
-        .box {
-            transition: background-color .1s linear;
-
-            &:hover {
-                background-color: var(--box_color2);
-            }
-        }
-    }
 }

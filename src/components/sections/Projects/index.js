@@ -1,5 +1,5 @@
 import Projects from './Projects.jsx';
-import projects from './projects.json';
+import projects from './data.js';
 
 export { projects };
 export default Projects;

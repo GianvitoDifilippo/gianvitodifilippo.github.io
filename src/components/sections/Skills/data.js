@@ -1,4 +1,4 @@
-{
+const skills = {
     "cplusplus": {
         "name": "C++",
         "experience": [ 0 ],
@@ -90,3 +90,5 @@
         ]
     }
 }
+
+export default skills;

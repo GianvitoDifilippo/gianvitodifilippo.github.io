@@ -18,19 +18,27 @@
     "experience": {
         "research": {
             "name": "Assistente di ricerca",
-            "year": "2017 - 2018"
+            "year": "2017 - 2018",
+            "yearfull": "Dic 2017 - Mar 2018",
+            "descr": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga amet odio atque explicabo nisi tempore ducimus fugiat, et minus sit"
         },
         "tutoring": {
             "name": "Tutor studenti",
-            "year": "2018 - 2019"
+            "year": "2018 - 2019",
+            "yearfull": "Set 2018 - Set 2019",
+            "descr": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga amet odio atque explicabo nisi tempore ducimus fugiat, et minus sit"
         },
         "backend": {
             "name": "Sviluppatore back-end",
-            "year": "2020"
+            "year": "2020",
+            "yearfull": "Gen 2020 - Set 2020",
+            "descr": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga amet odio atque explicabo nisi tempore ducimus fugiat, et minus sit"
         },
         "software": {
             "name": "Sviluppatore software",
-            "year": "2020 - Oggi"
+            "year": "2020 - Oggi",
+            "yearfull": "Ott 2020 - Oggi",
+            "descr": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga amet odio atque explicabo nisi tempore ducimus fugiat, et minus sit"
         }
     },
     "education": {

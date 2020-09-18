@@ -24,7 +24,7 @@ class ProjectThumbnail extends React.PureComponent
             <div className="project-thumbnail">
                 <a href="#" className="space">
                     <div className="background" style={ {
-                        backgroundImage: `url(${require(`../../../assets/img/projects/${this.id}_thumbnail.jpg`)})`,
+                        backgroundImage: `url(${projects[this.id].thumbnail.backgroundImage})`,
                         backgroundPosition: projects[this.id].thumbnail.backgroundPosition
                     } }>
                     </div>

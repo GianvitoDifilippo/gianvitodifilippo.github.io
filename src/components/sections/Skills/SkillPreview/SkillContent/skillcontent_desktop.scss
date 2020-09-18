@@ -55,7 +55,7 @@
         position: relative;
 
         ul.skill-projects-list {
-            margin: 10px;
+            padding: 10px;
             list-style: none;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -73,7 +73,7 @@
         }
 
         .skill-projects-none {
-            margin: 10px;
+            padding: 10px;
             font-size: 1.6rem;
             font-weight: 300;
 
@@ -115,7 +115,7 @@
 
     .fade-wait-leave.fade-wait-leave-active {
         opacity: 0;
-        transition: opacity 0.4s ease-in;
+        transition: opacity .4s ease-in;
     }
 
     .fade-wait-enter {
@@ -124,10 +124,10 @@
 
     .fade-wait-enter.fade-wait-enter-active {
         opacity: 1;
-        transition: opacity 0.4s ease-in;
+        transition: opacity .4s ease-in;
     }
 
     .fade-wait-height {
-        transition: height 0.6s ease-in-out;
+        transition: height .6s ease-in-out;
     }
 }

@@ -15,6 +15,24 @@
         "contacts": "Contatti",
         "findme": "Mi trovi anche su"
     },
+    "experience": {
+        "research": {
+            "name": "Assistente di ricerca",
+            "year": "2017 - 2018"
+        },
+        "tutoring": {
+            "name": "Tutor studenti",
+            "year": "2018 - 2019"
+        },
+        "backend": {
+            "name": "Sviluppatore back-end",
+            "year": "2020"
+        },
+        "software": {
+            "name": "Sviluppatore software",
+            "year": "2020 - Oggi"
+        }
+    },
     "education": {
         "bsc": {
             "h1": "Laurea Triennale in Ingegneria Informatica e dell'Automazione",

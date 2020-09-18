@@ -1,14 +1,26 @@
+$line-thickness: 36px;
+$hexagon-size: 144px;
+$curve-diameter: 16vw;
+$line-height: calc(100% - #{$curve-diameter} - #{$hexagon-size * 0.75});
+
 @mixin clip-timeline-item($clip-start, $clip-end) {
-    -webkit-clip-path: polygon(-400% $clip-start, 500% $clip-start, 500% $clip-end, -400% $clip-end);
-    clip-path: polygon(-400% $clip-start, 500% $clip-start, 500% $clip-end, -400% $clip-end);
+    -webkit-clip-path: polygon(0% $clip-start, 100% $clip-start, 100% $clip-end, 0% $clip-end);
+    clip-path: polygon(0% $clip-start, 100% $clip-start, 100% $clip-end, 0% $clip-end);
+}
+
+@mixin clip-top {
+    top: calc(50% - #{$curve-diameter / 2} - #{$line-thickness});
+    -webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+}
+
+@mixin clip-bottom {
+    top: calc(50% - #{$curve-diameter / 2} - #{$line-thickness});
+    -webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 0%, 0% 0%);
+    clip-path: polygon(0% 50%, 100% 50%, 100% 0%, 0% 0%);
 }
 
 #experience {
-    $line-thickness: 34px;
-    $hexagon-size: 140px;
-    $curve-diameter: 16vw;
-    $line-height: calc(100% - #{$curve-diameter} - #{$hexagon-size * 0.75});
-
     .container {
         display: flex;
         justify-content: center;
@@ -30,32 +42,38 @@
                 height: $curve-diameter;
                 border-radius: $curve-diameter;
                 border: $line-thickness solid var(--color2);
+                transition: border .2s;
             }
 
             &::before {
-                top: calc(50% - #{$curve-diameter / 2} - #{$line-thickness});
+                @include clip-top;
                 right: calc(100% - #{$line-thickness / 2});
-                -webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
-                clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
             }
 
             &::after {
-                top: calc(50% - #{$curve-diameter / 2} - #{$line-thickness});
                 left: calc(100% - #{$line-thickness / 2});
-                -webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 0%, 0% 0%);
-                clip-path: polygon(0% 50%, 100% 50%, 100% 0%, 0% 0%);
+            }
+
+            &.odd-nli {
+                &::after {
+                    @include clip-top;
+                }
+            }
+
+            &.even-nli {
+                &::after {
+                    @include clip-bottom;
+                }
             }
         
             > li.timeline-item {
+                position: relative;
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
                 width: $curve-diameter;
                 height: calc(#{$curve-diameter} + #{$line-height});
-                border-radius: $curve-diameter;
-                border: $line-thickness solid var(--color2);
                 margin: 0px #{-$line-thickness / 2};
-                transition: border .2s;
 
                 h1,
                 h2,
@@ -72,7 +90,6 @@
                     text-align: center;
                     width: 150%;
                     background-color: var(--box_color1_opaque);
-
     
                     h3 {
                         font-size: 1.8rem;
@@ -81,9 +98,12 @@
                 }
             
                 .hexagon {
-                    // filter: drop-shadow(0 0 3px white);
+                    transition: filter .3s;
+                    cursor: pointer;
+                    &:hover {
+                        filter: drop-shadow(0 0 4px var(--color2));
+                    }
                     
-
                     > .hexagon-content {
                         display: flex;
                         justify-content: center;
@@ -103,22 +123,41 @@
                         }
                     }
                 }
-        
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: calc(100% - #{2 * $line-thickness});
+                    height: calc(100% - #{2 * $line-thickness});
+                    border: $line-thickness solid var(--color2);
+                    border-radius: $curve-diameter;
+                    transition: border .2s;
+                }
+
                 &:nth-child(2n + 1) {
-                    @include clip-timeline-item(-$hexagon-size, 51%);
                     flex-direction: column;
     
                     .hexagon {
-                        margin-top: -#{$hexagon-size * 0.75 - $line-thickness};
+                        margin-top: -#{$hexagon-size / 4 + $line-thickness / 2};
+                    }
+
+                    &::before {
+                        -webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 0%, 0% 0%);
+                        clip-path: polygon(0% 50%, 100% 50%, 100% 0%, 0% 0%);
                     }
                 }
-        
                 &:nth-child(2n) {
-                    @include clip-timeline-item(49%, calc(100% + #{$hexagon-size}));
                     flex-direction: column-reverse;
         
                     .hexagon {
-                        margin-bottom: -#{$hexagon-size * 0.75 - $line-thickness};
+                        margin-bottom: -#{$hexagon-size / 4 + $line-thickness / 2};
+                    }
+
+                    &::before {
+                        -webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+                        clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
                     }
                 }
             }

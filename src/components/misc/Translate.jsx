@@ -30,7 +30,7 @@ const Translate = React.memo(props =>
         text = text[selectors[i]];
         if (!text) return <>{props.children}</>;
     }
-    return <>{text}</>;
+    return props.transform ? <>{props.transform(text)}</> : <>{text}</>;
 });
 
 export default Translate;

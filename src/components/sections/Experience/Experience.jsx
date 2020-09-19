@@ -8,10 +8,13 @@ import Translate from '../../misc/Translate';
 import experience from './data.js';
 
 import './experience_desktop.scss';
-import './experience_tablet.scss';
+import './experience_tablet_big.scss';
+import './experience_tablet_small.scss';
 import './experience_phone.scss';
+import { DeviceContext } from '../../../context';
 
 const TimelineItem = props => {
+    const { device } = React.useContext(DeviceContext);
     let isActive = props.currentExperience === props.id;
     return (
         <li className={`timeline-item${isActive ? ' active' : ''}`}>
@@ -26,12 +29,25 @@ const TimelineItem = props => {
                 <ReactCSSTransitionReplace transitionName="cross-fade" transitionEnterTimeout={600} transitionLeaveTimeout={600}>
                     {isActive
                     ?
-                    <p key="descr"><Translate selector={`experience:${props.id}:descr`}></Translate></p> 
+                    <div key="descr">
+                        <p><Translate selector={`experience:${props.id}:yearfull`}>{props.id}</Translate></p>
+                        <p className="descr">
+                            <Translate selector={`experience:${props.id}:descr`}></Translate>
+                        </p>
+                    </div>
                     :
-                    <p key="null"></p>}
+                    <div key="null"></div>}
                 </ReactCSSTransitionReplace>
             </div>
-            <h2><Translate selector={`experience:${props.id}:year`}>{props.id}</Translate></h2>
+            <h2>
+                <Translate selector={`experience:${props.id}:year`} transform={device === 'tablet_small' || device === 'phone' ? text => {
+                    let years = text.split(' ');
+                    if (years.length === 1) return text;
+                    return <>{years[0]}<br/>{years[1]}<br/>{years[2]}</>
+                } : null}>
+                    {props.id}
+                </Translate>
+            </h2>
             <div className="hexagon" onClick={() => props.onClick(props.id)}>
                 <div className="hexagon-content">
                     <img src={props.image} alt="" className="hexagon-image"/>

@@ -4,7 +4,8 @@
     overflow: hidden;
 
     > .container {
-        margin: calc(55px + 10rem) 7.5vw 10px 7.5vw;
+        width: calc(100vw - 6vw * 2);
+        margin: calc(55px + 10rem) 6vw 10px 6vw;
     }
 
     > .section-title {

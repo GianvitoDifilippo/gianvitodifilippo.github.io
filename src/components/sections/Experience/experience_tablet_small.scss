@@ -1,0 +1,119 @@
+@media only screen and (max-width: 1024px) {
+
+$line-thickness: 16px;
+$hexagon-size: 100px;
+$ul-margin-vertical: 70px;
+$ul-padding-left: 15px;
+
+#experience {
+    .container {
+        justify-content: flex-start;
+        ul.timeline {
+            flex-direction: column;
+            width: 100%;
+            height: fit-content;
+            margin: $ul-margin-vertical auto;
+            padding-left: $ul-padding-left;
+    
+            &::before {
+                width: 400px;
+                top: -$ul-margin-vertical;
+                right: calc(100% - #{$ul-padding-left} - #{($hexagon-size + $line-thickness) / 2});
+                border-width: $line-thickness;
+                height: calc(100% - #{2 * $line-thickness} + #{$ul-margin-vertical * 2});
+                -webkit-clip-path: none;
+                clip-path: none;
+            }
+
+            &::after {
+                display: none;
+            }
+        
+            > li.timeline-item {
+                display: flex;
+                align-items: center;
+                min-width: unset;
+                max-height: unset;
+                width: 100%;
+                flex-direction: row-reverse !important;
+                margin: 30px auto;
+
+                h2 {
+                    position: absolute;
+                    font-size: 1.5rem;
+                    left: -50px;
+                    text-align: center;
+                }
+
+                div.box {
+                    margin-left: 40px;
+                    position: relative;
+                    width: 100%;
+                    background-color: var(--box_color1_opaque);
+                    cursor: pointer;
+                    z-index: 2;
+
+                    h1,
+                    h3 {
+                        white-space: nowrap;
+                        text-align: center;
+                        width: calc(100% - 2 * 5px);
+                        margin: 5px;
+                        transition: width 2s;
+                    }
+
+                    h1 {
+                        font-size: 2.8rem;
+                    }
+    
+                    h3 {
+                        font-size: 1.6rem;
+                        font-weight: 300;
+
+                        > span {
+                            text-transform: uppercase;
+                            width: 0px;
+                            overflow: hidden;
+                            display: inline-flex;
+                            transition: width .5s linear;
+                        }
+                    }
+                    
+                    div {
+                        p.descr {
+                            font-size: 1.5rem;
+                            padding: 0px;
+                            transition: padding 1.5s;
+                        }
+                    }
+                }
+            
+                .hexagon {
+                    margin: 0px !important;
+                    transition: filter .3s;
+                    cursor: pointer;
+                    
+                    > .hexagon-content {
+                        width: $hexagon-size;
+                        height: $hexagon-size;
+                    }
+                }
+
+                &::before {
+                    display: none;
+                }
+
+                &.active {
+                    div.box {
+                        h1,
+                        h3 {
+                            width: unset;
+                            transition: unset;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+}

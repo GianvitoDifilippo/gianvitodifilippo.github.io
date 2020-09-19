@@ -1,7 +1,6 @@
 $line-thickness: 36px;
 $hexagon-size: 144px;
-$curve-diameter: 17vw;
-$line-height: calc(100% - #{$curve-diameter} - #{$hexagon-size * 0.75});
+$curve-diameter: 15vw;
 
 @mixin clip-timeline-item($clip-start, $clip-end) {
     -webkit-clip-path: polygon(0% $clip-start, 100% $clip-start, 100% $clip-end, 0% $clip-end);
@@ -28,10 +27,6 @@ $line-height: calc(100% - #{$curve-diameter} - #{$hexagon-size * 0.75});
     overflow-x: hidden;
 
     .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
         ul.timeline {
             position: relative;
             display: flex;
@@ -39,6 +34,7 @@ $line-height: calc(100% - #{$curve-diameter} - #{$hexagon-size * 0.75});
             align-items: center;
             height: 100%;
             width: fit-content;
+            margin: auto;
     
             &::before,
             &::after {
@@ -73,12 +69,15 @@ $line-height: calc(100% - #{$curve-diameter} - #{$hexagon-size * 0.75});
             }
         
             > li.timeline-item {
+                box-sizing: content-box;
                 position: relative;
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
-                width: $curve-diameter;
-                height: calc(#{$curve-diameter} + #{$line-height});
+                min-width: 250px;
+                max-height: $curve-diameter * 4;
+                width: calc(#{$curve-diameter} + #{$line-thickness});
+                height: calc(100% - #{$hexagon-size * 0.75});
                 margin: 0px #{-$line-thickness / 2};
 
                 h2 {
@@ -90,8 +89,8 @@ $line-height: calc(100% - #{$curve-diameter} - #{$hexagon-size * 0.75});
                     position: relative;
                     width: 150%;
                     background-color: var(--box_color1_opaque);
-                    z-index: 2;
                     cursor: pointer;
+                    z-index: 2;
 
                     h1,
                     h3 {
@@ -99,7 +98,7 @@ $line-height: calc(100% - #{$curve-diameter} - #{$hexagon-size * 0.75});
                         text-align: center;
                         width: calc(100% - 2 * 5px);
                         margin: 5px;
-                        transition: width 1.5s;
+                        transition: width 2s;
                     }
 
                     h1 {
@@ -107,21 +106,28 @@ $line-height: calc(100% - #{$curve-diameter} - #{$hexagon-size * 0.75});
                     }
     
                     h3 {
-                        font-size: 1.8rem;
+                        font-size: 1.6rem;
                         font-weight: 300;
 
                         > span {
+                            text-transform: uppercase;
                             width: 0px;
                             overflow: hidden;
                             display: inline-flex;
-                            transition: width 1s linear;
+                            transition: width .6s linear;
                         }
                     }
-                    
-                    p {
-                        font-size: 1.5rem;
-                        padding: 0px;
-                        transition: padding 1.5s;
+
+                    div {
+                        p:not(.descr) {
+                            display: none;
+                        }
+
+                        p.descr {
+                            font-size: 1.5rem;
+                            padding: 0px;
+                            transition: padding 0s .3s;
+                        }
                     }
 
                     @media (any-hover: hover) {
@@ -173,6 +179,7 @@ $line-height: calc(100% - #{$curve-diameter} - #{$hexagon-size * 0.75});
                     border: $line-thickness solid var(--color2);
                     border-radius: $curve-diameter;
                     transition: border .2s;
+                    z-index: -1;
                 }
 
                 &:nth-child(2n + 1) {
@@ -205,15 +212,17 @@ $line-height: calc(100% - #{$curve-diameter} - #{$hexagon-size * 0.75});
                         h1,
                         h3 {
                             width: 0;
-                            transition: width 3s;
+                            transition: width 2.2s;
 
                             > span {
-                                width: 200px;
+                                width: 190px;
+                                transition: width .6s 1.1s linear;
                             }
                         }
-
-                        p {
-                            padding: 10px 5px;
+                        div {
+                            p.descr {
+                                padding: 10px 5px;
+                            }
                         }
                     }
 
@@ -231,7 +240,7 @@ $line-height: calc(100% - #{$curve-diameter} - #{$hexagon-size * 0.75});
 
     .cross-fade-leave.cross-fade-leave-active {
         opacity: 0;
-        transition: opacity .3s ease-in;
+        transition: opacity .3s ease-in, padding 0s .3s !important;
     }
 
     .cross-fade-enter {
@@ -240,7 +249,7 @@ $line-height: calc(100% - #{$curve-diameter} - #{$hexagon-size * 0.75});
 
     .cross-fade-enter.cross-fade-enter-active {
         opacity: 1;
-        transition: opacity .3s ease-in;
+        transition: opacity .3s ease-in, padding 0s .3s !important;
     }
 
     .cross-fade-height {

@@ -17,12 +17,12 @@ import './app_phone.scss';
 
 function deviceType(width = window.innerWidth)
 {
-    return width > 1366 ? 'desktop' : width > 600 ? 'tablet' : 'phone'
+    return width > 1366 ? 'desktop' : width > 1024 ? 'tablet_big' : width > 800 ? 'tablet_small' : 'phone'
 }
 
 function isMobile(width = window.innerWidth)
 {
-    return deviceType(width) === 'tablet' || deviceType(width) === 'phone';
+    return deviceType(width) === 'tablet_big' || deviceType(width) === 'tablet_small' || deviceType(width) === 'phone';
 }
 
 class App extends React.PureComponent

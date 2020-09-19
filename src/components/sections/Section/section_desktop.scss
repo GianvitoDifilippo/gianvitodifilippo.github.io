@@ -7,7 +7,7 @@
         margin: calc(45px + 13rem) 8vw 10px 8vw;
         z-index: 1;
         width: calc(100vw - 8vw * 2);
-        min-height: calc(100vh - 45px - 13rem - 10px);
+        min-height: calc(min(100vh, 100vw) - 45px - 13rem - 10px);
     }
 
     > .section-title {

@@ -2,7 +2,8 @@
 
 .section {
     > .container {
-        margin: calc(65px + 5rem) 5vw 10px 5vw;
+        width: calc(100vw - 4vw * 2);
+        margin: calc(65px + 5rem) 4vw 10px 4vw;
     }
 
     > .section-title {

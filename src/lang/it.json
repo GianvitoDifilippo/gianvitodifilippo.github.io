@@ -13,7 +13,8 @@
     },
     "about": {
         "contacts": "Contatti",
-        "findme": "Mi trovi anche su"
+        "findme": "Mi trovi anche su",
+        "theysay": "Dicono di me"
     },
     "experience": {
         "research": {
@@ -95,6 +96,9 @@
             "noprojects": "Non ci sono progetti per questa skill al momento, ma possiamo avviare il primo insieme.",
             "contactme": "Contattami!"
         }
+    },
+    "projects": {
+        "other": "Altri progetti"
     },
     "messages": {
         "copied": "Copiato!"

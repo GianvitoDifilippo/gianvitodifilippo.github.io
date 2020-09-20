@@ -17,7 +17,7 @@ import './app_phone.scss';
 
 function deviceType(width = window.innerWidth)
 {
-    return width > 1366 ? 'desktop' : width > 1024 ? 'tablet_big' : width > 800 ? 'tablet_small' : 'phone'
+    return width > 1366 ? 'desktop' : width > 1024 ? 'tablet_big' : width > 600 ? 'tablet_small' : 'phone'
 }
 
 function isMobile(width = window.innerWidth)

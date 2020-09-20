@@ -1,5 +1,12 @@
 @import './themes.scss';
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
 #app {
     &.modal-open > * {
         filter: blur(5px);
@@ -45,6 +52,10 @@
 
 ul {
     list-style: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 @media (any-hover: hover) {

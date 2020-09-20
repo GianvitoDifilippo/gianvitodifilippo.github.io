@@ -22,7 +22,7 @@ const TimelineItem = props => {
                 <h1 className="box-heading"><Translate selector={`experience:${props.id}:name`}>{props.id}</Translate></h1>
                 <h3>
                     @ {props.where}{' '}
-                    <span className={isActive ? 'active' : ''}>
+                    <span>
                         {'| '}<Translate selector={`experience:${props.id}:yearfull`}>{props.id}</Translate>
                     </span>
                 </h3>
@@ -39,7 +39,7 @@ const TimelineItem = props => {
                     <div key="null"></div>}
                 </ReactCSSTransitionReplace>
             </div>
-            <h2>
+            <h2 className="noselect">
                 <Translate selector={`experience:${props.id}:year`} transform={device === 'tablet_small' || device === 'phone' ? text => {
                     let years = text.split(' ');
                     if (years.length === 1) return text;
@@ -48,7 +48,7 @@ const TimelineItem = props => {
                     {props.id}
                 </Translate>
             </h2>
-            <div className="hexagon" onClick={() => props.onClick(props.id)}>
+            <div className="hexagon noselect" onClick={() => props.onClick(props.id)}>
                 <div className="hexagon-content">
                     <img src={props.image} alt="" className="hexagon-image"/>
                 </div>

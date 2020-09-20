@@ -7,19 +7,18 @@
         display: flex;
         flex-direction: column;
 
+        h1 {
+            font-size: 3rem;
+            font-weight: 300;
+        }
+
         > .profile {
             display: flex;
             align-items: flex-start;
 
-            h1 {
-                font-size: 3rem;
-                font-weight: 300;
-            }
-
             > img {
                 width: 400px;
                 height: 400px;
-                margin-left: 20px;
                 margin-right: 60px;
                 box-shadow: 5px 5px 5px var(--shadow_color);
             }
@@ -47,7 +46,6 @@
                             justify-content: center;
                             align-items: center;
                             cursor: pointer;
-                            -webkit-tap-highlight-color: transparent;
                             margin-top: 8px;
 
                             > span {
@@ -116,6 +114,49 @@
                                 background-image: url(../../../assets/img/icons/instagram_hover.png);
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        > .reviews {
+            h1 {
+                width: 100%;
+                text-align: left;
+                
+                ul {
+                    float: right;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    li {
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background-color: var(--color2);
+                        margin: 10px;
+                    }
+                }
+            }
+
+            > ul {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                > li {
+                    height: 100px;
+
+                    &:nth-child(1) {
+                        background-color: red;
+                    }
+
+                    &:nth-child(2) {
+                        background-color: green;
+                    }
+
+                    &:nth-child(3) {
+                        background-color: blue;
                     }
                 }
             }

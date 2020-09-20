@@ -1,0 +1,44 @@
+@media only screen and (max-width: 600px) {
+
+    #projects {
+        .container {
+
+            h1 {
+                font-size: 3rem;
+                margin-bottom: 10px;
+            }
+            
+            ul.mainlist {
+                margin-bottom: 10px;
+                grid-template-columns: 1fr;
+                > li {
+                    margin: 10px 0px;
+
+                    .project-thumbnail {
+                        > .space {
+                            padding-top: 27%;
+                            padding-bottom: 27%;
+                        }
+                    }
+                }
+            }
+
+            ul.otherlist {
+                column-gap: 10px;
+                row-gap: 10px;
+
+                > li {
+                    margin: 0px;
+
+                    .project-thumbnail {
+                        > .space {
+                            padding-top: 22%;
+                            padding-bottom: 22%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    }

@@ -44,9 +44,8 @@ class About extends React.PureComponent
                             temporibus molestiae vero quisquam. Laborum, ut quasi eos commodi incidunt vel fugit. Nesciunt,
                             repudiandae repellendus maiores omnis molestias facilis eius dolore voluptas ipsam exercitationem
                             quibusdam quasi explicabo perspiciatis facere laborum at veritatis tenetur esse rerum similique impedit,
-                            modi asperiores. Corporis vero nulla impedit accusamus illo provident dignissimos magnam autem sequi
-                            odio!
-                            </p>
+                            modi asperiores. Corporis vero nulla impedit accusamus illo provident dignissimos magnam autem sequi odio!
+                        </p>
                         <div>
                             <div className="contacts">
                                 <h1><Translate selector="about:contacts">Contatti</Translate></h1>

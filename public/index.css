@@ -19,17 +19,6 @@ body.stop_scroll {
     display: none;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-a {
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
-}
-
 #root {
     display: contents;
 }

@@ -32,6 +32,10 @@
                     top: 50%;
                     transform: translateY(-50%);
 
+                    &.box {
+                        background-color: var(--box_color1_opaque);
+                    }
+
                     h1 {
                         font-size: 3rem;
                         font-weight: 400;

@@ -1,20 +1,29 @@
 @media only screen and (max-width: 600px) {
+#skill-preview-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 
-#skill-preview {
-    width: calc(100% - 10vw);
-    margin: 5vw 5vw 0vh 5vw;
+    .skill-preview-container {
+        #skill-preview {
+            width: calc(100% - 4vw * 2);
+            margin: 4vw 4vw 0 4vw;
+        
+            > h1 {
+                display: none;
+            }
+        
+            .skill-card {
+                margin: 15px 15px 5px 10px;
+            }
+        }
 
-    > h1 {
-        display: none;
+        > .fa-icon {
+            margin: 15px;
+        }
     }
-
-    .skill-card {
-        margin: 15px 15px 5px 10px;
-    }
-}
-
-.skill-preview-container > .fa-icon {
-    margin: 15px;
 }
 
 }

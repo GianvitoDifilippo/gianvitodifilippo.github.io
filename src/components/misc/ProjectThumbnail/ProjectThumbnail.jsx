@@ -22,14 +22,19 @@ class ProjectThumbnail extends React.PureComponent
     {
         return (
             <div className="project-thumbnail">
-                <a href="#" className="space">
+                <div className="space">
                     <div className="background" style={ {
                         backgroundImage: `url(${projects[this.id].thumbnail.backgroundImage})`,
                         backgroundPosition: projects[this.id].thumbnail.backgroundPosition
                     } }>
                     </div>
-                    <FontAwesomeIcon className="fa-icon" icon={faSearchPlus}/>
-                </a>
+                    <div className="content">
+                    <p>{projects[this.id].descr}</p>
+                        <a href="#">
+                            <FontAwesomeIcon className="fa-icon" icon={faSearchPlus}/>
+                        </a>
+                    </div>
+                </div>
                 <h2>{projects[this.id].name}</h2>
             </div>
         );

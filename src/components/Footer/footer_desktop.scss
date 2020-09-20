@@ -6,6 +6,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     filter: drop-shadow(0 -2px 2px var(--background_color_dark));
     transition: background-color .2s, filter .2s;
+    overflow: hidden;
 
     .sitemap {
         padding: 15px;

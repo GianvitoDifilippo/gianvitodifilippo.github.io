@@ -1,8 +1,6 @@
 @media only screen and (max-width: 1366px) {
 
 .section {
-    overflow: hidden;
-
     > .container {
         width: calc(100vw - 6vw * 2);
         margin: calc(55px + 10rem) 6vw 10px 6vw;

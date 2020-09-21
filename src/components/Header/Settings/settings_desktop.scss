@@ -66,13 +66,13 @@
     > .themeToggler {
         width: 60px;
         height: 30px;
-        background-color: var(--dark_color);
+        background-color: var(--color_dark);
         border-radius: 30px;
         opacity: 0;
         transform: translateY(calc(100% + 15px));
         transition: transform .2s, opacity .2s, background-color .3s, filter .3s;
         cursor: pointer;
-        filter: drop-shadow(0 0 2px whitesmoke);
+        filter: drop-shadow(0 0 1.5px whitesmoke);
 
         &.green-mode {
             .dot {
@@ -108,8 +108,8 @@
             top: calc((22px - 16px) / 2);
             left: calc((22px - 16px) / 2);
             transition: opacity .1s;
-            color: var(--dark_color);
-            filter: drop-shadow(0 0 1px var(--dark_color));
+            color: var(--color_dark);
+            filter: drop-shadow(0 0 1px var(--color_dark));
 
             &.green {
                 opacity: 0;

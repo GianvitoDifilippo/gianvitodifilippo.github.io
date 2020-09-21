@@ -8,6 +8,7 @@
 }
 
 #app {
+    overflow: hidden;
     &.modal-open > * {
         filter: blur(5px);
     }

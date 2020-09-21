@@ -48,7 +48,7 @@ const projects = {
     },
     "portfolio": {
         "name": "Portfolio website",
-        "descr": "È il sito che stai visitando in questo momento! Non credo serva descriverlo :)",
+        "descr": "È il sito che stai visitando in questo momento! Non credo serva descriverlo. 😁",
         "thumbnail": {
             "backgroundImage": portfolio_thumbnail,
             "backgroundPosition": "center"

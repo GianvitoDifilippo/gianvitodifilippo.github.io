@@ -130,7 +130,7 @@ class Footer extends React.PureComponent
                 <div className="feedback">
                     <p>How was your user experience while browsing this website?<br/>Tell me using the form below.</p>
                     <form method="POST" enctype="text/plain"
-                    action="mailto:gianvito.difilippo@gmail.com&subject=Portfolio website feedback&body=asdf">
+                    action="">
                         <div>
                             <input placeholder="Your name" type="text" name="name" id="feedback-name" autocomplete="off" required/>
                             <select name="rating" id="feedback-rating" required>

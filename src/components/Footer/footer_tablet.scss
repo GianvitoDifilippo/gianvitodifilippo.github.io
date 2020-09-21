@@ -1,0 +1,51 @@
+@media only screen and (max-width: 1366px) {
+#footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .sitemap {
+        order: 1;
+        width: 100%;
+        padding: 15px;
+
+        > div {
+            ul {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .center {
+        order: 3;
+        width: 80%;
+        padding: 15px;
+        height: 180px;
+    }
+
+    .feedback {
+        width: 80%;
+        order: 2;
+        padding: 15px;
+
+        form {
+            width: 100%;
+
+            > div {
+                width: 100%;
+            }
+        }
+    }
+
+    @keyframes rocket-fire {
+        from {
+            transform: translateY(70vh) scale(1);
+            position: fixed;
+        }
+        to {
+            transform: translateY(-140vh) scale(7);
+        }
+    }
+}
+}

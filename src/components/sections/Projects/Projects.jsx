@@ -7,7 +7,7 @@ import Modal from '../../misc/Modal';
 import Translate from '../../misc/Translate';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDoubleLeft, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { DeviceContext } from '../../../context';
 
@@ -21,7 +21,10 @@ const MainProjectPreview = props => (
     <li className="mainproject">
         <img src={projects[props.id].images[0]} alt="" className="noselect"/>
         <div className="box">
-            <h1>{projects[props.id].name}</h1>
+            <div className="heading">
+                <h1>{projects[props.id].name}</h1>
+                <a href="#"><FontAwesomeIcon className="fa-icon" icon={faExternalLinkAlt}/></a>
+            </div>
             <p>{projects[props.id].descr}</p>
         </div>
     </li>

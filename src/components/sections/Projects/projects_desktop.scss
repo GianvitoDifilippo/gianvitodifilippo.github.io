@@ -26,7 +26,7 @@
                     box-shadow: 5px 5px 5px var(--shadow_color);
                 }
 
-                div {
+                > div {
                     width: 65%;
                     position: absolute;
                     top: 50%;
@@ -36,10 +36,20 @@
                         background-color: var(--box_color1_opaque);
                     }
 
-                    h1 {
-                        font-size: 3rem;
-                        font-weight: 400;
-                        margin: 10px;
+                    .heading {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        h1 {
+                            font-size: 3rem;
+                            font-weight: 400;
+                            margin: 10px 10px 0px 10px;
+                        }
+
+                        .fa-icon {
+                            font-size: 2.5rem;
+                            margin-right: 10px;
+                        }
                     }
 
                     p {

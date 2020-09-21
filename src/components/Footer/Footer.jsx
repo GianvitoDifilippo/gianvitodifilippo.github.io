@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Translate from '../misc/Translate';
+import { translate } from '../misc/Translate';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact } from '@fortawesome/free-brands-svg-icons';
@@ -40,7 +41,16 @@ class Footer extends React.PureComponent
     fireAnimation()
     {
         this.rocketRef.current.classList.add('active');
-        setTimeout(() => this.rocketRef.current.classList.remove('active'), 1100);
+        setTimeout(() => this.rocketRef.current.classList.remove('active'), 1500);
+    }
+
+    sendFeedback(locale)
+    {
+        let ux = translate(`footer:feedback:ratings:${document.getElementById('feedback-rating').value}`, locale).toLowerCase();
+        let message = document.getElementById('feedback-message').value;
+        window.location.href = `mailto:gianvito.difilippo@gmail.com?subject=Feedback form&body=${
+translate('misc:feedback:intro', locale)} ${translate('misc:feedback:ux', locale)} ${ux}.
+${message ? '%0D%0A' + message : ''}%0D%0A%0D%0A${document.getElementById('feedback-name').value}%0D%0A`;
     }
 
     render()
@@ -49,49 +59,79 @@ class Footer extends React.PureComponent
             <footer id="footer">
                 <div className="sitemap">
                     <div className="landingpage">
-                        <h1>Landing page</h1>
-                        <ul>
-                            <li><a href="#hero" className="neon_activator neon1">
-                                Hero
-                            </a></li>
-                            <li><a href="#about" className="neon_activator neon1">
-                                <Translate selector="sections:about">Su di me</Translate>
-                            </a></li>
-                            <li><a href="#skills" className="neon_activator neon1">
-                                <Translate selector="sections:skills">Skills</Translate>
-                            </a></li>
-                            <li><a href="#experience" className="neon_activator neon1">
-                                <Translate selector="sections:experience">Esperienza</Translate>
-                            </a></li>
-                            <li><a href="#education" className="neon_activator neon1">
-                                <Translate selector="sections:education">Educazione</Translate>
-                            </a></li>
-                            <li><a href="#projects" className="neon_activator neon1">
-                                <Translate selector="sections:projects">Progetti</Translate>
-                            </a></li>
-                        </ul>
+                        <div>
+                            <h1>Landing page</h1>
+                            <ul>
+                                <li><a href="#hero" className="neon_activator neon1">
+                                    Hero
+                                </a></li>
+                                <li><a href="#about" className="neon_activator neon1">
+                                    <Translate selector="sections:about">Su di me</Translate>
+                                </a></li>
+                                <li><a href="#skills" className="neon_activator neon1">
+                                    <Translate selector="sections:skills">Skills</Translate>
+                                </a></li>
+                                <li><a href="#experience" className="neon_activator neon1">
+                                    <Translate selector="sections:experience">Esperienza</Translate>
+                                </a></li>
+                                <li><a href="#education" className="neon_activator neon1">
+                                    <Translate selector="sections:education">Educazione</Translate>
+                                </a></li>
+                                <li><a href="#projects" className="neon_activator neon1">
+                                    <Translate selector="sections:projects">Progetti</Translate>
+                                </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="projects">
+                        <div>
+                            <h1><Translate selector="footer:projects:heading">Progetti in dettaglio</Translate></h1>
+                            <ul>
+                                <li>
+                                    <a href="#" className="neon_activator neon1">
+                                        <Translate selector="footer:projects:mscthesis">Tesi di laurea magistrale</Translate>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" className="neon_activator neon1">
+                                        <Translate selector="footer:projects:bscthesis">Tesi di laurea triennale</Translate>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" className="neon_activator neon1">
+                                        AudioEngineer
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div className="interests">
-                        <h1>Interessi</h1>
-                        <ul>
-                            <li>Chitarra</li>
-                            <li>Drone</li>
-                            <li>Elettronica</li>
-                        </ul>
-                    </div>
-                    <div className="technical">
-                        <h1>Technical</h1>
-                        <ul>
-                            <li>Tesi di laurea Magistrale</li>
-                            <li>Tesi di laurea Triennale</li>
-                            <li>AudioEngineer</li>
-                        </ul>
+                        <div>
+                            <h1><Translate selector="footer:interests:heading">Interessi</Translate></h1>
+                            <ul>
+                                <li>
+                                    <a href="#" className="neon_activator neon1">
+                                        <Translate selector="footer:interests:guitar">Chitarra</Translate>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" className="neon_activator neon1">
+                                        <Translate selector="footer:interests:drone">Fotografia aerea</Translate>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" className="neon_activator neon1">
+                                        <Translate selector="footer:interests:electronics">Elettronica</Translate>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div className="center">
-                    <a href="#hero" onClick={this.fireAnimation}>
-                        <svg ref={this.rocketRef} className="rocket" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                            width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" space="preserve">
+                    <a href="#hero" onClick={this.fireAnimation} ref={this.rocketRef}>
+                        <svg className="rocket" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            width="512px" height="512px" viewBox="0 0 512 512" enableBackground="new 0 0 512 512" space="preserve">
                             <g>
                                 <g>
                                     <g>
@@ -128,24 +168,40 @@ class Footer extends React.PureComponent
                     </div>
                 </div>
                 <div className="feedback">
-                    <p>How was your user experience while browsing this website?<br/>Tell me using the form below.</p>
-                    <form method="POST" enctype="text/plain"
-                    action="">
-                        <div>
-                            <input placeholder="Your name" type="text" name="name" id="feedback-name" autocomplete="off" required/>
-                            <select name="rating" id="feedback-rating" required>
-                                <option value="" disabled selected hidden>Your rating</option>
-                                <option value="good">Good 😀</option>
-                                <option value="neutral">Neutral 😐</option>
-                                <option value="bad">Bad 🙄</option>
-                            </select>
-                            <textarea placeholder="Enter your feedback" type="text" name="message" id="feedback-message" rows="2">
-                            </textarea>
-                        </div>
-                        <button className="neon_activator" type="submit" id="feedback-submit">
-                            <FontAwesomeIcon className="neon1" icon={faPaperPlane}/>
-                        </button>
-                    </form>
+                    <p>
+                        <Translate selector="footer:feedback:tellme1">Com'è stata la tua esperienza di navigazione?</Translate>
+                        <br/>
+                        <Translate selector="footer:feedback:tellme2">Fammelo sapere riempendo il modulo in basso.</Translate>
+                    </p>
+                    <LocaleContext.Consumer>
+                    {({ locale, setLocale }) => (
+                        <form method="" onSubmit={e => { e.preventDefault(); this.sendFeedback(locale); return false; }}>
+                            <div>
+                                <input placeholder={translate('footer:feedback:name', locale, 'Il tuo nome')} type="text" name="name" 
+                                id="feedback-name" autoComplete="off" required/>
+                                <select name="rating" id="feedback-rating" required>
+                                    <option value="" disabled selected hidden>
+                                        {translate('footer:feedback:ratings:placeholder', locale, 'La tua valutazione')}
+                                    </option>
+                                    <option value="good">
+                                        {translate('footer:feedback:ratings:good', locale, 'Positiva')} 😀
+                                    </option>
+                                    <option value="neutral">
+                                        {translate('footer:feedback:ratings:neutral', locale, 'Neutrale')} 😐
+                                    </option>
+                                    <option value="bad">
+                                        {translate('footer:feedback:ratings:bad', locale, 'Negativa')} 🙄
+                                    </option>
+                                </select>
+                                <textarea placeholder={translate('footer:feedback:message', locale, 'Qualche suggerimento?')}
+                                type="text" name="message" id="feedback-message" rows="3"></textarea>
+                            </div>
+                            <button className="neon_activator" type="submit" id="feedback-submit">
+                                <FontAwesomeIcon className="neon1" icon={faPaperPlane}/>
+                            </button>
+                        </form>
+                    )}
+                    </LocaleContext.Consumer>
                 </div>
             </footer>
         );

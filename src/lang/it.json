@@ -100,10 +100,38 @@
     "projects": {
         "other": "Altri progetti"
     },
-    "messages": {
-        "copied": "Copiato!"
+    "footer": {
+        "sitemap": {
+            "projects": {
+                "heading": "Progetti in dettaglio",
+                "bscthesis": "Tesi di laurea triennale",
+                "mscthesis": "Tesi di laurea magistrale"
+            },
+            "interests": {
+                "heading": "Interessi",
+                "guitar": "Chitarra",
+                "drone": "Fotografia aerea",
+                "electronics": "Elettronica"
+            }
+        },
+        "feedback": {
+            "tellme1": "Com'è stata la tua esperienza di navigazione?",
+            "tellme2": "Fammelo sapere riempendo il modulo in basso.",
+            "name": "Il tuo nome",
+            "ratings": {
+                "placeholder": "La tua valutazione",
+                "good": "Positiva",
+                "neutral": "Neutrale",
+                "bad": "Negativa"
+            },
+            "message": "Qualche suggerimento?"
+        }
     },
     "misc": {
-        "thiswebsite": "Questo sito!"
+        "thiswebsite": "Questo sito!",
+        "feedback": {
+            "intro": "Hey, ho visitato il tuo portfolio online!",
+            "ux": "La mia esperienza è stata"
+        }
     }
 }

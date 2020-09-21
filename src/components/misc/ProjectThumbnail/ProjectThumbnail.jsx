@@ -5,7 +5,7 @@ import './projectthumbnail_tablet.scss';
 import './projectthumbnail_phone.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearchPlus } from '@fortawesome/free-solid-svg-icons';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { projects } from '../../sections/Projects';
 
@@ -31,7 +31,7 @@ class ProjectThumbnail extends React.PureComponent
                     <div className="content">
                     <p>{projects[this.id].descr}</p>
                         <a href="#">
-                            <FontAwesomeIcon className="fa-icon" icon={faSearchPlus}/>
+                            <FontAwesomeIcon className="fa-icon" icon={faExternalLinkAlt}/>
                         </a>
                     </div>
                 </div>

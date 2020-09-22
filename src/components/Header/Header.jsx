@@ -90,19 +90,19 @@ class Header extends React.Component
                     </div>
                     <ul className={this.navlistClassName()}>
                         <li onClick={this.toggleNavlist}><a href="#about" className="neon_activator neon1">
-                            <Translate selector="sections:about">Su di me</Translate>
+                            <Translate selector="sections:about"/>
                         </a></li>
                         <li onClick={this.toggleNavlist}><a href="#skills" className="neon_activator neon1">
-                            <Translate selector="sections:skills">Skills</Translate>
+                            <Translate selector="sections:skills"/>
                         </a></li>
                         <li onClick={this.toggleNavlist}><a href="#experience" className="neon_activator neon1">
-                            <Translate selector="sections:experience">Esperienza</Translate>
+                            <Translate selector="sections:experience"/>
                         </a></li>
                         <li onClick={this.toggleNavlist}><a href="#education" className="neon_activator neon1">
-                            <Translate selector="sections:education">Educazione</Translate>
+                            <Translate selector="sections:education"/>
                         </a></li>
                         <li onClick={this.toggleNavlist}><a href="#projects" className="neon_activator neon1">
-                            <Translate selector="sections:projects">Progetti</Translate>
+                            <Translate selector="sections:projects"/>
                         </a></li>
                     </ul>
                 </div>

@@ -27,8 +27,12 @@
             > div {
                 > p {
                     font-size: 2rem;
-                    font-weight: 200;
+                    font-weight: 300;
                     padding: 20px;
+
+                    a {
+                        font-weight: 600;
+                    }
                 }
 
                 > div {
@@ -115,49 +119,6 @@
                                 background-image: url(../../../assets/img/icons/instagram_hover.png);
                             }
                         }
-                    }
-                }
-            }
-        }
-
-        > .reviews {
-            h1 {
-                width: 100%;
-                text-align: left;
-                
-                ul {
-                    float: right;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    li {
-                        width: 10px;
-                        height: 10px;
-                        border-radius: 50%;
-                        background-color: var(--color2);
-                        margin: 10px;
-                    }
-                }
-            }
-
-            > ul {
-                width: 100%;
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                > li {
-                    height: 100px;
-
-                    &:nth-child(1) {
-                        background-color: red;
-                    }
-
-                    &:nth-child(2) {
-                        background-color: green;
-                    }
-
-                    &:nth-child(3) {
-                        background-color: blue;
                     }
                 }
             }

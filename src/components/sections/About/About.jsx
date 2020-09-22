@@ -11,6 +11,7 @@ import './about_tablet.scss';
 import './about_phone.scss';
 
 import photo from '../../../assets/img/photo.jpg';
+import fiocco from '../../../assets/img/fiocco.jpg';
 import { DeviceContext } from '../../../context';
 
 class About extends React.PureComponent
@@ -29,6 +30,30 @@ class About extends React.PureComponent
         this.phonenumber_messageRef = React.createRef();
     }
 
+    replacePoliba(text)
+    {
+        let strings = text.split('*');
+        return (
+            <>
+                {strings[0]} <a href="http://www.poliba.it/" target="_blank">Politecnico di Bari</a>{strings[1]}
+            </>
+        );
+    }
+
+    replaceInterests(text)
+    {
+        let strings = text.split('*');
+        return (
+            <>
+                {strings[0]}<a className="interests-link" href="#"><Translate selector="about:descr:guitar"/></a>
+                {strings[1]}<a className="interests-link" href="#"><Translate selector="about:descr:drone"/></a>
+                {strings[2]}<a className="interests-link" href="#"><Translate selector="about:descr:circuits"/></a>
+                {strings[3]}<a className="interests-link" href={fiocco}>Fiocco</a>
+                {strings[4]}
+            </>
+        );
+    }
+
     render()
     {
         // console.log('ABOUT being rendered');
@@ -38,17 +63,17 @@ class About extends React.PureComponent
                     <img src={photo} alt="" className="noselect" />
                     <div>
                         <p className="box">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quibusdam molestiae, consequuntur
-                            non nobis voluptas sapiente, illum omnis necessitatibus, deleniti id? Aliquid eligendi iste porro
-                            cupiditate inventore laborum voluptates minus, sapiente itaque recusandae velit, enim ex adipisci
-                            temporibus molestiae vero quisquam. Laborum, ut quasi eos commodi incidunt vel fugit. Nesciunt,
-                            repudiandae repellendus maiores omnis molestias facilis eius dolore voluptas ipsam exercitationem
-                            quibusdam quasi explicabo perspiciatis facere laborum at veritatis tenetur esse rerum similique impedit,
-                            modi asperiores. Corporis vero nulla impedit accusamus illo provident dignissimos magnam autem sequi odio!
+                            <Translate selector="about:descr:text:0"/>
+                            <br/>
+                            <Translate selector="about:descr:text:1" transform={text => this.replacePoliba(text)}/>
+                            <br/>
+                            <Translate selector="about:descr:text:2"/>
+                            <br/>
+                            <Translate selector="about:descr:text:3" transform={text => this.replaceInterests(text)}/>
                         </p>
                         <div>
                             <div className="contacts">
-                                <h1><Translate selector="about:contacts">Contatti</Translate></h1>
+                                <h1><Translate selector="about:contacts"/></h1>
                                 <a className="neon_activator" href="mailto:gianvito.difilippo@gmail.com">
                                     <FontAwesomeIcon className="fa-icon neon2" icon={faEnvelope} />
                                     <span ref={this.emailaddressRef} className="neon2">
@@ -63,7 +88,7 @@ class About extends React.PureComponent
                                 </a>
                             </div>
                             <div className="social">
-                                <h1><Translate selector="about:findme">Mi trovi anche su</Translate></h1>
+                                <h1><Translate selector="about:findme"/></h1>
                                 <div className="icons">
                                     <a href="https://www.linkedin.com/in/gianvito-difilippo/" target="_blank">
                                         <div className="icon icon-linkedin"></div>

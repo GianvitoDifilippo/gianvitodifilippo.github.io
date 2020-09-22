@@ -1,13 +1,15 @@
 import React from 'react';
 
-import './projectthumbnail_desktop.scss';
-import './projectthumbnail_tablet.scss';
-import './projectthumbnail_phone.scss';
+import Translate from '../Translate';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { projects } from '../../sections/Projects';
+
+import './projectthumbnail_desktop.scss';
+import './projectthumbnail_tablet.scss';
+import './projectthumbnail_phone.scss';
 
 class ProjectThumbnail extends React.PureComponent
 {
@@ -16,6 +18,7 @@ class ProjectThumbnail extends React.PureComponent
         super(props);
         
         this.id = props.id;
+        this.project = projects[props.id];
     }
 
     render()
@@ -24,18 +27,18 @@ class ProjectThumbnail extends React.PureComponent
             <div className="project-thumbnail">
                 <div className="space">
                     <div className="background" style={ {
-                        backgroundImage: `url(${projects[this.id].thumbnail.backgroundImage})`,
-                        backgroundPosition: projects[this.id].thumbnail.backgroundPosition
+                        backgroundImage: `url(${this.project.thumbnail.backgroundImage})`,
+                        backgroundPosition: this.project.thumbnail.backgroundPosition
                     } }>
                     </div>
                     <div className="content">
-                    <p>{projects[this.id].descr}</p>
+                    <p><Translate selector={`projects:descr:${this.id}`}/></p>
                         <a href="#">
                             <FontAwesomeIcon className="fa-icon" icon={faExternalLinkAlt}/>
                         </a>
                     </div>
                 </div>
-                <h2>{projects[this.id].name}</h2>
+                <h2>{this.project.name}</h2>
             </div>
         );
     }

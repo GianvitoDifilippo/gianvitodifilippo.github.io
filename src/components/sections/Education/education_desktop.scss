@@ -56,7 +56,12 @@
 
                 > p {
                     margin-bottom: .4rem;
-                    font-size: 1.6rem;
+                    font-size: 1.7rem;
+                    font-weight: 300;
+
+                    .bold {
+                        font-weight: 500;
+                    }
                 }
             }
         }

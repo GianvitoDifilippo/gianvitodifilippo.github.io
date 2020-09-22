@@ -2,6 +2,8 @@ import React from 'react';
 
 import Translate from '../misc/Translate';
 
+import cvpdf from '../../assets/cv.pdf';
+
 import './hero_desktop.scss';
 import './hero_tablet.scss';
 import './hero_phone.scss';
@@ -25,13 +27,13 @@ class Hero extends React.Component
                 <div className="main">
                     <h1 className={fadein ? 'fadein' : ''}>Gianvito Difilippo</h1>
                     <h2 className={fadein ? 'fadein' : ''}>
-                        <Translate selector="hero:h2">Ingegnere dell'Automazione</Translate>
+                        <Translate selector="hero:h2"/>
                     </h2>
                     <a href="mailto:gianvito.difilippo@gmail.com" className={fadein ? 'fadein noselect' : 'noselect'}>
-                        <Translate selector="hero:contactme">Contattami</Translate>
+                        <Translate selector="hero:contactme"/>
                     </a>
-                    <a href="./assets/cv.pdf" target="_blank" className={fadein ? 'fadein noselect' : 'noselect'}>
-                        <Translate selector="hero:downloadcv">Scarica il mio CV</Translate>
+                    <a href={cvpdf} target="_blank" className={fadein ? 'fadein noselect' : 'noselect'}>
+                        <Translate selector="hero:downloadcv"/>
                     </a>
                 </div>
             </section>

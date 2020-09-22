@@ -18,9 +18,9 @@ const SkillPreviewDesktop = props => (
         <h1 className="box-heading">
             {props.currentSkill
             ?
-            <Translate selector="skills:preview:details">Dettagli</Translate>
+            <Translate selector="skills:preview:details"/>
             :
-            <Translate selector="skills:preview:message">Clicca su una skill per i dettagli</Translate>
+            <Translate selector="skills:preview:message"/>
             }
         </h1>
         <SkillContent currentSkill={props.currentSkill}/>

@@ -1,9 +1,11 @@
+$border-margin: 6vw;
+
 @media only screen and (max-width: 1366px) {
 
 .section {
     > .container {
-        width: calc(100vw - 6vw * 2);
-        margin: calc(55px + 10rem) 6vw 10px 6vw;
+        width: calc(100vw - #{$border-margin * 2});
+        margin: calc(55px + 10rem) $border-margin 10px $border-margin;
     }
 
     > .section-title {

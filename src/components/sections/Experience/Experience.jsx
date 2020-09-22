@@ -5,13 +5,14 @@ import Section from '../Section';
 
 import Translate from '../../misc/Translate';
 
+import { DeviceContext } from '../../../context';
+
 import experience from './data.js';
 
 import './experience_desktop.scss';
 import './experience_tablet_big.scss';
 import './experience_tablet_small.scss';
 import './experience_phone.scss';
-import { DeviceContext } from '../../../context';
 
 const TimelineItem = props => {
     const { device } = React.useContext(DeviceContext);
@@ -19,20 +20,20 @@ const TimelineItem = props => {
     return (
         <li className={`timeline-item${isActive ? ' active' : ''}`}>
             <div className="box" onClick={() => props.onClick(props.id)}>
-                <h1 className="box-heading"><Translate selector={`experience:${props.id}:name`}>{props.id}</Translate></h1>
+                <h1 className="box-heading"><Translate selector={`experience:${props.id}:name`}/></h1>
                 <h3>
                     @ {props.where}{' '}
                     <span>
-                        {'| '}<Translate selector={`experience:${props.id}:yearfull`}>{props.id}</Translate>
+                        {'| '}<Translate selector={`experience:${props.id}:yearfull`}/>
                     </span>
                 </h3>
                 <ReactCSSTransitionReplace transitionName="cross-fade" transitionEnterTimeout={600} transitionLeaveTimeout={600}>
                     {isActive
                     ?
                     <div key="descr">
-                        <p><Translate selector={`experience:${props.id}:yearfull`}>{props.id}</Translate></p>
+                        <p><Translate selector={`experience:${props.id}:yearfull`}/></p>
                         <p className="descr">
-                            <Translate selector={`experience:${props.id}:descr`}></Translate>
+                            <Translate selector={`experience:${props.id}:descr`}/>
                         </p>
                     </div>
                     :
@@ -44,9 +45,7 @@ const TimelineItem = props => {
                     let years = text.split(' ');
                     if (years.length === 1) return text;
                     return <>{years[0]}<br/>{years[1]}<br/>{years[2]}</>
-                } : null}>
-                    {props.id}
-                </Translate>
+                } : null}/>
             </h2>
             <div className="hexagon noselect" onClick={() => props.onClick(props.id)}>
                 <div className="hexagon-content">

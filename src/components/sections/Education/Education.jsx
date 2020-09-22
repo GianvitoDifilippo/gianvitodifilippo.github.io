@@ -15,14 +15,21 @@ const EducationItem = props => (
     <li className={`box ${props.id}`}>
         <a className="noselect" href={props.link} target="_blank"><img src={props.img} alt="" /></a>
         <span className="edu-descr">
-            <h1 className="box-heading"><Translate selector={`education:${props.id}:h1`}>Education title</Translate></h1>
+            <h1 className="box-heading"><Translate selector={`education:${props.id}:h1`}/></h1>
             <h2><a href={props.link} target="_blank">{props.uni}</a></h2>
             <h3>{props.year}</h3>
-            <p><Translate selector={`education:${props.id}:descr`}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga amet odio atque explicabo nisi tempore ducimus fugiat, et minus sit.
-            </Translate></p>
-            <p><Translate selector={`education:${props.id}:score`}>
-            </Translate></p>
+            <p>
+                <span className="bold"><Translate selector={`education:${props.id}:thesis:key`}/></span>
+                <Translate selector={`education:${props.id}:thesis:value`}/>
+            </p>
+            <p>
+                <span className="bold"><Translate selector={`education:${props.id}:descr:key`}/></span>
+                <Translate selector={`education:${props.id}:descr:value`}/>
+            </p>
+            <p>
+                <span className="bold"><Translate selector={`education:${props.id}:score:key`}/></span>
+                <Translate selector={`education:${props.id}:score:value`}/>
+            </p>
         </span>
     </li>
 );

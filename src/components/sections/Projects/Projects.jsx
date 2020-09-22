@@ -27,7 +27,7 @@ const MainProjectPreview = props => (
                 <h1>{projects[props.id].name}</h1>
                 <a href="#"><FontAwesomeIcon className="fa-icon" icon={faExternalLinkAlt}/></a>
             </div>
-            <p>{projects[props.id].descr}</p>
+            <p><Translate selector={`projects:descr:${props.id}`}/></p>
         </div>
     </li>
 );
@@ -38,7 +38,7 @@ const ProjectsDesktopTablet = props => (
             <MainProjectPreview id="audioengineer"/>
             <MainProjectPreview id="voicenotes"/>
         </ul>
-        <h1><Translate selector="projects:other">Altri progetti</Translate></h1>
+        <h1><Translate selector="projects:other"/></h1>
         <ul className="otherlist">
             <li><ProjectThumbnail id="portfolio"/></li>
             <li><ProjectThumbnail id="magicbet"/></li>
@@ -77,7 +77,7 @@ class ProjectsPhone extends React.PureComponent
                         <ProjectThumbnail id="voicenotes"/>
                     </li>
                 </ul>
-                <h1><Translate selector="projects:other">Altri progetti</Translate></h1>
+                <h1><Translate selector="projects:other"/></h1>
                 <ul className="otherlist">
                     <li onClick={() => this.setCurrentProject('portfolio')}><ProjectThumbnail id="portfolio"/></li>
                     <li onClick={() => this.setCurrentProject('magicbet')}><ProjectThumbnail id="magicbet"/></li>

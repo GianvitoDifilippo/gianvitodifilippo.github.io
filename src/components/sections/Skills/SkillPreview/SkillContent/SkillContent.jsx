@@ -34,30 +34,30 @@ const SkillContent = props => {
                         <h2>{skill.name}</h2>
                         <h3>
                             <span className="bold">
-                                <Translate selector="skills:preview:experience:key">Esperienza</Translate>
+                                <Translate selector="skills:preview:experience:key"/>
                                 {': '}
                             </span>
                             <span className="value">
                             {skill.experience.map((value, index) => (
                                 <span key={value}>
-                                    {index ? ', ' : ''}<Translate selector={`skills:preview:experience:values:${value}`}></Translate>
+                                    {index ? ', ' : ''}<Translate selector={`skills:preview:experience:values:${value}`}/>
                                 </span>
                             ))}
                             </span>
                         </h3>
                         <h3>
                             <span className="bold">
-                                <Translate selector="skills:preview:since">Programmo dal</Translate>
+                                <Translate selector="skills:preview:since"/>
                                 {': '}
                             </span>
                             <span>{skill.since}</span>
                         </h3>
                     </div>
                     <p className="skill-descr">
-                        <Translate selector={`skills:preview:descr:${props.currentSkill}`}></Translate>
+                        <Translate selector={`skills:preview:descr:${props.currentSkill}`}/>
                     </p>
                 </div>
-                <h1 className="box-heading"><Translate selector="skills:preview:projects">Progetti</Translate></h1>
+                <h1 className="box-heading"><Translate selector="skills:preview:projects"/></h1>
                 <ReactCSSTransitionReplace className="skill-projects-content"
                 transitionName="cross-fade" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
                     {
@@ -66,12 +66,10 @@ const SkillContent = props => {
                         <ProjectList key={props.currentSkill} projects={skill.projects}/>
                         :
                         <p key="null" className="skill-projects-none">
-                            <Translate selector="skills:preview:noprojects">
-                                Non ci sono progetti per questa skill al momento, ma possiamo avviare il primo insieme.
-                            </Translate>
+                            <Translate selector="skills:preview:noprojects"/>
                             {' '}
                             <a href="mailto:gianvito.difilippo@gmail.com" className="neon_activator neon">
-                                <Translate selector="skills:preview:contactme">Contattami!</Translate>
+                                <Translate selector="skills:preview:contactme"/>
                             </a>
                         </p>
                     }

@@ -18,12 +18,16 @@ class Skills extends React.PureComponent
         this.state = {
             currentSkill: null
         };
+        
+        this.sectionRef = React.createRef();
+
         this.setSkill = this.setSkill.bind(this);
     }
 
     setSkill(skill)
     {
-        if (skill !== null && skill !== this.state.currentSkill && this.context.device === 'desktop') {
+        let sectionY = document.getElementById('skills').getBoundingClientRect().y;
+        if (skill !== null && skill !== this.state.currentSkill && this.context.device === 'desktop' && sectionY < -150) {
             window.location.href = '#skills';
         }
         this.setState({

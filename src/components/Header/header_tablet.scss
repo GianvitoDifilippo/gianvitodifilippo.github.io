@@ -1,5 +1,4 @@
 @media only screen and (max-width: 1366px) {
-
     #header {
         &.hidden {
             transform: none;
@@ -46,7 +45,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                z-index: 1;
+                z-index: 20;
 
                 > li {
                     padding: 2.5rem;
@@ -84,7 +83,7 @@
                 top: 0;
                 right: 0;
                 cursor: pointer;
-                z-index: 2;
+                z-index: 25;
                 transition: transform .3s ease-in-out;
 
                 > .bar {
@@ -127,5 +126,4 @@
             }
         }
     }
-
 }

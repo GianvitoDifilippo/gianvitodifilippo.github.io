@@ -65,7 +65,7 @@
             p {
                 margin-top: 5px;
                 font-size: 1.5rem;
-                margin: 10px 0px;
+                margin: 5px 0px;
             }
 
             .background {
@@ -81,6 +81,15 @@
     .fa-icon {
         font-size: 4rem;
         margin: 15px;
+    }
+}
+
+#project-preview-modal {
+    div {
+        .fa-icon {
+            font-size: 2.5rem;
+            margin: 5px 0px 15px 0px;
+        }
     }
 }
     

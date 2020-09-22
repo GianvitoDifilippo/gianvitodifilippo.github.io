@@ -6,6 +6,8 @@ import ProjectThumbnail from '../../misc/ProjectThumbnail';
 import Modal from '../../misc/Modal';
 import Translate from '../../misc/Translate';
 
+import ReactCSSTransitionReplace from 'react-css-transition-replace';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleLeft, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -82,22 +84,25 @@ class ProjectsPhone extends React.PureComponent
                     <li onClick={() => this.setCurrentProject('supermario')}><ProjectThumbnail id="supermario"/></li>
                 </ul>
                 <Modal isOpen={this.state.currentProject !== null} id="project-preview-modal">
-                    {this.state.currentProject !== null
-                    ?
                     <div className="project-preview-container">
-                        <div className="box">
-                            <h1>{projects[this.state.currentProject].name}</h1>
-                            <p>{projects[this.state.currentProject].descr}</p>
-                            <div className="background" style={ {
-                                backgroundImage: `url(${projects[this.state.currentProject].thumbnail.backgroundImage})`,
-                                backgroundPosition: projects[this.state.currentProject].thumbnail.backgroundPosition
-                            } }>
+                        <ReactCSSTransitionReplace transitionName="cross-fade" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
+                            {this.state.currentProject !== null
+                            ?
+                            <div className="box">
+                                <h1>{projects[this.state.currentProject].name}</h1>
+                                <p>{projects[this.state.currentProject].descr}</p>
+                                <a href="#"><FontAwesomeIcon className="fa-icon" icon={faExternalLinkAlt}/></a>
+                                <div className="background" style={ {
+                                    backgroundImage: `url(${projects[this.state.currentProject].thumbnail.backgroundImage})`,
+                                    backgroundPosition: projects[this.state.currentProject].thumbnail.backgroundPosition
+                                } }>
+                                </div>
                             </div>
-                        </div>
+                            :
+                            null
+                            }
+                        </ReactCSSTransitionReplace>
                     </div>
-                    :
-                    null
-                    }
                     <FontAwesomeIcon className="fa-icon" icon={faAngleDoubleLeft} onClick={() => this.setCurrentProject(null)}/>
                 </Modal>
             </Section>

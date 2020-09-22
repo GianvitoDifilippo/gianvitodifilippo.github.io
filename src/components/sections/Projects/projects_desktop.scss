@@ -93,4 +93,26 @@
             }
         }
     }
+
+    .cross-fade-leave {
+        opacity: 1;
+    }
+
+    .cross-fade-leave.cross-fade-leave-active {
+        opacity: 0;
+        transition: opacity .15s ease-in, padding 0s .15s !important;
+    }
+
+    .cross-fade-enter {
+        opacity: 0;
+    }
+
+    .cross-fade-enter.cross-fade-enter-active {
+        opacity: 1;
+        transition: opacity .15s ease-in, padding 0s .15s !important;
+    }
+
+    .cross-fade-height {
+        transition: height .3s ease-in-out;
+    }
 }

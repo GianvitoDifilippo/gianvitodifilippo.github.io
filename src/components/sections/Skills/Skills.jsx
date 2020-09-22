@@ -7,6 +7,7 @@ import SkillList from './SkillList';
 import './skills_desktop.scss';
 import './skills_tablet.scss';
 import './skills_phone.scss';
+import { DeviceContext } from '../../../context';
 
 class Skills extends React.PureComponent
 {
@@ -22,7 +23,9 @@ class Skills extends React.PureComponent
 
     setSkill(skill)
     {
-        if (this.state.inTransition) return;
+        if (skill !== null && skill !== this.state.currentSkill && this.context.device === 'desktop') {
+            window.location.href = '#skills';
+        }
         this.setState({
             currentSkill: this.state.currentSkill !== skill ? skill : null
         });
@@ -39,5 +42,7 @@ class Skills extends React.PureComponent
         );
     }
 }
+
+Skills.contextType = DeviceContext;
  
 export default Skills;

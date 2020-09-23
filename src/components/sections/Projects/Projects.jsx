@@ -90,7 +90,7 @@ class ProjectsPhone extends React.PureComponent
                             ?
                             <div className="box">
                                 <h1>{projects[this.state.currentProject].name}</h1>
-                                <p>{projects[this.state.currentProject].descr}</p>
+                                <p><Translate selector={`projects:descr:${this.state.currentProject}`}/></p>
                                 <a href="#"><FontAwesomeIcon className="fa-icon" icon={faExternalLinkAlt}/></a>
                                 <div className="background" style={ {
                                     backgroundImage: `url(${projects[this.state.currentProject].thumbnail.backgroundImage})`,

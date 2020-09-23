@@ -12,8 +12,58 @@
         "downloadcv": "Download my CV"
     },
     "about": {
+        "descr": {
+            "text": [
+                "Hello! I'm a young automation engineer living in Santeramo in Colle, Italy.",
+                "I graduated at *, where I grew as a student and as a professional, gaining insight in fields as control theory, robotics and artificial intelligence.",
+                "My goals are learning, growing and innovating. I try to take the most from each experience I make, and to make my initiative spirit emerge.",
+                "Outside the workplace, you may find me *, * or *. Or maybe walking *."
+            ],
+            "guitar": "playing",
+            "drone": "flying my drone",
+            "circuits": "handling a soldering iron"
+        },
         "contacts": "Contacts",
         "findme": "Find me on"
+    },
+    "skills": {
+        "list": {
+            "languages": "Languages",
+            "tools": "Tools",
+            "backend": "Back-end",
+            "webdev": "Web development"
+        },
+        "preview": {
+            "message": "Click on a skill to show details",
+            "details": "Details",
+            "experience": {
+                "key": "Experience:",
+                "values": [
+                    "personal",
+                    "academic",
+                    "professional"
+                ]
+            },
+            "since": "Programming since:",
+            "descr": {
+                "cplusplus": "It's my favorite language! I started learning it on my own and keep updating my knowledge over time.",
+                "csharp": "Uno degli ultimi linguaggi entrati nel mio arsenale, appreso durante la mia esperienza come sviluppatore back-end.",
+                "python": "Ho dovuto approcciarmi a Python per lavoro ed ho subito adorato la sua sintassi potente e coincisa.",
+                "java": "È stato il linguaggio che mi ha introdotto alla programmazione, con cui ho sviluppato soprattutto progetti personali e di svago.",
+                "matlab": "È lo strumento di calcolo principale utilizzato durante i corsi universitari.",
+                "labview": "L'ho utilizzato durante il mio Erasmus per controllare la strumentazione di laboratorio e leggere le misure.",
+                "docker": "Utilizzato durante la mia esperienza da programmatore back-end.",
+                "dotnet": "Ho appreso il framework .NET per lavoro, ma ho subito cominciato ad approfondirne la conoscienza per interesse personale.",
+                "postgresql": "Utilizzato durante la mia esperienza da programmatore back-end.",
+                "html": "",
+                "css": "",
+                "javascript": "",
+                "react": ""
+            },
+            "projects": "Projects",
+            "noprojects": "There are no projects for this skill right now, but how about starting the first one together?",
+            "contactme": "Contact me!"
+        }
     },
     "education": {
         "bsc": {
@@ -30,53 +80,6 @@
         "mmus": {
             "h1": "Master of Music in Guitar",
             "score": "Final score: 10/10"
-        }
-    },
-    "skills": {
-        "list": {
-            "languages": "Languages",
-            "tools": "Tools",
-            "backend": "Back-end",
-            "webdev": "Web development"
-        },
-        "preview": {
-            "message": "Click on a skill to show details",
-            "details": "Details",
-            "experience": {
-                "key": "Experience:",
-                "values": {
-                    "cplusplus": "academic, personal",
-                    "csharp": "professional",
-                    "python": "academic, professional",
-                    "java": "personal",
-                    "matlab": "academic",
-                    "labview": "academic",
-                    "docker": "professional",
-                    "dotnet": "professional",
-                    "postgresql": "professional",
-                    "html": "personal",
-                    "css": "personal",
-                    "javascript": "personal"
-                }
-            },
-            "since": "Programming since:",
-            "descr": {
-                "cplusplus": "È il linguaggio che preferisco!",
-                "csharp": "Uno degli ultimi linguaggi entrati nel mio arsenale.",
-                "python": "Ho dovuto approcciarmi a Python per lavoro ed ho subito adorato la sua sintassi potente e coincisa.",
-                "java": "È stato il primo linguaggio di programmazione che ho imparato.",
-                "matlab": "È lo strumento di calcolo principale utilizzato durante i corsi universitari.",
-                "labview": "L'ho utilizzato durante il mio Erasmus per controllare la strumentazione di laboratorio e leggere le misure.",
-                "docker": "Utilizzato durante la mia esperienza da programmatore back-end.",
-                "dotnet": "Ho appreso il framework .NET per lavoro, ma ho subito cominciato ad approfondirne la conoscienza per interesse personale.",
-                "postgresql": "Utilizzato durante la mia esperienza da programmatore back-end.",
-                "html": "Insieme a CSS e JavaScript, sta da poco entrando tra le mie skill.",
-                "css": "Insieme a HTML e JavaScript, sta da poco entrando tra le mie skill.",
-                "javascript": "Insieme a HTML e CSS, sta da poco entrando tra le mie skill."
-            },
-            "projects": "Projects",
-            "noprojects": "There are no projects for this skill right now, but how about starting the first one together?",
-            "contactme": "Contact me!"
         }
     },
     "messages": {

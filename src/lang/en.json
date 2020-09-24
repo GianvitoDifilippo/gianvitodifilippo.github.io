@@ -171,9 +171,9 @@
             "name": "Your name",
             "ratings": {
                 "placeholder": "Your opinion",
-                "good": "Good",
+                "good": "Positive",
                 "neutral": "Neutral",
-                "bad": "Negative"
+                "bad": "Bad"
             },
             "message": "Any suggestions?"
         }

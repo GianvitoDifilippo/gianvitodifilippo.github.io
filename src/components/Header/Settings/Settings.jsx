@@ -9,7 +9,6 @@ import { FullscreenContext, LocaleContext } from '../../../context';
 
 import flag_it from '../../../assets/img/flags/flag_it.png';
 import flag_en from '../../../assets/img/flags/flag_en.png';
-import flag_es from '../../../assets/img/flags/flag_es.png';
 
 import './settings_desktop.scss';
 import './settings_tablet.scss';
@@ -85,9 +84,6 @@ class Settings extends React.PureComponent
                         </li>
                         <li className={this.flagClassName(locale, 'en')} ref={this.enRef} onClick={() => setLocale('en')}>
                             <img src={flag_en} alt=""/>
-                        </li>
-                        <li className={this.flagClassName(locale, 'es')} ref={this.esRef} onClick={() => setLocale('es')}>
-                            <img src={flag_es} alt=""/>
                         </li>
                     </ul>
                     <div className="fullscreen-toggler">

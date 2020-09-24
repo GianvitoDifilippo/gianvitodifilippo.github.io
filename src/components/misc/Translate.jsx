@@ -4,7 +4,6 @@ import { LocaleContext } from '../../context';
 
 import it_json from '../../lang/it.json'
 import en_json from '../../lang/en.json';
-import es_json from '../../lang/es.json';
 
 function translate(selector, locale, defaultValue = null)
 {
@@ -12,9 +11,6 @@ function translate(selector, locale, defaultValue = null)
     switch (locale) {
         case 'it':
             text = it_json;
-            break;
-        case 'es':
-            text = es_json;
             break;
         case 'en':
         default:

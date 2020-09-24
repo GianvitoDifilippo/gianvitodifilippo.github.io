@@ -30,7 +30,7 @@
         margin: 0px;
 
         > li {
-            @for $i from 1 through 3 {
+            @for $i from 1 through 2 {
                 &:nth-child(#{$i}) {
                     transition: filter .2s, transform .2s calc(#{$i} * .05s) ease-in-out, opacity .2s calc(#{$i} * .05s) linear;
                 }

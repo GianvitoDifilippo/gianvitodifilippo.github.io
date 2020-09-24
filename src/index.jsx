@@ -8,7 +8,6 @@ if (!window.localStorage.getItem('locale')) {
     switch (navigatorLang) {
         case 'it':
         case 'en':
-        case 'es':
             break;
         default:
             navigatorLang = 'en';

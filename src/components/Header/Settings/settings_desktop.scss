@@ -22,9 +22,6 @@
                 &.en.active {
                     filter: drop-shadow(0 0 3px lighten(blue, 30%));
                 }
-                &.es.active {
-                    filter: drop-shadow(0 0 3px lighten(red, 30%));
-                }
             }
         }
 
@@ -42,7 +39,7 @@
 
     > ul.flags {
         display: flex;
-        margin: 0px 50px 0px 40px;
+        margin: 0px 30px 0px 30px;
 
         > li {
             padding: 5px;
@@ -50,7 +47,7 @@
             opacity: 0;
             transform: translateY(calc(100% + 11px));
             
-            @for $i from 1 through 3 {
+            @for $i from 1 through 2 {
                 &:nth-child(#{$i}) {
                     transition: filter .2s, transform .2s calc(#{$i} * .1s) ease-in-out, opacity .2s calc(#{$i} * .1s) linear;
                 }

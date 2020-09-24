@@ -32,8 +32,6 @@ class Footer extends React.PureComponent
         switch (this.context.locale) {
             case 'it':
                 return 'https://it.reactjs.org/';
-            case 'es':
-                return 'https://es.reactjs.org/';
             case 'en':
             default:
                 return 'https://reactjs.org/';

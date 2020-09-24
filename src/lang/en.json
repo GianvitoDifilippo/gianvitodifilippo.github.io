@@ -37,14 +37,14 @@
             "message": "Click on a skill to show details",
             "details": "Details",
             "experience": {
-                "key": "Experience:",
+                "key": "Experience",
                 "values": [
                     "personal",
                     "academic",
                     "professional"
                 ]
             },
-            "since": "Programming since:",
+            "since": "Programming since",
             "descr": {
                 "cplusplus": "It's my favorite language! I started learning it on my own and keep updating my knowledge over time.",
                 "csharp": "One of the lastest languages joining my portfolio, learned during my experience as back-end developer.",

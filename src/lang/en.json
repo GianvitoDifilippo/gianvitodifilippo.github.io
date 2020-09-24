@@ -173,7 +173,7 @@
                 "placeholder": "Your opinion",
                 "good": "Positive",
                 "neutral": "Neutral",
-                "bad": "Bad"
+                "bad": "Negative"
             },
             "message": "Any suggestions?"
         }

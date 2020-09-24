@@ -47,14 +47,14 @@
             "since": "Programming since:",
             "descr": {
                 "cplusplus": "It's my favorite language! I started learning it on my own and keep updating my knowledge over time.",
-                "csharp": "Uno degli ultimi linguaggi entrati nel mio arsenale, appreso durante la mia esperienza come sviluppatore back-end.",
-                "python": "Ho dovuto approcciarmi a Python per lavoro ed ho subito adorato la sua sintassi potente e coincisa.",
-                "java": "È stato il linguaggio che mi ha introdotto alla programmazione, con cui ho sviluppato soprattutto progetti personali e di svago.",
-                "matlab": "È lo strumento di calcolo principale utilizzato durante i corsi universitari.",
-                "labview": "L'ho utilizzato durante il mio Erasmus per controllare la strumentazione di laboratorio e leggere le misure.",
-                "docker": "Utilizzato durante la mia esperienza da programmatore back-end.",
-                "dotnet": "Ho appreso il framework .NET per lavoro, ma ho subito cominciato ad approfondirne la conoscienza per interesse personale.",
-                "postgresql": "Utilizzato durante la mia esperienza da programmatore back-end.",
+                "csharp": "One of the lastest languages joining my portfolio, learned during my experience as back-end developer.",
+                "python": "I had to approach Python for work purposes and I immediately loved its elegant yet powerful syntax.",
+                "java": "It's the language that led me inside the coding world, and with which I developed mostly personal and spare time projects.",
+                "matlab": "It's the main computing tool used during my academical path.",
+                "labview": "I used it during my Erasmus to control lab instrumentation and to read measures.",
+                "docker": "Used during my experience as back-end developer.",
+                "dotnet": "I learned the .NET framework for work purposes, but then I started deepening my knowledge of it for personal purposes.",
+                "postgresql": "Used during my experience as back-end developer.",
                 "html": "",
                 "css": "",
                 "javascript": "",
@@ -65,27 +65,124 @@
             "contactme": "Contact me!"
         }
     },
+    "experience": {
+        "research": {
+            "name": "Research assistant",
+            "year": "2017 - 2018",
+            "yearfull": "Dec 2017 - Mar 2018",
+            "descr": "I developed an optimization module of transport missions of heavy-duty trucks. The algorithm reconstructs the street graph from a set of geographical points and computes, using the truck model, the most ecological route and the recommended speed profile to reduce CO2 emissions, taking account of traffic and weather conditions, as well as delivery constraints."
+        },
+        "tutoring": {
+            "name": "Students' tutor",
+            "year": "2018 - 2019",
+            "yearfull": "Sep 2018 - Sep 2019",
+            "descr": "I supported first-year students, helping them with exams, easing their relationship with professors and leading them into university life."
+        },
+        "backend": {
+            "name": "Back-end developer",
+            "year": "2020",
+            "yearfull": "Jan 2020 - Sep 2020",
+            "descr": "I took responsibility of the full back-end (ASP.NET Core) lifecycle, including designing, development, testing, documentation, deployment and maintenance. At the same time, I researched on cooperative control of autonomous vehicles, collaborating with the scientific director of the lab and writing papers."
+        },
+        "software": {
+            "name": "Software developer",
+            "year": "2020 - Today",
+            "yearfull": "Oct 2020 - Today",
+            "descr": "Work in progress :)"
+        }
+    },
     "education": {
         "bsc": {
             "h1": "Bachelor's Degree in Computer Science and Automation Engineering",
-            "score": "Final score: 110/110 with honors"
+            "thesis": {
+                "key": "Thesis title: ",
+                "value": "Analysis of minimization algorithms for determining the optimum path of heavy-duty trucks ."
+            },
+            "descr": {
+                "key": "Main courses: ",
+                "value": "Control Theory, Industrial Automation, Applied Mechanics, Electrical Communications, Electric Machines."
+            },
+            "score": {
+                "key": "Final score: ",
+                "value": "110/110 with honors"
+            }
         },
         "msc": {
             "h1": "Master's Degree in Automation Engineering",
-            "score": "Final score: 110/110 with honors"
+            "thesis": {
+                "key": "Thesis title: ",
+                "value": "Analysis and design of control algorithms for autonomous vehicles at urban intersections."
+            },
+            "descr": {
+                "key": "Main courses: ",
+                "value": "Robotics, Electric Drives, Estimation and Control of Dynamical Systems, Model Predictive Control."
+            },
+            "score": {
+                "key": "Final score: ",
+                "value": "110/110 with honors"
+            }
         },
         "erasmus": {
-            "h1":"Master in Big Data and Telecommunications"
+            "h1":"Master in Big Data and Telecommunications",
+            "thesis": {
+                "key": "Six-months Erasmus",
+                "value": ""
+            },
+            "descr": {
+                "key": "Main courses: ",
+                "value": "Reinforcement Learning, Deep Learning for Acoustic Signal Processing, Signal Processing for Big Data."
+            }
         },
         "mmus": {
             "h1": "Master of Music in Guitar",
-            "score": "Final score: 10/10"
+            "score": {
+                "key": "Final score: ",
+                "value": "10/10"
+            }
         }
     },
-    "messages": {
-        "copied": "Copied!"
+    "projects": {
+        "other": "Other projects",
+        "descr": {
+            "audioengineer": "Simple application, born as university project. It offered some functions as audio acquisition, spectrogram generation and real-time FFT. It includes a voice recognition algorithm, based on neural networks and genetic algorithms, capable of recognizing vowels.",
+            "voicenotes": "Applicazione commissionatami da un laureando in logopedia come proof-of-concept della sua tesi di laurea, incentrata sulla diagnostica di patologie vocali. Gestisce le cartelle cliniche dei pazienti, permettendo di inserire anamnesi, diagnosi con foto e/o video, e altri parametri di valutazione della postura e della voce.",
+            "magicbet": "My very first project. It manages the amount on money to stake on sports betting, following an algorithm, called MagicBet, designed by myself.",
+            "supermario": "A simple Super Mario Clone written in pure Java, as low-level videogame programming exercise.",
+            "portfolio": "It's the website you're visiting right now! No caption needed. 😁"
+        }
+    },
+    "footer": {
+        "sitemap": {
+            "projects": {
+                "heading": "Projects in detail",
+                "bscthesis": "Bachelor thesis",
+                "mscthesis": "Master thesis"
+            },
+            "interests": {
+                "heading": "Interests",
+                "guitar": "Guitar",
+                "drone": "Aerial photography",
+                "electronics": "Electronics"
+            }
+        },
+        "feedback": {
+            "tellme1": "How was your user experience?",
+            "tellme2": "Tell me using the form below.",
+            "name": "Your name",
+            "ratings": {
+                "placeholder": "Your opinion",
+                "good": "Good",
+                "neutral": "Neutral",
+                "bad": "Negative"
+            },
+            "message": "Any suggestions?"
+        }
     },
     "misc": {
-        "thiswebsite": "This website!"
+        "thiswebsite": "This website!",
+        "feedback": {
+            "intro": "Hey, I visited your online portfolio!",
+            "ux": "My user experience was"
+        }
     }
 }

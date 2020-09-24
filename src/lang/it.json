@@ -170,7 +170,7 @@
             "tellme2": "Fammelo sapere riempendo il modulo in basso.",
             "name": "Il tuo nome",
             "ratings": {
-                "placeholder": "La tua valutazione",
+                "placeholder": "La tua opinione",
                 "good": "Positiva",
                 "neutral": "Neutrale",
                 "bad": "Negativa"

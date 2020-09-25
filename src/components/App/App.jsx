@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Home from '../Home';
+import Guitar from '../Guitar';
 import Header from '../Header';
-import HeaderItem from '../Header/HeaderItem';
 import Footer from '../Footer';
 
 import { LocaleContext, DeviceContext, ModalContext, FullscreenContext } from '../../context';
@@ -83,7 +83,6 @@ class App extends React.PureComponent
         if (this.state.modalCtx.modal) {
             className += 'modal-open';
         }
-        console.log(this.state.headerItems);
 
         return (
             <LocaleContext.Provider     value={this.state.localeCtx}>
@@ -93,16 +92,34 @@ class App extends React.PureComponent
                 <div id="app" className={className}>
                 <Router>
                     <Switch>
-                        <Route path="/" component={() => (
-                            <Header scrollY={this.state.scrollY} greenTheme={this.state.greenTheme} toggleTheme={this.toggleTheme} page='home'/>
-                        )}/>
-                        <Route path="/guitar" component={() => (
-                            <Header scrollY={this.state.scrollY} greenTheme={this.state.greenTheme} toggleTheme={this.toggleTheme} page='guitar'/>
-                        )}/>
+                        <Route path="/guitar">
+                            <Header key="guitar" scrollY={this.state.scrollY} greenTheme={this.state.greenTheme} toggleTheme={this.toggleTheme} items = {
+                                [ 'la-la-medley', 'disney-medley' ]
+                            }/>
+                        </Route>
+                        <Route path="/drone">
+                            <Header key="drone" scrollY={this.state.scrollY} greenTheme={this.state.greenTheme} toggleTheme={this.toggleTheme} items = {
+                                [ 'snow', 'belltower' ]
+                            }/>
+                        </Route>
+                        <Route path="/electronics">
+                            <Header key="guitar" scrollY={this.state.scrollY} greenTheme={this.state.greenTheme} toggleTheme={this.toggleTheme} items = {
+                                [ 'nightvisor' ]
+                            }/>
+                        </Route>
+                        <Route path="/">
+                            <Header home key="home" scrollY={this.state.scrollY} greenTheme={this.state.greenTheme} toggleTheme={this.toggleTheme} items={
+                                ['about', 'skills', 'experience', 'education', 'projects']
+                            }/>
+                        </Route>
                     </Switch>
                     <Switch>
-                        <Route path="/" component={Home}/>
-                        <Route path="/guitar" component={null}/>
+                        <Route path="/guitar">
+                            <Guitar/>
+                        </Route>
+                        <Route path="/">
+                            <Home scrollY={this.state.scrollY}/>
+                        </Route>
                     </Switch>
                     <Footer/>
                 </Router>

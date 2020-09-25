@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Settings from './Settings';
 import HeaderItem from './HeaderItem';
+import Settings from './Settings';
 
 import { DeviceContext } from '../../context';
 
@@ -74,25 +74,13 @@ class Header extends React.Component
         }
     }
 
-    genHeaderItems(page)
-    {
-        switch(page) {
-            case 'home':
-                return ['about', 'skills', 'experience', 'education', 'projects'].map(item => (
-                    <HeaderItem href={`#${item}`} selector={`sections:${item}`}/>
-                ));
-            default:
-                return [];
-        }
-    }
-
     render()
     {
-        // console.log('HEADER being rendered');
+        console.log('HEADER being rendered');
         return(
             <header id="header" className={this.state.isVisible ? '' : "hidden"}>
                 <div id="navbar" className={this.inNavigation(this.props.scrollY) ? 'navigating' : ''}>
-                    <a className={this.brandClassName()} href="#hero">
+                    <a className={this.brandClassName()} href={this.props.home ? '#hero' : '/'}>
                         <h1>
                             <span className="neon1">Gia</span>nvito<br/><span className="neon1">Dif</span>ilippo
                         </h1>
@@ -101,9 +89,9 @@ class Header extends React.Component
                         <div className="bar"></div>
                     </div>
                     <ul className={this.navlistClassName()}>
-                    {this.genHeaderItems(this.props.page).map((item, index) => (
+                    {this.props.items.map((item, index) => (
                         <li key={`item-${index}`} onClick={this.toggleNavlist}>
-                            {item}
+                            <HeaderItem href={`#${item}`} selector={`sections:${item}`}/>
                         </li>
                     ))}
                     </ul>

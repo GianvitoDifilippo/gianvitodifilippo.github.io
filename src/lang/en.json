@@ -4,7 +4,9 @@
         "experience": "Experience",
         "education": "Education",
         "skills": "Skills",
-        "projects": "Projects"
+        "projects": "Projects",
+        "la-la-medley": "La La Medley",
+        "disney-medley": "Disney Medley"
     },
     "hero": {
         "h2": "Automation Engineer",

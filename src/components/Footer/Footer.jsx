@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 import Rocket from './Rocket.jsx';
 
@@ -60,26 +62,26 @@ ${message ? '%0D%0A' + message : ''}%0D%0A%0D%0A${document.getElementById('feedb
                 <div className="sitemap">
                     <div className="landingpage">
                         <div>
-                            <h1>Landing page</h1>
+                            <h1>Home page</h1>
                             <ul>
-                                <li><a href="#hero" className="neon_activator neon1">
+                                <li><HashLink to="/#hero" className="neon_activator neon1">
                                     Hero
-                                </a></li>
-                                <li><a href="#about" className="neon_activator neon1">
+                                </HashLink></li>
+                                <li><HashLink to="/#about" className="neon_activator neon1">
                                     <Translate selector="sections:about"/>
-                                </a></li>
-                                <li><a href="#skills" className="neon_activator neon1">
+                                </HashLink></li>
+                                <li><HashLink to="/#skills" className="neon_activator neon1">
                                     <Translate selector="sections:skills"/>
-                                </a></li>
-                                <li><a href="#experience" className="neon_activator neon1">
+                                </HashLink></li>
+                                <li><HashLink to="/#experience" className="neon_activator neon1">
                                     <Translate selector="sections:experience"/>
-                                </a></li>
-                                <li><a href="#education" className="neon_activator neon1">
+                                </HashLink></li>
+                                <li><HashLink to="/#education" className="neon_activator neon1">
                                     <Translate selector="sections:education"/>
-                                </a></li>
-                                <li><a href="#projects" className="neon_activator neon1">
+                                </HashLink></li>
+                                <li><HashLink to="/#projects" className="neon_activator neon1">
                                     <Translate selector="sections:projects"/>
-                                </a></li>
+                                </HashLink></li>
                             </ul>
                         </div>
                     </div>
@@ -88,19 +90,19 @@ ${message ? '%0D%0A' + message : ''}%0D%0A%0D%0A${document.getElementById('feedb
                             <h1><Translate selector="footer:sitemap:projects:heading"/></h1>
                             <ul>
                                 <li>
-                                    <a href="#" className="neon_activator neon1">
+                                    <Link to="/mscthesis" className="neon_activator neon1">
                                         <Translate selector="footer:sitemap:projects:mscthesis"/>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="#" className="neon_activator neon1">
+                                    <Link to="/bscthesis" className="neon_activator neon1">
                                         <Translate selector="footer:sitemap:projects:bscthesis"/>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="#" className="neon_activator neon1">
+                                    <Link to="/audioengineer" className="neon_activator neon1">
                                         AudioEngineer
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -110,19 +112,19 @@ ${message ? '%0D%0A' + message : ''}%0D%0A%0D%0A${document.getElementById('feedb
                             <h1><Translate selector="footer:sitemap:interests:heading"/></h1>
                             <ul>
                                 <li>
-                                    <a href="#" className="neon_activator neon1">
+                                    <Link to="/guitar" className="neon_activator neon1">
                                         <Translate selector="footer:sitemap:interests:guitar"/>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="#" className="neon_activator neon1">
+                                    <Link to="/drone" className="neon_activator neon1">
                                         <Translate selector="footer:sitemap:interests:drone"/>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="#" className="neon_activator neon1">
+                                    <Link to="/electronics" className="neon_activator neon1">
                                         <Translate selector="footer:sitemap:interests:electronics"/>
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>

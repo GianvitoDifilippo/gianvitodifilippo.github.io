@@ -1,7 +1,5 @@
 import React from 'react';
 
-import ReactCSSTransitionReplace from 'react-css-transition-replace';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCog, faCompressArrowsAlt, faCrow, faDragon, faExpandArrowsAlt } from '@fortawesome/free-solid-svg-icons'
 

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Translate from '../misc/Translate';
 import Settings from './Settings';
+import HeaderItem from './HeaderItem';
 
-import { DeviceContext } from '../../context.jsx';
+import { DeviceContext } from '../../context';
 
 import './header_desktop.scss';
 import './header_tablet.scss';
@@ -74,6 +74,18 @@ class Header extends React.Component
         }
     }
 
+    genHeaderItems(page)
+    {
+        switch(page) {
+            case 'home':
+                return ['about', 'skills', 'experience', 'education', 'projects'].map(item => (
+                    <HeaderItem href={`#${item}`} selector={`sections:${item}`}/>
+                ));
+            default:
+                return [];
+        }
+    }
+
     render()
     {
         // console.log('HEADER being rendered');
@@ -89,21 +101,11 @@ class Header extends React.Component
                         <div className="bar"></div>
                     </div>
                     <ul className={this.navlistClassName()}>
-                        <li onClick={this.toggleNavlist}><a href="#about" className="neon_activator neon1">
-                            <Translate selector="sections:about"/>
-                        </a></li>
-                        <li onClick={this.toggleNavlist}><a href="#skills" className="neon_activator neon1">
-                            <Translate selector="sections:skills"/>
-                        </a></li>
-                        <li onClick={this.toggleNavlist}><a href="#experience" className="neon_activator neon1">
-                            <Translate selector="sections:experience"/>
-                        </a></li>
-                        <li onClick={this.toggleNavlist}><a href="#education" className="neon_activator neon1">
-                            <Translate selector="sections:education"/>
-                        </a></li>
-                        <li onClick={this.toggleNavlist}><a href="#projects" className="neon_activator neon1">
-                            <Translate selector="sections:projects"/>
-                        </a></li>
+                    {this.genHeaderItems(this.props.page).map((item, index) => (
+                        <li key={`item-${index}`} onClick={this.toggleNavlist}>
+                            {item}
+                        </li>
+                    ))}
                     </ul>
                 </div>
                 <Settings

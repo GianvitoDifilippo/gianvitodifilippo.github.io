@@ -19,6 +19,13 @@ body.stop_scroll {
     display: none;
 }
 
+::selection {
+    background: var(--highlight_color);
+}
+::-moz-selection {
+    background: var(--highlight_color);
+}
+
 #root {
     display: contents;
 }

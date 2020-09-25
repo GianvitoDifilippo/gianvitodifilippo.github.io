@@ -2,8 +2,8 @@ import React from 'react';
 
 import Rocket from './Rocket.jsx';
 
-import Translate from '../misc/Translate';
-import { translate } from '../misc/Translate';
+import Translate from '../Translate';
+import { translate } from '../Translate';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact } from '@fortawesome/free-brands-svg-icons';

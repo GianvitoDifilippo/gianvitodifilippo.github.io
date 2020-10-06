@@ -98,8 +98,6 @@ class Header extends React.Component
                 </div>
                 <Settings
                     isNavlistActive={this.state.isNavlistActive}
-                    greenTheme={this.props.greenTheme}
-                    toggleTheme={this.props.toggleTheme}
                     isButtonVisible={this.state.isSettingsButtonVisible}
                 />
             </header>

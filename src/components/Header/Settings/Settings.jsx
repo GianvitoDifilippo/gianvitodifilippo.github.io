@@ -3,7 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCog, faCompressArrowsAlt, faCrow, faDragon, faExpandArrowsAlt } from '@fortawesome/free-solid-svg-icons'
 
-import { FullscreenContext, LocaleContext } from '../../../context';
+import { ThemeContext, FullscreenContext, LocaleContext } from '../../../context';
 
 import flag_it from '../../../assets/img/flags/flag_it.png';
 import flag_en from '../../../assets/img/flags/flag_en.png';
@@ -67,15 +67,19 @@ class Settings extends React.PureComponent
         if (!this.props.isButtonVisible) buttonClassName += ' hidden';
         
         return (
-            <LocaleContext.Consumer>
-            {({ locale, setLocale }) => (
-                <div id="settings" className={this.state.isActive ? 'active' : ''}>
-                    <div className={`themeToggler ${this.props.greenTheme ? 'green-mode' : ''}`} onClick={this.props.toggleTheme}>
+            <div id="settings" className={this.state.isActive ? 'active' : ''}>
+                <ThemeContext.Consumer>
+                {({ greenTheme, toggleTheme }) => (
+                    <div className={`themeToggler ${greenTheme ? 'green-mode' : ''}`} onClick={toggleTheme}>
                         <div className="dot">
                             <FontAwesomeIcon className="fa-icon green" icon={faDragon}/>
                             <FontAwesomeIcon className="fa-icon blue" icon={faCrow}/>
                         </div>
                     </div>
+                )}
+                </ThemeContext.Consumer>
+                <LocaleContext.Consumer>
+                {({ locale, setLocale }) => (
                     <ul className="flags noselect">
                         <li className={this.flagClassName(locale, 'it')} ref={this.itRef} onClick={() => setLocale('it')}>
                             <img src={flag_it} alt=""/>
@@ -84,19 +88,21 @@ class Settings extends React.PureComponent
                             <img src={flag_en} alt=""/>
                         </li>
                     </ul>
+                )}
+                </LocaleContext.Consumer>
+                <FullscreenContext.Consumer>
+                {fullscreenCtx => (
                     <div className="fullscreen-toggler">
-                    <FullscreenContext.Consumer>
-                    {fullscreenCtx => fullscreenCtx.isFullscreen ?
-                        <FontAwesomeIcon icon={faCompressArrowsAlt} key="compress" className="fullscreen-compress" onClick={() => this.toggleFullscren(fullscreenCtx)}/>
-                        :
-                        <FontAwesomeIcon icon={faExpandArrowsAlt} key="expand" className="fullscreen-expand" onClick={() => this.toggleFullscren(fullscreenCtx)}/>
-                    }
-                    </FullscreenContext.Consumer>
+                        {fullscreenCtx.isFullscreen ?
+                            <FontAwesomeIcon icon={faCompressArrowsAlt} key="compress" className="fullscreen-compress" onClick={() => this.toggleFullscren(fullscreenCtx)}/>
+                            :
+                            <FontAwesomeIcon icon={faExpandArrowsAlt} key="expand" className="fullscreen-expand" onClick={() => this.toggleFullscren(fullscreenCtx)}/>
+                        }
                     </div>
-                    <FontAwesomeIcon icon={faCog} className={buttonClassName} onClick={this.toggleActive}/>
-                </div>
-            )}
-            </LocaleContext.Consumer>
+                )}
+                </FullscreenContext.Consumer>
+                <FontAwesomeIcon icon={faCog} className={buttonClassName} onClick={this.toggleActive}/>
+            </div>
         );
     }
 

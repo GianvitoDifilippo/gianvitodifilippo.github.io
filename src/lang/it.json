@@ -156,6 +156,15 @@
             "portfolio": "È il sito che stai visitando in questo momento! Non credo serva descriverlo. 😁"
         }
     },
+    "guitar": {
+        "heading": "Il mio spazio musicale"
+    },
+    "drone": {
+        "heading": "Fotografia aerea"
+    },
+    "electronics": {
+        "heading": "Progetti di elettronica"
+    },
     "footer": {
         "sitemap": {
             "projects": {
@@ -163,12 +172,7 @@
                 "bscthesis": "Tesi di laurea triennale",
                 "mscthesis": "Tesi di laurea magistrale"
             },
-            "interests": {
-                "heading": "Interessi",
-                "guitar": "Chitarra",
-                "drone": "Fotografia aerea",
-                "electronics": "Elettronica"
-            }
+            "interests": "Interessi"
         },
         "feedback": {
             "tellme1": "Com'è stata la tua esperienza di navigazione?",

@@ -109,21 +109,21 @@ ${message ? '%0D%0A' + message : ''}%0D%0A%0D%0A${document.getElementById('feedb
                     </div>
                     <div className="interests">
                         <div>
-                            <h1><Translate selector="footer:sitemap:interests:heading"/></h1>
+                            <h1><Translate selector="footer:sitemap:interests"/></h1>
                             <ul>
                                 <li>
                                     <Link to="/guitar" className="neon_activator neon1">
-                                        <Translate selector="footer:sitemap:interests:guitar"/>
+                                        <Translate selector="guitar:heading"/>
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="/drone" className="neon_activator neon1">
-                                        <Translate selector="footer:sitemap:interests:drone"/>
+                                        <Translate selector="drone:heading"/>
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="/electronics" className="neon_activator neon1">
-                                        <Translate selector="footer:sitemap:interests:electronics"/>
+                                        <Translate selector="electronics:heading"/>
                                     </Link>
                                 </li>
                             </ul>

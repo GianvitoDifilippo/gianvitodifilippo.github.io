@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Home from '../Home';
+import { Hero, About, Education, Experience, Projects, Skills } from '../Home';
 import Guitar from '../Guitar';
 import Header from '../Header';
 import Footer from '../Footer';
 
-import { LocaleContext, DeviceContext, ModalContext, FullscreenContext } from '../../context';
+import { LocaleContext, DeviceContext, ModalContext, FullscreenContext, ThemeContext } from '../../context';
 
 import './app_desktop.scss';
 import './app_tablet.scss';
@@ -63,18 +63,21 @@ class App extends React.PureComponent
                     }
                 })
             },
-            isSettingsButtonVisible: false,
-            greenTheme: window.localStorage.getItem('theme') === 'green'
+            themeCtx: {
+                greenTheme: window.localStorage.getItem('theme') === 'green',
+                toggleTheme: () => {
+                    this.setState({
+                        themeCtx: {
+                            greenTheme: !this.state.themeCtx.greenTheme,
+                            toggleTheme: this.state.themeCtx.toggleTheme
+                        }
+                    });
+                    window.localStorage.setItem('theme', this.state.greenTheme ? 'green' : 'blue');
+                    document.body.classList.toggle('green-mode');
+                }
+            },
+            isSettingsButtonVisible: false
         };
-
-        this.toggleTheme = this.toggleTheme.bind(this);
-    }
-    
-    toggleTheme()
-    {
-        this.setState({ greenTheme: !this.state.greenTheme });
-        window.localStorage.setItem('theme', !this.state.greenTheme ? 'green' : 'blue');
-        document.body.classList.toggle('green-mode');
     }
 
     render()
@@ -89,41 +92,34 @@ class App extends React.PureComponent
             <DeviceContext.Provider     value={this.state.deviceCtx}>
             <ModalContext.Provider      value={this.state.modalCtx}>
             <FullscreenContext.Provider value={this.state.fullscreenCtx}>
+            <ThemeContext.Provider      value={this.state.themeCtx}>
                 <div id="app" className={className}>
-                <Router>
-                    <Switch>
-                        <Route path="/guitar">
-                            <Header key="guitar" scrollY={this.state.scrollY} greenTheme={this.state.greenTheme} toggleTheme={this.toggleTheme} items = {
-                                [ 'la-la-medley', 'disney-medley' ]
-                            }/>
-                        </Route>
-                        <Route path="/drone">
-                            <Header key="drone" scrollY={this.state.scrollY} greenTheme={this.state.greenTheme} toggleTheme={this.toggleTheme} items = {
-                                [ 'snow', 'belltower' ]
-                            }/>
-                        </Route>
-                        <Route path="/electronics">
-                            <Header key="guitar" scrollY={this.state.scrollY} greenTheme={this.state.greenTheme} toggleTheme={this.toggleTheme} items = {
-                                [ 'nightvisor' ]
-                            }/>
-                        </Route>
-                        <Route path="/">
-                            <Header home key="home" scrollY={this.state.scrollY} greenTheme={this.state.greenTheme} toggleTheme={this.toggleTheme} items={
-                                ['about', 'skills', 'experience', 'education', 'projects']
-                            }/>
-                        </Route>
-                    </Switch>
-                    <Switch>
-                        <Route path="/guitar">
-                            <Guitar/>
-                        </Route>
-                        <Route path="/">
-                            <Home scrollY={this.state.scrollY}/>
-                        </Route>
-                    </Switch>
-                    <Footer/>
-                </Router>
+                    <Router>
+                        <Switch>
+                            <Route path="/guitar">
+                                <Header key="guitar" scrollY={this.state.scrollY} items = {
+                                    [ 'la-la-medley', 'disney-medley' ]
+                                }/>
+                                <Guitar/>
+                            </Route>
+                            <Route path="/" exact>
+                                <Header home key="home" scrollY={this.state.scrollY} items={
+                                    ['about', 'skills', 'experience', 'education', 'projects']
+                                }/>
+                                <div id="home">
+                                    <Hero scrollY={this.state.scrollY}/>
+                                    <About/>
+                                    <Skills/>
+                                    <Experience/>
+                                    <Education/>
+                                    <Projects/>
+                                </div>
+                            </Route>
+                        </Switch>
+                        <Footer/>
+                    </Router>
                 </div>
+            </ThemeContext.Provider>
             </FullscreenContext.Provider>
             </ModalContext.Provider>
             </DeviceContext.Provider>

@@ -1,108 +1,112 @@
-#hero {
-    width: 100vw;
-    min-height: calc(100vh + 10px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) calc(100% - 10px), rgba(0, 0, 0, 0) 100%);
-    -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) calc(100% - 10px), rgba(0, 0, 0, 0) 100%);
+#home {
+    #hero {
+        width: 100vw;
+        min-height: calc(100vh + 10px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) calc(100% - 10px), rgba(0, 0, 0, 0) 100%);
+        -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) calc(100% - 10px), rgba(0, 0, 0, 0) 100%);
 
-    > .background {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        background-image: url('../../../assets/img/hero-background.jpeg');
-        background-size: cover;
-        background-position-x: 80% !important;
-
-        &::after {
-            content: '';
+        > .background {
             position: absolute;
-            left: 0;
-            top: 0;
             width: 100%;
             height: 100%;
-            background-color: black;
-            opacity: 0.6;
-        }
-    }
+            left: 0;
+            top: 0;
+            background-image: url('../../../assets/img/hero-background.jpeg');
+            background-size: cover;
+            background-position-x: 80% !important;
 
-    > .main {
-        width: fit-content;
-        position: relative;
-        left: 14%;
-
-        > h1 {
-            font-size: 5rem;
-            font-weight: 600;
-
-            &.fadein {
-                opacity: 0;
-                cursor: default;
-                animation: fadein_title 1s 1s;
-                animation-fill-mode: forwards;
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: black;
+                opacity: 0.6;
             }
         }
 
-        > h2 {
-            font-size: 3rem;
-            font-weight: 200;
+        >.main {
+            width: fit-content;
+            position: relative;
+            left: 14%;
 
-            &.fadein {
-                opacity: 0;
-                cursor: default;
-                animation: fadein_title 1s 2.5s;
-                animation-fill-mode: forwards;
+            >h1 {
+                font-size: 5rem;
+                font-weight: 600;
+
+                &.fadein {
+                    opacity: 0;
+                    cursor: default;
+                    animation: fadein_title 1s 1s;
+                    animation-fill-mode: forwards;
+                }
+            }
+
+            >h2 {
+                font-size: 3rem;
+                font-weight: 200;
+
+                &.fadein {
+                    opacity: 0;
+                    cursor: default;
+                    animation: fadein_title 1s 2.5s;
+                    animation-fill-mode: forwards;
+                }
+            }
+
+            >a {
+                display: inline-block;
+                max-width: 300px;
+                text-align: center;
+                text-transform: uppercase;
+                color: var(--color1);
+                font-size: 2rem;
+                padding: 1rem 3rem;
+                margin: 10px 2px 0px 2px;
+                border: var(--color1) solid 2px;
+                background-color: transparent;
+                transition: background-color .3s, color .3s;
+
+                &.fadein {
+                    pointer-events: none;
+                    opacity: 0;
+                    animation: fadein_button 1s 4s;
+                    animation-fill-mode: forwards;
+                }
+
+                &:hover {
+                    background-color: var(--color1);
+                    color: black;
+                }
             }
         }
+    }
 
-        > a {
-            display: inline-block;
-            max-width: 300px;
-            text-align: center;
-            text-transform: uppercase;
-            color: var(--color1);
-            font-size: 2rem;
-            padding: 1rem 3rem;
-            margin: 10px 2px 0px 2px;
-            border: var(--color1) solid 2px;
-            background-color: transparent;
-            transition: background-color .3s, color .3s;
+    @keyframes fadein_title {
+        from {
+            opacity: 0;
+        }
 
-            &.fadein {
-                pointer-events: none;
-                opacity: 0;
-                animation: fadein_button 1s 4s;
-                animation-fill-mode: forwards;
-            }
-
-            &:hover {
-                background-color: var(--color1);
-                color: black;
-            }
+        to {
+            cursor: text;
+            opacity: 1;
+            pointer-events: unset;
         }
     }
-}
 
-@keyframes fadein_title {
-    from {
-        opacity: 0;
-    }
-    to {
-        cursor: text;
-        opacity: 1;
-        pointer-events: unset;
-    }
-}
+    @keyframes fadein_button {
+        from {
+            opacity: 0;
+        }
 
-@keyframes fadein_button {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-        pointer-events: unset;
+        to {
+            opacity: 1;
+            pointer-events: unset;
+        }
     }
 }

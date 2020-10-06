@@ -24,7 +24,7 @@
                 "My goals are learning, growing and innovating. I try to take the most from each experience I make, and to make my initiative spirit emerge.",
                 "Outside the workplace, you may find me *, * or *. Or maybe walking *."
             ],
-            "guitar": "playing",
+            "guitar": "playing my guitar",
             "drone": "flying my drone",
             "circuits": "handling a soldering iron"
         },
@@ -156,6 +156,15 @@
             "portfolio": "It's the website you're browsing right now! No caption needed. 😁"
         }
     },
+    "guitar": {
+        "heading": "My musical space"
+    },
+    "drone": {
+        "heading": "Aerial photography"
+    },
+    "electronics": {
+        "heading": "Electronics projects"
+    },
     "footer": {
         "sitemap": {
             "projects": {
@@ -163,12 +172,7 @@
                 "bscthesis": "Bachelor thesis",
                 "mscthesis": "Master thesis"
             },
-            "interests": {
-                "heading": "Interests",
-                "guitar": "Guitar",
-                "drone": "Aerial photography",
-                "electronics": "Electronics"
-            }
+            "interests": "Interests"
         },
         "feedback": {
             "tellme1": "How was your user experience?",

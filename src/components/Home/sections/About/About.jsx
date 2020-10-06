@@ -45,9 +45,9 @@ class About extends React.PureComponent
         let strings = text.split('*');
         return (
             <>
-                {strings[0]}<a className="interests-link" href="#"><Translate selector="about:descr:guitar"/></a>
-                {strings[1]}<a className="interests-link" href="#"><Translate selector="about:descr:drone"/></a>
-                {strings[2]}<a className="interests-link" href="#"><Translate selector="about:descr:circuits"/></a>
+                {strings[0]}<a className="interests-link" href="/guitar"><Translate selector="about:descr:guitar"/></a>
+                {strings[1]}<a className="interests-link" href="/drone"><Translate selector="about:descr:drone"/></a>
+                {strings[2]}<a className="interests-link" href="/circuits"><Translate selector="about:descr:circuits"/></a>
                 {strings[3]}<a className="interests-link" href={fiocco}>Fiocco</a>
                 {strings[4]}
             </>

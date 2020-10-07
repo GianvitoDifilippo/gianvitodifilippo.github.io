@@ -25,9 +25,7 @@
         }
     }
 
-    #la-la-medley {
-        padding-top: 80px;
-
+    section {
         iframe {
             display: block;
             margin: 20px auto;
@@ -35,6 +33,7 @@
     }
 
     .download-sheet {
+        width: fit-content;
         display: flex;
         align-items: center;
         cursor: pointer;

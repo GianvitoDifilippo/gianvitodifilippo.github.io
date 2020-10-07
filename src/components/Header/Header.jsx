@@ -30,7 +30,7 @@ class Header extends React.Component
 
     inNavigation(scrollY)
     {
-        return scrollY > (this.context.device === 'phone' ? 60 : 200);
+        return scrollY >= (this.props.navigationScroll || 0);
     }
 
     navlistClassName()

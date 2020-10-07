@@ -97,13 +97,15 @@ class App extends React.PureComponent
                     <Router>
                         <Switch>
                             <Route path="/guitar">
-                                <Header key="guitar" scrollY={this.state.scrollY} items = {
+                                <Header key="guitar" navigationScroll={this.state.deviceCtx.device === 'phone' ? 60 : 100}
+                                scrollY={this.state.scrollY} items = {
                                     [ 'la-la-medley', 'disney-medley' ]
                                 }/>
                                 <Guitar/>
                             </Route>
                             <Route path="/" exact>
-                                <Header home key="home" scrollY={this.state.scrollY} items={
+                                <Header home key="home" navigationScroll={this.state.deviceCtx.device === 'phone' ? 60 : 200}
+                                scrollY={this.state.scrollY} items={
                                     ['about', 'skills', 'experience', 'education', 'projects']
                                 }/>
                                 <div id="home">

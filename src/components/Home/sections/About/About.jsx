@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import Section from '../Section';
 import Translate from '../../../Translate';
 
@@ -45,9 +47,9 @@ class About extends React.PureComponent
         let strings = text.split('*');
         return (
             <>
-                {strings[0]}<a className="interests-link" href="/guitar"><Translate selector="about:descr:guitar"/></a>
-                {strings[1]}<a className="interests-link" href="/drone"><Translate selector="about:descr:drone"/></a>
-                {strings[2]}<a className="interests-link" href="/circuits"><Translate selector="about:descr:circuits"/></a>
+                {strings[0]}<Link to="/guitar" className="interests-link"><Translate selector="about:descr:guitar"/></Link>
+                {strings[1]}<Link to="/drone" className="interests-link"><Translate selector="about:descr:drone"/></Link>
+                {strings[2]}<Link to="/circuits" className="interests-link"><Translate selector="about:descr:circuits"/></Link>
                 {strings[3]}<a className="interests-link" href={fiocco}>Fiocco</a>
                 {strings[4]}
             </>

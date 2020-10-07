@@ -27,12 +27,11 @@ class Guitar extends React.PureComponent
                     </p>
                 </div>
                 <section className="blog-section" id="la-la-medley">
-                    <h1>The La La Medley</h1>
+                    <h1>La La Medley</h1>
                     <p>
-                        Il lockdown della primavera 2020 dovuto alla pandemia di COVID-19 è stato un momento di immensa incertezza. Ma,
-                        vuoi per la voglia di battere la paura, vuoi per la gran quantità di tempo libero a disposizione, è stata anche
-                        una stagione di estrema creatività. Avevo in mente l'idea di realizzare una cover split-screen e decisi che era
-                        il momento giusto di farlo: sotto l'hashtag <span>#iorestoacasa</span> nasce il La La Medley.
+                        <Translate selector="guitar:la-la-medley:text:0"/>&nbsp;
+                        <span><Translate selector="guitar:la-la-medley:hashtag"/></span>&nbsp;
+                        <Translate selector="guitar:la-la-medley:text:1"/>
                     </p>
                     <iframe
                         width="960"
@@ -52,12 +51,26 @@ class Guitar extends React.PureComponent
                     </div>
                 </section>
                 <section className="blog-section" id="disney-medley">
-                    <h1>The Disney Medley</h1>
+                    <h1>Disney Medley</h1>
                     <p>
-                        Il medley di La La Land è stato un punto di partenza da cui decisi di sviluppare altre idee. Sono cresciuto con
-                        le videocassette della Disney, innamorandomi, come molti, delle colonne sonore dei loro film di animazione.
-                        
+                        <Translate selector="guitar:disney-medley:text"/>
                     </p>
+                    <iframe
+                        width="960"
+                        height="600"
+                        title="disney-medley"
+                        src="https://www.youtube.com/embed/kGz_20yrYrg"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div className="download-sheet neon_activator">
+                        <span className="fa-layers fa-fw">
+                          <FontAwesomeIcon className="fa-icon-file" icon={faFile}/>
+                          <FontAwesomeIcon className="fa-icon-music" icon={faMusic} inverse/>
+                        </span>
+                        <span className="neon2">Scarica lo spartito in formato PDF!</span>
+                    </div>
                 </section>
             </BlogPage>
         );

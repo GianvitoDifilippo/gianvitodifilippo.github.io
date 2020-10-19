@@ -89,7 +89,6 @@ $curve-diameter: 15vw;
                     position: relative;
                     width: 150%;
                     background-color: var(--box_color1_opaque);
-                    cursor: pointer;
                     z-index: 2;
 
                     h1,
@@ -103,6 +102,7 @@ $curve-diameter: 15vw;
 
                     h1 {
                         font-size: 2.8rem;
+                        cursor: pointer;
                     }
     
                     h3 {

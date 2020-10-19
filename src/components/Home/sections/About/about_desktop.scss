@@ -14,11 +14,11 @@
                 font-weight: 300;
             }
 
-            > .profile {
+            .profile {
                 display: flex;
                 align-items: flex-start;
 
-                > img {
+                .profile-img {
                     width: 400px;
                     height: 400px;
                     margin-right: 60px;
@@ -39,14 +39,14 @@
                     > div {
                         margin: 20px 10px 10px 10px;
 
-                        > .contacts,
-                        > .social {
+                        .contacts,
+                        .social {
                             font-size: 2rem;
                             font-weight: 300;
                             margin-bottom: 15px;
                         }
 
-                        > .contacts {
+                        .contacts {
                             > a {
                                 display: inline-flex;
                                 justify-content: center;
@@ -69,7 +69,7 @@
                             }
                         }
 
-                        > .social {
+                        .social {
                             > .icons > a {
                                 display: inline-block;
                                 margin: 5px 8px 5px 8px;

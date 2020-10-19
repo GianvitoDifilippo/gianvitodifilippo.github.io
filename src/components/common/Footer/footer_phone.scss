@@ -1,0 +1,41 @@
+@media only screen and (max-width: 600px) {
+#footer {
+
+    .sitemap {
+        display: block;
+        padding: 10px;
+
+        > div {
+            margin-bottom: 20px;
+
+            > div {
+                text-align: center;
+
+                h1 {
+                    margin-bottom: 5px;
+                }
+
+                ul {
+                    list-style: none;
+                }
+            }
+        }
+    }
+
+    .center {
+        padding: 10px;
+
+        .rocket-container {
+            &.active {
+                animation: rocket-fire 1.5s linear;
+            }
+        }
+    }
+
+    .feedback {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+}
+}

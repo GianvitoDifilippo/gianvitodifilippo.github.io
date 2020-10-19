@@ -1,0 +1,108 @@
+.neon_activator {
+    display: contents;
+}
+
+.neon1,
+.neon2 {
+    display: contents;
+    transition: color .3s;
+}
+
+.neon_activator.animated .neon1,
+.neon_activator.animated .neon2 {
+    animation: neon .3s;
+}
+
+.neon_activator.animated .neon1.fa-icon,
+.neon_activator.animated .neon2.fa-icon {
+    animation: neon_fa-icon .3s;
+}
+
+@media only screen and (max-width: 1366px) {
+    .neon_activator.animated .neon1 {
+        animation: neon1_mobile .3s;
+    }
+    
+    .neon_activator.animated .neon2 {
+        animation: neon2_mobile .3s;
+    }
+    
+    .neon_activator.animated .neon1.fa-icon {
+        animation: neon1_fa-icon_mobile .3s;
+    }
+    
+    .neon_activator.animated .neon2.fa-icon {
+        animation: neon2_fa-icon_mobile .3s;
+    }
+}
+
+
+@media (any-hover: hover) {
+    .neon_activator:hover .neon1,
+    .neon_activator.neon1:hover {
+        color: var(--color1) !important;
+    }
+
+    .neon_activator:hover .neon2,
+    .neon_activator.neon2:hover {
+        color: var(--color2) !important;
+    }
+}
+
+@keyframes neon {
+    50% {
+        text-shadow: 0 0 1rem var(--color2);
+    }
+    100% {
+        text-shadow: 0 0 0rem var(--color2);
+    }
+}
+
+@keyframes neon_fa-icon {
+    50% {
+        filter: drop-shadow(0 0 0.5rem var(--color2));
+    }
+    100% {
+        filter: drop-shadow(0 0 0rem var(--color2));
+    }
+}
+
+@keyframes neon1_mobile {
+    50% {
+        text-shadow: 0 0 1rem var(--color2);
+        color: var(--color1);
+    }
+    100% {
+        text-shadow: 0 0 0px var(--color2);
+    }
+}
+
+@keyframes neon2_mobile {
+    50% {
+        text-shadow: 0 0 1rem var(--color2);
+        color: var(--color2);
+    }
+    100% {
+        text-shadow: 0 0 0px var(--color2);
+    }
+}
+
+@keyframes neon1_fa-icon_mobile {
+    50% {
+        filter: drop-shadow(0 0 0.5rem var(--color2));
+        color: var(--color2);
+    }
+    100% {
+        filter: drop-shadow(0 0 0rem var(--color2));
+    }
+}
+
+@keyframes neon2_fa-icon_mobile {
+    50% {
+        filter: drop-shadow(0 0 0.5rem var(--color2));
+        color: var(--color2);
+    }
+    100% {
+        filter: drop-shadow(0 0 0rem var(--color2));
+    }
+}

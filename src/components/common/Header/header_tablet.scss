@@ -1,0 +1,141 @@
+@media only screen and (max-width: 1366px) {
+    #header {
+        &.hidden {
+            transform: none;
+
+            .hamburger {
+                transform: translateX(calc(100% + 20px));
+            }
+        }
+
+        nav {
+            position: relative;
+            justify-content: space-between;
+
+            .brand {
+                pointer-events: none;
+
+                h1 {
+                    position: relative;
+                    opacity: 0;
+                    transition: opacity .2s;
+                    margin-left: 10px;
+                }
+            }
+
+            &.navigating {
+                .brand {
+                    pointer-events: visible;
+
+                    h1 {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .nav-list {
+                position: fixed;
+                top: 0;
+                left: 100vw;
+                width: 100vw;
+                height: 100%;
+                transition: left .5s;
+                transition-delay: .2s;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                z-index: 20;
+
+                .nav-item {
+                    margin: 2.5rem;
+                    text-align: center;
+
+                    .nav-link {
+                        font-size: 3.5rem;
+                        
+                        .nav-section-name::after {
+                            display: none;
+                        }
+                    }
+
+                    &.is-current {
+                        .nav-link {
+                            color: var(--color1);
+                            text-shadow: 0 0 .7rem var(--color2);
+                        }
+                    }
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100vh;
+                    transition: background-color .2s;
+                    background-color: var(--background_color_dark);
+                    z-index: -1;
+                }
+
+                &.active {
+                    left: 0;
+                    transition-delay: 0s;
+                }
+            }
+
+            > .hamburger {
+                position: fixed;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 25px;
+                margin: 20px;
+                top: 0;
+                right: 0;
+                cursor: pointer;
+                z-index: 25;
+                transition: transform .3s ease-in-out;
+
+                > .bar {
+                    position: relative;
+                    width: 25px;
+                    height: 3px;
+                    background-color: white;
+
+                    &::before,
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-color: white;
+                    }
+
+                    &::before {
+                        bottom: 7px;
+                        transition: bottom .2s linear;
+                    }
+
+                    &::after {
+                        top: 7px;
+                        transition: top .2s linear;
+                    }
+                }
+
+                &.active {
+                    > .bar {
+                        &::before {
+                            bottom: 0px;
+                        }
+
+                        &::after {
+                            top: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

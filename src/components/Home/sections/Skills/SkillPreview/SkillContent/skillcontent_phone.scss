@@ -2,9 +2,6 @@
 
 #skill-content {
     > .skill-details-content {
-        .skill-card {
-            margin: 10px 15px 10px 10px;
-        }
 
         > .skill-brief {
             > h2 {
@@ -18,12 +15,9 @@
             }
         }
 
-        > p {
-            clear: both;
-        }
-
         > .skill-descr {
             margin-top: 5px;
+            clear: both;
         }
     }
 

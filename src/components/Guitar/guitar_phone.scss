@@ -1,0 +1,34 @@
+@media only screen and (max-width: 600px) {
+
+#guitar {
+    .blogpage {
+        #descr {
+            flex-direction: column;
+
+            .profileimg {
+                margin-right: 0px;
+                margin-top: 20px;
+                order: 1;
+            }
+
+            p {
+                text-align: center;
+            }
+        }
+
+        section {
+            iframe {
+                &.la-la-land-video {
+                    width: 85vw;
+                    height: calc(85vw * 9 / 16);
+                }
+                &.disney-video {
+                    width: 85vw;
+                    height: calc(85vw * 10 / 16);
+                }
+            }
+        }
+    }
+}
+
+}

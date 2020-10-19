@@ -1,0 +1,27 @@
+@media only screen and (max-width: 600px) {
+
+.blogpage {
+
+    #hero {
+        min-height: 350px;
+
+        h1 {
+            max-width: 90%;
+        }
+    }
+
+    .blog-section {
+        width: 85vw;
+
+        h1 {
+            font-size: 1.8em;
+        }
+        
+    }
+
+    section {
+        padding-top: 70px;
+    }
+}
+    
+}

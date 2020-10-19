@@ -23,7 +23,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-scrollspy": "^3.3.3",
     "gatsby": "^2.24.80",
-    "gatsby-plugin-sass": "^2.3.17",
+    "gatsby-plugin-sass": "^2.3.18",
     "node-sass": "^4.14.1",
     "react": "^16.14.0",
     "react-css-transition-replace": "^4.0.2",

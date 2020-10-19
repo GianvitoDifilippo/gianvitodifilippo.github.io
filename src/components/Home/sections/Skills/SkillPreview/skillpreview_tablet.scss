@@ -1,0 +1,47 @@
+@media only screen and (max-width: 1366px) {
+
+#skill-preview-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .skill-preview-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        width: 100%;
+        flex-grow: 1;
+
+        #skill-preview {
+            width: calc(100% - 6vw * 2);
+            margin: 6vw 6vw 0vh 6vw;
+            overflow: hidden;
+        
+            > div,
+            > div > span {
+                display: flex;
+                overflow: hidden;
+                width: 100%;
+            }
+        
+            > h1 {
+                display: none;
+            }
+        
+            .box-heading {
+                margin: 0px 10px 0px 10px;
+            }
+        }
+    }
+
+    > .fa-icon {
+        font-size: 4rem;
+        margin: 20px;
+    }
+}
+
+}

@@ -1,0 +1,118 @@
+#projects {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        h1 {
+            font-size: 5rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        ul.mainlist {
+            width: 100%;
+
+            > li.mainproject {
+                margin: 40px 0px;
+                display: flex;
+                align-items: center;
+                position: relative;
+                width: 100%;
+
+                img {
+                    width: 700px;
+                    box-shadow: 5px 5px 5px var(--shadow_color);
+                }
+
+                > div {
+                    width: 65%;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    &.box {
+                        background-color: var(--box_color1_opaque);
+                    }
+
+                    .heading {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        h1 {
+                            font-size: 3rem;
+                            font-weight: 400;
+                            margin: 10px 10px 0px 10px;
+                        }
+
+                        .fa-icon {
+                            font-size: 2.5rem;
+                            margin-right: 10px;
+                        }
+                    }
+
+                    p {
+                        font-size: 1.5rem;
+                        margin: 10px;
+                    }
+                }
+
+                &:nth-child(2n + 1) {
+                    flex-direction: row;
+
+                    div {
+                        left: 35%;
+                    }
+                }
+
+                &:nth-child(2n) {
+                    flex-direction: row-reverse;
+
+                    div {
+                        left: 0%;
+                    }
+                }
+            }
+        }
+
+        ul.otherlist {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 20px;
+            row-gap: 20px;
+
+            > li {
+                .project-thumbnail {
+                    > .space {
+                        padding-top: 30%;
+                        padding-bottom: 30%;
+                    }
+                }
+            }
+        }
+    }
+
+    .cross-fade-leave {
+        opacity: 1;
+    }
+
+    .cross-fade-leave.cross-fade-leave-active {
+        opacity: 0;
+        transition: opacity .15s ease-in, padding 0s .15s !important;
+    }
+
+    .cross-fade-enter {
+        opacity: 0;
+    }
+
+    .cross-fade-enter.cross-fade-enter-active {
+        opacity: 1;
+        transition: opacity .15s ease-in, padding 0s .15s !important;
+    }
+
+    .cross-fade-height {
+        transition: height .3s ease-in-out;
+    }
+}

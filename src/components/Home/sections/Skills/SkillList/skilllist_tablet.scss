@@ -1,0 +1,33 @@
+@media only screen and (max-width: 1366px) {
+
+#skill-list {
+    .box-heading {
+        text-align: center;
+        margin: 0px;
+    }
+
+    > li {
+        > ul.icons {
+            justify-content: center;
+            flex-flow: row wrap;
+
+            > li {
+                margin: 5px;
+
+                &:nth-child(1) {
+                    margin: 5px;
+                }
+
+                &:nth-last-child(1) {
+                    margin: 5px;
+                }
+
+                > .skill-card {
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
+
+}

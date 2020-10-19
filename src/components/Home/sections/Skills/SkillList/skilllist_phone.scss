@@ -1,0 +1,9 @@
+@media only screen and (max-width: 600px) {
+
+#skill-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+}
+
+}

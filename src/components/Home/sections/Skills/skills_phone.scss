@@ -1,0 +1,22 @@
+@media only screen and (max-width: 600px) {
+
+#skill-list,
+#skill-preview {
+    .skill-card {
+        width: auto;
+        height: auto;
+
+        > .skill-icon {
+            width: 65px;
+            height: 65px;
+            margin: 10px 15px 10px 15px;
+        }
+
+        > .skill-name {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+}

@@ -2,11 +2,12 @@ import * as React from 'react';
 
 import { Link } from 'gatsby';
 
-import Section from '../Section';
-import Translate from '../../../common/Translate';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
+
+import Section from '../Section';
+import Translate from '../../../common/Translate';
+import { Neon, NeonConsumer, NeonProvider } from '../../../common/Neon';
 
 import './about_desktop.scss';
 import './about_tablet.scss';
@@ -63,18 +64,30 @@ class About extends React.PureComponent
                         <div>
                             <div className="contacts">
                                 <h1><Translate selector="about:contacts"/></h1>
-                                <a className="neon_activator" href="mailto:gianvito.difilippo@gmail.com">
-                                    <FontAwesomeIcon className="fa-icon neon2" icon={faEnvelope} />
-                                    <span className="neon2">
-                                        gianvito.difilippo@gmail.com
-                                    </span>
-                                </a>
-                                <a className="neon_activator" href="tel:+393898331018">
-                                    <FontAwesomeIcon className="fa-icon neon2" icon={faMobileAlt} />
-                                    <span className="neon2">
-                                        +39 3898331018
-                                    </span>
-                                </a>
+                                <NeonProvider>
+                                    <a href="mailto:gianvito.difilippo@gmail.com" className="contact-link">
+                                        <NeonConsumer>
+                                            <FontAwesomeIcon className="fa-icon" icon={faEnvelope}/>
+                                        </NeonConsumer>
+                                        <span className="contact-data">
+                                            <NeonConsumer>
+                                                gianvito.difilippo@gmail.com
+                                            </NeonConsumer>
+                                        </span>
+                                    </a>
+                                </NeonProvider>
+                                <NeonProvider>
+                                    <a href="tel:+393898331018" className="contact-link">
+                                        <NeonConsumer>
+                                            <FontAwesomeIcon className="fa-icon" icon={faMobileAlt} />
+                                        </NeonConsumer>
+                                        <span className="contact-data">
+                                            <NeonConsumer>
+                                                +39 3898331018
+                                            </NeonConsumer>
+                                        </span>
+                                    </a>
+                                </NeonProvider>
                             </div>
                             <div className="social">
                                 <h1><Translate selector="about:findme"/></h1>

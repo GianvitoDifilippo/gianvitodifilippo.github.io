@@ -4,7 +4,7 @@ import ScrollSpy from 'react-scrollspy';
 
 import Settings from './Settings';
 import AnchorLink from '../AnchorLink';
-import { Neon, NeonActivator } from '../Neon';
+import { NeonConsumer, NeonProvider } from '../Neon';
 import Translate from '../Translate';
 
 import { DeviceContext } from '../../../shared/context';
@@ -124,13 +124,15 @@ class Header extends React.PureComponent<PropsType, StateType>
         return (
             <header id="header" className={this.state.isVisible ? '' : "hidden"}>
                 <nav className={this.state.isNavigating ? 'navigating' : ''}>
-                    <NeonActivator>
+                    <NeonProvider>
                         <AnchorLink here={!!this.props.home} toHere="#" toThere="/" className={`brand ${this.state.isNavlistActive ? 'inactive' : ''}`}>
                             <h1>
-                                <Neon light>Gia</Neon>nvito<br/><Neon light>Dif</Neon>ilippo
+                                <NeonConsumer light>Gia</NeonConsumer>nvito
+                                <br/>
+                                <NeonConsumer light>Dif</NeonConsumer>ilippo
                             </h1>
                         </AnchorLink>
-                    </NeonActivator>
+                    </NeonProvider>
                     <div className={`hamburger ${this.state.isNavlistActive ? 'active' : ''}`} onClick={this.toggleNavlist}>
                         <div className="bar"></div>
                     </div>
@@ -138,13 +140,13 @@ class Header extends React.PureComponent<PropsType, StateType>
                     items={this.props.sectionSlugs} currentClassName="is-current">
                     {this.props.sectionSlugs.map((slug, index) => (
                         <li className="nav-item" key={`item-${index}`} onClick={this.toggleNavlist}>
-                            <NeonActivator>
+                            <NeonProvider>
                                 <a className="nav-link" href={`#${slug}`}>
-                                    <Neon light>
+                                    <NeonConsumer light>
                                         <span className="nav-section-name"><Translate selector={`sections:${slug}`}/></span>
-                                    </Neon>
+                                    </NeonConsumer>
                                 </a>
-                            </NeonActivator>
+                            </NeonProvider>
                         </li>
                     ))}
                     </ScrollSpy>

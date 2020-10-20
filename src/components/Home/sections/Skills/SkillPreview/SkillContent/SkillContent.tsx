@@ -71,7 +71,7 @@ const SkillContent = (props: Readonly<{ currentSkill: string }>) => {
                         <p key="null" className="skill-projects-none">
                             <Translate selector="skills:preview:noprojects"/>
                             {' '}
-                            <a href="mailto:gianvito.difilippo@gmail.com" className="neon_activator neon">
+                            <a href="mailto:gianvito.difilippo@gmail.com">
                                 <Translate selector="skills:preview:contactme"/>
                             </a>
                         </p>

@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 type PropsType = {
     here: boolean,
-    className: string,
+    className?: string,
     toHere?: string,
     toThere?: string,
     children?: React.ReactNode

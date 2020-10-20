@@ -1,3 +1,3 @@
-import { Neon, NeonActivator } from './Neon';
+import { NeonConsumer, NeonProvider, Neon } from './Neon';
 
-export { Neon, NeonActivator };
+export { NeonConsumer, NeonProvider, Neon };

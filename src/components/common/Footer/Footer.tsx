@@ -6,7 +6,9 @@ import Rocket from './Rocket';
 import Translate from '../Translate';
 import { translate } from '../Translate';
 import AnchorLink from '../AnchorLink';
+
 import { LocaleContext } from '../../../shared/context';
+import { Neon } from '../Neon';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact } from '@fortawesome/free-brands-svg-icons';
@@ -71,23 +73,35 @@ ${message ? '%0D%0A' + message : ''}%0D%0A%0D%0A${(document.getElementById('feed
                         <div>
                             <h1>Home page</h1>
                             <ul>
-                                <li><AnchorLink here={!!this.props.home} toHere="#" toThere="/" className="neon_activator neon1">
-                                    Hero
+                                <li><AnchorLink here={!!this.props.home} toHere="#" toThere="/">
+                                    <Neon light>
+                                        Hero
+                                    </Neon>
                                 </AnchorLink></li>
-                                <li><AnchorLink here={!!this.props.home} toHere="#about" toThere="/#about" className="neon_activator neon1">
-                                    <Translate selector="sections:about"/>
+                                <li><AnchorLink here={!!this.props.home} toHere="#about" toThere="/#about">
+                                    <Neon light>
+                                        <Translate selector="sections:about"/>
+                                    </Neon>
                                 </AnchorLink></li>
-                                <li><AnchorLink here={!!this.props.home} toHere="#skills" toThere="/#skills" className="neon_activator neon1">
-                                    <Translate selector="sections:skills"/>
+                                <li><AnchorLink here={!!this.props.home} toHere="#skills" toThere="/#skills">
+                                    <Neon light>
+                                        <Translate selector="sections:skills"/>
+                                    </Neon>
                                 </AnchorLink></li>
-                                <li><AnchorLink here={!!this.props.home} toHere="#experience" toThere="/#experience" className="neon_activator neon1">
-                                    <Translate selector="sections:experience"/>
+                                <li><AnchorLink here={!!this.props.home} toHere="#experience" toThere="/#experience">
+                                    <Neon light>
+                                        <Translate selector="sections:experience"/>
+                                    </Neon>
                                 </AnchorLink></li>
-                                <li><AnchorLink here={!!this.props.home} toHere="#education" toThere="/#education" className="neon_activator neon1">
-                                    <Translate selector="sections:education"/>
+                                <li><AnchorLink here={!!this.props.home} toHere="#education" toThere="/#education">
+                                    <Neon light>
+                                        <Translate selector="sections:education"/>
+                                    </Neon>
                                 </AnchorLink></li>
-                                <li><AnchorLink here={!!this.props.home} toHere="#projects" toThere="/#projects" className="neon_activator neon1">
-                                    <Translate selector="sections:projects"/>
+                                <li><AnchorLink here={!!this.props.home} toHere="#projects" toThere="/#projects">
+                                    <Neon light>
+                                        <Translate selector="sections:projects"/>
+                                    </Neon>
                                 </AnchorLink></li>
                             </ul>
                         </div>
@@ -97,18 +111,24 @@ ${message ? '%0D%0A' + message : ''}%0D%0A%0D%0A${(document.getElementById('feed
                             <h1><Translate selector="footer:sitemap:projects:heading"/></h1>
                             <ul>
                                 <li>
-                                    <Link to="/mscthesis" className="neon_activator neon1">
-                                        <Translate selector="footer:sitemap:projects:mscthesis"/>
+                                    <Link to="/mscthesis">
+                                        <Neon light>
+                                            <Translate selector="footer:sitemap:projects:mscthesis"/>
+                                        </Neon>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/bscthesis" className="neon_activator neon1">
-                                        <Translate selector="footer:sitemap:projects:bscthesis"/>
+                                    <Link to="/bscthesis">
+                                        <Neon light>
+                                            <Translate selector="footer:sitemap:projects:bscthesis"/>
+                                        </Neon>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/audioengineer" className="neon_activator neon1">
-                                        AudioEngineer
+                                    <Link to="/audioengineer">
+                                        <Neon light>
+                                            AudioEngineer
+                                        </Neon>
                                     </Link>
                                 </li>
                             </ul>
@@ -119,18 +139,24 @@ ${message ? '%0D%0A' + message : ''}%0D%0A%0D%0A${(document.getElementById('feed
                             <h1><Translate selector="footer:sitemap:interests"/></h1>
                             <ul>
                                 <li>
-                                    <Link to="/guitar" className="neon_activator neon1">
-                                        <Translate selector="guitar:heading"/>
+                                    <Link to="/guitar">
+                                        <Neon light>
+                                            <Translate selector="guitar:heading"/>
+                                        </Neon>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/drone" className="neon_activator neon1">
-                                        <Translate selector="drone:heading"/>
+                                    <Link to="/drone">
+                                        <Neon light>
+                                            <Translate selector="drone:heading"/>
+                                        </Neon>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/electronics" className="neon_activator neon1">
-                                        <Translate selector="electronics:heading"/>
+                                    <Link to="/electronics">
+                                        <Neon light>
+                                            <Translate selector="electronics:heading"/>
+                                        </Neon>
                                     </Link>
                                 </li>
                             </ul>
@@ -145,9 +171,11 @@ ${message ? '%0D%0A' + message : ''}%0D%0A%0D%0A${(document.getElementById('feed
                         <span>Made by Gianvito Difilippo</span>
                         <div>
                             built with&nbsp;
-                            <a className="neon_activator neon1" href={this.getLocaleReactHref()} target="_blank">
-                                React
-                                <FontAwesomeIcon className="fa-icon" icon={faReact}/>
+                            <a href={this.getLocaleReactHref()} target="_blank">
+                                <Neon light>
+                                    React
+                                    <FontAwesomeIcon className="fa-icon" icon={faReact}/>
+                                </Neon>
                             </a>
                         </div>
                     </div>
@@ -181,8 +209,10 @@ ${message ? '%0D%0A' + message : ''}%0D%0A%0D%0A${(document.getElementById('feed
                                 <textarea placeholder={translate('footer:feedback:message', locale)}
                                 name="message" id="feedback-message" rows={3}></textarea>
                             </div>
-                            <button className="neon_activator" type="submit" id="feedback-submit">
-                                <FontAwesomeIcon className="neon1" icon={faPaperPlane}/>
+                            <button type="submit" id="feedback-submit">
+                                <Neon>
+                                    <FontAwesomeIcon className="fa-icon" icon={faPaperPlane}/>
+                                </Neon>
                             </button>
                         </form>
                     )}

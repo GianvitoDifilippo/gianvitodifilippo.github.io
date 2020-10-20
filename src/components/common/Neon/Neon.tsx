@@ -4,12 +4,11 @@ import './neon.scss';
 
 type PropsType = {
     light?: boolean,
-    faIcon?: boolean,
     children: React.ReactNode
 };
 
-const Neon = (props: Readonly<PropsType>) => {
-    let className = (props.light ? 'neon1' : 'neon2') + (props.faIcon ? 'fa-icon' : '');
+const NeonConsumer = (props: Readonly<PropsType>) => {
+    let className = props.light ? 'neon1' : 'neon2';
     return (
         <span className={className}>
             {props.children}
@@ -17,7 +16,7 @@ const Neon = (props: Readonly<PropsType>) => {
     );
 };
 
-const NeonActivator = (props: { children: React.ReactNode }) => {
+const NeonProvider = (props: { children: React.ReactNode }) => {
     const [ animated, setAnimated ] = React.useState(false);
 
     let className = 'neon_activator' + (animated ? ' animated' : '');
@@ -28,4 +27,15 @@ const NeonActivator = (props: { children: React.ReactNode }) => {
     );
 }
 
-export { Neon, NeonActivator };
+const Neon = (props: Readonly<PropsType>) => {
+    const [ animated, setAnimated ] = React.useState(false);
+
+    let className = 'neon_activator' + (props.light ? ' neon1' : ' neon2') + (animated ? ' animated' : '');
+    return (
+        <span className={className} onClick={() => setAnimated(true)} onAnimationEnd={() => setAnimated(false)}>
+            {props.children}
+        </span>
+    );
+}
+
+export { NeonConsumer, NeonProvider, Neon };

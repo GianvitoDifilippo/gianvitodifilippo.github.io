@@ -47,14 +47,14 @@
                         }
 
                         .contacts {
-                            > a {
+                            .contact-link {
                                 display: inline-flex;
                                 justify-content: center;
                                 align-items: center;
                                 cursor: pointer;
                                 margin-top: 8px;
 
-                                > span {
+                                .contact-data {
                                     padding: 8px;
                                     white-space: nowrap;
                                 }

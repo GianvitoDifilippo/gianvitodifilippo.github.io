@@ -13,9 +13,11 @@
     animation: neon .3s;
 }
 
-.neon_activator.animated .neon1.fa-icon,
-.neon_activator.animated .neon2.fa-icon {
-    animation: neon_fa-icon .3s;
+.neon_activator.animated .neon1,
+.neon_activator.animated .neon2 {
+    .fa-icon {
+        animation: neon_fa-icon .3s;
+    }
 }
 
 @media only screen and (max-width: 1366px) {
@@ -27,12 +29,16 @@
         animation: neon2_mobile .3s;
     }
     
-    .neon_activator.animated .neon1.fa-icon {
-        animation: neon1_fa-icon_mobile .3s;
+    .neon_activator.animated .neon1 {
+        .fa-icon {
+            animation: neon1_fa-icon_mobile .3s;
+        }
     }
     
-    .neon_activator.animated .neon2.fa-icon {
-        animation: neon2_fa-icon_mobile .3s;
+    .neon_activator.animated .neon2 {
+        .fa-icon {
+            animation: neon2_fa-icon_mobile .3s;
+        }
     }
 }
 

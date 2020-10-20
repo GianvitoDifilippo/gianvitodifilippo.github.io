@@ -73,14 +73,6 @@
                     }
                 }
             }
-
-            &.active {
-                .rocket {
-                    @include rocket-on;
-                }
-                animation: rocket-fire 1.1s linear;
-                z-index: 30;
-            }
         }
 
         .madeby {
@@ -187,4 +179,12 @@
             transform: translateY(-150vh) scale(10);
         }
     }
+}
+
+body.rocket-fire #footer .center .rocket-container {
+    .rocket {
+        @include rocket-on;
+    }
+    animation: rocket-fire 1.1s linear;
+    z-index: 30;
 }

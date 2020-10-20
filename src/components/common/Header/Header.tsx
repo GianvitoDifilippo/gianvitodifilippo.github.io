@@ -7,8 +7,6 @@ import AnchorLink from '../AnchorLink';
 import { Neon, NeonActivator } from '../Neon';
 import Translate from '../Translate';
 
-import { PageData } from '../Page';
-
 import { DeviceContext } from '../../../shared/context';
 
 import './header_desktop.scss';
@@ -16,8 +14,10 @@ import './header_tablet.scss';
 import './header_phone.scss';
 
 
-interface PropsType extends PageData {
-    home?: boolean
+type PropsType = {
+    home?: boolean,
+    navThresholds: number[],
+    sectionSlugs: string[]
 };
 type StateType = {
     isVisible: boolean,
@@ -42,9 +42,13 @@ class Header extends React.PureComponent<PropsType, StateType>
         this.show = this.show.bind(this);
         this.scrollListener = this.scrollListener.bind(this);
 
+        // Allows window object to be used in static pages
+        let noLaunchAnimation = false;
+        if (typeof window !== 'undefined') noLaunchAnimation = window.sessionStorage.getItem('launchanimation') === 'no';
+
         this.state = {
-            isVisible: false,
-            isSettingsButtonVisible: false,
+            isVisible: noLaunchAnimation,
+            isSettingsButtonVisible: noLaunchAnimation && this.context === 'desktop',
             isNavlistActive: false,
             isNavigating: false
         };
@@ -76,7 +80,22 @@ class Header extends React.PureComponent<PropsType, StateType>
 
     get navThreshold(): number
     {
-        return this.props.navThreshold || Header.defaultNavThreshold;
+        if (!this.props.navThresholds) return Header.defaultNavThreshold;
+        let index = 0;
+        let length = this.props.navThresholds.length;
+        switch (this.context) {
+            case 'tablet_big':
+                index = 1;
+                break;
+            case 'tablet_small':
+                index = 2;
+                break;
+            case 'phone':
+                index = 3;
+                break;
+        }
+        if (index >= length) return this.props.navThresholds[length - 1];
+        return this.props.navThresholds[index];
     }
 
     get isNavigating(): boolean
@@ -90,6 +109,10 @@ class Header extends React.PureComponent<PropsType, StateType>
         
         if (navigating !== this.state.isNavigating) {
             this.setState({ isNavigating: navigating });
+        }
+
+        if (!this.state.isVisible) {
+            this.show();
         }
     }
 
@@ -135,7 +158,7 @@ class Header extends React.PureComponent<PropsType, StateType>
 
     componentDidUpdate(prevProps: Readonly<PropsType>): void
     {
-        if (this.props.navThreshold !== prevProps.navThreshold) {
+        if (this.props.navThresholds !== prevProps.navThresholds) {
             this.setState({ isNavigating: this.isNavigating });
         }
     }
@@ -145,12 +168,6 @@ class Header extends React.PureComponent<PropsType, StateType>
         console.log('HEADER did mount');
 
         document.addEventListener('scroll', this.scrollListener);
-
-        let noLaunchAnimation = window.sessionStorage.getItem('launchanimation') === 'no';
-        this.setState({
-            isVisible: noLaunchAnimation,
-            isSettingsButtonVisible: noLaunchAnimation && this.context === 'desktop'
-        });
         
         setTimeout(() => this.show(), 4500);
     }

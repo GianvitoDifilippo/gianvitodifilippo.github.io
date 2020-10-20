@@ -26,13 +26,10 @@ type PropsType = {
 class Footer extends React.PureComponent<PropsType>
 {
     static contextType = LocaleContext;
-    rocketRef: React.RefObject<any>;
 
     constructor(props: Readonly<PropsType>)
     {
         super(props);
-
-        this.rocketRef = React.createRef();
 
         this.getLocaleReactHref = this.getLocaleReactHref.bind(this);
         this.fireAnimation = this.fireAnimation.bind(this);
@@ -51,9 +48,9 @@ class Footer extends React.PureComponent<PropsType>
 
     fireAnimation()
     {
-        this.rocketRef.current.classList.add('active');
+        document.body.classList.add('rocket-fire');
         window.scrollTo(0, 0);
-        setTimeout(() => this.rocketRef.current.classList.remove('active'), 1500);
+        setTimeout(() => document.body.classList.remove('rocket-fire'), 1500);
     }
 
     sendFeedback(locale: string)
@@ -141,13 +138,13 @@ ${message ? '%0D%0A' + message : ''}%0D%0A%0D%0A${(document.getElementById('feed
                     </div>
                 </div>
                 <div className="center">
-                    <div className="rocket-container" onClick={this.fireAnimation} ref={this.rocketRef}>
+                    <div className="rocket-container" onClick={this.fireAnimation}>
                         {Rocket}
                     </div>
                     <div className="madeby">
                         <span>Made by Gianvito Difilippo</span>
                         <div>
-                            with&nbsp;
+                            built with&nbsp;
                             <a className="neon_activator neon1" href={this.getLocaleReactHref()} target="_blank">
                                 React
                                 <FontAwesomeIcon className="fa-icon" icon={faReact}/>

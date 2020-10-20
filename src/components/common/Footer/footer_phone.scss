@@ -24,12 +24,6 @@
 
     .center {
         padding: 10px;
-
-        .rocket-container {
-            &.active {
-                animation: rocket-fire 1.5s linear;
-            }
-        }
     }
 
     .feedback {
@@ -38,4 +32,9 @@
         margin-bottom: 20px;
     }
 }
+
+body.rocket-fire #footer .center .rocket-container {
+    animation: rocket-fire 1.5s linear;
+}
+
 }

@@ -43,18 +43,14 @@ class Skills extends React.PureComponent<{}, StateType>
 
     render(): JSX.Element
     {
-        console.log('SKILLS being rendered', this.state.currentSkill);
-
-        let a = (
+        console.log('SKILLS being rendered');
+        
+        return (
             <Section id="skills" defaultTitle="Skills">
                 <SkillList setSkill={this.setSkill}/>
                 <SkillPreview currentSkill={this.state.currentSkill} setSkill={this.setSkill}/>
             </Section>
         );
-
-        console.log(a);
-        
-        return a;
     }
 }
  

@@ -1,11 +1,7 @@
 import * as React from 'react';
 
-interface PageData{
-    sectionSlugs: string[]
-    navThreshold?: number
-};
 type StateType = {
-    pageData: PageData
+    sectionSlugs: string[]
 };
 
 
@@ -17,23 +13,56 @@ abstract class Page extends React.PureComponent<{}, StateType>
 
         console.log('PAGE constructor');
 
+        setup();
 
         this.state = {
-            pageData: {
-                sectionSlugs: []
-            }
+            sectionSlugs: []
         };
     }
 
-    abstract get pageData(): PageData;
+    abstract get pageId(): string;
+
+    getSectionSlugs(pageId: string): string[]
+    {
+        let sections = document.getElementById(pageId).getElementsByTagName('section');
+
+        return ([].map.call(sections, function(section: HTMLElement) {
+            return section.id;
+        }) as string[]);
+    }
 
     componentDidMount(): void
     {
         console.log('PAGE did mount');
 
-        this.setState({ pageData: this.pageData });
+        this.setState({ sectionSlugs: this.getSectionSlugs(this.pageId) });
     }
 };
 
-export { PageData };
+function setup(): void
+{
+    if (typeof window !== 'undefined') {
+        if (!window.localStorage.getItem('locale')) {
+            var navigatorLang = navigator.language.split('-')[0];
+            switch (navigatorLang) {
+                case 'it':
+                case 'en':
+                    break;
+                default:
+                    navigatorLang = 'en';
+                    break;
+            }
+            window.localStorage.setItem('locale', navigatorLang);
+        }
+
+        if (!window.localStorage.getItem('theme')) {
+            window.localStorage.setItem('theme', 'blue');
+        }
+
+        if (window.localStorage.getItem('theme') === 'green') {
+            document.body.classList.add('green-mode');
+        }
+    }
+}
+
 export default Page;

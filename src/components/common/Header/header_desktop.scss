@@ -73,10 +73,6 @@
                         }
                     }
                 }
-
-                &.is-current .nav-link span::after {
-                    width: 100%;
-                }
             }
         }
 
@@ -84,4 +80,8 @@
             display: none;
         }
     }
+}
+
+body:not(.rocket-fire) #header nav .nav-list .nav-item.is-current .nav-link span::after {
+    width: 100%;
 }

@@ -43,12 +43,12 @@ class Guitar extends React.PureComponent
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen>
                     </iframe>
-                    <a href={lalalandpdf} download="La La Land Medley" className="download-sheet neon_activator">
+                    <a href={lalalandpdf} download="La La Land Medley" className="download-sheet">
                         <span className="fa-layers fa-fw">
                           <FontAwesomeIcon className="fa-icon-file" icon={faFile}/>
                           <FontAwesomeIcon className="fa-icon-music" icon={faMusic} inverse/>
                         </span>
-                        <span className="neon2">Scarica lo spartito!</span>
+                        <span className="download-sheet-text">Scarica lo spartito!</span>
                     </a>
                 </section>
                 <section className="blog-section" id="disney-medley">
@@ -63,12 +63,12 @@ class Guitar extends React.PureComponent
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen>
                     </iframe>
-                    <a href={disneypdf} download="Disney Medley" className="download-sheet neon_activator">
+                    <a href={disneypdf} download="Disney Medley" className="download-sheet">
                         <span className="fa-layers fa-fw">
                           <FontAwesomeIcon className="fa-icon-file" icon={faFile}/>
                           <FontAwesomeIcon className="fa-icon-music" icon={faMusic} inverse/>
                         </span>
-                        <span className="neon2">Scarica lo spartito!</span>
+                        <span className="download-sheet-text">Scarica lo spartito!</span>
                     </a>
                 </section>
             </BlogPage>

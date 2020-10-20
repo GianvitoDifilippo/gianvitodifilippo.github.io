@@ -32,8 +32,13 @@ class App extends React.PureComponent<{}, StateType>
         this.resizeListener = this.resizeListener.bind(this);
         this.fullscreenchangeListener = this.fullscreenchangeListener.bind(this);
 
+        let device = null;
+        if (typeof window !== 'undefined') {
+            device = getDeviceFromWidth(window.innerWidth);
+        }
+
         this.state = {
-            device: null,
+            device,
             isFullscreen: false,
             locale: getLocaleFromPreferences(),
             modal: null,
@@ -146,8 +151,6 @@ class App extends React.PureComponent<{}, StateType>
         document.addEventListener('fullscreenchange', this.fullscreenchangeListener);
         
         setTimeout(() => document.documentElement.classList.add('smooth-scroll'), 10);
-        
-        this.setState({ device: getDeviceFromWidth(window.innerWidth) });
     }
 
     componentWillUnmount(): void

@@ -30,9 +30,16 @@ class Hero extends React.Component<{}, StateType>
         this.scrollListener = this.scrollListener.bind(this);
         this.height = vh(100);
 
+        let offsetY = 0;
+        let fadeIn = true;
+        if (typeof window !== 'undefined') {
+            offsetY = this.getOffsetY(window.scrollY);
+            fadeIn = window.sessionStorage.getItem('launchanimation') !== 'no'
+        }
+
         this.state = {
-            offsetY: 0,
-            fadeIn: false
+            offsetY,
+            fadeIn
         };
     }
 
@@ -75,11 +82,6 @@ class Hero extends React.Component<{}, StateType>
     componentDidMount(): void
     {
         console.log('HERO did mount');
-
-        this.setState({
-            offsetY: this.getOffsetY(window.scrollY),
-            fadeIn: window.sessionStorage.getItem('launchanimation') !== 'no'
-        });
 
         document.addEventListener('scroll', this.scrollListener);
     }

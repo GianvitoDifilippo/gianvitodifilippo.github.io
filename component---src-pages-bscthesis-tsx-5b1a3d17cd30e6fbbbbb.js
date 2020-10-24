@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{XXW1:function(n,t,e){"use strict";e.r(t);var c=e("q1tI"),o=e.n(c),r=e("YwZP");t.default=function(){return o.a.createElement(r.Redirect,{to:"/underconstruction"})}}}]);
+//# sourceMappingURL=component---src-pages-bscthesis-tsx-5b1a3d17cd30e6fbbbbb.js.map

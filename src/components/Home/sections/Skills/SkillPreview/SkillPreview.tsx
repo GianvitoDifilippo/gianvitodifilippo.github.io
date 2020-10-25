@@ -42,11 +42,8 @@ const SkillPreviewMobile = (props: Readonly<PropsType>) => {
     }
     
     return (
-        <Modal parent={body} isOpen={props.currentSkill !== null} id="skill-preview-modal">
-            <div className="skill-preview-container">
-                <SkillPreviewDesktop {...props}/>
-            </div>
-            <FontAwesomeIcon className="fa-icon" icon={faAngleDoubleLeft} onClick={() => props.setSkill(null)}/>
+        <Modal parent={body} isOpen={props.currentSkill !== null} id="skill-preview-modal" onClose={() => props.setSkill(null)}>
+            <SkillPreviewDesktop {...props}/>
         </Modal>
     );
 };

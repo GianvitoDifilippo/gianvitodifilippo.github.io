@@ -44,11 +44,12 @@ const EducationItem = (props: Readonly<EducationItemPropsType>): JSX.Element => 
     </li>
 );
 
-const Education = (props: Readonly<{}>): JSX.Element => (
+const Education = (): JSX.Element => (
     <Section id="education" defaultTitle="Educazione">
         <ul>
-            <EducationItem id="bsc" uni="Politecnico di Bari" link="http://www.poliba.it/" img={polibaImg} year="2014-2017"/>
+            <EducationItem id="phd" uni="Politecnico di Bari" link="http://www.poliba.it/" img={polibaImg} year="2020-"/>
             <EducationItem id="msc" uni="Politecnico di Bari" link="http://www.poliba.it/" img={polibaImg} year="2017-2019"/>
+            <EducationItem id="bsc" uni="Politecnico di Bari" link="http://www.poliba.it/" img={polibaImg} year="2014-2017"/>
             <EducationItem id="erasmus" uni="Universidad Politécnica de Madrid" link="https://www.upm.es/" img={upmImg} year="2019"/>
             <EducationItem id="mmus" uni="Conservatorio di Musica N. Piccinni" link="http://www.consba.it/" img={piccinniImg} year="2011-2018"/>
         </ul>

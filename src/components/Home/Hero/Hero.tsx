@@ -12,8 +12,7 @@ import './hero_phone.scss';
 
 
 type StateType = {
-    offsetY: number,
-    fadeIn: boolean
+    offsetY: number
 };
 
 
@@ -31,15 +30,12 @@ class Hero extends React.Component<{}, StateType>
         this.height = vh(100);
 
         let offsetY = 0;
-        let fadeIn = true;
         if (typeof window !== 'undefined') {
             offsetY = this.getOffsetY(window.scrollY);
-            fadeIn = window.sessionStorage.getItem('launchanimation') !== 'no'
         }
 
         this.state = {
-            offsetY,
-            fadeIn
+            offsetY
         };
     }
 
@@ -62,16 +58,14 @@ class Hero extends React.Component<{}, StateType>
 
         return (
             <div id="hero" className="section">
-                <div className="background" style={ { transform: `translateY(${this.state.offsetY}px)` } }></div>
+                <div className="background"></div>
                 <div className="main">
-                    <h1 className={this.state.fadeIn ? 'fadein' : ''}>Gianvito Difilippo</h1>
-                    <h2 className={this.state.fadeIn ? 'fadein' : ''}>
-                        <Translate selector="hero:h2"/>
-                    </h2>
-                    <a href="mailto:gianvito.difilippo@gmail.com" className={this.state.fadeIn ? 'fadein noselect' : 'noselect'}>
+                    <h1>Gianvito Difilippo</h1>
+                    <h2><Translate selector="hero:h2"/></h2>
+                    <a href="mailto:gianvito.difilippo@gmail.com" className="noselect">
                         <Translate selector="hero:contactme"/>
                     </a>
-                    <a href={cvpdf} target="_blank" className={this.state.fadeIn ? 'fadein noselect' : 'noselect'}>
+                    <a href={cvpdf} target="_blank" className="noselect">
                         <Translate selector="hero:downloadcv"/>
                     </a>
                 </div>

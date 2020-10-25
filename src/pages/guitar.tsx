@@ -7,7 +7,7 @@ import Page from '../components/common/Page';
 import Guitar from '../components/Guitar';
 
 
-class HomePage extends Page
+class GuitarPage extends Page
 {
     render(): JSX.Element
     {
@@ -29,4 +29,4 @@ class HomePage extends Page
 }
 
 
-export default HomePage;
+export default GuitarPage;

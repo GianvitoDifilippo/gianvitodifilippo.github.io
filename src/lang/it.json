@@ -8,7 +8,7 @@
         "la-la-land-medley": "La La Land Medley",
         "disney-medley": "Disney Medley",
         "snow": "Santeramo imbiancata",
-        "belltower": "Campanile",
+        "gallery": "Galleria",
         "nightvisor": "Visore notturno"
     },
     "hero": {
@@ -26,7 +26,7 @@
             ],
             "guitar": "suonare",
             "drone": "pilotare il mio drone",
-            "circuits": "maneggiando un saldatore"
+            "electronics": "maneggiando un saldatore"
         },
         "contacts": "Contatti",
         "findme": "Mi trovi anche su"
@@ -127,6 +127,13 @@
                 "value": "110/110 e Lode"
             }
         },
+        "phd": {
+            "h1": "Dottorato di ricerca in Ingegneria Elettrica e dell'Informazione",
+            "thesis": {
+                "key": "Titolo della tesi: ",
+                "value": "Distributed control and coordination of autonomous vehicles (titolo provvisorio)"
+            }
+        },
         "erasmus": {
             "h1":"Master in Big Data e Telecomunicazioni",
             "thesis": {
@@ -160,21 +167,46 @@
         "heading": "Il mio spazio musicale",
         "descr": {
             "welcome": "Benvenuto nel mio spazio musicale!",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem cupiditate magni eos ea soluta. Nobis eligendi pariatur alias est atque officiis quisquam consequuntur, incidunt optio quod! Reprehenderit qui ea voluptate, temporibus culpa debitis, error accusamus possimus doloremque sint recusandae est perferendis modi magnam quasi? Rerum est quas repellendus inventore unde."
+            "text": "In questa pagina potrai trovare alcuni miei video musicali. Al momento non ce ne sono molti, ma spero di poter popolare presto questa pagina con tanti altri!"
+        },
+        "faq": {
+            "really": "Sì, sul serio.",
+            "q": "D",
+            "a": "R",
+            "questions": [
+                "Quale strumento suoni?",
+                "Da quanto tempo suoni?",
+                "Ne sai suonare altri?",
+                "Mi suoni La canzone del sole?"
+            ],
+            "answers": [
+                "Suono la chitarra classica. Mi sono diplomato in Conservatorio nel 2019.",
+                "Ho ricevuto la mia prima chitarra come regalo quando ho compiuto 10 anni. Ho cominciato a suonarla sul serio solo qualche anno dopo, preparandomi all'esame di ammissione in Conservatorio.",
+                "Negli anni ho studiato un po' di pianoforte da autodidatta, ma non sono mai andato oltre \"Tanti auguri\". Ho anche preso lezioni di canto per 4 anni, ma ho smesso quando ho cominciato l'università.",
+                "No."
+            ]
         },
         "la-la-land-medley": {
             "text": [
-                "Il lockdown della primavera 2020 dovuto alla pandemia di COVID-19 è stato un momento di immensa incertezza. Ma, vuoi per la voglia di battere la paura, vuoi per la gran quantità di tempo libero a disposizione, è stata anche una stagione di estrema creatività. Avevo in mente l'idea di realizzare una cover split-screen e decisi che era il momento giusto di farlo: sotto l'hashtag",
-                "nasce il La La Medley."
+                "Il lockdown della primavera 2020 dovuto alla pandemia di COVID-19 è stato un momento di immensa incertezza. Ma, vuoi per la voglia di battere la paura, vuoi per la gran quantità di tempo libero a disposizione, è stata anche una stagione di estrema creatività. Avevo in mente l'idea di realizzare una cover split-screen da tempo e decisi che era il momento giusto di farlo: sotto l'hashtag",
+                "nasce il La La Land Medley."
             ],
             "hashtag": "#iorestoacasa"
         },
         "disney-medley": {
             "text": "Il medley di La La Land è stato un punto di partenza da cui decisi di sviluppare altre idee. Sono cresciuto con le videocassette della Disney, innamorandomi, come molti, delle colonne sonore dei loro film di animazione. Ed ecco che nasce il Disney Medley: 9 me si esibiscono in un concentrato di 8 canzoni da 7 film in 6 minuti. Con il karaoke incluso nel video!"
-        }
+        },
+        "downloadpdf": "Scarica lo spartito!"
     },
     "drone": {
-        "heading": "Fotografia aerea"
+        "heading": "Fotografia aerea",
+        "descr": {
+            "welcome": "Questa è la pagina dedicata alla fotografia aerea.",
+            "text": "Qui inserirà foto e video realizzati da me con il mio fedele Mavic Pro, che ho comprato nel 2018."
+        },
+        "snow": {
+            "text": "L'anno 2019 cominciò con un'eccezionale nevicata che imbiancò completamente Santeramo in Colle, il mio paese natale. La nevicata fu di proporzioni tali da isolare completamente la cittadina per qualche giorno, depositando più di un metro di neve. Una volta terminata la tempesta, però, lo spettacolo fu meraviglioso, come non si vedeva da anni: quale migliore occasione per il mio primo montaggio video di un paesello sulla Murgia avvolta da una coltre bianca?"
+        }
     },
     "electronics": {
         "heading": "Progetti di elettronica"
@@ -200,6 +232,16 @@
             },
             "message": "Qualche suggerimento?"
         }
+    },
+    "error": {
+        "breakpoint": "Oops! Hai attivato un breakpoint!",
+        "badrequest": "Non c'è alcun easter egg in questo sito. Fila via.",
+        "notfound": "Hey! Sembra che tu ti sia perso. Non preoccuparti, continua pure a navigare!",
+        "append": "Grazie per aver visitato il mio sito. Sei il migliore!"
+    },
+    "underconstruction": {
+        "h1": "Questa pagina è in costruzione",
+        "h2": "Ci sto ancora lavorando, passa tra qualche tempo!"
     },
     "misc": {
         "thiswebsite": "Questo sito!",

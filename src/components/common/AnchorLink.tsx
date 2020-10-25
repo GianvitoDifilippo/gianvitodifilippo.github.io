@@ -3,8 +3,9 @@ import { Link } from 'gatsby';
 
 
 type PropsType = {
-    here: boolean,
+    here?: boolean,
     className?: string,
+    to?: string,
     toHere?: string,
     toThere?: string,
     children?: React.ReactNode
@@ -12,8 +13,8 @@ type PropsType = {
 
 
 const AnchorLink = (props: PropsType): JSX.Element => {
-    if (props.here && !!props.toHere) return <a href={props.toHere} className={props.className}>{props.children}</a>
-    if (!props.here && !!props.toThere) return <Link to={props.toThere} className={props.className}>{props.children}</Link>
+    if (props.here && (!!props.toHere || !!props.to)) return <a href={props.toHere ?? props.to} className={props.className}>{props.children}</a>
+    if (!props.here && (!!props.toThere || !!props.to)) return <Link to={props.toThere ?? props.to} className={props.className}>{props.children}</Link>
     return <>{props.children}</>
 };
 

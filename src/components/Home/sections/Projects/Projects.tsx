@@ -21,7 +21,7 @@ import './projects_phone.scss';
 
 const MainProjectPreview = (props: Readonly<{ id: string }>): JSX.Element => (
     <li className="mainproject">
-        <img src={projects[props.id].images[0]} alt="" className="noselect"/>
+        <img src={projects[props.id].images[0]} alt="" className="has-shadow noselect"/>
         <div className="box">
             <div className="heading">
                 <h1>{projects[props.id].name}</h1>
@@ -33,7 +33,7 @@ const MainProjectPreview = (props: Readonly<{ id: string }>): JSX.Element => (
 );
 
 
-const ProjectsDesktopTablet = (props: Readonly<{}>) => (
+const ProjectsDesktopTablet = () => (
     <Section id="projects" defaultTitle="Progetti">
         <ul className="mainlist">
             <MainProjectPreview id="audioengineer"/>
@@ -56,8 +56,6 @@ type ProjectsPhoneStateType = {
 
 class ProjectsPhone extends React.PureComponent<{}, ProjectsPhoneStateType>
 {
-    body: Element;
-
     constructor(props: Readonly<{}>)
     {
         super(props);
@@ -65,8 +63,6 @@ class ProjectsPhone extends React.PureComponent<{}, ProjectsPhoneStateType>
         this.state = {
             currentProject: null
         };
-
-        this.body = null;
     }
 
     setCurrentProject(project: string): void
@@ -76,8 +72,6 @@ class ProjectsPhone extends React.PureComponent<{}, ProjectsPhoneStateType>
 
     render(): JSX.Element
     {
-        if (this.body === null) return null;
-
         return (
             <Section id="projects" defaultTitle="Progetti">
                 <ul className="mainlist">
@@ -94,43 +88,34 @@ class ProjectsPhone extends React.PureComponent<{}, ProjectsPhoneStateType>
                     <li onClick={() => this.setCurrentProject('magicbet')}><ProjectThumbnail id="magicbet"/></li>
                     <li onClick={() => this.setCurrentProject('supermario')}><ProjectThumbnail id="supermario"/></li>
                 </ul>
-                <Modal parent={this.body} isOpen={this.state.currentProject !== null} id="project-preview-modal">
-                    <div className="project-preview-container">
-                        <CSSTransitionReplace transitionName="cross-fade" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
-                            {this.state.currentProject !== null
-                            ?
-                            <div className="box">
-                                <h1>{projects[this.state.currentProject].name}</h1>
-                                <p><Translate selector={`projects:descr:${this.state.currentProject}`}/></p>
-                                <a href="#"><FontAwesomeIcon className="fa-icon" icon={faExternalLinkAlt}/></a>
-                                <div className="background" style={ {
-                                    backgroundImage: `url(${projects[this.state.currentProject].thumbnail.backgroundImage})`,
-                                    backgroundPosition: projects[this.state.currentProject].thumbnail.backgroundPosition
-                                } }>
-                                </div>
+                <Modal isOpen={this.state.currentProject !== null} id="project-preview-modal" onClose={() => this.setCurrentProject(null)}>
+                    <CSSTransitionReplace transitionName="cross-fade" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
+                        {this.state.currentProject !== null
+                        ?
+                        <div className="box">
+                            <h1>{projects[this.state.currentProject].name}</h1>
+                            <p><Translate selector={`projects:descr:${this.state.currentProject}`}/></p>
+                            <a href="#"><FontAwesomeIcon className="fa-icon external-link" icon={faExternalLinkAlt}/></a>
+                            <div className="background has-shadow" style={ {
+                                backgroundImage: `url(${projects[this.state.currentProject].thumbnail.backgroundImage})`,
+                                backgroundPosition: projects[this.state.currentProject].thumbnail.backgroundPosition
+                            } }>
                             </div>
-                            :
-                            null
-                            }
-                        </CSSTransitionReplace>
-                    </div>
-                    <FontAwesomeIcon className="fa-icon" icon={faAngleDoubleLeft} onClick={() => this.setCurrentProject(null)}/>
+                        </div>
+                        :
+                        null
+                        }
+                    </CSSTransitionReplace>
                 </Modal>
             </Section>
         );
     }
-
-    componentDidMount()
-    {
-        this.body = document.body;
-        this.forceUpdate();
-    }
 }
 
-const Projects = (props: Readonly<{}>) => {
+const Projects = () => {
     const device = React.useContext(DeviceContext);
 
-    return device === 'phone' ? <ProjectsPhone/> : <ProjectsDesktopTablet/>
+    return device === 'phone' ? <ProjectsPhone/> : <ProjectsDesktopTablet/>;
 };
 
 export default Projects;

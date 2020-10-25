@@ -5,10 +5,10 @@
         "education": "Education",
         "skills": "Skills",
         "projects": "Projects",
-        "la-la-medley": "La La Medley",
+        "la-la-land-medley": "La La Land Medley",
         "disney-medley": "Disney Medley",
         "snow": "Santeramo in white",
-        "belltower": "Bell tower",
+        "gallery": "Gallery",
         "nightvisor": "Night visor"
     },
     "hero": {
@@ -26,7 +26,7 @@
             ],
             "guitar": "playing my guitar",
             "drone": "flying my drone",
-            "circuits": "handling a soldering iron"
+            "electronics": "handling a soldering iron"
         },
         "contacts": "Contacts",
         "findme": "Find me on"
@@ -127,6 +127,13 @@
                 "value": "110/110 with honors"
             }
         },
+        "phd": {
+            "h1": "PhD Degree in Electrical and Information Engineering",
+            "thesis": {
+                "key": "Thesis title: ",
+                "value": "Distributed control and coordination of autonomous vehicles (preliminary title)"
+            }
+        },
         "erasmus": {
             "h1":"Master in Big Data and Telecommunications",
             "thesis": {
@@ -157,10 +164,49 @@
         }
     },
     "guitar": {
-        "heading": "My musical space"
+        "heading": "My musical space",
+        "descr": {
+            "welcome": "Welcome to my musical space!",
+            "text": "In this page you will find some music videos of mine. Not many so far, but I hope to add some more soon!"
+        },
+        "faq": {
+            "really": "Yeah, really.",
+            "q": "Q",
+            "a": "A",
+            "questions": [
+                "What instrument do you play?",
+                "How long have you been playing?",
+                "Can you play other instruments?",
+                "Can you play Wonderwall?"
+            ],
+            "answers": [
+                "I play the classical guitar. I got my degree from Conservatory in 2019.",
+                "I got my first guitar as a present for my 10th birthday. However, I started actually playing it only some years later, to get prepared for the admission in Conservatory.",
+                "I've been self-learning piano during the years, but I never got beyond \"Happy birthday\". I've been taking singing lessons for 4 years, but I quit when I started university.",
+                "No."
+            ]
+        },
+        "la-la-land-medley": {
+            "text": [
+                "The COVID-19 lockdown in Spring 2020 was a time of great uncertainty. But, thanks to the will to conquer fear - or maybe thanks to the boatload of spare time we all had - it also was a season of great creativity. For a long time, I had been having in mind the idea of realizing a split-screen cover, so I decided that was the right moment to do it: under the hashtag",
+                "(#stayhome) the La La Land Medley is born."
+            ],
+            "hashtag": "#iorestoacasa"
+        },
+        "disney-medley": {
+            "text": "The La La Land Medley was a starting point since where I decided to work on other ideas. I grew up with Disney movies, falling in love, like many, with their animated movies' soundtracks. And so, the Disney Medley is born: 9 copies of myself perform a mashup of 8 songs from 7 films in 6 minutes. And the karaoke comes for free!"
+        },
+        "downloadpdf": "Get the sheet music here!"
     },
     "drone": {
-        "heading": "Aerial photography"
+        "heading": "Aerial photography",
+        "descr": {
+            "welcome": "This is the page about my aerial photos and videos.",
+            "text": "Here you will find some of them, which I shot with my loyal Mavic Pro, buyed in 2018."
+        },
+        "snow": {
+            "text": "The year 2019 began with an exceptional snowstorm that turned Santeramo in Colle, my hometown, completely white. The snowstorm was of such proportions that the town got itself isolated for a couple of days, covered by a meter of snow. When the storm stopped, however, we were left with an amazing sight, something that had not been seen in years: what better occasion for my first video shot if not a little town on top of the Murge plateau enveloped in a white blanket?"
+        }
     },
     "electronics": {
         "heading": "Electronics projects"
@@ -186,6 +232,16 @@
             },
             "message": "Any suggestions?"
         }
+    },
+    "error": {
+        "breakpoint": "Oops! You triggered a breakpoint!!",
+        "badrequest": "There is no easter egg in this website. Go away.",
+        "notfound": "Hey! It seems like you got lost. Don't panic, just keep browsing!",
+        "append": "Thanks for visiting my website. You're awesome!"
+    },
+    "underconstruction": {
+        "h1": "This page is under construction",
+        "h2": "I'm still working on it, try later!"
     },
     "misc": {
         "thiswebsite": "This website!",

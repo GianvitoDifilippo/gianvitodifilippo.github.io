@@ -27,7 +27,4 @@ const ThemeContext      : React.Context<ThemeContextType>       = React.createCo
 export { DeviceContext, FullscreenContext, LocaleContext, ModalContext, ThemeContext };
 
 export const supportedLocales = [ 'it', 'en' ];
-export const defaultLocale = supportedLocales[1];
-
 export const supportedThemes = [ 'blue', 'green' ];
-export const defaultTheme = supportedThemes[0];

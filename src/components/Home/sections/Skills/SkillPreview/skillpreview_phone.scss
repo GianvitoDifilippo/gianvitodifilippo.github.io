@@ -6,7 +6,7 @@
     align-items: center;
     overflow: hidden;
 
-    .skill-preview-container {
+    .modal-container {
         #skill-preview {
             width: calc(100% - 4vw * 2);
             margin: 4vw 4vw 0 4vw;
@@ -18,10 +18,6 @@
             .skill-card {
                 margin: 15px 15px 10px 10px;
             }
-        }
-
-        > .fa-icon {
-            margin: 15px;
         }
     }
 }

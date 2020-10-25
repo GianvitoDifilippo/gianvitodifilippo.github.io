@@ -33,7 +33,6 @@ class Skills extends React.PureComponent<{}, StateType>
     setSkill(skill: string): void
     {
         let sectionY = document.getElementById('skills').getBoundingClientRect().y;
-        console.log(skill, this.state.currentSkill, sectionY);
         if (skill !== null && skill !== this.state.currentSkill && this.context === 'desktop' && sectionY < -150) {
             window.location.href = '#skills';
         }

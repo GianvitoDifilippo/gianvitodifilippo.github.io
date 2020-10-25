@@ -1,0 +1,35 @@
+@media only screen and (max-width: 1366px) {
+
+#drone {
+    .blogpage {
+        #descr {
+            .descr-img {
+                max-width: 100%;
+                margin-top: 30px;
+            }
+        }
+    
+        section {
+            iframe {
+                &.snow-video {
+                    width: 80vw;
+                    height: calc(80vw * 9 / 16);
+                }
+            }
+        }
+
+        #gallery {
+            .image-gallery {
+                width: 100%;
+
+                .image-gallery-content:not(.fullscreen) {
+                    .image-gallery-image {
+                        height: 60vh;
+                    }
+                }
+            }
+        }
+    }
+}
+    
+}

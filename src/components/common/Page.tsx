@@ -13,8 +13,6 @@ abstract class Page extends React.PureComponent<{}, StateType>
 
         console.log('PAGE constructor');
 
-        setup();
-
         this.state = {
             sectionSlugs: []
         };
@@ -38,31 +36,5 @@ abstract class Page extends React.PureComponent<{}, StateType>
         this.setState({ sectionSlugs: this.getSectionSlugs(this.pageId) });
     }
 };
-
-function setup(): void
-{
-    if (typeof window !== 'undefined') {
-        if (!window.localStorage.getItem('locale')) {
-            var navigatorLang = navigator.language.split('-')[0];
-            switch (navigatorLang) {
-                case 'it':
-                case 'en':
-                    break;
-                default:
-                    navigatorLang = 'en';
-                    break;
-            }
-            window.localStorage.setItem('locale', navigatorLang);
-        }
-
-        if (!window.localStorage.getItem('theme')) {
-            window.localStorage.setItem('theme', 'blue');
-        }
-
-        if (window.localStorage.getItem('theme') === 'green') {
-            document.body.classList.add('green-mode');
-        }
-    }
-}
 
 export default Page;

@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+#underconstruction {
+    font-size: 2rem;
+    white-space: pre-wrap;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    flex: 1 0 0;
+
+    .container {
+        display: inline-block;
+        width: 100%;
+        height: fit-content;
+
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    }
+
+    .string {
+        color: #ECC48D;
+    }
+
+    .keyword {
+        color: #C792EA;
+    }
+
+    .attribute {
+        color: #BBE478;
+    }
+
+    .tag {
+        color: #CAECE6;
+    }
+
+    .reacttag {
+        color: #F78C6C;
+    }
+
+    .angbrackets {
+        color: #7FD8B5;
+    }
+}

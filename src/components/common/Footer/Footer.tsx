@@ -37,7 +37,7 @@ class Footer extends React.PureComponent<PropsType>
         this.fireAnimation = this.fireAnimation.bind(this);
     }
 
-    getLocaleReactHref()
+    getLocaleReactHref(): string
     {
         switch (this.context) {
             case 'it':
@@ -48,14 +48,14 @@ class Footer extends React.PureComponent<PropsType>
         }
     }
 
-    fireAnimation()
+    fireAnimation(): void
     {
         document.body.classList.add('rocket-fire');
         window.scrollTo(0, 0);
         setTimeout(() => document.body.classList.remove('rocket-fire'), 1500);
     }
 
-    sendFeedback(locale: string)
+    sendFeedback(locale: string): void
     {
         let ux = translate(`footer:feedback:ratings:${(document.getElementById('feedback-rating') as HTMLSelectElement).value}`, locale).toLowerCase();
         let message = (document.getElementById('feedback-message') as HTMLTextAreaElement).value;
@@ -73,32 +73,32 @@ ${message ? '%0D%0A' + message : ''}%0D%0A%0D%0A${(document.getElementById('feed
                         <div>
                             <h1>Home page</h1>
                             <ul>
-                                <li><AnchorLink here={!!this.props.home} toHere="#" toThere="/">
+                                <li><AnchorLink here={!!this.props.home} to="/#">
                                     <Neon light>
                                         Hero
                                     </Neon>
                                 </AnchorLink></li>
-                                <li><AnchorLink here={!!this.props.home} toHere="#about" toThere="/#about">
+                                <li><AnchorLink here={!!this.props.home} to="/#about">
                                     <Neon light>
                                         <Translate selector="sections:about"/>
                                     </Neon>
                                 </AnchorLink></li>
-                                <li><AnchorLink here={!!this.props.home} toHere="#skills" toThere="/#skills">
+                                <li><AnchorLink here={!!this.props.home} to="/#skills">
                                     <Neon light>
                                         <Translate selector="sections:skills"/>
                                     </Neon>
                                 </AnchorLink></li>
-                                <li><AnchorLink here={!!this.props.home} toHere="#experience" toThere="/#experience">
+                                <li><AnchorLink here={!!this.props.home} to="/#experience">
                                     <Neon light>
                                         <Translate selector="sections:experience"/>
                                     </Neon>
                                 </AnchorLink></li>
-                                <li><AnchorLink here={!!this.props.home} toHere="#education" toThere="/#education">
+                                <li><AnchorLink here={!!this.props.home} to="/#education">
                                     <Neon light>
                                         <Translate selector="sections:education"/>
                                     </Neon>
                                 </AnchorLink></li>
-                                <li><AnchorLink here={!!this.props.home} toHere="#projects" toThere="/#projects">
+                                <li><AnchorLink here={!!this.props.home} to="/#projects">
                                     <Neon light>
                                         <Translate selector="sections:projects"/>
                                     </Neon>

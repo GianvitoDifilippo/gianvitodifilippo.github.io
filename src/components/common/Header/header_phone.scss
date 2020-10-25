@@ -2,8 +2,10 @@
 
 #header {
     nav {
-        .brand h1 {
-            font-size: 3rem;
+        .brand-wrapper {
+            .brand h1 {
+                font-size: 3rem;
+            }
         }
     
         .nav-link {

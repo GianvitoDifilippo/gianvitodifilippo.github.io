@@ -18,6 +18,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
     transition: background-color .2s, filter .2s;
+    width: 100%;
 
     .sitemap {
         position: relative;
@@ -177,6 +178,16 @@
         }
         to {
             transform: translateY(-150vh) scale(10);
+            position: fixed;
+        }
+    }
+
+    @keyframes fade_in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
         }
     }
 }

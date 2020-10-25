@@ -5,9 +5,8 @@ import ScrollSpy from 'react-scrollspy';
 import Settings from './Settings';
 import AnchorLink from '../AnchorLink';
 import { NeonConsumer, NeonProvider } from '../Neon';
-import Translate from '../Translate';
-
 import { DeviceContext } from '../../../shared/context';
+import Translate from '../Translate';
 
 import './header_desktop.scss';
 import './header_tablet.scss';
@@ -20,10 +19,10 @@ type PropsType = {
     sectionSlugs: string[]
 };
 type StateType = {
-    isVisible: boolean,
     isSettingsButtonVisible: boolean,
     isNavlistActive: boolean,
-    isNavigating: boolean
+    isNavigating: boolean,
+    isSetup: boolean
 };
 
 
@@ -39,18 +38,13 @@ class Header extends React.PureComponent<PropsType, StateType>
         console.log('HEADER constructor');
 
         this.toggleNavlist = this.toggleNavlist.bind(this);
-        this.show = this.show.bind(this);
         this.scrollListener = this.scrollListener.bind(this);
 
-        // Allows window object to be used in static pages
-        let noLaunchAnimation = false;
-        if (typeof window !== 'undefined') noLaunchAnimation = window.sessionStorage.getItem('launchanimation') === 'no';
-
         this.state = {
-            isVisible: noLaunchAnimation,
-            isSettingsButtonVisible: noLaunchAnimation && this.context === 'desktop',
+            isSettingsButtonVisible: false,
             isNavlistActive: false,
-            isNavigating: false
+            isNavigating: this.isNavigating,
+            isSetup: false
         };
     }
 
@@ -62,20 +56,6 @@ class Header extends React.PureComponent<PropsType, StateType>
             isSettingsButtonVisible: !this.state.isSettingsButtonVisible,
             isNavlistActive: !this.state.isNavlistActive
         });
-    }
-
-    show(): void
-    {
-        this.setState({
-            isVisible: true
-        });
-        if (this.context === 'desktop') {
-            setTimeout(() => this.setState({
-                isSettingsButtonVisible: true
-            }), 500);
-
-            window.sessionStorage.setItem('launchanimation', 'no')
-        }
     }
 
     get navThreshold(): number
@@ -100,7 +80,8 @@ class Header extends React.PureComponent<PropsType, StateType>
 
     get isNavigating(): boolean
     {
-        return window.scrollY >= this.navThreshold;
+        if (typeof window !== 'undefined') return window.scrollY >= this.navThreshold;
+        return true;
     }
 
     scrollListener(): void
@@ -110,10 +91,6 @@ class Header extends React.PureComponent<PropsType, StateType>
         if (navigating !== this.state.isNavigating) {
             this.setState({ isNavigating: navigating });
         }
-
-        if (!this.state.isVisible) {
-            this.show();
-        }
     }
 
 
@@ -121,17 +98,21 @@ class Header extends React.PureComponent<PropsType, StateType>
     {
         console.log('HEADER being rendered');
 
+        if (!this.state.isSetup) return null;
+
         return (
-            <header id="header" className={this.state.isVisible ? '' : "hidden"}>
+            <header id="header">
                 <nav className={this.state.isNavigating ? 'navigating' : ''}>
                     <NeonProvider>
-                        <AnchorLink here={!!this.props.home} toHere="#" toThere="/" className={`brand ${this.state.isNavlistActive ? 'inactive' : ''}`}>
-                            <h1>
-                                <NeonConsumer light>Gia</NeonConsumer>nvito
-                                <br/>
-                                <NeonConsumer light>Dif</NeonConsumer>ilippo
-                            </h1>
-                        </AnchorLink>
+                        <div className="brand-wrapper">
+                            <AnchorLink here={!!this.props.home} toHere="/#" toThere="/" className={`brand ${this.state.isNavlistActive ? 'inactive' : ''}`}>
+                                <h1>
+                                    <NeonConsumer light>Gia</NeonConsumer>nvito
+                                    <br/>
+                                    <NeonConsumer light>Dif</NeonConsumer>ilippo
+                                </h1>
+                            </AnchorLink>
+                        </div>
                     </NeonProvider>
                     <div className={`hamburger ${this.state.isNavlistActive ? 'active' : ''}`} onClick={this.toggleNavlist}>
                         <div className="bar"></div>
@@ -141,11 +122,11 @@ class Header extends React.PureComponent<PropsType, StateType>
                     {this.props.sectionSlugs.map((slug, index) => (
                         <li className="nav-item" key={`item-${index}`} onClick={this.toggleNavlist}>
                             <NeonProvider>
-                                <a className="nav-link" href={`#${slug}`}>
+                                <AnchorLink here className="nav-link" to={`#${slug}`}>
                                     <NeonConsumer light>
                                         <span className="nav-section-name"><Translate selector={`sections:${slug}`}/></span>
                                     </NeonConsumer>
-                                </a>
+                                </AnchorLink>
                             </NeonProvider>
                         </li>
                     ))}
@@ -169,9 +150,13 @@ class Header extends React.PureComponent<PropsType, StateType>
     {
         console.log('HEADER did mount');
 
+        this.setState({
+            isSetup: true,
+            isSettingsButtonVisible: this.context === 'desktop',
+            isNavigating: this.isNavigating
+        });
+
         document.addEventListener('scroll', this.scrollListener);
-        
-        setTimeout(() => this.show(), 4500);
     }
 
     componentWillUnmount(): void

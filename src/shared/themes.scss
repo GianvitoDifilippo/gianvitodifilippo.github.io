@@ -27,6 +27,10 @@ $green_theme: (
     "highlight_color": rgb(230, 210, 150)
 );
 
+html {
+    background-color: $background_color;
+}
+
 body {
     @each $name, $color in $blue_theme {
         --#{$name}: #{$color}

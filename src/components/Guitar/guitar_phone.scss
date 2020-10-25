@@ -2,13 +2,17 @@
 
 #guitar {
     .blogpage {
-        #descr {
+        #faq {
+            display: flex;
             flex-direction: column;
 
             .profileimg {
+                float: none;
                 margin-right: 0px;
+                margin-bottom: 0px;
                 margin-top: 20px;
-                order: 1;
+                order: 1000;
+                align-self: center;
             }
 
             p {

@@ -36,7 +36,7 @@ class About extends React.PureComponent
             <>
                 {strings[0]}<Link to="/guitar" className="interests-link"><Translate selector="about:descr:guitar"/></Link>
                 {strings[1]}<Link to="/drone" className="interests-link"><Translate selector="about:descr:drone"/></Link>
-                {strings[2]}<Link to="/circuits" className="interests-link"><Translate selector="about:descr:circuits"/></Link>
+                {strings[2]}<Link to="/electronics" className="interests-link"><Translate selector="about:descr:electronics"/></Link>
                 {strings[3]}<a className="interests-link" href={fiocco}>Fiocco</a>
                 {strings[4]}
             </>
@@ -50,7 +50,7 @@ class About extends React.PureComponent
         return (
             <Section id="about" defaultTitle="Su di me">
                 <div className="profile">
-                    <img src={photo} alt="" className="profile-img noselect" />
+                    <img src={photo} alt="" className="profile-img has-shadow noselect" />
                     <div>
                         <p className="box">
                             <Translate selector="about:descr:text:0"/>

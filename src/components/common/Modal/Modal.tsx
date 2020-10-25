@@ -1,3 +1,5 @@
+import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
@@ -9,15 +11,16 @@ import './modal.scss';
 type PropsType = {
     id: string,
     isOpen: boolean,
-    parent: Element, // cambiare
-    children?: React.ReactNode
+    parent?: Element,
+    children?: React.ReactNode,
+    onClose?(): void
 };
 type StateType = {
     isOpen: boolean
 };
 
 
-class Modal extends React.Component<PropsType, StateType>
+class Modal extends React.PureComponent<PropsType, StateType>
 {
     constructor(props: Readonly<PropsType>)
     {
@@ -30,15 +33,23 @@ class Modal extends React.Component<PropsType, StateType>
 
     render(): JSX.Element
     {
+        let parent = this.props.parent;
+        if (!parent) {
+            if (typeof document !== 'undefined') parent = document.body;
+        }
+        
         return ReactDOM.createPortal(
             this.state.isOpen
             ?
-            <div className={`modal${this.props.isOpen ? '' : ' closing'}`} id={this.props.id}>
-                {this.props.children}
+            <div className={`modal ${this.props.isOpen ? '' : 'closing'}`} id={this.props.id}>
+                <div className="modal-container">
+                    {this.props.children}
+                </div>
+                <FontAwesomeIcon className="fa-icon" icon={faAngleDoubleLeft} onClick={this.props.onClose}/>
             </div>
             :
             null
-        , this.props.parent);
+        , parent);
     }
     
     componentDidUpdate(): void
@@ -61,16 +72,6 @@ class Modal extends React.Component<PropsType, StateType>
                 isOpen: false
             }), 200);
         }
-    }
-
-    shouldComponentUpdate(nextProps: Readonly<PropsType>, nextState: Readonly<StateType>): boolean
-    {
-        return (
-            nextProps.children !== this.props.children ||
-            nextProps.parent !== this.props.parent ||
-            !nextProps.isOpen ||
-            nextState !== this.state
-        );
     }
 }
 

@@ -9,26 +9,31 @@
         }
 
         nav {
-            position: relative;
+            display: flex;
+            align-items: center;
             justify-content: space-between;
 
-            .brand {
-                pointer-events: none;
-
-                h1 {
-                    position: relative;
-                    opacity: 0;
-                    transition: opacity .2s;
-                    margin-left: 10px;
+            .brand-wrapper {
+                display: contents;
+                .brand {
+                    pointer-events: none;
+                    h1 {
+                        position: relative;
+                        opacity: 0;
+                        transition: opacity .2s;
+                        margin-left: 10px;
+                    }
                 }
             }
 
             &.navigating {
-                .brand {
-                    pointer-events: visible;
-
-                    h1 {
-                        opacity: 1;
+                .brand-wrapper {
+                    .brand {
+                        pointer-events: visible;
+                    
+                        h1 {
+                            opacity: 1;
+                        }
                     }
                 }
             }

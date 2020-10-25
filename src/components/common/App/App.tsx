@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { defaultTheme, DeviceContext, FullscreenContext, LocaleContext, ModalContext, ThemeContext } from '../../../shared/context';
-import { supportedLocales, defaultLocale } from '../../../shared/context';
+import { DeviceContext, FullscreenContext, LocaleContext, ModalContext, ThemeContext } from '../../../shared/context';
+import { supportedLocales } from '../../../shared/context';
 import { supportedThemes } from '../../../shared/context';
 
 import './app_desktop.scss';
@@ -18,9 +18,9 @@ type StateType = {
 };
 
 
-class App extends React.PureComponent<{}, StateType>
+class App extends React.PureComponent<{ className?: string }, StateType>
 {
-    constructor(props: Readonly<{}>)
+    constructor(props: Readonly<{ className?: string }>)
     {
         super(props);
 
@@ -32,17 +32,12 @@ class App extends React.PureComponent<{}, StateType>
         this.resizeListener = this.resizeListener.bind(this);
         this.fullscreenchangeListener = this.fullscreenchangeListener.bind(this);
 
-        let device = null;
-        if (typeof window !== 'undefined') {
-            device = getDeviceFromWidth(window.innerWidth);
-        }
-
         this.state = {
-            device,
+            device: 'desktop',
             isFullscreen: false,
-            locale: getLocaleFromPreferences(),
+            locale: 'it',
             modal: null,
-            theme: getThemeFromPreferences()
+            theme: false
         };
 
         if (typeof document !== 'undefined') {
@@ -108,7 +103,7 @@ class App extends React.PureComponent<{}, StateType>
                 toggleTheme: this.toggleTheme
             }}>
                 
-                <div id="app" className={this.state.modal ? 'modal-open' : ''}>
+                <div id="app" className={this.props.className + (this.state.modal ? ' modal-open' : '')}>
                     {this.props.children}
                 </div>
             
@@ -135,7 +130,8 @@ class App extends React.PureComponent<{}, StateType>
 
         if (this.state.theme !== prevState.theme) {
             window.localStorage.setItem('theme', this.state.theme ? 'green' : 'blue');
-            document.body.classList.toggle('green-mode');
+            if (this.state.theme) document.body.classList.add('green-mode');
+            else document.body.classList.remove('green-mode');
         }
 
         if (this.state.locale !== prevState.locale) {
@@ -149,8 +145,33 @@ class App extends React.PureComponent<{}, StateType>
 
         window.addEventListener('resize',             this.resizeListener);
         document.addEventListener('fullscreenchange', this.fullscreenchangeListener);
+
+        if (!window.localStorage.getItem('locale')) {
+            var navigatorLang = navigator.language.split('-')[0];
+            switch (navigatorLang) {
+                case 'it':
+                case 'en':
+                    break;
+                default:
+                    navigatorLang = 'en';
+                    break;
+            }
+            window.localStorage.setItem('locale', navigatorLang);
+        }
+    
+        if (!window.localStorage.getItem('theme')) {
+            window.localStorage.setItem('theme', 'blue');
+        }
+    
+        this.setState({
+            device: getDeviceFromWidth(window.innerWidth),
+            locale: window.localStorage.getItem('locale'),
+            theme: window.localStorage.getItem('theme') === 'green'
+        });
         
-        setTimeout(() => document.documentElement.classList.add('smooth-scroll'), 10);
+        setTimeout(() => {
+            document.documentElement.classList.add('smooth-scroll');
+        }, 5);
     }
 
     componentWillUnmount(): void
@@ -165,30 +186,6 @@ class App extends React.PureComponent<{}, StateType>
 function getDeviceFromWidth(width: number): string
 {
     return width > 1366 ? 'desktop' : width > 1024 ? 'tablet_big' : width > 600 ? 'tablet_small' : 'phone';
-}
-
-function getLocaleFromPreferences(): string
-{
-    if (typeof window !== 'undefined') {
-        let locale = window.localStorage.getItem('locale');
-        if (!locale || !supportedLocales.includes(locale)) {
-            return defaultLocale;
-        }
-        return locale;
-    }
-    return defaultLocale;
-}
-
-function getThemeFromPreferences(): boolean
-{
-    if (typeof window !== 'undefined') {
-        let theme = window.localStorage.getItem('theme');
-        if (!theme || !supportedThemes.includes(theme)) {
-            return false;
-        }
-        return theme === 'green';
-    }
-    return defaultTheme === 'green';
 }
 
 export default App;

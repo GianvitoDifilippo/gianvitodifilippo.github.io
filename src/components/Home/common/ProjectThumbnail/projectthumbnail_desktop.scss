@@ -26,7 +26,7 @@ $name_height: 40px;
             p {
                 text-align: center;
                 font-size: 1.5rem;
-                padding: 5%;
+                padding: 10px;
                 z-index: 2;
                 transform: translateY(-40%);
                 opacity: 0;
@@ -38,6 +38,7 @@ $name_height: 40px;
                 transform: translateY(100%);
                 opacity: 0;
                 transition: transform .4s ease-out, opacity .2s .1s linear;
+
                 .fa-icon {
                     font-size: 3rem;
                 }

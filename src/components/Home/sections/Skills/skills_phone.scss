@@ -1,7 +1,9 @@
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 580px) {
 
 #skill-list,
 #skill-preview {
+    padding: 5px;
+
     .skill-card {
         width: auto;
         height: auto;

@@ -1,4 +1,4 @@
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 580px) {
 
 #home {
     #about {
@@ -28,6 +28,7 @@
                         grid-column-start: unset;
                         grid-column-end: unset;
                         text-align: center;
+                        padding: 10px;
                     }
 
                     > div {

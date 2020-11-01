@@ -35,15 +35,11 @@ const SkillPreviewDesktop = (props: Readonly<PropsType>) => (
 );
 
 const SkillPreviewMobile = (props: Readonly<PropsType>) => {
-    const [ body, setBody ] = React.useState<Element>(null);
-    if (body === null) {
-        if (typeof document !== 'undefined') setBody(document.body);
-        return null;
-    }
-    
     return (
-        <Modal parent={body} isOpen={props.currentSkill !== null} id="skill-preview-modal" onClose={() => props.setSkill(null)}>
-            <SkillPreviewDesktop {...props}/>
+        <Modal isOpen={props.currentSkill !== null} id="skill-preview-modal" onClose={() => props.setSkill(null)}>
+            <div className="modal-content">
+                <SkillPreviewDesktop {...props}/>
+            </div>
         </Modal>
     );
 };

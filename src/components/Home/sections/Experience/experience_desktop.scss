@@ -32,7 +32,7 @@ $curve-diameter: 15vw;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 750px;
+            height: 800px;
             width: fit-content;
             margin: auto;
     
@@ -74,8 +74,6 @@ $curve-diameter: 15vw;
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
-                min-width: 250px;
-                max-height: $curve-diameter * 4;
                 width: calc(#{$curve-diameter} + #{$line-thickness});
                 height: calc(100% - #{$hexagon-size * 0.75});
                 margin: 0px #{-$line-thickness / 2};
@@ -85,11 +83,21 @@ $curve-diameter: 15vw;
                     font-size: 2.3rem;
                 }
 
-                div.box {
+                .experience-container {
                     position: relative;
                     width: 150%;
                     background-color: var(--box_color1_opaque);
                     z-index: 2;
+
+                    .fa-icon {
+                        position: absolute;
+                        width: 3.5rem;
+                        height: 3.5rem;
+                        top: 0;
+                        right: 0;
+                        padding: 5px;
+                        cursor: pointer;
+                    }
 
                     h1,
                     h3 {
@@ -102,7 +110,6 @@ $curve-diameter: 15vw;
 
                     h1 {
                         font-size: 2.8rem;
-                        cursor: pointer;
                     }
     
                     h3 {
@@ -127,14 +134,6 @@ $curve-diameter: 15vw;
                             font-size: 1.5rem;
                             padding: 0px;
                             transition: padding 0s .3s;
-                        }
-                    }
-
-                    @media (any-hover: hover) {
-                        &:hover {
-                            &~ .hexagon {
-                                @include hexagon-active;
-                            }
                         }
                     }
                 }
@@ -196,7 +195,7 @@ $curve-diameter: 15vw;
                 }
                 &:nth-child(2n) {
                     flex-direction: column;
-        
+
                     .hexagon {
                         margin-bottom: -#{$hexagon-size / 4 + $line-thickness / 2};
                     }

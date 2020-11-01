@@ -64,8 +64,10 @@ class Drone extends React.PureComponent<{}, { currentPhoto: number }>
                         <>
                             <GalleryPhone photos={photoProps} onClick={this.openPhoto}/>
                             <Modal isOpen={this.state.currentPhoto !== -1} id="drone-gallery-modal" onClose={() => this.setCurrentPhoto(-1)}>
-                                <img src={photos[this.state.currentPhoto]?.src}/>
-                                <h1>{photos[this.state.currentPhoto]?.title}</h1>
+                                <div className="modal-content">
+                                    <img src={photos[this.state.currentPhoto]?.src}/>
+                                    <h1>{photos[this.state.currentPhoto]?.title}</h1>
+                                </div>
                             </Modal>
                         </>
                     }

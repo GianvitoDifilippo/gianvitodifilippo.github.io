@@ -19,7 +19,8 @@ $curve-diameter: 14vw;
 #experience {
     .container {
         ul.timeline {
-    
+            height: 700px;
+            
             &::before,
             &::after {
                 content: '';

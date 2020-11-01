@@ -30,7 +30,8 @@
                         font-weight: 300;
                         padding: 20px;
 
-                        a {
+                        a, span {
+                            cursor: pointer;
                             font-weight: 600;
                         }
                     }
@@ -123,6 +124,30 @@
                     }
                 }
             }
+        }
+    }
+}
+
+#fiocco-modal {
+    .modal-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            max-width: 100%;
+            max-height: calc(100% - 2.5rem - 5px);
+            margin-bottom: 5px;
+        }
+
+        h1 {
+            width: 100%;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 500;
         }
     }
 }

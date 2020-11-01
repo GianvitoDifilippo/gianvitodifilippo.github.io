@@ -1,6 +1,9 @@
 import * as React from 'react';
 import CSSTransitionReplace from 'react-css-transition-replace';
 
+import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import Section from '../Section';
 
 import Translate from '../../../common/Translate';
@@ -20,7 +23,8 @@ type TimelineItemPropsType = {
     currentExperience: string,
     onClick(value: string): void,
     where: string,
-    image: string
+    image: string,
+    index: number
 }
 
 
@@ -28,10 +32,13 @@ const TimelineItem = (props: Readonly<TimelineItemPropsType>) => {
     const device = React.useContext(DeviceContext);
     let isActive = props.currentExperience === props.id;
 
+    const icon = isActive === (!(props.index % 2) || ['tablet_small', 'phone'].includes(device)) ? faAngleUp : faAngleDown;
+
     return (
         <li className={`timeline-item${isActive ? ' active' : ''}`}>
-            <div className="box">
-                <h1 className="box-heading"  onClick={() => props.onClick(props.id)}>
+            <div className="experience-container box">
+                <FontAwesomeIcon fixedWidth icon={icon} className="fa-icon" onClick={() => props.onClick(props.id)}/>
+                <h1 className="box-heading">
                     <Translate selector={`experience:${props.id}:name`}/>
                 </h1>
                 <h3>
@@ -110,10 +117,10 @@ class Experience extends React.PureComponent<{}, StateType>
         return (
             <Section id="experience" defaultTitle="Esperienza">
                 <ul className={this.ulClassName()}>
-                {experience.map(value => (
+                {experience.map((value, index) => (
                     <TimelineItem
                     key={value.id} currentExperience={this.state.currentExperience} onClick={this.setExperience}
-                    id={value.id} where={value.where} image={value.image}/>
+                    id={value.id} where={value.where} image={value.image} index={index}/>
                 ))}
                 </ul>
             </Section>

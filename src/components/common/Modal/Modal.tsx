@@ -1,7 +1,8 @@
-import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+
+import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { ModalContext } from '../../../shared/context';
 
@@ -45,7 +46,9 @@ class Modal extends React.PureComponent<PropsType, StateType>
                 <div className="modal-container">
                     {this.props.children}
                 </div>
-                <FontAwesomeIcon className="fa-icon" icon={faAngleDoubleLeft} onClick={this.props.onClose}/>
+                <div className="back-container">
+                    <FontAwesomeIcon className="fa-icon" icon={faAngleDoubleLeft} onClick={this.props.onClose}/>
+                </div>
             </div>
             :
             null

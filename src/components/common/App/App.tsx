@@ -196,7 +196,7 @@ class App extends React.PureComponent<{ className?: string }, StateType>
 
 function getDeviceFromWidth(width: number): string
 {
-    return width > 1366 ? 'desktop' : width > 1024 ? 'tablet_big' : width > 600 ? 'tablet_small' : 'phone';
+    return width > 1366 ? 'desktop' : width > 1024 ? 'tablet_big' : width > 580 ? 'tablet_small' : 'phone';
 }
 
 export default App;

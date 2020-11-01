@@ -9,7 +9,6 @@ $border-margin: 7.5vw;
         margin: calc(45px + 13rem) $border-margin 10px $border-margin;
         z-index: 1;
         width: calc(100vw - #{$border-margin * 2});
-        min-height: calc(min(100vh, 100vw) - 45px - 13rem - 10px);
     }
 
     > .section-title {

@@ -91,25 +91,27 @@ class ProjectsPhone extends React.PureComponent<{}, ProjectsPhoneStateType>
                     <li onClick={() => this.setCurrentProject('supermario')}><ProjectThumbnail id="supermario"/></li>
                 </ul>
                 <Modal isOpen={this.state.currentProject !== null} id="project-preview-modal" onClose={() => this.setCurrentProject(null)}>
-                    <CSSTransitionReplace transitionName="cross-fade" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
-                        {this.state.currentProject !== null
-                        ?
-                        <div className="box">
-                            <h1>{projects[this.state.currentProject].name}</h1>
-                            <p><Translate selector={`projects:descr:${this.state.currentProject}`}/></p>
-                            <a href={projects[this.state.currentProject].href} target="_blank">
-                                <FontAwesomeIcon className="fa-icon external-link" icon={faExternalLinkAlt}/>
-                            </a>
-                            <div className="background has-shadow" style={ {
-                                backgroundImage: `url(${projects[this.state.currentProject].thumbnail.backgroundImage})`,
-                                backgroundPosition: projects[this.state.currentProject].thumbnail.backgroundPosition
-                            } }>
+                    <div className="modal-content">
+                        <CSSTransitionReplace transitionName="cross-fade" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
+                            {this.state.currentProject !== null
+                            ?
+                            <div className="box">
+                                <h1>{projects[this.state.currentProject].name}</h1>
+                                <p><Translate selector={`projects:descr:${this.state.currentProject}`}/></p>
+                                <a href={projects[this.state.currentProject].href} target="_blank">
+                                    <FontAwesomeIcon className="fa-icon external-link" icon={faExternalLinkAlt}/>
+                                </a>
+                                <div className="background has-shadow" style={ {
+                                    backgroundImage: `url(${projects[this.state.currentProject].thumbnail.backgroundImage})`,
+                                    backgroundPosition: projects[this.state.currentProject].thumbnail.backgroundPosition
+                                } }>
+                                </div>
                             </div>
-                        </div>
-                        :
-                        null
-                        }
-                    </CSSTransitionReplace>
+                            :
+                            null
+                            }
+                        </CSSTransitionReplace>
+                    </div>
                 </Modal>
             </Section>
         );

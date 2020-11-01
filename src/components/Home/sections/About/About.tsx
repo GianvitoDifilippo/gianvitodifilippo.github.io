@@ -7,7 +7,7 @@ import { faEnvelope, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
 
 import Section from '../Section';
 import Translate from '../../../common/Translate';
-import { Neon, NeonConsumer, NeonProvider } from '../../../common/Neon';
+import { NeonConsumer, NeonProvider } from '../../../common/Neon';
 
 import './about_desktop.scss';
 import './about_tablet.scss';
@@ -15,10 +15,20 @@ import './about_phone.scss';
 
 import photo from '../../../../assets/img/photo.jpg';
 import fiocco from '../../../../assets/img/fiocco.jpg';
+import Modal from '../../../common/Modal';
 
 
-class About extends React.PureComponent
+class About extends React.PureComponent<{}, { isFioccoModalOpen: boolean }>
 {
+    constructor(props: Readonly<{}>)
+    {
+        super(props);
+
+        this.state = {
+            isFioccoModalOpen: false
+        };
+    }
+
     replacePoliba(text: string): JSX.Element
     {
         let strings = text.split('*');
@@ -37,7 +47,7 @@ class About extends React.PureComponent
                 {strings[0]}<Link to="/guitar" className="interests-link"><Translate selector="about:descr:guitar"/></Link>
                 {strings[1]}<Link to="/drone" className="interests-link"><Translate selector="about:descr:drone"/></Link>
                 {strings[2]}<Link to="/electronics" className="interests-link"><Translate selector="about:descr:electronics"/></Link>
-                {strings[3]}<a className="interests-link" href={fiocco}>Fiocco</a>
+                {strings[3]}<span onClick={() => { this.setState({ isFioccoModalOpen: true }); console.log('asdf') }}>Fiocco</span>
                 {strings[4]}
             </>
         );
@@ -59,6 +69,12 @@ class About extends React.PureComponent
                             <br/>
                             <Translate selector="about:descr:text:3" transform={text => this.replaceInterests(text)}/>
                         </p>
+                        <Modal id="fiocco-modal" isOpen={this.state.isFioccoModalOpen} onClose={() => this.setState({ isFioccoModalOpen: false })}>
+                            <div className="modal-content">
+                                <img src={fiocco}/>
+                                <h1>Fiocco</h1>
+                            </div>
+                        </Modal>
                         <div>
                             <div className="contacts">
                                 <h1><Translate selector="about:contacts"/></h1>

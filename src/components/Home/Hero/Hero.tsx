@@ -49,7 +49,7 @@ class Hero extends React.Component<{}, StateType>
     {
         return (
             <div id="hero" className="section">
-                <div className="background"></div>
+                <div className="background" style={{backgroundPositionY: this.state.offsetY}}></div>
                 <div className="main">
                     <h1>Gianvito Difilippo</h1>
                     <h2><Translate selector="hero:h2"/></h2>

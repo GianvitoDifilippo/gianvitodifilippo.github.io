@@ -6,8 +6,8 @@ $back-container_size: calc(#{$back-container_margin} + 2 * #{$back-container_fon
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     padding: 10px 10px 0px 10px;
     animation: fade_in .2s;
     z-index: 20;
@@ -39,7 +39,7 @@ $back-container_size: calc(#{$back-container_margin} + 2 * #{$back-container_fon
 
     .modal-container {
         width: 100%;
-        height: calc(100% - 4rem - 10px);
+        height: calc(100% - #{$back-container_size});
         overflow: hidden;
 
         @media (orientation: landscape) and (max-width: 1366px) {

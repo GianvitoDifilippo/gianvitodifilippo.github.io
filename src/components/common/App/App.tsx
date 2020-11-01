@@ -2,8 +2,6 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
 import { DeviceContext, FullscreenContext, LocaleContext, ModalContext, ThemeContext } from '../../../shared/context';
-import { supportedLocales } from '../../../shared/context';
-import { supportedThemes } from '../../../shared/context';
 
 import './app_desktop.scss';
 import './app_tablet.scss';
@@ -96,6 +94,9 @@ class App extends React.PureComponent<{ className?: string }, StateType>
                     <meta charSet="utf-8"/>
                     <title>Gianvito Difilippo</title>
                     <link rel="canonical" href="http://gianvitodifilippo.github.io"/>
+                    <meta property="og:title" content="Gianvito Difilippo"/>
+                    <meta property="og:description"/>
+                    <meta property="og:image"/>
                 </Helmet>
                 <DeviceContext.Provider value={
                     this.state.device

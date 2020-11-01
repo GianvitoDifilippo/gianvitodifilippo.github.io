@@ -6,7 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { ModalContext } from '../../../shared/context';
 
-import './modal.scss';
+import './modal_desktop.scss';
+import './modal_tablet.scss';
+import './modal_phone.scss';
 
 
 type PropsType = {

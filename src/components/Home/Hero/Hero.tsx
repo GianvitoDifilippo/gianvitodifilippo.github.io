@@ -27,13 +27,8 @@ class Hero extends React.Component<{}, StateType>
         this.scrollListener = this.scrollListener.bind(this);
         this.height = vh(100);
 
-        let offsetY = 0;
-        if (typeof window !== 'undefined') {
-            offsetY = this.getOffsetY(window.scrollY);
-        }
-
         this.state = {
-            offsetY
+            offsetY: 0
         };
     }
 
@@ -72,6 +67,7 @@ class Hero extends React.Component<{}, StateType>
     componentDidMount(): void
     {
         document.addEventListener('scroll', this.scrollListener);
+        this.scrollListener();
     }
 
     componentWillUnmount(): void

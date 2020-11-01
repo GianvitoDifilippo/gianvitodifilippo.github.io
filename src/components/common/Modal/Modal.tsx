@@ -12,12 +12,12 @@ import './modal.scss';
 type PropsType = {
     id: string,
     isOpen: boolean,
-    parent?: Element,
     children?: React.ReactNode,
     onClose?(): void
 };
 type StateType = {
-    isOpen: boolean
+    isOpen: boolean,
+    parent: HTMLElement
 };
 
 
@@ -28,17 +28,15 @@ class Modal extends React.PureComponent<PropsType, StateType>
         super(props);
 
         this.state = {
-            isOpen: props.isOpen
+            isOpen: props.isOpen,
+            parent: null
         };
     }
 
     render(): JSX.Element
     {
-        let parent = this.props.parent;
-        if (!parent) {
-            if (typeof document !== 'undefined') parent = document.body;
-        }
-        
+        if (this.state.parent === null) return null;
+
         return ReactDOM.createPortal(
             this.state.isOpen
             ?
@@ -52,7 +50,7 @@ class Modal extends React.PureComponent<PropsType, StateType>
             </div>
             :
             null
-        , parent);
+        , this.state.parent);
     }
     
     componentDidUpdate(): void
@@ -75,6 +73,13 @@ class Modal extends React.PureComponent<PropsType, StateType>
                 isOpen: false
             }), 200);
         }
+    }
+
+    componentDidMount(): void
+    {
+        this.setState({
+            parent: document.body
+        });
     }
 }
 

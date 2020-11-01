@@ -41,10 +41,6 @@ class App extends React.PureComponent<{ className?: string }, StateType>
             theme: false,
             isInit: false
         };
-
-        if (typeof document !== 'undefined') {
-            document.documentElement.classList.remove('smooth-scroll');
-        }
     }
 
     private init(): void {
@@ -73,13 +69,11 @@ class App extends React.PureComponent<{ className?: string }, StateType>
 
     private resizeListener(): void
     {
-        if (typeof window !== undefined) {
-            let newDevice = getDeviceFromWidth(window.innerWidth);
-            if (newDevice !== this.state.device) {
-                this.setState({ device: newDevice });
+        let newDevice = getDeviceFromWidth(window.innerWidth);
+        if (newDevice !== this.state.device) {
+            this.setState({ device: newDevice });
 
-                window.location.reload();
-            }
+            window.location.reload();
         }
     }
 
@@ -184,13 +178,15 @@ class App extends React.PureComponent<{ className?: string }, StateType>
         
         setTimeout(() => {
             document.documentElement.classList.add('smooth-scroll');
-        }, 5);
+        }, 4);
     }
 
     componentWillUnmount(): void
     {
         document.removeEventListener('resize',           this.resizeListener);
         document.removeEventListener('fullscreenchange', this.fullscreenchangeListener);
+
+        document.documentElement.classList.remove('smooth-scroll');
     }
 }
 

@@ -7,13 +7,14 @@ import portfolio_thumbnail from '../../../../assets/img/projects/portfolio_thumb
 import audioengineer_img1 from '../../../../assets/img/projects/audioengineer_1.jpg';
 import voicenotes_img1 from '../../../../assets/img/projects/voicenotes_1.png';
 
-interface Project {
+export interface Project {
     name: string,
     thumbnail: {
         backgroundImage: string,
         backgroundPosition?: string
     },
-    images: string[]
+    images: string[],
+    href: string
 };
 
 
@@ -26,7 +27,8 @@ const projects: { [id: string]: Project } = {
         },
         images: [
             audioengineer_img1
-        ]
+        ],
+        href: 'https://github.com/GianvitoDifilippo/audioengineer'
     },
     'voicenotes': {
         name: 'Voice Notes',
@@ -36,7 +38,8 @@ const projects: { [id: string]: Project } = {
         },
         images: [
             voicenotes_img1
-        ]
+        ],
+        href: 'https://github.com/GianvitoDifilippo'
     },
     'magicbet': {
         name: 'MagicBet',
@@ -44,7 +47,8 @@ const projects: { [id: string]: Project } = {
             backgroundImage: magicbet_thumbnail,
             backgroundPosition: 'center top'
         },
-        images: []
+        images: [],
+        href: 'https://github.com/GianvitoDifilippo'
     },
     'supermario': {
         name: 'Super Mario Clone',
@@ -52,7 +56,8 @@ const projects: { [id: string]: Project } = {
             backgroundImage: supermario_thumbnail,
             backgroundPosition: 'center 90%'
         },
-        images: []
+        images: [],
+        href: 'https://github.com/GianvitoDifilippo'
     },
     'portfolio': {
         name: 'Portfolio website',
@@ -60,7 +65,8 @@ const projects: { [id: string]: Project } = {
             backgroundImage: portfolio_thumbnail,
             backgroundPosition: 'center'
         },
-        images: []
+        images: [],
+        href: 'https://github.com/GianvitoDifilippo/gianvitodifilippo.github.io'
     }
 }
 

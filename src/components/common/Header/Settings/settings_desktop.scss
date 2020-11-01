@@ -130,10 +130,6 @@
         cursor: pointer;
         transition: transform .5s ease-in-out, opacity .1s linear;
         transform: translateX(0%) rotateZ(0deg);
-
-        &.hidden {
-            transform: translateX(calc(100% + 15px)) rotateZ(0deg);
-        }
     
         @media (any-hover: hover) {
             &:hover {

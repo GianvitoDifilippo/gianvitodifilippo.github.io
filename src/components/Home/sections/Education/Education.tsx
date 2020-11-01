@@ -47,7 +47,7 @@ const EducationItem = (props: Readonly<EducationItemPropsType>): JSX.Element => 
 const Education = (): JSX.Element => (
     <Section id="education" defaultTitle="Educazione">
         <ul>
-            <EducationItem id="phd" uni="Politecnico di Bari" link="http://www.poliba.it/" img={polibaImg} year="2020-"/>
+            <EducationItem id="phd" uni="Politecnico di Bari" link="http://www.poliba.it/" img={polibaImg} year="2020-2023"/>
             <EducationItem id="msc" uni="Politecnico di Bari" link="http://www.poliba.it/" img={polibaImg} year="2017-2019"/>
             <EducationItem id="bsc" uni="Politecnico di Bari" link="http://www.poliba.it/" img={polibaImg} year="2014-2017"/>
             <EducationItem id="erasmus" uni="Universidad Politécnica de Madrid" link="https://www.upm.es/" img={upmImg} year="2019"/>

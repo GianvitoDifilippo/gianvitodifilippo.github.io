@@ -21,7 +21,11 @@
         order: 3;
         width: 80%;
         padding: 15px;
-        height: 180px;
+        height: 200px;
+
+        .rocket-container {
+            top: 20px;
+        }
     }
 
     .feedback {
@@ -35,17 +39,6 @@
             > div {
                 width: 100%;
             }
-        }
-    }
-
-    @keyframes rocket-fire {
-        from {
-            transform: translateY(68vh) scale(1);
-            position: fixed;
-        }
-        to {
-            transform: translateY(-150vh) scale(7);
-            position: fixed;
         }
     }
 }

@@ -220,6 +220,9 @@
             },
             "interests": "Interessi"
         },
+        "center": {
+            "up": "Portami su!"
+        },
         "feedback": {
             "tellme1": "Com'è stata la tua esperienza di navigazione?",
             "tellme2": "Fammelo sapere riempendo il modulo in basso.",

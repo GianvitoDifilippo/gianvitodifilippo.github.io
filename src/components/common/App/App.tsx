@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Helmet } from 'react-helmet';
 
 import { DeviceContext, FullscreenContext, LocaleContext, ModalContext, ThemeContext } from '../../../shared/context';
 import { supportedLocales } from '../../../shared/context';
@@ -14,7 +15,8 @@ type StateType = {
     isFullscreen: boolean,
     locale: string,
     modal: string,
-    theme: boolean
+    theme: boolean,
+    isInit: boolean
 };
 
 
@@ -31,13 +33,15 @@ class App extends React.PureComponent<{ className?: string }, StateType>
         this.toggleTheme = this.toggleTheme.bind(this);
         this.resizeListener = this.resizeListener.bind(this);
         this.fullscreenchangeListener = this.fullscreenchangeListener.bind(this);
+        this.init = this.init.bind(this);
 
         this.state = {
-            device: 'desktop',
+            device: '',
             isFullscreen: false,
             locale: 'it',
             modal: null,
-            theme: false
+            theme: false,
+            isInit: false
         };
 
         if (typeof document !== 'undefined') {
@@ -45,22 +49,31 @@ class App extends React.PureComponent<{ className?: string }, StateType>
         }
     }
 
-    setFullscreen(value: boolean): void
+    private init(): void {
+        this.setState({
+            device: getDeviceFromWidth(window.innerWidth),
+            locale: window.localStorage.getItem('locale'),
+            theme: window.localStorage.getItem('theme') === 'green',
+            isInit: true
+        });
+    }
+
+    private setFullscreen(value: boolean): void
     {
         this.setState({ isFullscreen: value });
     }
 
-    setLocale(value: string): void
+    private setLocale(value: string): void
     {
         this.setState({ locale: value });
     }
 
-    toggleTheme(): void
+    private toggleTheme(): void
     {
         this.setState({ theme: !this.state.theme });
     }
 
-    resizeListener(): void
+    private resizeListener(): void
     {
         if (typeof window !== undefined) {
             let newDevice = getDeviceFromWidth(window.innerWidth);
@@ -72,46 +85,58 @@ class App extends React.PureComponent<{ className?: string }, StateType>
         }
     }
 
-    fullscreenchangeListener(): void
+    private fullscreenchangeListener(): void
     {
         this.setFullscreen(document.fullscreenElement !== null);
+    }
+
+    private get appClassName(): string
+    {
+        return `${this.props.className} ${this.state.modal ? ' modal-open' : ''} ${this.state.isInit ? '' : 'hidden'}`;
     }
 
 
     render(): JSX.Element
     {
-        console.log('APP being rendered');
+        console.log('APP being rendered ' + this.state.device);
 
         return (
-            <DeviceContext.Provider value={
-                this.state.device
-            }>
-            <FullscreenContext.Provider value={{
-                isFullscreen: this.state.isFullscreen,
-                setFullscreen: this.setFullscreen
-            }}>
-            <LocaleContext.Provider value={{
-                locale: this.state.locale,
-                setLocale: this.setLocale
-            }}>
-            <ModalContext.Provider value={{
-                modal: this.state.modal,
-                setModal: (value) => this.setState({ modal: value })
-            }}>
-            <ThemeContext.Provider value={{
-                theme: this.state.theme,
-                toggleTheme: this.toggleTheme
-            }}>
-                
-                <div id="app" className={this.props.className + (this.state.modal ? ' modal-open' : '')}>
-                    {this.props.children}
-                </div>
-            
-            </ThemeContext.Provider>
-            </ModalContext.Provider>
-            </LocaleContext.Provider>
-            </FullscreenContext.Provider>
-            </DeviceContext.Provider>
+            <>
+                <Helmet>
+                    <meta charSet="utf-8"/>
+                    <title>Gianvito Difilippo</title>
+                    <link rel="canonical" href="http://gianvitodifilippo.github.io"/>
+                </Helmet>
+                <DeviceContext.Provider value={
+                    this.state.device
+                }>
+                <FullscreenContext.Provider value={{
+                    isFullscreen: this.state.isFullscreen,
+                    setFullscreen: this.setFullscreen
+                }}>
+                <LocaleContext.Provider value={{
+                    locale: this.state.locale,
+                    setLocale: this.setLocale
+                }}>
+                <ModalContext.Provider value={{
+                    modal: this.state.modal,
+                    setModal: (value) => this.setState({ modal: value })
+                }}>
+                <ThemeContext.Provider value={{
+                    theme: this.state.theme,
+                    toggleTheme: this.toggleTheme
+                }}>
+
+                    <div id="app" className={this.appClassName}>
+                        {this.props.children}
+                    </div>
+
+                </ThemeContext.Provider>
+                </ModalContext.Provider>
+                </LocaleContext.Provider>
+                </FullscreenContext.Provider>
+                </DeviceContext.Provider>
+            </>
         );
     }
 
@@ -163,11 +188,7 @@ class App extends React.PureComponent<{ className?: string }, StateType>
             window.localStorage.setItem('theme', 'blue');
         }
     
-        this.setState({
-            device: getDeviceFromWidth(window.innerWidth),
-            locale: window.localStorage.getItem('locale'),
-            theme: window.localStorage.getItem('theme') === 'green'
-        });
+        this.init();  
         
         setTimeout(() => {
             document.documentElement.classList.add('smooth-scroll');

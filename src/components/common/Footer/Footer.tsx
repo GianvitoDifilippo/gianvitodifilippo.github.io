@@ -8,7 +8,7 @@ import { translate } from '../Translate';
 import AnchorLink from '../AnchorLink';
 
 import { LocaleContext } from '../../../shared/context';
-import { Neon } from '../Neon';
+import { Neon, NeonConsumer, NeonProvider } from '../Neon';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact } from '@fortawesome/free-brands-svg-icons';
@@ -164,9 +164,16 @@ ${message ? '%0D%0A' + message : ''}%0D%0A%0D%0A${(document.getElementById('feed
                     </div>
                 </div>
                 <div className="center">
-                    <div className="rocket-container" onClick={this.fireAnimation}>
-                        {Rocket}
-                    </div>
+                    <NeonProvider>
+                        <div className="rocket-container" onClick={this.fireAnimation}>
+                            {Rocket}
+                            <div className="up">
+                                <NeonConsumer light>
+                                    <Translate selector="footer:center:up"/>
+                                </NeonConsumer>
+                            </div>
+                        </div>
+                    </NeonProvider>
                     <div className="madeby">
                         <span>Made by Gianvito Difilippo</span>
                         <div>

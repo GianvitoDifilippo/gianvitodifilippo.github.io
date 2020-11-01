@@ -50,6 +50,10 @@
             cursor: pointer;
             position: absolute;
             top: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
             .rocket {
                 width: 80px;
@@ -67,9 +71,11 @@
                     transition: transform .3s .3s, opacity .3s;
                     fill: var(--color1);
                 }
-
-                @media (any-hover: hover) {
-                    &:hover {
+            }
+            
+            @media (any-hover: hover) {
+                &:hover {
+                    .rocket {
                         @include rocket-on;
                     }
                 }
@@ -175,10 +181,12 @@
         from {
             transform: translateY(68vh) scale(1);
             position: fixed;
+            opacity: 1;
         }
         to {
             transform: translateY(-150vh) scale(10);
             position: fixed;
+            opacity: 1;
         }
     }
 
@@ -193,9 +201,13 @@
 }
 
 body.rocket-fire #footer .center .rocket-container {
+    .up {
+        visibility: hidden;
+    }
     .rocket {
         @include rocket-on;
     }
+
     animation: rocket-fire 1.1s linear;
     z-index: 30;
 }

@@ -6,6 +6,15 @@
 
 module.exports = {
   plugins: [
-    'gatsby-plugin-sass'
+    'gatsby-plugin-sass',
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Gianvito Difilippo',
+        short_name: 'Gianvito Difilippo',
+        icon: 'src/assets/favicon.png'
+      }
+    }
   ],
 }

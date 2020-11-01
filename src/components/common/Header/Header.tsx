@@ -96,7 +96,7 @@ class Header extends React.PureComponent<PropsType, StateType>
 
     render(): JSX.Element
     {
-        console.log('HEADER being rendered');
+        console.log('HEADER being rendered ' + this.state.isSettingsButtonVisible);
 
         if (!this.state.isSetup) return null;
 
@@ -144,6 +144,16 @@ class Header extends React.PureComponent<PropsType, StateType>
         if (this.props.navThresholds !== prevProps.navThresholds) {
             this.setState({ isNavigating: this.isNavigating });
         }
+        if (this.context === 'desktop') {
+            this.setState({
+                isSettingsButtonVisible: true
+            });
+        }
+        else {
+            this.setState({
+                isSettingsButtonVisible: this.state.isNavlistActive
+            });
+        }
     }
 
     componentDidMount(): void
@@ -152,7 +162,6 @@ class Header extends React.PureComponent<PropsType, StateType>
 
         this.setState({
             isSetup: true,
-            isSettingsButtonVisible: this.context === 'desktop',
             isNavigating: this.isNavigating
         });
 

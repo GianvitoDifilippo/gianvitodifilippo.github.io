@@ -25,7 +25,9 @@ const MainProjectPreview = (props: Readonly<{ id: string }>): JSX.Element => (
         <div className="box">
             <div className="heading">
                 <h1>{projects[props.id].name}</h1>
-                <a href="#"><FontAwesomeIcon className="fa-icon" icon={faExternalLinkAlt}/></a>
+                <a href={projects[props.id].href}  target="_blank">
+                    <FontAwesomeIcon className="fa-icon" icon={faExternalLinkAlt}/>
+                </a>
             </div>
             <p><Translate selector={`projects:descr:${props.id}`}/></p>
         </div>
@@ -95,7 +97,9 @@ class ProjectsPhone extends React.PureComponent<{}, ProjectsPhoneStateType>
                         <div className="box">
                             <h1>{projects[this.state.currentProject].name}</h1>
                             <p><Translate selector={`projects:descr:${this.state.currentProject}`}/></p>
-                            <a href="#"><FontAwesomeIcon className="fa-icon external-link" icon={faExternalLinkAlt}/></a>
+                            <a href={projects[this.state.currentProject].href} target="_blank">
+                                <FontAwesomeIcon className="fa-icon external-link" icon={faExternalLinkAlt}/>
+                            </a>
                             <div className="background has-shadow" style={ {
                                 backgroundImage: `url(${projects[this.state.currentProject].thumbnail.backgroundImage})`,
                                 backgroundPosition: projects[this.state.currentProject].thumbnail.backgroundPosition

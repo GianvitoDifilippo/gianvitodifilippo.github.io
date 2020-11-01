@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { projects } from '../../sections/Projects';
+import { Project } from '../../sections/Projects/data';
 
 import './projectthumbnail_desktop.scss';
 import './projectthumbnail_tablet.scss';
@@ -19,7 +20,7 @@ type PropsType = {
 
 class ProjectThumbnail extends React.Component<PropsType>
 {
-    get project(): any
+    get project(): Project
     {
         return projects[this.props.id];
     }
@@ -36,7 +37,7 @@ class ProjectThumbnail extends React.Component<PropsType>
                     </div>
                     <div className="content">
                     <p><Translate selector={`projects:descr:${this.props.id}`}/></p>
-                        <a href="#">
+                        <a href={this.project.href} target="_blank">
                             <FontAwesomeIcon className="fa-icon" icon={faExternalLinkAlt}/>
                         </a>
                     </div>

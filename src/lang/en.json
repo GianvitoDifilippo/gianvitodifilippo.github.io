@@ -157,7 +157,7 @@
         "other": "Other projects",
         "descr": {
             "audioengineer": "Simple application, born as university project. It offered some functions as audio acquisition, spectrogram generation and real-time FFT. It includes a voice recognition algorithm, based on neural networks and genetic algorithms, capable of recognizing vowels.",
-            "voicenotes": "Applicazione commissionatami da un laureando in logopedia come proof-of-concept della sua tesi di laurea, incentrata sulla diagnostica di patologie vocali. Gestisce le cartelle cliniche dei pazienti, permettendo di inserire anamnesi, diagnosi con foto e/o video, e altri parametri di valutazione della postura e della voce.",
+            "voicenotes": "This app was commissioned by a friend graduating in speech therapy. It was intended as a proof-of-concept of his thesis work, and it was focused on the diagnostic of speech diseases. It can manage the patients' medical records, allowing to insert medical history, diagnosis with images and videos, as well as other speech and posture evaluation parameters.",
             "magicbet": "My very first project. It manages the amount on money to stake on sports betting, following an algorithm, called MagicBet, designed by myself.",
             "supermario": "A simple Super Mario Clone written in pure Java, as low-level videogame programming exercise.",
             "portfolio": "It's the website you're browsing right now! No caption needed. 😁"

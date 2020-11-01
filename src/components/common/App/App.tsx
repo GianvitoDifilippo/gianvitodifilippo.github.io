@@ -26,8 +26,6 @@ class App extends React.PureComponent<{ className?: string }, StateType>
     {
         super(props);
 
-        console.log('APP constructor');
-        
         this.setLocale = this.setLocale.bind(this);
         this.setFullscreen = this.setFullscreen.bind(this);
         this.toggleTheme = this.toggleTheme.bind(this);
@@ -98,8 +96,6 @@ class App extends React.PureComponent<{ className?: string }, StateType>
 
     render(): JSX.Element
     {
-        console.log('APP being rendered ' + this.state.device);
-
         return (
             <>
                 <Helmet>
@@ -142,8 +138,6 @@ class App extends React.PureComponent<{ className?: string }, StateType>
 
     componentDidUpdate(prevProps: Readonly<{}>, prevState: Readonly<StateType>): void
     {
-        console.log('APP did update');
-
         if (this.state.modal !== prevState.modal) {
             if (this.state.modal !== null) {
                 document.body.classList.add('stop_scroll');
@@ -166,8 +160,6 @@ class App extends React.PureComponent<{ className?: string }, StateType>
 
     componentDidMount(): void
     {
-        console.log('APP did mount');
-
         window.addEventListener('resize',             this.resizeListener);
         document.addEventListener('fullscreenchange', this.fullscreenchangeListener);
 
@@ -197,8 +189,6 @@ class App extends React.PureComponent<{ className?: string }, StateType>
 
     componentWillUnmount(): void
     {
-        console.log('APP will unmount');
-
         document.removeEventListener('resize',           this.resizeListener);
         document.removeEventListener('fullscreenchange', this.fullscreenchangeListener);
     }

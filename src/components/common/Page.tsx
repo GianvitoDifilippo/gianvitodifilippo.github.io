@@ -11,8 +11,6 @@ abstract class Page extends React.PureComponent<{}, StateType>
     {
         super(props);
 
-        console.log('PAGE constructor');
-
         this.state = {
             sectionSlugs: []
         };
@@ -31,8 +29,6 @@ abstract class Page extends React.PureComponent<{}, StateType>
 
     componentDidMount(): void
     {
-        console.log('PAGE did mount');
-
         this.setState({ sectionSlugs: this.getSectionSlugs(this.pageId) });
     }
 };

@@ -45,8 +45,6 @@ class About extends React.PureComponent
 
     render(): JSX.Element
     {
-        console.log('ABOUT being rendered');
-
         return (
             <Section id="about" defaultTitle="Su di me">
                 <div className="profile">

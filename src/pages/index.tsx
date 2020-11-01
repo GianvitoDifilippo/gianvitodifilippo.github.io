@@ -11,8 +11,6 @@ class HomePage extends Page
 {
     render(): JSX.Element
     {
-        console.log('HOMEPAGE being rendered', this.context);
-        
         return (
             <App>
                 <Header home sectionSlugs={this.state.sectionSlugs} navThresholds={[240, 60]}/>

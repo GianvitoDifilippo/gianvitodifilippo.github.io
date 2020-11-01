@@ -34,8 +34,6 @@ class SkillList extends React.PureComponent<PropsType>
 {
     render()
     {
-        console.log('SKILLLIST being rendered');
-
         return (
             <ul id="skill-list">
                 <SkillSection id="languages" defaultName="Linguaggi">

@@ -35,8 +35,6 @@ class Header extends React.PureComponent<PropsType, StateType>
     {
         super(props);
 
-        console.log('HEADER constructor');
-
         this.toggleNavlist = this.toggleNavlist.bind(this);
         this.scrollListener = this.scrollListener.bind(this);
 
@@ -96,8 +94,6 @@ class Header extends React.PureComponent<PropsType, StateType>
 
     render(): JSX.Element
     {
-        console.log('HEADER being rendered ' + this.state.isSettingsButtonVisible);
-
         if (!this.state.isSetup) return null;
 
         return (
@@ -158,8 +154,6 @@ class Header extends React.PureComponent<PropsType, StateType>
 
     componentDidMount(): void
     {
-        console.log('HEADER did mount');
-
         this.setState({
             isSetup: true,
             isNavigating: this.isNavigating

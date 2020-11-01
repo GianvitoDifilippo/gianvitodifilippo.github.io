@@ -24,8 +24,6 @@ class Hero extends React.Component<{}, StateType>
     {
         super(props);
 
-        console.log('HERO constructor');
-
         this.scrollListener = this.scrollListener.bind(this);
         this.height = vh(100);
 
@@ -54,8 +52,6 @@ class Hero extends React.Component<{}, StateType>
 
     render()
     {
-        console.log('HERO being rendered');
-
         return (
             <div id="hero" className="section">
                 <div className="background"></div>
@@ -75,15 +71,11 @@ class Hero extends React.Component<{}, StateType>
 
     componentDidMount(): void
     {
-        console.log('HERO did mount');
-
         document.addEventListener('scroll', this.scrollListener);
     }
 
     componentWillUnmount(): void
     {
-        console.log('HERO will unmount');
-
         document.removeEventListener('scroll', this.scrollListener);
     }
 }

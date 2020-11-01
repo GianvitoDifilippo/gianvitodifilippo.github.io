@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{eANv:function(n,e,t){"use strict";t.r(e);var c=t("q1tI"),o=t.n(c),r=t("YwZP");e.default=function(){return o.a.createElement(r.Redirect,{to:"underconstruction"})}}}]);
-//# sourceMappingURL=component---src-pages-electronics-jsx-fc00ca1bab87d170d20c.js.map

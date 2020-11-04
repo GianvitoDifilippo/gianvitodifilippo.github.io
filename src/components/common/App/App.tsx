@@ -8,6 +8,10 @@ import './app_tablet.scss';
 import './app_phone.scss';
 
 
+const lsThemeKey = 'gianvitodifilippo.github.io-theme';
+const lsLocaleKey = 'gianvitodifilippo.github.io-locale';
+
+
 type StateType = {
     device: string,
     isFullscreen: boolean,
@@ -44,8 +48,8 @@ class App extends React.PureComponent<{ className?: string }, StateType>
     private init(): void {
         this.setState({
             device: getDeviceFromWidth(window.innerWidth),
-            locale: window.localStorage.getItem('locale'),
-            theme: window.localStorage.getItem('theme') === 'green',
+            locale: window.localStorage.getItem(lsLocaleKey),
+            theme: window.localStorage.getItem(lsThemeKey) === 'green',
             isInit: true
         });
     }
@@ -143,13 +147,13 @@ class App extends React.PureComponent<{ className?: string }, StateType>
         }
 
         if (this.state.theme !== prevState.theme) {
-            window.localStorage.setItem('theme', this.state.theme ? 'green' : 'blue');
+            window.localStorage.setItem(lsThemeKey, this.state.theme ? 'green' : 'blue');
             if (this.state.theme) document.body.classList.add('green-mode');
             else document.body.classList.remove('green-mode');
         }
 
         if (this.state.locale !== prevState.locale) {
-            window.localStorage.setItem('locale', this.state.locale);
+            window.localStorage.setItem(lsLocaleKey, this.state.locale);
         }
     }
 
@@ -158,7 +162,7 @@ class App extends React.PureComponent<{ className?: string }, StateType>
         window.addEventListener('resize',             this.resizeListener);
         document.addEventListener('fullscreenchange', this.fullscreenchangeListener);
 
-        if (!window.localStorage.getItem('locale')) {
+        if (!window.localStorage.getItem(lsLocaleKey)) {
             var navigatorLang = navigator.language.split('-')[0];
             switch (navigatorLang) {
                 case 'it':
@@ -168,11 +172,11 @@ class App extends React.PureComponent<{ className?: string }, StateType>
                     navigatorLang = 'en';
                     break;
             }
-            window.localStorage.setItem('locale', navigatorLang);
+            window.localStorage.setItem(lsLocaleKey, navigatorLang);
         }
     
-        if (!window.localStorage.getItem('theme')) {
-            window.localStorage.setItem('theme', 'blue');
+        if (!window.localStorage.getItem(lsThemeKey)) {
+            window.localStorage.setItem(lsThemeKey, 'blue');
         }
     
         this.init();  

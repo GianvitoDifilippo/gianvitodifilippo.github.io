@@ -82,7 +82,7 @@ class App extends React.PureComponent<{ className?: string }, StateType>
 
     private get appClassName(): string
     {
-        return `${this.props.className} ${this.state.modal ? ' modal-open' : ''} ${this.state.isInit ? '' : 'hidden'}`;
+        return `${this.props.className || ''} ${this.state.modal ? ' modal-open' : ''} ${this.state.isInit ? '' : 'hidden'}`;
     }
 
 

@@ -19,7 +19,7 @@
     "about": {
         "descr": {
             "text": [
-                "Hello! I'm a young automation engineer living in Santeramo in Colle, Italy.",
+                "Hello! I'm a young .NET developer and automation engineer living in Santeramo in Colle, Italy.",
                 "I graduated at *, where I grew as a student and as a professional, gaining insight in fields as control theory, robotics and artificial intelligence.",
                 "My goals are learning, growing and innovating. I try to take the most from each experience I make, and to make my initiative spirit emerge.",
                 "Outside the workplace, you may find me *, * or *. Or maybe walking *."
@@ -35,8 +35,8 @@
         "list": {
             "languages": "Languages",
             "tools": "Tools",
-            "backend": "Back-end",
-            "webdev": "Web development"
+            "backend": "Back end",
+            "frontend": "Front end"
         },
         "preview": {
             "message": "Click on a skill to show details",
@@ -51,22 +51,29 @@
             },
             "since": "Programming since",
             "descr": {
-                "cplusplus": "It's my favorite language! I started learning it on my own and keep updating my knowledge over time.",
-                "csharp": "One of the lastest languages joining my portfolio, learned during my experience as back-end developer.",
-                "python": "I had to approach Python for work purposes and I immediately loved its elegant yet powerful syntax.",
-                "java": "It's the language that led me inside the coding world, and with which I developed mostly personal and spare time projects.",
-                "matlab": "It's the main computing tool used during my academical path.",
-                "labview": "I used it during my Erasmus to control lab instrumentation and to read measures.",
-                "docker": "Used during my experience as back-end developer.",
-                "dotnet": "I learned the .NET framework for work purposes, but then I started deepening my knowledge of it for personal purposes.",
-                "postgresql": "Used during my experience as back-end developer.",
-                "html": "",
-                "css": "",
-                "javascript": "",
-                "react": ""
+                "angular": "The modern web developer's platform.",
+                "cplusplus": "One of my favorites! Fast and powerful.",
+                "csharp": "My absolute top language. Improving every day.",
+                "css": "To code with style.",
+                "dapr": "The Distributed Application Runtime takes care of your infrastructure and let you focus on what matters.",
+                "docker": "Ship everything, everywhere.",
+                "dotnet": "To build anything you can imagine.",
+                "envoy": "An open source edge and service proxy, designed for cloud-native applications.",
+                "git": "Source is nothing without control.",
+                "html": "To give structure to your projects.",
+                "java": "The most delicious coffee you'll ever have.",
+                "matlab": "Math. Graphics. Programming.",
+                "postgresql": "The world's most advanced open source database.",
+                "python": "Where you'll find a library for literally any need.",
+                "react": "Powers this very website!",
+                "sass": "When CSS is not enough.",
+                "sqlserver": "THE RDBMS.",
+                "typescript": "Any application that can be written in JavaScript, will eventually be written in JavaScript. And then, in TypeScript.",
+                "visualstudio": "The most powerful IDE for virtually all developers.",
+                "vscode": "Code Editing. Redefined."
             },
             "projects": "Projects",
-            "noprojects": "There are no projects for this skill right now, but how about starting the first one together?",
+            "noprojects": "There are no projects to show for this skill right now, but how about starting the first one together? More points for open source projects.",
             "contactme": "Contact me!"
         }
     },
@@ -84,10 +91,10 @@
             "descr": "I supported first-year students, helping them with exams, easing their relationship with professors and leading them into university life."
         },
         "backend": {
-            "name": "Back-end developer",
+            "name": "Back end developer",
             "year": "2020",
             "yearfull": "Jan 2020 - Sep 2020",
-            "descr": "I took responsibility of the full back-end (ASP.NET Core) lifecycle, including designing, development, testing, documentation, deployment and maintenance. At the same time, I researched on cooperative control of autonomous vehicles, collaborating with the scientific director of the lab and writing papers."
+            "descr": "I took responsibility of the full back end (ASP.NET Core) lifecycle, including designing, development, testing, documentation, deployment and maintenance. At the same time, I researched on cooperative control of autonomous vehicles, collaborating with the scientific director of the lab and writing papers."
         },
         "software": {
             "name": "Software developer",

@@ -3,23 +3,22 @@
     flex-direction: column;
 
     > li {
-        margin: 5px 0px 5px 0px;
+        margin: 8px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 800px;
 
         > ul.icons {
             display: flex;
-            margin: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 8px;
+            align-self: center;
 
             > li {
-                margin: 0px 7px 0px 7px;
+                margin: 5px;
                 cursor: pointer;
-            }
-
-            > li:nth-child(1) {
-                margin-left: 0px;
-            }
-
-            > li:nth-last-child(1) {
-                margin-right: 0px;
             }
         }
     }

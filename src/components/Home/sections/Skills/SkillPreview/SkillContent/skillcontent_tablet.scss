@@ -7,6 +7,13 @@
     .skill-details-content {
         .skill-card {
             margin-right: 20px;
+            width: 120px;
+            height: 152px;
+            
+            >.skill-icon {
+                width: 80px;
+                height: 80px;
+            }
         }
     }
 

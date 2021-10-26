@@ -16,9 +16,18 @@
             }
         }
 
+        .skill-card {
+            width: 110px;
+            height: 140px;
+            
+            >.skill-icon {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
         .skill-descr {
-            margin-top: 5px;
-            clear: both;
+            margin-top: 10px;
         }
     }
 

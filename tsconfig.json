@@ -1,9 +1,0 @@
-{
-    "compilerOptions": {
-        "typeRoots" : ["modules.d.ts"],
-        "jsx": "react",
-        "lib": ["ES6", "DOM", "ES2017"],
-        "target": "ES5",
-        "esModuleInterop": true
-    }
-}

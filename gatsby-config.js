@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
-module.exports = {
+ module.exports = {
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
@@ -13,8 +13,22 @@ module.exports = {
       options: {
         name: 'Gianvito Difilippo',
         short_name: 'Gianvito Difilippo',
-        icon: 'src/assets/favicon.png'
+        start_url: '/',
+        icons: [
+          {
+            src: `/icons/manifest-icon-192.maskable.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/icons/manifest-icon-512.maskable.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
+        display: 'fullscreen'
       }
-    }
+    },
+    'gatsby-plugin-offline'
   ],
 }

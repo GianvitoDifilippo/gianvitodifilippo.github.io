@@ -45,7 +45,7 @@ class SkillList extends React.PureComponent<PropsType>
                 </SkillSection>
                 <SkillSection id="backend" defaultName="Back end">
                     <li><SkillCard id="dotnet" onClick={this.props.setSkill}/></li>
-                    <li><SkillCard id="postgresql" onClick={this.props.setSkill}/></li>
+                    <li><SkillCard id="azure" onClick={this.props.setSkill}/></li>
                     <li><SkillCard id="sqlserver" onClick={this.props.setSkill}/></li>
                     <li><SkillCard id="nginx" onClick={this.props.setSkill}/></li>
                     <li><SkillCard id="dapr" onClick={this.props.setSkill}/></li>

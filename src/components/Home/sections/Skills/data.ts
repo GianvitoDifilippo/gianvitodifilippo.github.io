@@ -62,6 +62,12 @@ const skills: { [id: string]: Skill } = {
         since: 2021,
         projects: [ ]
     },
+    'azure': {
+        name: 'Azure',
+        experience: [ 2 ],
+        since: 2021,
+        projects: [ ]
+    },
     'git': {
         name: 'Git',
         experience: [ 0, 2 ],

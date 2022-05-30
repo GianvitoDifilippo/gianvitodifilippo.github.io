@@ -58,7 +58,7 @@
                 "dapr": "La Distributed Application Runtime si prende cura dell'infrastruttura lasciandoti concentrare su ciò che veramente importa.",
                 "docker": "Consegna qualsiasi cosa, ovunque.",
                 "dotnet": "Per creare qualunque cosa si possa immaginare.",
-                "envoy": "Un edge and service proxy open source, progettato per applicazioni cloud-native.",
+                "nginx": "Un web server open source, ora utilizzato anche come proxy inverso, cache HTTP e bilanciatore di carico.",
                 "git": "Il codice è niente senza controllo (versione).",
                 "html": "Per dare struttura ai tuoi progetti.",
                 "java": "Il miglior caffè che assaggerai.",

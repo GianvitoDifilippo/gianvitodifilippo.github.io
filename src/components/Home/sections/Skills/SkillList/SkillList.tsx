@@ -43,19 +43,19 @@ class SkillList extends React.PureComponent<PropsType>
                     <li><SkillCard id="java" onClick={this.props.setSkill}/></li>
                     <li><SkillCard id="typescript" onClick={this.props.setSkill}/></li>
                 </SkillSection>
+                <SkillSection id="backend" defaultName="Back end">
+                    <li><SkillCard id="dotnet" onClick={this.props.setSkill}/></li>
+                    <li><SkillCard id="postgresql" onClick={this.props.setSkill}/></li>
+                    <li><SkillCard id="sqlserver" onClick={this.props.setSkill}/></li>
+                    <li><SkillCard id="nginx" onClick={this.props.setSkill}/></li>
+                    <li><SkillCard id="dapr" onClick={this.props.setSkill}/></li>
+                </SkillSection>
                 <SkillSection id="frontend" defaultName="Front end">
                     <li><SkillCard id="html" onClick={this.props.setSkill}/></li>
                     <li><SkillCard id="css" onClick={this.props.setSkill}/></li>
                     <li><SkillCard id="react" onClick={this.props.setSkill}/></li>
                     <li><SkillCard id="angular" onClick={this.props.setSkill}/></li>
                     <li><SkillCard id="sass" onClick={this.props.setSkill}/></li>
-                </SkillSection>
-                <SkillSection id="backend" defaultName="Back end">
-                    <li><SkillCard id="dotnet" onClick={this.props.setSkill}/></li>
-                    <li><SkillCard id="postgresql" onClick={this.props.setSkill}/></li>
-                    <li><SkillCard id="sqlserver" onClick={this.props.setSkill}/></li>
-                    <li><SkillCard id="envoy" onClick={this.props.setSkill}/></li>
-                    <li><SkillCard id="dapr" onClick={this.props.setSkill}/></li>
                 </SkillSection>
                 <SkillSection id="tools" defaultName="Strumenti">
                     <li><SkillCard id="visualstudio" onClick={this.props.setSkill}/></li>

@@ -52,8 +52,8 @@ const skills: { [id: string]: Skill } = {
         since: 2020,
         projects: [ ]
     },
-    'envoy': {
-        name: 'Envoy',
+    'nginx': {
+        name: 'nginx',
         experience: [ 2 ],
         since: 2021,
         projects: [ ]

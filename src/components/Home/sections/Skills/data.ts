@@ -24,7 +24,9 @@ const skills: { [id: string]: Skill } = {
         name: 'C#',
         experience: [ 0, 2 ],
         since: 2020,
-        projects: [ ]
+        projects: [
+            'generatorkit'
+        ]
     },
     'css': {
         name: 'CSS',
@@ -50,7 +52,9 @@ const skills: { [id: string]: Skill } = {
         name: '.NET',
         experience: [ 0, 2 ],
         since: 2020,
-        projects: [ ]
+        projects: [
+            'generatorkit'
+        ]
     },
     'nginx': {
         name: 'nginx',

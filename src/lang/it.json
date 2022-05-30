@@ -167,7 +167,8 @@
             "voicenotes": "Applicazione commissionatami da un amico laureando in logopedia come proof-of-concept della sua tesi di laurea, incentrata sulla diagnostica di patologie vocali. Gestisce le cartelle cliniche dei pazienti, permettendo di inserire anamnesi, diagnosi con foto e/o video, e altri parametri di valutazione della postura e della voce.",
             "magicbet": "Il mio primo progetto in assoluto. Gestisce le somme di denaro da puntare nelle scommesse sportive secondo un preciso algoritmo, da me progettato, chiamato MagicBet.",
             "supermario": "Un semplice clone di Super Mario scritto in Java puro, come esercizio di programmazione a basso livello di videogiochi.",
-            "portfolio": "È il sito che stai visitando in questo momento! Non credo serva descriverlo. 😁"
+            "portfolio": "È il sito che stai visitando in questo momento! Non credo serva descriverlo. 😁",
+            "generatorkit": "Tool in via di sviluppo, il cui scopo è quello di semplificare la scrittura di generatori di codice in .NET, abilitando l'uso della reflectione e dell'esecuzione di codice in fase di compilazione."
         }
     },
     "guitar": {

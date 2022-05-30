@@ -167,7 +167,8 @@
             "voicenotes": "This app was commissioned by a friend graduating in speech therapy. It was intended as a proof-of-concept of his thesis work, and it was focused on the diagnostic of speech diseases. It can manage the patients' medical records, allowing to insert medical history, diagnosis with images and videos, as well as other speech and posture evaluation parameters.",
             "magicbet": "My very first project. It manages the amount on money to stake on sports betting, following an algorithm, called MagicBet, designed by myself.",
             "supermario": "A simple Super Mario Clone written in pure Java, as low-level videogame programming exercise.",
-            "portfolio": "It's the website you're browsing right now! No caption needed. 😁"
+            "portfolio": "It's the website you're browsing right now! No caption needed. 😁",
+            "generatorkit": "Work-in-progress tool, which aim is to simplify the development of .NET source generators, enabling the use of reflection and code execution at compile time."
         }
     },
     "guitar": {

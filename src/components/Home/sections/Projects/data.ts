@@ -3,6 +3,7 @@ import magicbet_thumbnail from '../../../../assets/img/projects/magicbet_thumbna
 import voicenotes_thumbnail from '../../../../assets/img/projects/voicenotes_thumbnail.jpg';
 import supermario_thumbnail from '../../../../assets/img/projects/supermario_thumbnail.jpg';
 import portfolio_thumbnail from '../../../../assets/img/projects/portfolio_thumbnail.jpg';
+import generatorkit_thumbnail from '../../../../assets/img/projects/generatorkit_thumbnail.png';
 
 import audioengineer_img1 from '../../../../assets/img/projects/audioengineer_1.jpg';
 import voicenotes_img1 from '../../../../assets/img/projects/voicenotes_1.png';
@@ -67,6 +68,15 @@ const projects: { [id: string]: Project } = {
         },
         images: [],
         href: 'https://github.com/GianvitoDifilippo/gianvitodifilippo.github.io'
+    },
+    'generatorkit': {
+        name: 'GeneratorKit',
+        thumbnail: {
+            backgroundImage: generatorkit_thumbnail,
+            backgroundPosition: 'center 50%'
+        },
+        images: [],
+        href: 'https://github.com/GianvitoDifilippo/GeneratorKit'
     }
 }
 

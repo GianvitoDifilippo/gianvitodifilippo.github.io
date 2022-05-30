@@ -14,7 +14,7 @@
         name: 'Gianvito Difilippo',
         short_name: 'Gianvito Difilippo',
         start_url: '/',
-        icon: 'src/assets/favicon.png',
+        icon: 'icons/manifest-icon-192.maskable.png',
         icons: [
           {
             src: `icons/manifest-icon-192.maskable.png`,

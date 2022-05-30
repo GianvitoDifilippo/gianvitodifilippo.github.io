@@ -7,6 +7,7 @@ import generatorkit_thumbnail from '../../../../assets/img/projects/generatorkit
 
 import audioengineer_img1 from '../../../../assets/img/projects/audioengineer_1.jpg';
 import voicenotes_img1 from '../../../../assets/img/projects/voicenotes_1.png';
+import generatorkit_img1 from '../../../../assets/img/projects/generatorkit_1.png';
 
 export interface Project {
     name: string,
@@ -75,7 +76,9 @@ const projects: { [id: string]: Project } = {
             backgroundImage: generatorkit_thumbnail,
             backgroundPosition: 'center 50%'
         },
-        images: [],
+        images: [
+            generatorkit_img1
+        ],
         href: 'https://github.com/GianvitoDifilippo/GeneratorKit'
     }
 }

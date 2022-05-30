@@ -39,11 +39,12 @@ const ProjectsDesktopTablet = () => (
     <Section id="projects" defaultTitle="Progetti">
         <ul className="mainlist">
             <MainProjectPreview id="audioengineer"/>
-            <MainProjectPreview id="voicenotes"/>
+            <MainProjectPreview id="generatorkit"/>
         </ul>
         <h1><Translate selector="projects:other"/></h1>
         <ul className="otherlist">
             <li><ProjectThumbnail id="portfolio"/></li>
+            <li><ProjectThumbnail id="voicenotes"/></li>
             <li><ProjectThumbnail id="magicbet"/></li>
             <li><ProjectThumbnail id="supermario"/></li>
         </ul>
@@ -80,13 +81,14 @@ class ProjectsPhone extends React.PureComponent<{}, ProjectsPhoneStateType>
                     <li onClick={() => this.setCurrentProject('audioengineer')}>
                         <ProjectThumbnail id="audioengineer"/>
                     </li>
-                    <li onClick={() => this.setCurrentProject('voicenotes')}>
-                        <ProjectThumbnail id="voicenotes"/>
+                    <li onClick={() => this.setCurrentProject('generatorkit')}>
+                        <ProjectThumbnail id="generatorkit"/>
                     </li>
                 </ul>
                 <h1><Translate selector="projects:other"/></h1>
                 <ul className="otherlist">
                     <li onClick={() => this.setCurrentProject('portfolio')}><ProjectThumbnail id="portfolio"/></li>
+                    <li onClick={() => this.setCurrentProject('voicenotes')}><ProjectThumbnail id="voicenotes"/></li>
                     <li onClick={() => this.setCurrentProject('magicbet')}><ProjectThumbnail id="magicbet"/></li>
                     <li onClick={() => this.setCurrentProject('supermario')}><ProjectThumbnail id="supermario"/></li>
                 </ul>

@@ -97,7 +97,7 @@
             "yearfull": "Gen 2020 - Set 2020",
             "descr": "Ho preso in carico lo sviluppo back end (ASP.NET Core) delle app sviluppate, per gran parte del ciclo di vita, occupandomi delle fasi di design, sviluppo, testing, documentazione, deployment e manutenzione. Parallelamente, ho svolto attività di ricerca sul controllo cooperativo di veicoli autonomi, collaborando con il direttore scientifico del laboratorio nella scrittura di articoli."
         },
-        "software": {
+        "ca": {
             "name": "Sviluppatore .NET",
             "year": "2020 - 2024",
             "yearfull": "Ott 2020 - Apr 2024",
@@ -107,7 +107,7 @@
             "name": "Sviluppatore .NET",
             "year": "2024 - Oggi",
             "yearfull": "Apr 2024 - Oggi",
-            "descr": "Lavoro principalmente su EasyLife 365 Identity, una soluzione completa per gestire le app su Microsoft Entra ID. Mi occupo anche della manutenzione e dell'espansione delle librerie core del back-end e organizzo sessioni di condivisione della conoscenza per il team"
+            "descr": "Lavoro principalmente su EasyLife 365 Identity, una soluzione completa per gestire le app su Microsoft Entra ID. Mi occupo anche della manutenzione e dell'espansione delle librerie core del back-end e organizzo sessioni di condivisione di conoscenze per il team."
         }
     },
     "education": {

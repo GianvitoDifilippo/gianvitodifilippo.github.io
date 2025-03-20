@@ -91,17 +91,23 @@
             "yearfull": "Set 2018 - Set 2019",
             "descr": "Ho svolto attività di supporto per studenti del primo anno, aiutandoli ad affrontare esami, a rapportarsi con i professori e guidandoli alla vita universitaria."
         },
-        "backend": {
-            "name": "Sviluppatore back end",
+        "autologs": {
+            "name": "Sviluppatore .NET",
             "year": "2020",
             "yearfull": "Gen 2020 - Set 2020",
             "descr": "Ho preso in carico lo sviluppo back end (ASP.NET Core) delle app sviluppate, per gran parte del ciclo di vita, occupandomi delle fasi di design, sviluppo, testing, documentazione, deployment e manutenzione. Parallelamente, ho svolto attività di ricerca sul controllo cooperativo di veicoli autonomi, collaborando con il direttore scientifico del laboratorio nella scrittura di articoli."
         },
         "software": {
-            "name": "Sviluppatore software",
-            "year": "2020 - Oggi",
-            "yearfull": "Ott 2020 - Oggi",
+            "name": "Sviluppatore .NET",
+            "year": "2020 - 2024",
+            "yearfull": "Ott 2020 - Apr 2024",
             "descr": "Sviluppo back-end di soluzioni enterprise. Progettazione di architetture a microservizi, scalabili e distribuite. Svilippo e manutenzione delle librerie foundation. Importante utilizzo di orchestratori di workflow e del modello di programmazione ad attori."
+        },
+        "easylife": {
+            "name": "Sviluppatore .NET",
+            "year": "2024 - Oggi",
+            "yearfull": "Apr 2024 - Oggi",
+            "descr": "Lavoro principalmente su EasyLife 365 Identity, una soluzione completa per gestire le app su Microsoft Entra ID. Mi occupo anche della manutenzione e dell'espansione delle librerie core del back-end e organizzo sessioni di condivisione della conoscenza per il team"
         }
     },
     "education": {
@@ -139,7 +145,7 @@
             "h1": "Dottorato di ricerca in Ingegneria Elettrica e dell'Informazione",
             "thesis": {
                 "key": "Titolo della tesi: ",
-                "value": "Distributed control and coordination of autonomous vehicles (titolo provvisorio)"
+                "value": "Coordination and Control of Autonomous Vehicles at Urban Intersections"
             }
         },
         "erasmus": {

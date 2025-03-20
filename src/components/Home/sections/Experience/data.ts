@@ -1,28 +1,33 @@
-import truck from '../../../../assets/img/experience/truck.png';
-import tutor from '../../../../assets/img/experience/tutor.png';
-import backend from '../../../../assets/img/experience/backend.png';
-import developer from '../../../../assets/img/experience/developer.png';
+import poliba from '../../../../assets/img/experience/poliba.png';
+import autologs from '../../../../assets/img/experience/autologs.png';
+import ca from '../../../../assets/img/experience/ca.png';
+import easylife from '../../../../assets/img/experience/easylife.png';
 
 const experience = [
     {
         id: 'research',
         where: 'Politecnico di Bari',
-        image: truck
+        image: poliba
     },
     {
         id: 'tutoring',
         where: 'Politecnico di Bari',
-        image: tutor
+        image: poliba
     },
     {
-        id: 'backend',
+        id: 'autologs',
         where: 'AutoLogS',
-        image: backend
+        image: autologs
     },
     {
-        id: 'software',
+        id: 'ca',
         where: 'Code Architects',
-        image: developer
+        image: ca
+    },
+    {
+        id: 'easylife',
+        where: 'EasyLife 365 AG',
+        image: easylife
     }
 ];
 

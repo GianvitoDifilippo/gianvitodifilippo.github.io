@@ -91,17 +91,23 @@
             "yearfull": "Sep 2018 - Sep 2019",
             "descr": "I supported first-year students, helping them with exams, easing their relationship with professors and leading them into university life."
         },
-        "backend": {
-            "name": "Back end developer",
+        "autologs": {
+            "name": ".NET developer",
             "year": "2020",
             "yearfull": "Jan 2020 - Sep 2020",
             "descr": "I took responsibility of the full back end (ASP.NET Core) lifecycle, including designing, development, testing, documentation, deployment and maintenance. At the same time, I researched on cooperative control of autonomous vehicles, collaborating with the scientific director of the lab and writing papers."
         },
-        "software": {
-            "name": "Software developer",
-            "year": "2020 - Today",
-            "yearfull": "Oct 2020 - Today",
+        "ca": {
+            "name": ".NET developer",
+            "year": "2020 - 2024",
+            "yearfull": "Oct 2020 - Apr 2024",
             "descr": "Back-end development of enterprise solutions. Design of distributed and scalable microservice architectures. Development and mantainance of foundation libraries. Strong usage of workflow orchestrators and the Actor Model."
+        },
+        "easylife": {
+            "name": ".NET developer",
+            "year": "2024 - Today",
+            "yearfull": "Apr 2024 - Today",
+            "descr": "I mainly work on EasyLife 365 Identity, a complete solution for managing apps on Microsoft Entra ID. I also take care of maintaining and expanding the back-end core libraries and organize knowledge-sharing sessions for the team."
         }
     },
     "education": {
@@ -139,7 +145,7 @@
             "h1": "PhD Degree in Electrical and Information Engineering",
             "thesis": {
                 "key": "Thesis title: ",
-                "value": "Distributed control and coordination of autonomous vehicles (preliminary title)"
+                "value": "Coordination and Control of Autonomous Vehicles at Urban Intersections"
             }
         },
         "erasmus": {
